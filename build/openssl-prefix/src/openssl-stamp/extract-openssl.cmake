@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz" ABSOLUTE)
-get_filename_component(directory "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl" ABSOLUTE)
+get_filename_component(filename "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz" ABSOLUTE)
+get_filename_component(directory "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

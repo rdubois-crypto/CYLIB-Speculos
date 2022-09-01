@@ -1,4 +1,4 @@
-# Install script for directory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src
+# Install script for directory: /home/dubois/eclipse-workspace/CYLIB-Speculos/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

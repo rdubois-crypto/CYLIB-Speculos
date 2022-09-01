@@ -4,7 +4,7 @@
 # compile C with arm-linux-gnueabihf-gcc
 C_FLAGS =   -mthumb -W -Wall -fPIC
 
-C_DEFINES = -DGIT_REVISION=\"\" -DNATIVE_64BITS -DOS_LITTLE_ENDIAN -DST31
+C_DEFINES = -DGIT_REVISION=\"52bb743\" -DNATIVE_64BITS -DOS_LITTLE_ENDIAN -DST31
 
-C_INCLUDES = -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/sdk -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src/innovation/api -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src/innovation/api/arithmetic -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src/innovation/api/common -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src/innovation/api/components -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src/innovation/api/io -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src/innovation/tests -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/include 
+C_INCLUDES = -I/home/dubois/eclipse-workspace/CYLIB-Speculos/sdk -I/home/dubois/eclipse-workspace/CYLIB-Speculos/src -I/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/api -I/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/api/arithmetic -I/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/api/common -I/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/api/components -I/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/api/io -I/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install/include 
 

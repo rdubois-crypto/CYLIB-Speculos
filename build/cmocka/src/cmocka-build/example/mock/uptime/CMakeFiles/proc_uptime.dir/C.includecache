@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.c
 errno.h
 -
 stdio.h
@@ -26,7 +26,7 @@ locale.h
 unistd.h
 -
 proc_uptime.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
 

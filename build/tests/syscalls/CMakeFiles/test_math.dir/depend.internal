@@ -8,8 +8,8 @@ tests/syscalls/CMakeFiles/test_math.dir/test_math.c.o
  ../src/bolos/cx_math.h
  ../src/emulate.h
  ../src/sdk.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_math.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_math.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
  install/include/openssl/bn.h
  install/include/openssl/bnerr.h

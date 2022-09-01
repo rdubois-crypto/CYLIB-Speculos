@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/simple_test.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/simple_test.c
 stdarg.h
 -
 stddef.h
@@ -18,5 +18,5 @@ stdint.h
 cmocka.h
 -
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include/cmocka.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include/cmocka.h
 

@@ -3,5 +3,5 @@
 
 tests/syscalls/CMakeFiles/test_crc16.dir/test_crc16.c.o
  ../src/bolos/cx_crc.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_crc16.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_crc16.c
  install/include/cmocka.h

@@ -9,8 +9,8 @@
 #define LIBDIR "lib"
 #define PLUGINDIR "-0"
 /* #undef SYSCONFDIR */
-#define BINARYDIR "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build"
-#define SOURCEDIR "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka"
+#define BINARYDIR "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build"
+#define SOURCEDIR "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka"
 
 /************************** HEADER FILES *************************/
 

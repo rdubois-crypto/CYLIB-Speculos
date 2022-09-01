@@ -1,1 +1,1 @@
-/usr/bin/arm-linux-gnueabihf-gcc    -Wl,--wrap=uptime CMakeFiles/test_uptime.dir/test_uptime.c.o  -o test_uptime  -Wl,-rpath,/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/src ../../../src/libcmocka.so.0.7.0 
+/usr/bin/arm-linux-gnueabihf-gcc    -Wl,--wrap=uptime CMakeFiles/test_uptime.dir/test_uptime.c.o  -o test_uptime  -Wl,-rpath,/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/src ../../../src/libcmocka.so.0.7.0 

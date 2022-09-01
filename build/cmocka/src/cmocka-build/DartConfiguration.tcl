@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka
-BuildDirectory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build
+SourceDirectory: /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka
+BuildDirectory: /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -26,7 +26,7 @@ SubmitURL: https://test.cmocka.org/submit.php?project=cmocka
 NightlyStartTime: 01:00:00 UTC
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka"
+ConfigureCommand: "/usr/bin/cmake" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

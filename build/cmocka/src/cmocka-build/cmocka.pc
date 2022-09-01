@@ -1,5 +1,5 @@
 Name: cmocka
 Description: The cmocka unit testing library
 Version: 1.1.5
-Libs: -L/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib -lcmocka
-Cflags: -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/include
+Libs: -L/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install/lib -lcmocka
+Cflags: -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install/include

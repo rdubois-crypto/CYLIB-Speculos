@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/src/launcher.c" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/src/CMakeFiles/launcher.dir/launcher.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/launcher.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/launcher.dir/launcher.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "GIT_REVISION=\"\""
+  "GIT_REVISION=\"52bb743\""
   "NATIVE_64BITS"
   "OS_LITTLE_ENDIAN"
   )
@@ -30,7 +30,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/src/CMakeFiles/emu.dir/DependInfo.cmake"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

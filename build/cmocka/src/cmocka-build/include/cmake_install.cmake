@@ -1,8 +1,8 @@
-# Install script for directory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include
+# Install script for directory: /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,8 +39,8 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xcmocka-headerx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include/cmocka.h"
-    "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include/cmocka_pbc.h"
+    "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include/cmocka.h"
+    "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include/cmocka_pbc.h"
     )
 endif()
 

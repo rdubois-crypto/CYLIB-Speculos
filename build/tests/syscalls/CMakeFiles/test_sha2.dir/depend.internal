@@ -4,9 +4,9 @@
 tests/syscalls/CMakeFiles/test_sha2.dir/nist_cavp.c.o
  ../src/bolos/cx.h
  ../src/bolos/cx_hash.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/nist_cavp.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/nist_cavp.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/nist_cavp.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/nist_cavp.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
 tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.o
  ../src/bolos/cx.h
@@ -15,9 +15,9 @@ tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.o
  ../src/bolos/cx_hash.h
  ../src/emulate.h
  ../src/sdk.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/nist_cavp.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_sha2.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/nist_cavp.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_sha2.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
  install/include/openssl/bn.h
  install/include/openssl/bnerr.h
@@ -32,5 +32,5 @@ tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.o
  install/include/openssl/stack.h
  install/include/openssl/symhacks.h
 tests/syscalls/CMakeFiles/test_sha2.dir/utils.c.o
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h

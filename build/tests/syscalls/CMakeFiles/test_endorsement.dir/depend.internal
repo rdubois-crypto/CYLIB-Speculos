@@ -9,8 +9,8 @@ tests/syscalls/CMakeFiles/test_endorsement.dir/test_endorsement.c.o
  ../src/bolos/endorsement.h
  ../src/emulate.h
  ../src/sdk.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_endorsement.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_endorsement.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
  install/include/openssl/bn.h
  install/include/openssl/bnerr.h

@@ -8,8 +8,8 @@ tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.o
  ../src/bolos/cx_utils.h
  ../src/emulate.h
  ../src/sdk.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_eip2333.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_eip2333.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
  install/include/openssl/bn.h
  install/include/openssl/bnerr.h
@@ -24,5 +24,5 @@ tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.o
  install/include/openssl/stack.h
  install/include/openssl/symhacks.h
 tests/syscalls/CMakeFiles/test_eip2333.dir/utils.c.o
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h

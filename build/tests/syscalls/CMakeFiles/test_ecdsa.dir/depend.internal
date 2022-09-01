@@ -8,8 +8,8 @@ tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.o
  ../src/bolos/cx_hash.h
  ../src/emulate.h
  ../src/sdk.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_ecdsa.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_ecdsa.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
  install/include/openssl/asn1.h
  install/include/openssl/asn1err.h
@@ -33,5 +33,5 @@ tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.o
  install/include/openssl/stack.h
  install/include/openssl/symhacks.h
 tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.o
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h

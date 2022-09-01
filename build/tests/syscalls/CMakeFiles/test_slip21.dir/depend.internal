@@ -8,7 +8,7 @@ tests/syscalls/CMakeFiles/test_slip21.dir/test_slip21.c.o
  ../src/bolos/os_bip32.h
  ../src/emulate.h
  ../src/sdk.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_slip21.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_slip21.c
  install/include/cmocka.h
  install/include/openssl/bn.h
  install/include/openssl/bnerr.h

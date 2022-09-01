@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c
 stdarg.h
 -
 stddef.h
@@ -20,9 +20,9 @@ setjmp.h
 cmocka.h
 -
 uptime.c
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/uptime.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/uptime.c
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/uptime.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/uptime.c
 stdio.h
 -
 stdlib.h
@@ -36,7 +36,7 @@ time.h
 sys/time.h
 -
 proc_uptime.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/proc_uptime.h
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include/cmocka.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include/cmocka.h
 

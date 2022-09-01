@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master
+CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build
+CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,14 +91,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/tests/syscalls/CMakeFiles/progress.marks
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles /home/dubois/eclipse-workspace/CYLIB-Speculos/build/tests/syscalls/CMakeFiles/progress.marks
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/clean
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/clean
 .PHONY : clean
 
 # The main clean target
@@ -108,22 +108,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_eip2333.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_eip2333.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_eip2333.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_eip2333.dir/rule
 
 # Convenience name for target.
@@ -133,12 +133,12 @@ test_eip2333: tests/syscalls/CMakeFiles/test_eip2333.dir/rule
 
 # fast build rule for target.
 test_eip2333/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/build
 .PHONY : test_eip2333/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_slip21.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_slip21.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_slip21.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_slip21.dir/rule
 
 # Convenience name for target.
@@ -148,12 +148,12 @@ test_slip21: tests/syscalls/CMakeFiles/test_slip21.dir/rule
 
 # fast build rule for target.
 test_slip21/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/build
 .PHONY : test_slip21/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_sha3.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_sha3.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_sha3.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_sha3.dir/rule
 
 # Convenience name for target.
@@ -163,12 +163,12 @@ test_sha3: tests/syscalls/CMakeFiles/test_sha3.dir/rule
 
 # fast build rule for target.
 test_sha3/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/build
 .PHONY : test_sha3/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_ripemd.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ripemd.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ripemd.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_ripemd.dir/rule
 
 # Convenience name for target.
@@ -178,12 +178,12 @@ test_ripemd: tests/syscalls/CMakeFiles/test_ripemd.dir/rule
 
 # fast build rule for target.
 test_ripemd/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/build
 .PHONY : test_ripemd/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/hello.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/hello.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/hello.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/hello.dir/rule
 
 # Convenience name for target.
@@ -193,12 +193,12 @@ hello: tests/syscalls/CMakeFiles/hello.dir/rule
 
 # fast build rule for target.
 hello/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/build
 .PHONY : hello/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_bip32.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_bip32.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_bip32.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_bip32.dir/rule
 
 # Convenience name for target.
@@ -208,12 +208,12 @@ test_bip32: tests/syscalls/CMakeFiles/test_bip32.dir/rule
 
 # fast build rule for target.
 test_bip32/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/build
 .PHONY : test_bip32/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_ecdsa.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ecdsa.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ecdsa.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_ecdsa.dir/rule
 
 # Convenience name for target.
@@ -223,12 +223,12 @@ test_ecdsa: tests/syscalls/CMakeFiles/test_ecdsa.dir/rule
 
 # fast build rule for target.
 test_ecdsa/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/build
 .PHONY : test_ecdsa/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_mpi_rng.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_mpi_rng.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_mpi_rng.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_mpi_rng.dir/rule
 
 # Convenience name for target.
@@ -238,12 +238,12 @@ test_mpi_rng: tests/syscalls/CMakeFiles/test_mpi_rng.dir/rule
 
 # fast build rule for target.
 test_mpi_rng/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/build
 .PHONY : test_mpi_rng/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_ecpoint.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ecpoint.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ecpoint.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_ecpoint.dir/rule
 
 # Convenience name for target.
@@ -253,12 +253,12 @@ test_ecpoint: tests/syscalls/CMakeFiles/test_ecpoint.dir/rule
 
 # fast build rule for target.
 test_ecpoint/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/build
 .PHONY : test_ecpoint/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/rule
 
 # Convenience name for target.
@@ -268,12 +268,12 @@ test_os_global_pin_is_validated: tests/syscalls/CMakeFiles/test_os_global_pin_is
 
 # fast build rule for target.
 test_os_global_pin_is_validated/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build
 .PHONY : test_os_global_pin_is_validated/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_aes.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_aes.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_aes.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_aes.dir/rule
 
 # Convenience name for target.
@@ -283,12 +283,12 @@ test_aes: tests/syscalls/CMakeFiles/test_aes.dir/rule
 
 # fast build rule for target.
 test_aes/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/build
 .PHONY : test_aes/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_blake2.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_blake2.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_blake2.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_blake2.dir/rule
 
 # Convenience name for target.
@@ -298,12 +298,12 @@ test_blake2: tests/syscalls/CMakeFiles/test_blake2.dir/rule
 
 # fast build rule for target.
 test_blake2/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/build
 .PHONY : test_blake2/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_sha2.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_sha2.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_sha2.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_sha2.dir/rule
 
 # Convenience name for target.
@@ -313,12 +313,12 @@ test_sha2: tests/syscalls/CMakeFiles/test_sha2.dir/rule
 
 # fast build rule for target.
 test_sha2/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/build
 .PHONY : test_sha2/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_crc16.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_crc16.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_crc16.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_crc16.dir/rule
 
 # Convenience name for target.
@@ -328,12 +328,12 @@ test_crc16: tests/syscalls/CMakeFiles/test_crc16.dir/rule
 
 # fast build rule for target.
 test_crc16/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/build
 .PHONY : test_crc16/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_ecdh.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ecdh.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ecdh.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_ecdh.dir/rule
 
 # Convenience name for target.
@@ -343,12 +343,12 @@ test_ecdh: tests/syscalls/CMakeFiles/test_ecdh.dir/rule
 
 # fast build rule for target.
 test_ecdh/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/build
 .PHONY : test_ecdh/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_eddsa.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_eddsa.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_eddsa.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_eddsa.dir/rule
 
 # Convenience name for target.
@@ -358,12 +358,12 @@ test_eddsa: tests/syscalls/CMakeFiles/test_eddsa.dir/rule
 
 # fast build rule for target.
 test_eddsa/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/build
 .PHONY : test_eddsa/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_rfc6979.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_rfc6979.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_rfc6979.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_rfc6979.dir/rule
 
 # Convenience name for target.
@@ -373,12 +373,12 @@ test_rfc6979: tests/syscalls/CMakeFiles/test_rfc6979.dir/rule
 
 # fast build rule for target.
 test_rfc6979/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/build
 .PHONY : test_rfc6979/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_ec.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ec.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_ec.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_ec.dir/rule
 
 # Convenience name for target.
@@ -388,12 +388,12 @@ test_ec: tests/syscalls/CMakeFiles/test_ec.dir/rule
 
 # fast build rule for target.
 test_ec/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/build
 .PHONY : test_ec/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_endorsement.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_endorsement.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_endorsement.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_endorsement.dir/rule
 
 # Convenience name for target.
@@ -403,12 +403,12 @@ test_endorsement: tests/syscalls/CMakeFiles/test_endorsement.dir/rule
 
 # fast build rule for target.
 test_endorsement/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/build
 .PHONY : test_endorsement/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_hmac.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_hmac.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_hmac.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_hmac.dir/rule
 
 # Convenience name for target.
@@ -418,12 +418,12 @@ test_hmac: tests/syscalls/CMakeFiles/test_hmac.dir/rule
 
 # fast build rule for target.
 test_hmac/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/build
 .PHONY : test_hmac/fast
 
 # Convenience name for target.
 tests/syscalls/CMakeFiles/test_math.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_math.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/syscalls/CMakeFiles/test_math.dir/rule
 .PHONY : tests/syscalls/CMakeFiles/test_math.dir/rule
 
 # Convenience name for target.
@@ -433,7 +433,7 @@ test_math: tests/syscalls/CMakeFiles/test_math.dir/rule
 
 # fast build rule for target.
 test_math/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/build
 .PHONY : test_math/fast
 
 hello.o: hello.c.o
@@ -442,7 +442,7 @@ hello.o: hello.c.o
 
 # target to build an object file
 hello.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/hello.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/hello.c.o
 .PHONY : hello.c.o
 
 hello.i: hello.c.i
@@ -451,7 +451,7 @@ hello.i: hello.c.i
 
 # target to preprocess a source file
 hello.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/hello.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/hello.c.i
 .PHONY : hello.c.i
 
 hello.s: hello.c.s
@@ -460,7 +460,7 @@ hello.s: hello.c.s
 
 # target to generate assembly for a file
 hello.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/hello.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/hello.dir/build.make tests/syscalls/CMakeFiles/hello.dir/hello.c.s
 .PHONY : hello.c.s
 
 nist_cavp.o: nist_cavp.c.o
@@ -469,10 +469,10 @@ nist_cavp.o: nist_cavp.c.o
 
 # target to build an object file
 nist_cavp.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/nist_cavp.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/nist_cavp.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/nist_cavp.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/nist_cavp.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/nist_cavp.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/nist_cavp.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/nist_cavp.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/nist_cavp.c.o
 .PHONY : nist_cavp.c.o
 
 nist_cavp.i: nist_cavp.c.i
@@ -481,10 +481,10 @@ nist_cavp.i: nist_cavp.c.i
 
 # target to preprocess a source file
 nist_cavp.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/nist_cavp.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/nist_cavp.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/nist_cavp.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/nist_cavp.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/nist_cavp.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/nist_cavp.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/nist_cavp.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/nist_cavp.c.i
 .PHONY : nist_cavp.c.i
 
 nist_cavp.s: nist_cavp.c.s
@@ -493,10 +493,10 @@ nist_cavp.s: nist_cavp.c.s
 
 # target to generate assembly for a file
 nist_cavp.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/nist_cavp.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/nist_cavp.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/nist_cavp.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/nist_cavp.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/nist_cavp.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/nist_cavp.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/nist_cavp.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/nist_cavp.c.s
 .PHONY : nist_cavp.c.s
 
 test_aes.o: test_aes.c.o
@@ -505,7 +505,7 @@ test_aes.o: test_aes.c.o
 
 # target to build an object file
 test_aes.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/test_aes.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/test_aes.c.o
 .PHONY : test_aes.c.o
 
 test_aes.i: test_aes.c.i
@@ -514,7 +514,7 @@ test_aes.i: test_aes.c.i
 
 # target to preprocess a source file
 test_aes.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/test_aes.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/test_aes.c.i
 .PHONY : test_aes.c.i
 
 test_aes.s: test_aes.c.s
@@ -523,7 +523,7 @@ test_aes.s: test_aes.c.s
 
 # target to generate assembly for a file
 test_aes.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/test_aes.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/test_aes.c.s
 .PHONY : test_aes.c.s
 
 test_bip32.o: test_bip32.c.o
@@ -532,7 +532,7 @@ test_bip32.o: test_bip32.c.o
 
 # target to build an object file
 test_bip32.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/test_bip32.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/test_bip32.c.o
 .PHONY : test_bip32.c.o
 
 test_bip32.i: test_bip32.c.i
@@ -541,7 +541,7 @@ test_bip32.i: test_bip32.c.i
 
 # target to preprocess a source file
 test_bip32.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/test_bip32.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/test_bip32.c.i
 .PHONY : test_bip32.c.i
 
 test_bip32.s: test_bip32.c.s
@@ -550,7 +550,7 @@ test_bip32.s: test_bip32.c.s
 
 # target to generate assembly for a file
 test_bip32.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/test_bip32.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/test_bip32.c.s
 .PHONY : test_bip32.c.s
 
 test_blake2.o: test_blake2.c.o
@@ -559,7 +559,7 @@ test_blake2.o: test_blake2.c.o
 
 # target to build an object file
 test_blake2.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/test_blake2.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/test_blake2.c.o
 .PHONY : test_blake2.c.o
 
 test_blake2.i: test_blake2.c.i
@@ -568,7 +568,7 @@ test_blake2.i: test_blake2.c.i
 
 # target to preprocess a source file
 test_blake2.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/test_blake2.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/test_blake2.c.i
 .PHONY : test_blake2.c.i
 
 test_blake2.s: test_blake2.c.s
@@ -577,7 +577,7 @@ test_blake2.s: test_blake2.c.s
 
 # target to generate assembly for a file
 test_blake2.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/test_blake2.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/test_blake2.c.s
 .PHONY : test_blake2.c.s
 
 test_crc16.o: test_crc16.c.o
@@ -586,7 +586,7 @@ test_crc16.o: test_crc16.c.o
 
 # target to build an object file
 test_crc16.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/test_crc16.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/test_crc16.c.o
 .PHONY : test_crc16.c.o
 
 test_crc16.i: test_crc16.c.i
@@ -595,7 +595,7 @@ test_crc16.i: test_crc16.c.i
 
 # target to preprocess a source file
 test_crc16.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/test_crc16.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/test_crc16.c.i
 .PHONY : test_crc16.c.i
 
 test_crc16.s: test_crc16.c.s
@@ -604,7 +604,7 @@ test_crc16.s: test_crc16.c.s
 
 # target to generate assembly for a file
 test_crc16.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/test_crc16.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_crc16.dir/build.make tests/syscalls/CMakeFiles/test_crc16.dir/test_crc16.c.s
 .PHONY : test_crc16.c.s
 
 test_ec.o: test_ec.c.o
@@ -613,7 +613,7 @@ test_ec.o: test_ec.c.o
 
 # target to build an object file
 test_ec.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/test_ec.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/test_ec.c.o
 .PHONY : test_ec.c.o
 
 test_ec.i: test_ec.c.i
@@ -622,7 +622,7 @@ test_ec.i: test_ec.c.i
 
 # target to preprocess a source file
 test_ec.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/test_ec.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/test_ec.c.i
 .PHONY : test_ec.c.i
 
 test_ec.s: test_ec.c.s
@@ -631,7 +631,7 @@ test_ec.s: test_ec.c.s
 
 # target to generate assembly for a file
 test_ec.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/test_ec.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/test_ec.c.s
 .PHONY : test_ec.c.s
 
 test_ecdh.o: test_ecdh.c.o
@@ -640,7 +640,7 @@ test_ecdh.o: test_ecdh.c.o
 
 # target to build an object file
 test_ecdh.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/test_ecdh.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/test_ecdh.c.o
 .PHONY : test_ecdh.c.o
 
 test_ecdh.i: test_ecdh.c.i
@@ -649,7 +649,7 @@ test_ecdh.i: test_ecdh.c.i
 
 # target to preprocess a source file
 test_ecdh.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/test_ecdh.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/test_ecdh.c.i
 .PHONY : test_ecdh.c.i
 
 test_ecdh.s: test_ecdh.c.s
@@ -658,7 +658,7 @@ test_ecdh.s: test_ecdh.c.s
 
 # target to generate assembly for a file
 test_ecdh.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/test_ecdh.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/test_ecdh.c.s
 .PHONY : test_ecdh.c.s
 
 test_ecdsa.o: test_ecdsa.c.o
@@ -667,7 +667,7 @@ test_ecdsa.o: test_ecdsa.c.o
 
 # target to build an object file
 test_ecdsa.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.o
 .PHONY : test_ecdsa.c.o
 
 test_ecdsa.i: test_ecdsa.c.i
@@ -676,7 +676,7 @@ test_ecdsa.i: test_ecdsa.c.i
 
 # target to preprocess a source file
 test_ecdsa.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.i
 .PHONY : test_ecdsa.c.i
 
 test_ecdsa.s: test_ecdsa.c.s
@@ -685,7 +685,7 @@ test_ecdsa.s: test_ecdsa.c.s
 
 # target to generate assembly for a file
 test_ecdsa.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.s
 .PHONY : test_ecdsa.c.s
 
 test_ecpoint.o: test_ecpoint.c.o
@@ -694,7 +694,7 @@ test_ecpoint.o: test_ecpoint.c.o
 
 # target to build an object file
 test_ecpoint.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/test_ecpoint.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/test_ecpoint.c.o
 .PHONY : test_ecpoint.c.o
 
 test_ecpoint.i: test_ecpoint.c.i
@@ -703,7 +703,7 @@ test_ecpoint.i: test_ecpoint.c.i
 
 # target to preprocess a source file
 test_ecpoint.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/test_ecpoint.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/test_ecpoint.c.i
 .PHONY : test_ecpoint.c.i
 
 test_ecpoint.s: test_ecpoint.c.s
@@ -712,7 +712,7 @@ test_ecpoint.s: test_ecpoint.c.s
 
 # target to generate assembly for a file
 test_ecpoint.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/test_ecpoint.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/test_ecpoint.c.s
 .PHONY : test_ecpoint.c.s
 
 test_eddsa.o: test_eddsa.c.o
@@ -721,7 +721,7 @@ test_eddsa.o: test_eddsa.c.o
 
 # target to build an object file
 test_eddsa.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/test_eddsa.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/test_eddsa.c.o
 .PHONY : test_eddsa.c.o
 
 test_eddsa.i: test_eddsa.c.i
@@ -730,7 +730,7 @@ test_eddsa.i: test_eddsa.c.i
 
 # target to preprocess a source file
 test_eddsa.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/test_eddsa.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/test_eddsa.c.i
 .PHONY : test_eddsa.c.i
 
 test_eddsa.s: test_eddsa.c.s
@@ -739,7 +739,7 @@ test_eddsa.s: test_eddsa.c.s
 
 # target to generate assembly for a file
 test_eddsa.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/test_eddsa.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/test_eddsa.c.s
 .PHONY : test_eddsa.c.s
 
 test_eip2333.o: test_eip2333.c.o
@@ -748,7 +748,7 @@ test_eip2333.o: test_eip2333.c.o
 
 # target to build an object file
 test_eip2333.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.o
 .PHONY : test_eip2333.c.o
 
 test_eip2333.i: test_eip2333.c.i
@@ -757,7 +757,7 @@ test_eip2333.i: test_eip2333.c.i
 
 # target to preprocess a source file
 test_eip2333.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.i
 .PHONY : test_eip2333.c.i
 
 test_eip2333.s: test_eip2333.c.s
@@ -766,7 +766,7 @@ test_eip2333.s: test_eip2333.c.s
 
 # target to generate assembly for a file
 test_eip2333.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/test_eip2333.c.s
 .PHONY : test_eip2333.c.s
 
 test_endorsement.o: test_endorsement.c.o
@@ -775,7 +775,7 @@ test_endorsement.o: test_endorsement.c.o
 
 # target to build an object file
 test_endorsement.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/test_endorsement.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/test_endorsement.c.o
 .PHONY : test_endorsement.c.o
 
 test_endorsement.i: test_endorsement.c.i
@@ -784,7 +784,7 @@ test_endorsement.i: test_endorsement.c.i
 
 # target to preprocess a source file
 test_endorsement.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/test_endorsement.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/test_endorsement.c.i
 .PHONY : test_endorsement.c.i
 
 test_endorsement.s: test_endorsement.c.s
@@ -793,7 +793,7 @@ test_endorsement.s: test_endorsement.c.s
 
 # target to generate assembly for a file
 test_endorsement.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/test_endorsement.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_endorsement.dir/build.make tests/syscalls/CMakeFiles/test_endorsement.dir/test_endorsement.c.s
 .PHONY : test_endorsement.c.s
 
 test_hmac.o: test_hmac.c.o
@@ -802,7 +802,7 @@ test_hmac.o: test_hmac.c.o
 
 # target to build an object file
 test_hmac.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/test_hmac.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/test_hmac.c.o
 .PHONY : test_hmac.c.o
 
 test_hmac.i: test_hmac.c.i
@@ -811,7 +811,7 @@ test_hmac.i: test_hmac.c.i
 
 # target to preprocess a source file
 test_hmac.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/test_hmac.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/test_hmac.c.i
 .PHONY : test_hmac.c.i
 
 test_hmac.s: test_hmac.c.s
@@ -820,7 +820,7 @@ test_hmac.s: test_hmac.c.s
 
 # target to generate assembly for a file
 test_hmac.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/test_hmac.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/test_hmac.c.s
 .PHONY : test_hmac.c.s
 
 test_math.o: test_math.c.o
@@ -829,7 +829,7 @@ test_math.o: test_math.c.o
 
 # target to build an object file
 test_math.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/test_math.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/test_math.c.o
 .PHONY : test_math.c.o
 
 test_math.i: test_math.c.i
@@ -838,7 +838,7 @@ test_math.i: test_math.c.i
 
 # target to preprocess a source file
 test_math.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/test_math.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/test_math.c.i
 .PHONY : test_math.c.i
 
 test_math.s: test_math.c.s
@@ -847,7 +847,7 @@ test_math.s: test_math.c.s
 
 # target to generate assembly for a file
 test_math.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/test_math.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_math.dir/build.make tests/syscalls/CMakeFiles/test_math.dir/test_math.c.s
 .PHONY : test_math.c.s
 
 test_mpi_rng.o: test_mpi_rng.c.o
@@ -856,7 +856,7 @@ test_mpi_rng.o: test_mpi_rng.c.o
 
 # target to build an object file
 test_mpi_rng.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.o
 .PHONY : test_mpi_rng.c.o
 
 test_mpi_rng.i: test_mpi_rng.c.i
@@ -865,7 +865,7 @@ test_mpi_rng.i: test_mpi_rng.c.i
 
 # target to preprocess a source file
 test_mpi_rng.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.i
 .PHONY : test_mpi_rng.c.i
 
 test_mpi_rng.s: test_mpi_rng.c.s
@@ -874,7 +874,7 @@ test_mpi_rng.s: test_mpi_rng.c.s
 
 # target to generate assembly for a file
 test_mpi_rng.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.s
 .PHONY : test_mpi_rng.c.s
 
 test_os_global_pin_is_validated.o: test_os_global_pin_is_validated.c.o
@@ -883,7 +883,7 @@ test_os_global_pin_is_validated.o: test_os_global_pin_is_validated.c.o
 
 # target to build an object file
 test_os_global_pin_is_validated.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/test_os_global_pin_is_validated.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/test_os_global_pin_is_validated.c.o
 .PHONY : test_os_global_pin_is_validated.c.o
 
 test_os_global_pin_is_validated.i: test_os_global_pin_is_validated.c.i
@@ -892,7 +892,7 @@ test_os_global_pin_is_validated.i: test_os_global_pin_is_validated.c.i
 
 # target to preprocess a source file
 test_os_global_pin_is_validated.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/test_os_global_pin_is_validated.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/test_os_global_pin_is_validated.c.i
 .PHONY : test_os_global_pin_is_validated.c.i
 
 test_os_global_pin_is_validated.s: test_os_global_pin_is_validated.c.s
@@ -901,7 +901,7 @@ test_os_global_pin_is_validated.s: test_os_global_pin_is_validated.c.s
 
 # target to generate assembly for a file
 test_os_global_pin_is_validated.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/test_os_global_pin_is_validated.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/build.make tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/test_os_global_pin_is_validated.c.s
 .PHONY : test_os_global_pin_is_validated.c.s
 
 test_rfc6979.o: test_rfc6979.c.o
@@ -910,7 +910,7 @@ test_rfc6979.o: test_rfc6979.c.o
 
 # target to build an object file
 test_rfc6979.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/test_rfc6979.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/test_rfc6979.c.o
 .PHONY : test_rfc6979.c.o
 
 test_rfc6979.i: test_rfc6979.c.i
@@ -919,7 +919,7 @@ test_rfc6979.i: test_rfc6979.c.i
 
 # target to preprocess a source file
 test_rfc6979.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/test_rfc6979.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/test_rfc6979.c.i
 .PHONY : test_rfc6979.c.i
 
 test_rfc6979.s: test_rfc6979.c.s
@@ -928,7 +928,7 @@ test_rfc6979.s: test_rfc6979.c.s
 
 # target to generate assembly for a file
 test_rfc6979.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/test_rfc6979.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/test_rfc6979.c.s
 .PHONY : test_rfc6979.c.s
 
 test_ripemd.o: test_ripemd.c.o
@@ -937,7 +937,7 @@ test_ripemd.o: test_ripemd.c.o
 
 # target to build an object file
 test_ripemd.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/test_ripemd.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/test_ripemd.c.o
 .PHONY : test_ripemd.c.o
 
 test_ripemd.i: test_ripemd.c.i
@@ -946,7 +946,7 @@ test_ripemd.i: test_ripemd.c.i
 
 # target to preprocess a source file
 test_ripemd.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/test_ripemd.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/test_ripemd.c.i
 .PHONY : test_ripemd.c.i
 
 test_ripemd.s: test_ripemd.c.s
@@ -955,7 +955,7 @@ test_ripemd.s: test_ripemd.c.s
 
 # target to generate assembly for a file
 test_ripemd.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/test_ripemd.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/test_ripemd.c.s
 .PHONY : test_ripemd.c.s
 
 test_sha2.o: test_sha2.c.o
@@ -964,7 +964,7 @@ test_sha2.o: test_sha2.c.o
 
 # target to build an object file
 test_sha2.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.o
 .PHONY : test_sha2.c.o
 
 test_sha2.i: test_sha2.c.i
@@ -973,7 +973,7 @@ test_sha2.i: test_sha2.c.i
 
 # target to preprocess a source file
 test_sha2.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.i
 .PHONY : test_sha2.c.i
 
 test_sha2.s: test_sha2.c.s
@@ -982,7 +982,7 @@ test_sha2.s: test_sha2.c.s
 
 # target to generate assembly for a file
 test_sha2.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/test_sha2.c.s
 .PHONY : test_sha2.c.s
 
 test_sha3.o: test_sha3.c.o
@@ -991,7 +991,7 @@ test_sha3.o: test_sha3.c.o
 
 # target to build an object file
 test_sha3.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/test_sha3.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/test_sha3.c.o
 .PHONY : test_sha3.c.o
 
 test_sha3.i: test_sha3.c.i
@@ -1000,7 +1000,7 @@ test_sha3.i: test_sha3.c.i
 
 # target to preprocess a source file
 test_sha3.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/test_sha3.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/test_sha3.c.i
 .PHONY : test_sha3.c.i
 
 test_sha3.s: test_sha3.c.s
@@ -1009,7 +1009,7 @@ test_sha3.s: test_sha3.c.s
 
 # target to generate assembly for a file
 test_sha3.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/test_sha3.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/test_sha3.c.s
 .PHONY : test_sha3.c.s
 
 test_slip21.o: test_slip21.c.o
@@ -1018,7 +1018,7 @@ test_slip21.o: test_slip21.c.o
 
 # target to build an object file
 test_slip21.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/test_slip21.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/test_slip21.c.o
 .PHONY : test_slip21.c.o
 
 test_slip21.i: test_slip21.c.i
@@ -1027,7 +1027,7 @@ test_slip21.i: test_slip21.c.i
 
 # target to preprocess a source file
 test_slip21.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/test_slip21.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/test_slip21.c.i
 .PHONY : test_slip21.c.i
 
 test_slip21.s: test_slip21.c.s
@@ -1036,7 +1036,7 @@ test_slip21.s: test_slip21.c.s
 
 # target to generate assembly for a file
 test_slip21.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/test_slip21.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_slip21.dir/build.make tests/syscalls/CMakeFiles/test_slip21.dir/test_slip21.c.s
 .PHONY : test_slip21.c.s
 
 utils.o: utils.c.o
@@ -1045,21 +1045,21 @@ utils.o: utils.c.o
 
 # target to build an object file
 utils.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/utils.c.o
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/utils.c.o
 .PHONY : utils.c.o
 
 utils.i: utils.c.i
@@ -1068,21 +1068,21 @@ utils.i: utils.c.i
 
 # target to preprocess a source file
 utils.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/utils.c.i
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/utils.c.i
 .PHONY : utils.c.i
 
 utils.s: utils.c.s
@@ -1091,21 +1091,21 @@ utils.s: utils.c.s
 
 # target to generate assembly for a file
 utils.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/utils.c.s
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eip2333.dir/build.make tests/syscalls/CMakeFiles/test_eip2333.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha3.dir/build.make tests/syscalls/CMakeFiles/test_sha3.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ripemd.dir/build.make tests/syscalls/CMakeFiles/test_ripemd.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_bip32.dir/build.make tests/syscalls/CMakeFiles/test_bip32.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdsa.dir/build.make tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_mpi_rng.dir/build.make tests/syscalls/CMakeFiles/test_mpi_rng.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecpoint.dir/build.make tests/syscalls/CMakeFiles/test_ecpoint.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_aes.dir/build.make tests/syscalls/CMakeFiles/test_aes.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_blake2.dir/build.make tests/syscalls/CMakeFiles/test_blake2.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_sha2.dir/build.make tests/syscalls/CMakeFiles/test_sha2.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ecdh.dir/build.make tests/syscalls/CMakeFiles/test_ecdh.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_eddsa.dir/build.make tests/syscalls/CMakeFiles/test_eddsa.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_rfc6979.dir/build.make tests/syscalls/CMakeFiles/test_rfc6979.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_ec.dir/build.make tests/syscalls/CMakeFiles/test_ec.dir/utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/syscalls/CMakeFiles/test_hmac.dir/build.make tests/syscalls/CMakeFiles/test_hmac.dir/utils.c.s
 .PHONY : utils.c.s
 
 # Help Target
@@ -1218,6 +1218,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

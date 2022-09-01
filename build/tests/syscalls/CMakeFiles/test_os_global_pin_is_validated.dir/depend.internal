@@ -7,8 +7,8 @@ tests/syscalls/CMakeFiles/test_os_global_pin_is_validated.dir/test_os_global_pin
  ../src/bolos/cx_hash.h
  ../src/emulate.h
  ../src/sdk.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_os_global_pin_is_validated.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_os_global_pin_is_validated.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
  install/include/openssl/bn.h
  install/include/openssl/bnerr.h

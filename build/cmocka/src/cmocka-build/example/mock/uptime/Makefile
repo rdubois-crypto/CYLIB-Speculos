@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka
+CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build
+CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -93,7 +93,7 @@ test/fast: test
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CPackSourceConfig.cmake
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -137,7 +137,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -159,14 +159,14 @@ install/local/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime/CMakeFiles/progress.marks
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/CMakeFiles /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime/CMakeFiles/progress.marks
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/clean
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/clean
 .PHONY : clean
 
 # The main clean target
@@ -176,22 +176,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/mock/uptime/CMakeFiles/test_uptime.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/CMakeFiles/test_uptime.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/CMakeFiles/test_uptime.dir/rule
 .PHONY : example/mock/uptime/CMakeFiles/test_uptime.dir/rule
 
 # Convenience name for target.
@@ -201,12 +201,12 @@ test_uptime: example/mock/uptime/CMakeFiles/test_uptime.dir/rule
 
 # fast build rule for target.
 test_uptime/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/build
 .PHONY : test_uptime/fast
 
 # Convenience name for target.
 example/mock/uptime/CMakeFiles/uptime.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/CMakeFiles/uptime.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/CMakeFiles/uptime.dir/rule
 .PHONY : example/mock/uptime/CMakeFiles/uptime.dir/rule
 
 # Convenience name for target.
@@ -216,12 +216,12 @@ uptime: example/mock/uptime/CMakeFiles/uptime.dir/rule
 
 # fast build rule for target.
 uptime/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/build
 .PHONY : uptime/fast
 
 # Convenience name for target.
 example/mock/uptime/CMakeFiles/proc_uptime.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/CMakeFiles/proc_uptime.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f CMakeFiles/Makefile2 example/mock/uptime/CMakeFiles/proc_uptime.dir/rule
 .PHONY : example/mock/uptime/CMakeFiles/proc_uptime.dir/rule
 
 # Convenience name for target.
@@ -231,7 +231,7 @@ proc_uptime: example/mock/uptime/CMakeFiles/proc_uptime.dir/rule
 
 # fast build rule for target.
 proc_uptime/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/build
 .PHONY : proc_uptime/fast
 
 proc_uptime.o: proc_uptime.c.o
@@ -240,7 +240,7 @@ proc_uptime.o: proc_uptime.c.o
 
 # target to build an object file
 proc_uptime.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/proc_uptime.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/proc_uptime.c.o
 .PHONY : proc_uptime.c.o
 
 proc_uptime.i: proc_uptime.c.i
@@ -249,7 +249,7 @@ proc_uptime.i: proc_uptime.c.i
 
 # target to preprocess a source file
 proc_uptime.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/proc_uptime.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/proc_uptime.c.i
 .PHONY : proc_uptime.c.i
 
 proc_uptime.s: proc_uptime.c.s
@@ -258,7 +258,7 @@ proc_uptime.s: proc_uptime.c.s
 
 # target to generate assembly for a file
 proc_uptime.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/proc_uptime.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/proc_uptime.dir/build.make example/mock/uptime/CMakeFiles/proc_uptime.dir/proc_uptime.c.s
 .PHONY : proc_uptime.c.s
 
 test_uptime.o: test_uptime.c.o
@@ -267,7 +267,7 @@ test_uptime.o: test_uptime.c.o
 
 # target to build an object file
 test_uptime.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.o
 .PHONY : test_uptime.c.o
 
 test_uptime.i: test_uptime.c.i
@@ -276,7 +276,7 @@ test_uptime.i: test_uptime.c.i
 
 # target to preprocess a source file
 test_uptime.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.i
 .PHONY : test_uptime.c.i
 
 test_uptime.s: test_uptime.c.s
@@ -285,7 +285,7 @@ test_uptime.s: test_uptime.c.s
 
 # target to generate assembly for a file
 test_uptime.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/test_uptime.dir/build.make example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.s
 .PHONY : test_uptime.c.s
 
 uptime.o: uptime.c.o
@@ -294,7 +294,7 @@ uptime.o: uptime.c.o
 
 # target to build an object file
 uptime.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/uptime.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/uptime.c.o
 .PHONY : uptime.c.o
 
 uptime.i: uptime.c.i
@@ -303,7 +303,7 @@ uptime.i: uptime.c.i
 
 # target to preprocess a source file
 uptime.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/uptime.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/uptime.c.i
 .PHONY : uptime.c.i
 
 uptime.s: uptime.c.s
@@ -312,7 +312,7 @@ uptime.s: uptime.c.s
 
 # target to generate assembly for a file
 uptime.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/uptime.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) -f example/mock/uptime/CMakeFiles/uptime.dir/build.make example/mock/uptime/CMakeFiles/uptime.dir/uptime.c.s
 .PHONY : uptime.c.s
 
 # Help Target
@@ -353,6 +353,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

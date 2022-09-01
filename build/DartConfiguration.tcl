@@ -4,8 +4,8 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master
-BuildDirectory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build
+SourceDirectory: /home/dubois/eclipse-workspace/CYLIB-Speculos
+BuildDirectory: /home/dubois/eclipse-workspace/CYLIB-Speculos/build
 
 # Where to place the cost data store
 CostDataFile: 
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master"
+ConfigureCommand: "/usr/bin/cmake" "/home/dubois/eclipse-workspace/CYLIB-Speculos"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
@@ -57,9 +57,9 @@ P4UpdateOptions:
 P4UpdateCustom: 
 
 # Generic update command
-UpdateCommand: 
+UpdateCommand: /usr/bin/git
 UpdateOptions: 
-UpdateType: 
+UpdateType: git
 
 # Compiler info
 Compiler: 

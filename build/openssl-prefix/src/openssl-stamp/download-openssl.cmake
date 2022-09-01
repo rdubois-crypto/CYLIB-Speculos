@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(STATUS "verifying file...
-       file='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'")
+       file='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'")
 
-  file("SHA256" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz" actual_value)
+  file("SHA256" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "892a0875b9872acd04a9fde79b1f943075d5ea162415de3047c327df33fbaee5")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(STATUS "SHA256 hash of
-    /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz
+    /home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz
   does not match expected value
     expected: '892a0875b9872acd04a9fde79b1f943075d5ea162415de3047c327df33fbaee5'
       actual: '${actual_value}'")
@@ -71,7 +71,7 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz" STREQUAL "")
+if("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz" STREQUAL "")
   message(FATAL_ERROR "LOCAL can't be empty")
 endif()
 
@@ -79,32 +79,32 @@ if("https://www.openssl.org/source/openssl-1.1.1k.tar.gz" STREQUAL "")
   message(FATAL_ERROR "REMOTE can't be empty")
 endif()
 
-if(EXISTS "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
+if(EXISTS "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(STATUS "File already exists and hash match (skip download):
-  file='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'
+  file='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'
   SHA256='892a0875b9872acd04a9fde79b1f943075d5ea162415de3047c327df33fbaee5'"
       )
       return()
     else()
       message(STATUS "File already exists but hash mismatch. Removing...")
-      file(REMOVE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
+      file(REMOVE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
     endif()
   else()
     message(STATUS "File already exists but no hash specified (use URL_HASH):
-  file='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'
+  file='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
+    file(REMOVE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(STATUS "Downloading...
-   dst='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'
+   dst='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz'
    timeout='none'"
 )
 
@@ -121,7 +121,7 @@ foreach(i RANGE ${retry_number})
 
     file(
         DOWNLOAD
-        "${url}" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz"
+        "${url}" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz"
         SHOW_PROGRESS
         # no TIMEOUT
         STATUS status
@@ -137,7 +137,7 @@ foreach(i RANGE ${retry_number})
       check_file_hash(has_hash hash_is_good)
       if(has_hash AND NOT hash_is_good)
         message(STATUS "Hash mismatch, removing...")
-        file(REMOVE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
+        file(REMOVE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/openssl-prefix/src/openssl-1.1.1k.tar.gz")
       else()
         message(STATUS "Downloading... done")
         return()

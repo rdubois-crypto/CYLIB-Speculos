@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master
+CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build
+CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,14 +91,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/src/CMakeFiles/progress.marks
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/progress.marks
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -108,22 +108,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/launcher.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/launcher.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/launcher.dir/rule
 .PHONY : src/CMakeFiles/launcher.dir/rule
 
 # Convenience name for target.
@@ -133,12 +133,12 @@ launcher: src/CMakeFiles/launcher.dir/rule
 
 # fast build rule for target.
 launcher/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/build
 .PHONY : launcher/fast
 
 # Convenience name for target.
 src/CMakeFiles/emu.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/emu.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/emu.dir/rule
 .PHONY : src/CMakeFiles/emu.dir/rule
 
 # Convenience name for target.
@@ -148,7 +148,7 @@ emu: src/CMakeFiles/emu.dir/rule
 
 # fast build rule for target.
 emu/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/build
 .PHONY : emu/fast
 
 bolos/bagl.o: bolos/bagl.c.o
@@ -157,7 +157,7 @@ bolos/bagl.o: bolos/bagl.c.o
 
 # target to build an object file
 bolos/bagl.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/bagl.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/bagl.c.o
 .PHONY : bolos/bagl.c.o
 
 bolos/bagl.i: bolos/bagl.c.i
@@ -166,7 +166,7 @@ bolos/bagl.i: bolos/bagl.c.i
 
 # target to preprocess a source file
 bolos/bagl.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/bagl.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/bagl.c.i
 .PHONY : bolos/bagl.c.i
 
 bolos/bagl.s: bolos/bagl.c.s
@@ -175,7 +175,7 @@ bolos/bagl.s: bolos/bagl.c.s
 
 # target to generate assembly for a file
 bolos/bagl.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/bagl.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/bagl.c.s
 .PHONY : bolos/bagl.c.s
 
 bolos/cx.o: bolos/cx.c.o
@@ -184,7 +184,7 @@ bolos/cx.o: bolos/cx.c.o
 
 # target to build an object file
 bolos/cx.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx.c.o
 .PHONY : bolos/cx.c.o
 
 bolos/cx.i: bolos/cx.c.i
@@ -193,7 +193,7 @@ bolos/cx.i: bolos/cx.c.i
 
 # target to preprocess a source file
 bolos/cx.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx.c.i
 .PHONY : bolos/cx.c.i
 
 bolos/cx.s: bolos/cx.c.s
@@ -202,7 +202,7 @@ bolos/cx.s: bolos/cx.c.s
 
 # target to generate assembly for a file
 bolos/cx.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx.c.s
 .PHONY : bolos/cx.c.s
 
 bolos/cx_aes.o: bolos/cx_aes.c.o
@@ -211,7 +211,7 @@ bolos/cx_aes.o: bolos/cx_aes.c.o
 
 # target to build an object file
 bolos/cx_aes.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes.c.o
 .PHONY : bolos/cx_aes.c.o
 
 bolos/cx_aes.i: bolos/cx_aes.c.i
@@ -220,7 +220,7 @@ bolos/cx_aes.i: bolos/cx_aes.c.i
 
 # target to preprocess a source file
 bolos/cx_aes.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes.c.i
 .PHONY : bolos/cx_aes.c.i
 
 bolos/cx_aes.s: bolos/cx_aes.c.s
@@ -229,7 +229,7 @@ bolos/cx_aes.s: bolos/cx_aes.c.s
 
 # target to generate assembly for a file
 bolos/cx_aes.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes.c.s
 .PHONY : bolos/cx_aes.c.s
 
 bolos/cx_aes_sdk2.o: bolos/cx_aes_sdk2.c.o
@@ -238,7 +238,7 @@ bolos/cx_aes_sdk2.o: bolos/cx_aes_sdk2.c.o
 
 # target to build an object file
 bolos/cx_aes_sdk2.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes_sdk2.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes_sdk2.c.o
 .PHONY : bolos/cx_aes_sdk2.c.o
 
 bolos/cx_aes_sdk2.i: bolos/cx_aes_sdk2.c.i
@@ -247,7 +247,7 @@ bolos/cx_aes_sdk2.i: bolos/cx_aes_sdk2.c.i
 
 # target to preprocess a source file
 bolos/cx_aes_sdk2.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes_sdk2.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes_sdk2.c.i
 .PHONY : bolos/cx_aes_sdk2.c.i
 
 bolos/cx_aes_sdk2.s: bolos/cx_aes_sdk2.c.s
@@ -256,7 +256,7 @@ bolos/cx_aes_sdk2.s: bolos/cx_aes_sdk2.c.s
 
 # target to generate assembly for a file
 bolos/cx_aes_sdk2.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes_sdk2.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_aes_sdk2.c.s
 .PHONY : bolos/cx_aes_sdk2.c.s
 
 bolos/cx_blake2b.o: bolos/cx_blake2b.c.o
@@ -265,7 +265,7 @@ bolos/cx_blake2b.o: bolos/cx_blake2b.c.o
 
 # target to build an object file
 bolos/cx_blake2b.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_blake2b.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_blake2b.c.o
 .PHONY : bolos/cx_blake2b.c.o
 
 bolos/cx_blake2b.i: bolos/cx_blake2b.c.i
@@ -274,7 +274,7 @@ bolos/cx_blake2b.i: bolos/cx_blake2b.c.i
 
 # target to preprocess a source file
 bolos/cx_blake2b.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_blake2b.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_blake2b.c.i
 .PHONY : bolos/cx_blake2b.c.i
 
 bolos/cx_blake2b.s: bolos/cx_blake2b.c.s
@@ -283,7 +283,7 @@ bolos/cx_blake2b.s: bolos/cx_blake2b.c.s
 
 # target to generate assembly for a file
 bolos/cx_blake2b.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_blake2b.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_blake2b.c.s
 .PHONY : bolos/cx_blake2b.c.s
 
 bolos/cx_bn.o: bolos/cx_bn.c.o
@@ -292,7 +292,7 @@ bolos/cx_bn.o: bolos/cx_bn.c.o
 
 # target to build an object file
 bolos/cx_bn.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_bn.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_bn.c.o
 .PHONY : bolos/cx_bn.c.o
 
 bolos/cx_bn.i: bolos/cx_bn.c.i
@@ -301,7 +301,7 @@ bolos/cx_bn.i: bolos/cx_bn.c.i
 
 # target to preprocess a source file
 bolos/cx_bn.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_bn.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_bn.c.i
 .PHONY : bolos/cx_bn.c.i
 
 bolos/cx_bn.s: bolos/cx_bn.c.s
@@ -310,7 +310,7 @@ bolos/cx_bn.s: bolos/cx_bn.c.s
 
 # target to generate assembly for a file
 bolos/cx_bn.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_bn.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_bn.c.s
 .PHONY : bolos/cx_bn.c.s
 
 bolos/cx_crc.o: bolos/cx_crc.c.o
@@ -319,7 +319,7 @@ bolos/cx_crc.o: bolos/cx_crc.c.o
 
 # target to build an object file
 bolos/cx_crc.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_crc.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_crc.c.o
 .PHONY : bolos/cx_crc.c.o
 
 bolos/cx_crc.i: bolos/cx_crc.c.i
@@ -328,7 +328,7 @@ bolos/cx_crc.i: bolos/cx_crc.c.i
 
 # target to preprocess a source file
 bolos/cx_crc.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_crc.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_crc.c.i
 .PHONY : bolos/cx_crc.c.i
 
 bolos/cx_crc.s: bolos/cx_crc.c.s
@@ -337,7 +337,7 @@ bolos/cx_crc.s: bolos/cx_crc.c.s
 
 # target to generate assembly for a file
 bolos/cx_crc.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_crc.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_crc.c.s
 .PHONY : bolos/cx_crc.c.s
 
 bolos/cx_curve25519.o: bolos/cx_curve25519.c.o
@@ -346,7 +346,7 @@ bolos/cx_curve25519.o: bolos/cx_curve25519.c.o
 
 # target to build an object file
 bolos/cx_curve25519.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_curve25519.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_curve25519.c.o
 .PHONY : bolos/cx_curve25519.c.o
 
 bolos/cx_curve25519.i: bolos/cx_curve25519.c.i
@@ -355,7 +355,7 @@ bolos/cx_curve25519.i: bolos/cx_curve25519.c.i
 
 # target to preprocess a source file
 bolos/cx_curve25519.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_curve25519.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_curve25519.c.i
 .PHONY : bolos/cx_curve25519.c.i
 
 bolos/cx_curve25519.s: bolos/cx_curve25519.c.s
@@ -364,7 +364,7 @@ bolos/cx_curve25519.s: bolos/cx_curve25519.c.s
 
 # target to generate assembly for a file
 bolos/cx_curve25519.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_curve25519.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_curve25519.c.s
 .PHONY : bolos/cx_curve25519.c.s
 
 bolos/cx_ec.o: bolos/cx_ec.c.o
@@ -373,7 +373,7 @@ bolos/cx_ec.o: bolos/cx_ec.c.o
 
 # target to build an object file
 bolos/cx_ec.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec.c.o
 .PHONY : bolos/cx_ec.c.o
 
 bolos/cx_ec.i: bolos/cx_ec.c.i
@@ -382,7 +382,7 @@ bolos/cx_ec.i: bolos/cx_ec.c.i
 
 # target to preprocess a source file
 bolos/cx_ec.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec.c.i
 .PHONY : bolos/cx_ec.c.i
 
 bolos/cx_ec.s: bolos/cx_ec.c.s
@@ -391,7 +391,7 @@ bolos/cx_ec.s: bolos/cx_ec.c.s
 
 # target to generate assembly for a file
 bolos/cx_ec.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec.c.s
 .PHONY : bolos/cx_ec.c.s
 
 bolos/cx_ec_domain.o: bolos/cx_ec_domain.c.o
@@ -400,7 +400,7 @@ bolos/cx_ec_domain.o: bolos/cx_ec_domain.c.o
 
 # target to build an object file
 bolos/cx_ec_domain.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec_domain.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec_domain.c.o
 .PHONY : bolos/cx_ec_domain.c.o
 
 bolos/cx_ec_domain.i: bolos/cx_ec_domain.c.i
@@ -409,7 +409,7 @@ bolos/cx_ec_domain.i: bolos/cx_ec_domain.c.i
 
 # target to preprocess a source file
 bolos/cx_ec_domain.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec_domain.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec_domain.c.i
 .PHONY : bolos/cx_ec_domain.c.i
 
 bolos/cx_ec_domain.s: bolos/cx_ec_domain.c.s
@@ -418,7 +418,7 @@ bolos/cx_ec_domain.s: bolos/cx_ec_domain.c.s
 
 # target to generate assembly for a file
 bolos/cx_ec_domain.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec_domain.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ec_domain.c.s
 .PHONY : bolos/cx_ec_domain.c.s
 
 bolos/cx_ecpoint.o: bolos/cx_ecpoint.c.o
@@ -427,7 +427,7 @@ bolos/cx_ecpoint.o: bolos/cx_ecpoint.c.o
 
 # target to build an object file
 bolos/cx_ecpoint.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ecpoint.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ecpoint.c.o
 .PHONY : bolos/cx_ecpoint.c.o
 
 bolos/cx_ecpoint.i: bolos/cx_ecpoint.c.i
@@ -436,7 +436,7 @@ bolos/cx_ecpoint.i: bolos/cx_ecpoint.c.i
 
 # target to preprocess a source file
 bolos/cx_ecpoint.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ecpoint.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ecpoint.c.i
 .PHONY : bolos/cx_ecpoint.c.i
 
 bolos/cx_ecpoint.s: bolos/cx_ecpoint.c.s
@@ -445,7 +445,7 @@ bolos/cx_ecpoint.s: bolos/cx_ecpoint.c.s
 
 # target to generate assembly for a file
 bolos/cx_ecpoint.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ecpoint.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ecpoint.c.s
 .PHONY : bolos/cx_ecpoint.c.s
 
 bolos/cx_ed25519.o: bolos/cx_ed25519.c.o
@@ -454,7 +454,7 @@ bolos/cx_ed25519.o: bolos/cx_ed25519.c.o
 
 # target to build an object file
 bolos/cx_ed25519.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ed25519.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ed25519.c.o
 .PHONY : bolos/cx_ed25519.c.o
 
 bolos/cx_ed25519.i: bolos/cx_ed25519.c.i
@@ -463,7 +463,7 @@ bolos/cx_ed25519.i: bolos/cx_ed25519.c.i
 
 # target to preprocess a source file
 bolos/cx_ed25519.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ed25519.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ed25519.c.i
 .PHONY : bolos/cx_ed25519.c.i
 
 bolos/cx_ed25519.s: bolos/cx_ed25519.c.s
@@ -472,7 +472,7 @@ bolos/cx_ed25519.s: bolos/cx_ed25519.c.s
 
 # target to generate assembly for a file
 bolos/cx_ed25519.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ed25519.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ed25519.c.s
 .PHONY : bolos/cx_ed25519.c.s
 
 bolos/cx_hash.o: bolos/cx_hash.c.o
@@ -481,7 +481,7 @@ bolos/cx_hash.o: bolos/cx_hash.c.o
 
 # target to build an object file
 bolos/cx_hash.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hash.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hash.c.o
 .PHONY : bolos/cx_hash.c.o
 
 bolos/cx_hash.i: bolos/cx_hash.c.i
@@ -490,7 +490,7 @@ bolos/cx_hash.i: bolos/cx_hash.c.i
 
 # target to preprocess a source file
 bolos/cx_hash.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hash.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hash.c.i
 .PHONY : bolos/cx_hash.c.i
 
 bolos/cx_hash.s: bolos/cx_hash.c.s
@@ -499,7 +499,7 @@ bolos/cx_hash.s: bolos/cx_hash.c.s
 
 # target to generate assembly for a file
 bolos/cx_hash.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hash.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hash.c.s
 .PHONY : bolos/cx_hash.c.s
 
 bolos/cx_hkdf.o: bolos/cx_hkdf.c.o
@@ -508,7 +508,7 @@ bolos/cx_hkdf.o: bolos/cx_hkdf.c.o
 
 # target to build an object file
 bolos/cx_hkdf.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hkdf.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hkdf.c.o
 .PHONY : bolos/cx_hkdf.c.o
 
 bolos/cx_hkdf.i: bolos/cx_hkdf.c.i
@@ -517,7 +517,7 @@ bolos/cx_hkdf.i: bolos/cx_hkdf.c.i
 
 # target to preprocess a source file
 bolos/cx_hkdf.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hkdf.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hkdf.c.i
 .PHONY : bolos/cx_hkdf.c.i
 
 bolos/cx_hkdf.s: bolos/cx_hkdf.c.s
@@ -526,7 +526,7 @@ bolos/cx_hkdf.s: bolos/cx_hkdf.c.s
 
 # target to generate assembly for a file
 bolos/cx_hkdf.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hkdf.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hkdf.c.s
 .PHONY : bolos/cx_hkdf.c.s
 
 bolos/cx_hmac.o: bolos/cx_hmac.c.o
@@ -535,7 +535,7 @@ bolos/cx_hmac.o: bolos/cx_hmac.c.o
 
 # target to build an object file
 bolos/cx_hmac.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hmac.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hmac.c.o
 .PHONY : bolos/cx_hmac.c.o
 
 bolos/cx_hmac.i: bolos/cx_hmac.c.i
@@ -544,7 +544,7 @@ bolos/cx_hmac.i: bolos/cx_hmac.c.i
 
 # target to preprocess a source file
 bolos/cx_hmac.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hmac.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hmac.c.i
 .PHONY : bolos/cx_hmac.c.i
 
 bolos/cx_hmac.s: bolos/cx_hmac.c.s
@@ -553,7 +553,7 @@ bolos/cx_hmac.s: bolos/cx_hmac.c.s
 
 # target to generate assembly for a file
 bolos/cx_hmac.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hmac.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_hmac.c.s
 .PHONY : bolos/cx_hmac.c.s
 
 bolos/cx_math.o: bolos/cx_math.c.o
@@ -562,7 +562,7 @@ bolos/cx_math.o: bolos/cx_math.c.o
 
 # target to build an object file
 bolos/cx_math.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_math.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_math.c.o
 .PHONY : bolos/cx_math.c.o
 
 bolos/cx_math.i: bolos/cx_math.c.i
@@ -571,7 +571,7 @@ bolos/cx_math.i: bolos/cx_math.c.i
 
 # target to preprocess a source file
 bolos/cx_math.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_math.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_math.c.i
 .PHONY : bolos/cx_math.c.i
 
 bolos/cx_math.s: bolos/cx_math.c.s
@@ -580,7 +580,7 @@ bolos/cx_math.s: bolos/cx_math.c.s
 
 # target to generate assembly for a file
 bolos/cx_math.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_math.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_math.c.s
 .PHONY : bolos/cx_math.c.s
 
 bolos/cx_montgomery.o: bolos/cx_montgomery.c.o
@@ -589,7 +589,7 @@ bolos/cx_montgomery.o: bolos/cx_montgomery.c.o
 
 # target to build an object file
 bolos/cx_montgomery.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_montgomery.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_montgomery.c.o
 .PHONY : bolos/cx_montgomery.c.o
 
 bolos/cx_montgomery.i: bolos/cx_montgomery.c.i
@@ -598,7 +598,7 @@ bolos/cx_montgomery.i: bolos/cx_montgomery.c.i
 
 # target to preprocess a source file
 bolos/cx_montgomery.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_montgomery.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_montgomery.c.i
 .PHONY : bolos/cx_montgomery.c.i
 
 bolos/cx_montgomery.s: bolos/cx_montgomery.c.s
@@ -607,7 +607,7 @@ bolos/cx_montgomery.s: bolos/cx_montgomery.c.s
 
 # target to generate assembly for a file
 bolos/cx_montgomery.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_montgomery.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_montgomery.c.s
 .PHONY : bolos/cx_montgomery.c.s
 
 bolos/cx_mpi.o: bolos/cx_mpi.c.o
@@ -616,7 +616,7 @@ bolos/cx_mpi.o: bolos/cx_mpi.c.o
 
 # target to build an object file
 bolos/cx_mpi.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_mpi.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_mpi.c.o
 .PHONY : bolos/cx_mpi.c.o
 
 bolos/cx_mpi.i: bolos/cx_mpi.c.i
@@ -625,7 +625,7 @@ bolos/cx_mpi.i: bolos/cx_mpi.c.i
 
 # target to preprocess a source file
 bolos/cx_mpi.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_mpi.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_mpi.c.i
 .PHONY : bolos/cx_mpi.c.i
 
 bolos/cx_mpi.s: bolos/cx_mpi.c.s
@@ -634,7 +634,7 @@ bolos/cx_mpi.s: bolos/cx_mpi.c.s
 
 # target to generate assembly for a file
 bolos/cx_mpi.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_mpi.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_mpi.c.s
 .PHONY : bolos/cx_mpi.c.s
 
 bolos/cx_ripemd160.o: bolos/cx_ripemd160.c.o
@@ -643,7 +643,7 @@ bolos/cx_ripemd160.o: bolos/cx_ripemd160.c.o
 
 # target to build an object file
 bolos/cx_ripemd160.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ripemd160.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ripemd160.c.o
 .PHONY : bolos/cx_ripemd160.c.o
 
 bolos/cx_ripemd160.i: bolos/cx_ripemd160.c.i
@@ -652,7 +652,7 @@ bolos/cx_ripemd160.i: bolos/cx_ripemd160.c.i
 
 # target to preprocess a source file
 bolos/cx_ripemd160.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ripemd160.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ripemd160.c.i
 .PHONY : bolos/cx_ripemd160.c.i
 
 bolos/cx_ripemd160.s: bolos/cx_ripemd160.c.s
@@ -661,7 +661,7 @@ bolos/cx_ripemd160.s: bolos/cx_ripemd160.c.s
 
 # target to generate assembly for a file
 bolos/cx_ripemd160.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ripemd160.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_ripemd160.c.s
 .PHONY : bolos/cx_ripemd160.c.s
 
 bolos/cx_rng_rfc6979.o: bolos/cx_rng_rfc6979.c.o
@@ -670,7 +670,7 @@ bolos/cx_rng_rfc6979.o: bolos/cx_rng_rfc6979.c.o
 
 # target to build an object file
 bolos/cx_rng_rfc6979.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_rng_rfc6979.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_rng_rfc6979.c.o
 .PHONY : bolos/cx_rng_rfc6979.c.o
 
 bolos/cx_rng_rfc6979.i: bolos/cx_rng_rfc6979.c.i
@@ -679,7 +679,7 @@ bolos/cx_rng_rfc6979.i: bolos/cx_rng_rfc6979.c.i
 
 # target to preprocess a source file
 bolos/cx_rng_rfc6979.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_rng_rfc6979.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_rng_rfc6979.c.i
 .PHONY : bolos/cx_rng_rfc6979.c.i
 
 bolos/cx_rng_rfc6979.s: bolos/cx_rng_rfc6979.c.s
@@ -688,7 +688,7 @@ bolos/cx_rng_rfc6979.s: bolos/cx_rng_rfc6979.c.s
 
 # target to generate assembly for a file
 bolos/cx_rng_rfc6979.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_rng_rfc6979.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_rng_rfc6979.c.s
 .PHONY : bolos/cx_rng_rfc6979.c.s
 
 bolos/cx_scc.o: bolos/cx_scc.c.o
@@ -697,7 +697,7 @@ bolos/cx_scc.o: bolos/cx_scc.c.o
 
 # target to build an object file
 bolos/cx_scc.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_scc.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_scc.c.o
 .PHONY : bolos/cx_scc.c.o
 
 bolos/cx_scc.i: bolos/cx_scc.c.i
@@ -706,7 +706,7 @@ bolos/cx_scc.i: bolos/cx_scc.c.i
 
 # target to preprocess a source file
 bolos/cx_scc.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_scc.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_scc.c.i
 .PHONY : bolos/cx_scc.c.i
 
 bolos/cx_scc.s: bolos/cx_scc.c.s
@@ -715,7 +715,7 @@ bolos/cx_scc.s: bolos/cx_scc.c.s
 
 # target to generate assembly for a file
 bolos/cx_scc.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_scc.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_scc.c.s
 .PHONY : bolos/cx_scc.c.s
 
 bolos/cx_sha256.o: bolos/cx_sha256.c.o
@@ -724,7 +724,7 @@ bolos/cx_sha256.o: bolos/cx_sha256.c.o
 
 # target to build an object file
 bolos/cx_sha256.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha256.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha256.c.o
 .PHONY : bolos/cx_sha256.c.o
 
 bolos/cx_sha256.i: bolos/cx_sha256.c.i
@@ -733,7 +733,7 @@ bolos/cx_sha256.i: bolos/cx_sha256.c.i
 
 # target to preprocess a source file
 bolos/cx_sha256.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha256.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha256.c.i
 .PHONY : bolos/cx_sha256.c.i
 
 bolos/cx_sha256.s: bolos/cx_sha256.c.s
@@ -742,7 +742,7 @@ bolos/cx_sha256.s: bolos/cx_sha256.c.s
 
 # target to generate assembly for a file
 bolos/cx_sha256.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha256.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha256.c.s
 .PHONY : bolos/cx_sha256.c.s
 
 bolos/cx_sha3.o: bolos/cx_sha3.c.o
@@ -751,7 +751,7 @@ bolos/cx_sha3.o: bolos/cx_sha3.c.o
 
 # target to build an object file
 bolos/cx_sha3.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha3.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha3.c.o
 .PHONY : bolos/cx_sha3.c.o
 
 bolos/cx_sha3.i: bolos/cx_sha3.c.i
@@ -760,7 +760,7 @@ bolos/cx_sha3.i: bolos/cx_sha3.c.i
 
 # target to preprocess a source file
 bolos/cx_sha3.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha3.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha3.c.i
 .PHONY : bolos/cx_sha3.c.i
 
 bolos/cx_sha3.s: bolos/cx_sha3.c.s
@@ -769,7 +769,7 @@ bolos/cx_sha3.s: bolos/cx_sha3.c.s
 
 # target to generate assembly for a file
 bolos/cx_sha3.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha3.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha3.c.s
 .PHONY : bolos/cx_sha3.c.s
 
 bolos/cx_sha512.o: bolos/cx_sha512.c.o
@@ -778,7 +778,7 @@ bolos/cx_sha512.o: bolos/cx_sha512.c.o
 
 # target to build an object file
 bolos/cx_sha512.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha512.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha512.c.o
 .PHONY : bolos/cx_sha512.c.o
 
 bolos/cx_sha512.i: bolos/cx_sha512.c.i
@@ -787,7 +787,7 @@ bolos/cx_sha512.i: bolos/cx_sha512.c.i
 
 # target to preprocess a source file
 bolos/cx_sha512.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha512.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha512.c.i
 .PHONY : bolos/cx_sha512.c.i
 
 bolos/cx_sha512.s: bolos/cx_sha512.c.s
@@ -796,7 +796,7 @@ bolos/cx_sha512.s: bolos/cx_sha512.c.s
 
 # target to generate assembly for a file
 bolos/cx_sha512.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha512.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_sha512.c.s
 .PHONY : bolos/cx_sha512.c.s
 
 bolos/cx_twisted_edwards.o: bolos/cx_twisted_edwards.c.o
@@ -805,7 +805,7 @@ bolos/cx_twisted_edwards.o: bolos/cx_twisted_edwards.c.o
 
 # target to build an object file
 bolos/cx_twisted_edwards.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_twisted_edwards.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_twisted_edwards.c.o
 .PHONY : bolos/cx_twisted_edwards.c.o
 
 bolos/cx_twisted_edwards.i: bolos/cx_twisted_edwards.c.i
@@ -814,7 +814,7 @@ bolos/cx_twisted_edwards.i: bolos/cx_twisted_edwards.c.i
 
 # target to preprocess a source file
 bolos/cx_twisted_edwards.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_twisted_edwards.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_twisted_edwards.c.i
 .PHONY : bolos/cx_twisted_edwards.c.i
 
 bolos/cx_twisted_edwards.s: bolos/cx_twisted_edwards.c.s
@@ -823,7 +823,7 @@ bolos/cx_twisted_edwards.s: bolos/cx_twisted_edwards.c.s
 
 # target to generate assembly for a file
 bolos/cx_twisted_edwards.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_twisted_edwards.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_twisted_edwards.c.s
 .PHONY : bolos/cx_twisted_edwards.c.s
 
 bolos/cx_utils.o: bolos/cx_utils.c.o
@@ -832,7 +832,7 @@ bolos/cx_utils.o: bolos/cx_utils.c.o
 
 # target to build an object file
 bolos/cx_utils.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_utils.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_utils.c.o
 .PHONY : bolos/cx_utils.c.o
 
 bolos/cx_utils.i: bolos/cx_utils.c.i
@@ -841,7 +841,7 @@ bolos/cx_utils.i: bolos/cx_utils.c.i
 
 # target to preprocess a source file
 bolos/cx_utils.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_utils.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_utils.c.i
 .PHONY : bolos/cx_utils.c.i
 
 bolos/cx_utils.s: bolos/cx_utils.c.s
@@ -850,7 +850,7 @@ bolos/cx_utils.s: bolos/cx_utils.c.s
 
 # target to generate assembly for a file
 bolos/cx_utils.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_utils.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_utils.c.s
 .PHONY : bolos/cx_utils.c.s
 
 bolos/cx_weierstrass.o: bolos/cx_weierstrass.c.o
@@ -859,7 +859,7 @@ bolos/cx_weierstrass.o: bolos/cx_weierstrass.c.o
 
 # target to build an object file
 bolos/cx_weierstrass.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_weierstrass.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_weierstrass.c.o
 .PHONY : bolos/cx_weierstrass.c.o
 
 bolos/cx_weierstrass.i: bolos/cx_weierstrass.c.i
@@ -868,7 +868,7 @@ bolos/cx_weierstrass.i: bolos/cx_weierstrass.c.i
 
 # target to preprocess a source file
 bolos/cx_weierstrass.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_weierstrass.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_weierstrass.c.i
 .PHONY : bolos/cx_weierstrass.c.i
 
 bolos/cx_weierstrass.s: bolos/cx_weierstrass.c.s
@@ -877,7 +877,7 @@ bolos/cx_weierstrass.s: bolos/cx_weierstrass.c.s
 
 # target to generate assembly for a file
 bolos/cx_weierstrass.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_weierstrass.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cx_weierstrass.c.s
 .PHONY : bolos/cx_weierstrass.c.s
 
 bolos/cxlib.o: bolos/cxlib.c.o
@@ -886,7 +886,7 @@ bolos/cxlib.o: bolos/cxlib.c.o
 
 # target to build an object file
 bolos/cxlib.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cxlib.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cxlib.c.o
 .PHONY : bolos/cxlib.c.o
 
 bolos/cxlib.i: bolos/cxlib.c.i
@@ -895,7 +895,7 @@ bolos/cxlib.i: bolos/cxlib.c.i
 
 # target to preprocess a source file
 bolos/cxlib.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cxlib.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cxlib.c.i
 .PHONY : bolos/cxlib.c.i
 
 bolos/cxlib.s: bolos/cxlib.c.s
@@ -904,7 +904,7 @@ bolos/cxlib.s: bolos/cxlib.c.s
 
 # target to generate assembly for a file
 bolos/cxlib.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cxlib.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/cxlib.c.s
 .PHONY : bolos/cxlib.c.s
 
 bolos/default.o: bolos/default.c.o
@@ -913,7 +913,7 @@ bolos/default.o: bolos/default.c.o
 
 # target to build an object file
 bolos/default.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/default.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/default.c.o
 .PHONY : bolos/default.c.o
 
 bolos/default.i: bolos/default.c.i
@@ -922,7 +922,7 @@ bolos/default.i: bolos/default.c.i
 
 # target to preprocess a source file
 bolos/default.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/default.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/default.c.i
 .PHONY : bolos/default.c.i
 
 bolos/default.s: bolos/default.c.s
@@ -931,7 +931,7 @@ bolos/default.s: bolos/default.c.s
 
 # target to generate assembly for a file
 bolos/default.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/default.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/default.c.s
 .PHONY : bolos/default.c.s
 
 bolos/endorsement.o: bolos/endorsement.c.o
@@ -940,7 +940,7 @@ bolos/endorsement.o: bolos/endorsement.c.o
 
 # target to build an object file
 bolos/endorsement.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/endorsement.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/endorsement.c.o
 .PHONY : bolos/endorsement.c.o
 
 bolos/endorsement.i: bolos/endorsement.c.i
@@ -949,7 +949,7 @@ bolos/endorsement.i: bolos/endorsement.c.i
 
 # target to preprocess a source file
 bolos/endorsement.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/endorsement.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/endorsement.c.i
 .PHONY : bolos/endorsement.c.i
 
 bolos/endorsement.s: bolos/endorsement.c.s
@@ -958,7 +958,7 @@ bolos/endorsement.s: bolos/endorsement.c.s
 
 # target to generate assembly for a file
 bolos/endorsement.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/endorsement.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/endorsement.c.s
 .PHONY : bolos/endorsement.c.s
 
 bolos/os.o: bolos/os.c.o
@@ -967,7 +967,7 @@ bolos/os.o: bolos/os.c.o
 
 # target to build an object file
 bolos/os.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os.c.o
 .PHONY : bolos/os.c.o
 
 bolos/os.i: bolos/os.c.i
@@ -976,7 +976,7 @@ bolos/os.i: bolos/os.c.i
 
 # target to preprocess a source file
 bolos/os.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os.c.i
 .PHONY : bolos/os.c.i
 
 bolos/os.s: bolos/os.c.s
@@ -985,7 +985,7 @@ bolos/os.s: bolos/os.c.s
 
 # target to generate assembly for a file
 bolos/os.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os.c.s
 .PHONY : bolos/os.c.s
 
 bolos/os_1.2.o: bolos/os_1.2.c.o
@@ -994,7 +994,7 @@ bolos/os_1.2.o: bolos/os_1.2.c.o
 
 # target to build an object file
 bolos/os_1.2.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.2.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.2.c.o
 .PHONY : bolos/os_1.2.c.o
 
 bolos/os_1.2.i: bolos/os_1.2.c.i
@@ -1003,7 +1003,7 @@ bolos/os_1.2.i: bolos/os_1.2.c.i
 
 # target to preprocess a source file
 bolos/os_1.2.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.2.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.2.c.i
 .PHONY : bolos/os_1.2.c.i
 
 bolos/os_1.2.s: bolos/os_1.2.c.s
@@ -1012,7 +1012,7 @@ bolos/os_1.2.s: bolos/os_1.2.c.s
 
 # target to generate assembly for a file
 bolos/os_1.2.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.2.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.2.c.s
 .PHONY : bolos/os_1.2.c.s
 
 bolos/os_1.5.o: bolos/os_1.5.c.o
@@ -1021,7 +1021,7 @@ bolos/os_1.5.o: bolos/os_1.5.c.o
 
 # target to build an object file
 bolos/os_1.5.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.5.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.5.c.o
 .PHONY : bolos/os_1.5.c.o
 
 bolos/os_1.5.i: bolos/os_1.5.c.i
@@ -1030,7 +1030,7 @@ bolos/os_1.5.i: bolos/os_1.5.c.i
 
 # target to preprocess a source file
 bolos/os_1.5.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.5.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.5.c.i
 .PHONY : bolos/os_1.5.c.i
 
 bolos/os_1.5.s: bolos/os_1.5.c.s
@@ -1039,7 +1039,7 @@ bolos/os_1.5.s: bolos/os_1.5.c.s
 
 # target to generate assembly for a file
 bolos/os_1.5.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.5.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.5.c.s
 .PHONY : bolos/os_1.5.c.s
 
 bolos/os_1.6.o: bolos/os_1.6.c.o
@@ -1048,7 +1048,7 @@ bolos/os_1.6.o: bolos/os_1.6.c.o
 
 # target to build an object file
 bolos/os_1.6.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.6.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.6.c.o
 .PHONY : bolos/os_1.6.c.o
 
 bolos/os_1.6.i: bolos/os_1.6.c.i
@@ -1057,7 +1057,7 @@ bolos/os_1.6.i: bolos/os_1.6.c.i
 
 # target to preprocess a source file
 bolos/os_1.6.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.6.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.6.c.i
 .PHONY : bolos/os_1.6.c.i
 
 bolos/os_1.6.s: bolos/os_1.6.c.s
@@ -1066,7 +1066,7 @@ bolos/os_1.6.s: bolos/os_1.6.c.s
 
 # target to generate assembly for a file
 bolos/os_1.6.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.6.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_1.6.c.s
 .PHONY : bolos/os_1.6.c.s
 
 bolos/os_2.0.o: bolos/os_2.0.c.o
@@ -1075,7 +1075,7 @@ bolos/os_2.0.o: bolos/os_2.0.c.o
 
 # target to build an object file
 bolos/os_2.0.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_2.0.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_2.0.c.o
 .PHONY : bolos/os_2.0.c.o
 
 bolos/os_2.0.i: bolos/os_2.0.c.i
@@ -1084,7 +1084,7 @@ bolos/os_2.0.i: bolos/os_2.0.c.i
 
 # target to preprocess a source file
 bolos/os_2.0.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_2.0.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_2.0.c.i
 .PHONY : bolos/os_2.0.c.i
 
 bolos/os_2.0.s: bolos/os_2.0.c.s
@@ -1093,7 +1093,7 @@ bolos/os_2.0.s: bolos/os_2.0.c.s
 
 # target to generate assembly for a file
 bolos/os_2.0.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_2.0.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_2.0.c.s
 .PHONY : bolos/os_2.0.c.s
 
 bolos/os_bip32.o: bolos/os_bip32.c.o
@@ -1102,7 +1102,7 @@ bolos/os_bip32.o: bolos/os_bip32.c.o
 
 # target to build an object file
 bolos/os_bip32.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_bip32.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_bip32.c.o
 .PHONY : bolos/os_bip32.c.o
 
 bolos/os_bip32.i: bolos/os_bip32.c.i
@@ -1111,7 +1111,7 @@ bolos/os_bip32.i: bolos/os_bip32.c.i
 
 # target to preprocess a source file
 bolos/os_bip32.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_bip32.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_bip32.c.i
 .PHONY : bolos/os_bip32.c.i
 
 bolos/os_bip32.s: bolos/os_bip32.c.s
@@ -1120,7 +1120,7 @@ bolos/os_bip32.s: bolos/os_bip32.c.s
 
 # target to generate assembly for a file
 bolos/os_bip32.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_bip32.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_bip32.c.s
 .PHONY : bolos/os_bip32.c.s
 
 bolos/os_eip2333.o: bolos/os_eip2333.c.o
@@ -1129,7 +1129,7 @@ bolos/os_eip2333.o: bolos/os_eip2333.c.o
 
 # target to build an object file
 bolos/os_eip2333.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_eip2333.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_eip2333.c.o
 .PHONY : bolos/os_eip2333.c.o
 
 bolos/os_eip2333.i: bolos/os_eip2333.c.i
@@ -1138,7 +1138,7 @@ bolos/os_eip2333.i: bolos/os_eip2333.c.i
 
 # target to preprocess a source file
 bolos/os_eip2333.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_eip2333.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_eip2333.c.i
 .PHONY : bolos/os_eip2333.c.i
 
 bolos/os_eip2333.s: bolos/os_eip2333.c.s
@@ -1147,7 +1147,7 @@ bolos/os_eip2333.s: bolos/os_eip2333.c.s
 
 # target to generate assembly for a file
 bolos/os_eip2333.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_eip2333.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/os_eip2333.c.s
 .PHONY : bolos/os_eip2333.c.s
 
 bolos/seproxyhal.o: bolos/seproxyhal.c.o
@@ -1156,7 +1156,7 @@ bolos/seproxyhal.o: bolos/seproxyhal.c.o
 
 # target to build an object file
 bolos/seproxyhal.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/seproxyhal.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/seproxyhal.c.o
 .PHONY : bolos/seproxyhal.c.o
 
 bolos/seproxyhal.i: bolos/seproxyhal.c.i
@@ -1165,7 +1165,7 @@ bolos/seproxyhal.i: bolos/seproxyhal.c.i
 
 # target to preprocess a source file
 bolos/seproxyhal.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/seproxyhal.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/seproxyhal.c.i
 .PHONY : bolos/seproxyhal.c.i
 
 bolos/seproxyhal.s: bolos/seproxyhal.c.s
@@ -1174,7 +1174,7 @@ bolos/seproxyhal.s: bolos/seproxyhal.c.s
 
 # target to generate assembly for a file
 bolos/seproxyhal.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/seproxyhal.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/bolos/seproxyhal.c.s
 .PHONY : bolos/seproxyhal.c.s
 
 emulate.o: emulate.c.o
@@ -1183,7 +1183,7 @@ emulate.o: emulate.c.o
 
 # target to build an object file
 emulate.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate.c.o
 .PHONY : emulate.c.o
 
 emulate.i: emulate.c.i
@@ -1192,7 +1192,7 @@ emulate.i: emulate.c.i
 
 # target to preprocess a source file
 emulate.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate.c.i
 .PHONY : emulate.c.i
 
 emulate.s: emulate.c.s
@@ -1201,7 +1201,7 @@ emulate.s: emulate.c.s
 
 # target to generate assembly for a file
 emulate.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate.c.s
 .PHONY : emulate.c.s
 
 emulate_1.2.o: emulate_1.2.c.o
@@ -1210,7 +1210,7 @@ emulate_1.2.o: emulate_1.2.c.o
 
 # target to build an object file
 emulate_1.2.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.2.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.2.c.o
 .PHONY : emulate_1.2.c.o
 
 emulate_1.2.i: emulate_1.2.c.i
@@ -1219,7 +1219,7 @@ emulate_1.2.i: emulate_1.2.c.i
 
 # target to preprocess a source file
 emulate_1.2.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.2.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.2.c.i
 .PHONY : emulate_1.2.c.i
 
 emulate_1.2.s: emulate_1.2.c.s
@@ -1228,7 +1228,7 @@ emulate_1.2.s: emulate_1.2.c.s
 
 # target to generate assembly for a file
 emulate_1.2.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.2.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.2.c.s
 .PHONY : emulate_1.2.c.s
 
 emulate_1.5.o: emulate_1.5.c.o
@@ -1237,7 +1237,7 @@ emulate_1.5.o: emulate_1.5.c.o
 
 # target to build an object file
 emulate_1.5.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.5.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.5.c.o
 .PHONY : emulate_1.5.c.o
 
 emulate_1.5.i: emulate_1.5.c.i
@@ -1246,7 +1246,7 @@ emulate_1.5.i: emulate_1.5.c.i
 
 # target to preprocess a source file
 emulate_1.5.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.5.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.5.c.i
 .PHONY : emulate_1.5.c.i
 
 emulate_1.5.s: emulate_1.5.c.s
@@ -1255,7 +1255,7 @@ emulate_1.5.s: emulate_1.5.c.s
 
 # target to generate assembly for a file
 emulate_1.5.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.5.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.5.c.s
 .PHONY : emulate_1.5.c.s
 
 emulate_1.6.o: emulate_1.6.c.o
@@ -1264,7 +1264,7 @@ emulate_1.6.o: emulate_1.6.c.o
 
 # target to build an object file
 emulate_1.6.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.6.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.6.c.o
 .PHONY : emulate_1.6.c.o
 
 emulate_1.6.i: emulate_1.6.c.i
@@ -1273,7 +1273,7 @@ emulate_1.6.i: emulate_1.6.c.i
 
 # target to preprocess a source file
 emulate_1.6.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.6.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.6.c.i
 .PHONY : emulate_1.6.c.i
 
 emulate_1.6.s: emulate_1.6.c.s
@@ -1282,7 +1282,7 @@ emulate_1.6.s: emulate_1.6.c.s
 
 # target to generate assembly for a file
 emulate_1.6.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.6.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_1.6.c.s
 .PHONY : emulate_1.6.c.s
 
 emulate_2.0.o: emulate_2.0.c.o
@@ -1291,7 +1291,7 @@ emulate_2.0.o: emulate_2.0.c.o
 
 # target to build an object file
 emulate_2.0.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_2.0.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_2.0.c.o
 .PHONY : emulate_2.0.c.o
 
 emulate_2.0.i: emulate_2.0.c.i
@@ -1300,7 +1300,7 @@ emulate_2.0.i: emulate_2.0.c.i
 
 # target to preprocess a source file
 emulate_2.0.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_2.0.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_2.0.c.i
 .PHONY : emulate_2.0.c.i
 
 emulate_2.0.s: emulate_2.0.c.s
@@ -1309,7 +1309,7 @@ emulate_2.0.s: emulate_2.0.c.s
 
 # target to generate assembly for a file
 emulate_2.0.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_2.0.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_2.0.c.s
 .PHONY : emulate_2.0.c.s
 
 emulate_blue_2.2.5.o: emulate_blue_2.2.5.c.o
@@ -1318,7 +1318,7 @@ emulate_blue_2.2.5.o: emulate_blue_2.2.5.c.o
 
 # target to build an object file
 emulate_blue_2.2.5.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_blue_2.2.5.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_blue_2.2.5.c.o
 .PHONY : emulate_blue_2.2.5.c.o
 
 emulate_blue_2.2.5.i: emulate_blue_2.2.5.c.i
@@ -1327,7 +1327,7 @@ emulate_blue_2.2.5.i: emulate_blue_2.2.5.c.i
 
 # target to preprocess a source file
 emulate_blue_2.2.5.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_blue_2.2.5.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_blue_2.2.5.c.i
 .PHONY : emulate_blue_2.2.5.c.i
 
 emulate_blue_2.2.5.s: emulate_blue_2.2.5.c.s
@@ -1336,7 +1336,7 @@ emulate_blue_2.2.5.s: emulate_blue_2.2.5.c.s
 
 # target to generate assembly for a file
 emulate_blue_2.2.5.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_blue_2.2.5.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_blue_2.2.5.c.s
 .PHONY : emulate_blue_2.2.5.c.s
 
 emulate_lnsp_1.0.o: emulate_lnsp_1.0.c.o
@@ -1345,7 +1345,7 @@ emulate_lnsp_1.0.o: emulate_lnsp_1.0.c.o
 
 # target to build an object file
 emulate_lnsp_1.0.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_lnsp_1.0.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_lnsp_1.0.c.o
 .PHONY : emulate_lnsp_1.0.c.o
 
 emulate_lnsp_1.0.i: emulate_lnsp_1.0.c.i
@@ -1354,7 +1354,7 @@ emulate_lnsp_1.0.i: emulate_lnsp_1.0.c.i
 
 # target to preprocess a source file
 emulate_lnsp_1.0.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_lnsp_1.0.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_lnsp_1.0.c.i
 .PHONY : emulate_lnsp_1.0.c.i
 
 emulate_lnsp_1.0.s: emulate_lnsp_1.0.c.s
@@ -1363,7 +1363,7 @@ emulate_lnsp_1.0.s: emulate_lnsp_1.0.c.s
 
 # target to generate assembly for a file
 emulate_lnsp_1.0.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_lnsp_1.0.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/emulate_lnsp_1.0.c.s
 .PHONY : emulate_lnsp_1.0.c.s
 
 external/blst/blst_consts.o: external/blst/blst_consts.c.o
@@ -1372,7 +1372,7 @@ external/blst/blst_consts.o: external/blst/blst_consts.c.o
 
 # target to build an object file
 external/blst/blst_consts.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_consts.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_consts.c.o
 .PHONY : external/blst/blst_consts.c.o
 
 external/blst/blst_consts.i: external/blst/blst_consts.c.i
@@ -1381,7 +1381,7 @@ external/blst/blst_consts.i: external/blst/blst_consts.c.i
 
 # target to preprocess a source file
 external/blst/blst_consts.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_consts.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_consts.c.i
 .PHONY : external/blst/blst_consts.c.i
 
 external/blst/blst_consts.s: external/blst/blst_consts.c.s
@@ -1390,7 +1390,7 @@ external/blst/blst_consts.s: external/blst/blst_consts.c.s
 
 # target to generate assembly for a file
 external/blst/blst_consts.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_consts.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_consts.c.s
 .PHONY : external/blst/blst_consts.c.s
 
 external/blst/blst_e1.o: external/blst/blst_e1.c.o
@@ -1399,7 +1399,7 @@ external/blst/blst_e1.o: external/blst/blst_e1.c.o
 
 # target to build an object file
 external/blst/blst_e1.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e1.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e1.c.o
 .PHONY : external/blst/blst_e1.c.o
 
 external/blst/blst_e1.i: external/blst/blst_e1.c.i
@@ -1408,7 +1408,7 @@ external/blst/blst_e1.i: external/blst/blst_e1.c.i
 
 # target to preprocess a source file
 external/blst/blst_e1.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e1.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e1.c.i
 .PHONY : external/blst/blst_e1.c.i
 
 external/blst/blst_e1.s: external/blst/blst_e1.c.s
@@ -1417,7 +1417,7 @@ external/blst/blst_e1.s: external/blst/blst_e1.c.s
 
 # target to generate assembly for a file
 external/blst/blst_e1.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e1.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e1.c.s
 .PHONY : external/blst/blst_e1.c.s
 
 external/blst/blst_e2.o: external/blst/blst_e2.c.o
@@ -1426,7 +1426,7 @@ external/blst/blst_e2.o: external/blst/blst_e2.c.o
 
 # target to build an object file
 external/blst/blst_e2.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e2.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e2.c.o
 .PHONY : external/blst/blst_e2.c.o
 
 external/blst/blst_e2.i: external/blst/blst_e2.c.i
@@ -1435,7 +1435,7 @@ external/blst/blst_e2.i: external/blst/blst_e2.c.i
 
 # target to preprocess a source file
 external/blst/blst_e2.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e2.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e2.c.i
 .PHONY : external/blst/blst_e2.c.i
 
 external/blst/blst_e2.s: external/blst/blst_e2.c.s
@@ -1444,7 +1444,7 @@ external/blst/blst_e2.s: external/blst/blst_e2.c.s
 
 # target to generate assembly for a file
 external/blst/blst_e2.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e2.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_e2.c.s
 .PHONY : external/blst/blst_e2.c.s
 
 external/blst/blst_exp.o: external/blst/blst_exp.c.o
@@ -1453,7 +1453,7 @@ external/blst/blst_exp.o: external/blst/blst_exp.c.o
 
 # target to build an object file
 external/blst/blst_exp.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_exp.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_exp.c.o
 .PHONY : external/blst/blst_exp.c.o
 
 external/blst/blst_exp.i: external/blst/blst_exp.c.i
@@ -1462,7 +1462,7 @@ external/blst/blst_exp.i: external/blst/blst_exp.c.i
 
 # target to preprocess a source file
 external/blst/blst_exp.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_exp.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_exp.c.i
 .PHONY : external/blst/blst_exp.c.i
 
 external/blst/blst_exp.s: external/blst/blst_exp.c.s
@@ -1471,7 +1471,7 @@ external/blst/blst_exp.s: external/blst/blst_exp.c.s
 
 # target to generate assembly for a file
 external/blst/blst_exp.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_exp.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_exp.c.s
 .PHONY : external/blst/blst_exp.c.s
 
 external/blst/blst_fp12_tower.o: external/blst/blst_fp12_tower.c.o
@@ -1480,7 +1480,7 @@ external/blst/blst_fp12_tower.o: external/blst/blst_fp12_tower.c.o
 
 # target to build an object file
 external/blst/blst_fp12_tower.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.o
 .PHONY : external/blst/blst_fp12_tower.c.o
 
 external/blst/blst_fp12_tower.i: external/blst/blst_fp12_tower.c.i
@@ -1489,7 +1489,7 @@ external/blst/blst_fp12_tower.i: external/blst/blst_fp12_tower.c.i
 
 # target to preprocess a source file
 external/blst/blst_fp12_tower.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.i
 .PHONY : external/blst/blst_fp12_tower.c.i
 
 external/blst/blst_fp12_tower.s: external/blst/blst_fp12_tower.c.s
@@ -1498,7 +1498,7 @@ external/blst/blst_fp12_tower.s: external/blst/blst_fp12_tower.c.s
 
 # target to generate assembly for a file
 external/blst/blst_fp12_tower.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.s
 .PHONY : external/blst/blst_fp12_tower.c.s
 
 external/blst/blst_pairing.o: external/blst/blst_pairing.c.o
@@ -1507,7 +1507,7 @@ external/blst/blst_pairing.o: external/blst/blst_pairing.c.o
 
 # target to build an object file
 external/blst/blst_pairing.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.o
 .PHONY : external/blst/blst_pairing.c.o
 
 external/blst/blst_pairing.i: external/blst/blst_pairing.c.i
@@ -1516,7 +1516,7 @@ external/blst/blst_pairing.i: external/blst/blst_pairing.c.i
 
 # target to preprocess a source file
 external/blst/blst_pairing.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.i
 .PHONY : external/blst/blst_pairing.c.i
 
 external/blst/blst_pairing.s: external/blst/blst_pairing.c.s
@@ -1525,7 +1525,7 @@ external/blst/blst_pairing.s: external/blst/blst_pairing.c.s
 
 # target to generate assembly for a file
 external/blst/blst_pairing.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.s
 .PHONY : external/blst/blst_pairing.c.s
 
 external/blst/blst_recip.o: external/blst/blst_recip.c.o
@@ -1534,7 +1534,7 @@ external/blst/blst_recip.o: external/blst/blst_recip.c.o
 
 # target to build an object file
 external/blst/blst_recip.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_recip.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_recip.c.o
 .PHONY : external/blst/blst_recip.c.o
 
 external/blst/blst_recip.i: external/blst/blst_recip.c.i
@@ -1543,7 +1543,7 @@ external/blst/blst_recip.i: external/blst/blst_recip.c.i
 
 # target to preprocess a source file
 external/blst/blst_recip.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_recip.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_recip.c.i
 .PHONY : external/blst/blst_recip.c.i
 
 external/blst/blst_recip.s: external/blst/blst_recip.c.s
@@ -1552,7 +1552,7 @@ external/blst/blst_recip.s: external/blst/blst_recip.c.s
 
 # target to generate assembly for a file
 external/blst/blst_recip.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_recip.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_recip.c.s
 .PHONY : external/blst/blst_recip.c.s
 
 external/blst/blst_sqrt.o: external/blst/blst_sqrt.c.o
@@ -1561,7 +1561,7 @@ external/blst/blst_sqrt.o: external/blst/blst_sqrt.c.o
 
 # target to build an object file
 external/blst/blst_sqrt.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.o
 .PHONY : external/blst/blst_sqrt.c.o
 
 external/blst/blst_sqrt.i: external/blst/blst_sqrt.c.i
@@ -1570,7 +1570,7 @@ external/blst/blst_sqrt.i: external/blst/blst_sqrt.c.i
 
 # target to preprocess a source file
 external/blst/blst_sqrt.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.i
 .PHONY : external/blst/blst_sqrt.c.i
 
 external/blst/blst_sqrt.s: external/blst/blst_sqrt.c.s
@@ -1579,7 +1579,7 @@ external/blst/blst_sqrt.s: external/blst/blst_sqrt.c.s
 
 # target to generate assembly for a file
 external/blst/blst_sqrt.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.s
 .PHONY : external/blst/blst_sqrt.c.s
 
 external/blst/blst_vect.o: external/blst/blst_vect.c.o
@@ -1588,7 +1588,7 @@ external/blst/blst_vect.o: external/blst/blst_vect.c.o
 
 # target to build an object file
 external/blst/blst_vect.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_vect.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_vect.c.o
 .PHONY : external/blst/blst_vect.c.o
 
 external/blst/blst_vect.i: external/blst/blst_vect.c.i
@@ -1597,7 +1597,7 @@ external/blst/blst_vect.i: external/blst/blst_vect.c.i
 
 # target to preprocess a source file
 external/blst/blst_vect.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_vect.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_vect.c.i
 .PHONY : external/blst/blst_vect.c.i
 
 external/blst/blst_vect.s: external/blst/blst_vect.c.s
@@ -1606,7 +1606,7 @@ external/blst/blst_vect.s: external/blst/blst_vect.c.s
 
 # target to generate assembly for a file
 external/blst/blst_vect.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_vect.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/blst/blst_vect.c.s
 .PHONY : external/blst/blst_vect.c.s
 
 external/libECC/fp/fp.o: external/libECC/fp/fp.c.o
@@ -1615,7 +1615,7 @@ external/libECC/fp/fp.o: external/libECC/fp/fp.c.o
 
 # target to build an object file
 external/libECC/fp/fp.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.o
 .PHONY : external/libECC/fp/fp.c.o
 
 external/libECC/fp/fp.i: external/libECC/fp/fp.c.i
@@ -1624,7 +1624,7 @@ external/libECC/fp/fp.i: external/libECC/fp/fp.c.i
 
 # target to preprocess a source file
 external/libECC/fp/fp.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.i
 .PHONY : external/libECC/fp/fp.c.i
 
 external/libECC/fp/fp.s: external/libECC/fp/fp.c.s
@@ -1633,7 +1633,7 @@ external/libECC/fp/fp.s: external/libECC/fp/fp.c.s
 
 # target to generate assembly for a file
 external/libECC/fp/fp.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.s
 .PHONY : external/libECC/fp/fp.c.s
 
 external/libECC/nn/nn.o: external/libECC/nn/nn.c.o
@@ -1642,7 +1642,7 @@ external/libECC/nn/nn.o: external/libECC/nn/nn.c.o
 
 # target to build an object file
 external/libECC/nn/nn.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.o
 .PHONY : external/libECC/nn/nn.c.o
 
 external/libECC/nn/nn.i: external/libECC/nn/nn.c.i
@@ -1651,7 +1651,7 @@ external/libECC/nn/nn.i: external/libECC/nn/nn.c.i
 
 # target to preprocess a source file
 external/libECC/nn/nn.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.i
 .PHONY : external/libECC/nn/nn.c.i
 
 external/libECC/nn/nn.s: external/libECC/nn/nn.c.s
@@ -1660,7 +1660,7 @@ external/libECC/nn/nn.s: external/libECC/nn/nn.c.s
 
 # target to generate assembly for a file
 external/libECC/nn/nn.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.s
 .PHONY : external/libECC/nn/nn.c.s
 
 external/libECC/nn/nn_add.o: external/libECC/nn/nn_add.c.o
@@ -1669,7 +1669,7 @@ external/libECC/nn/nn_add.o: external/libECC/nn/nn_add.c.o
 
 # target to build an object file
 external/libECC/nn/nn_add.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o
 .PHONY : external/libECC/nn/nn_add.c.o
 
 external/libECC/nn/nn_add.i: external/libECC/nn/nn_add.c.i
@@ -1678,7 +1678,7 @@ external/libECC/nn/nn_add.i: external/libECC/nn/nn_add.c.i
 
 # target to preprocess a source file
 external/libECC/nn/nn_add.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.i
 .PHONY : external/libECC/nn/nn_add.c.i
 
 external/libECC/nn/nn_add.s: external/libECC/nn/nn_add.c.s
@@ -1687,7 +1687,7 @@ external/libECC/nn/nn_add.s: external/libECC/nn/nn_add.c.s
 
 # target to generate assembly for a file
 external/libECC/nn/nn_add.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.s
 .PHONY : external/libECC/nn/nn_add.c.s
 
 external/libECC/nn/nn_div.o: external/libECC/nn/nn_div.c.o
@@ -1696,7 +1696,7 @@ external/libECC/nn/nn_div.o: external/libECC/nn/nn_div.c.o
 
 # target to build an object file
 external/libECC/nn/nn_div.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o
 .PHONY : external/libECC/nn/nn_div.c.o
 
 external/libECC/nn/nn_div.i: external/libECC/nn/nn_div.c.i
@@ -1705,7 +1705,7 @@ external/libECC/nn/nn_div.i: external/libECC/nn/nn_div.c.i
 
 # target to preprocess a source file
 external/libECC/nn/nn_div.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.i
 .PHONY : external/libECC/nn/nn_div.c.i
 
 external/libECC/nn/nn_div.s: external/libECC/nn/nn_div.c.s
@@ -1714,7 +1714,7 @@ external/libECC/nn/nn_div.s: external/libECC/nn/nn_div.c.s
 
 # target to generate assembly for a file
 external/libECC/nn/nn_div.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.s
 .PHONY : external/libECC/nn/nn_div.c.s
 
 external/libECC/nn/nn_mul.o: external/libECC/nn/nn_mul.c.o
@@ -1723,7 +1723,7 @@ external/libECC/nn/nn_mul.o: external/libECC/nn/nn_mul.c.o
 
 # target to build an object file
 external/libECC/nn/nn_mul.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o
 .PHONY : external/libECC/nn/nn_mul.c.o
 
 external/libECC/nn/nn_mul.i: external/libECC/nn/nn_mul.c.i
@@ -1732,7 +1732,7 @@ external/libECC/nn/nn_mul.i: external/libECC/nn/nn_mul.c.i
 
 # target to preprocess a source file
 external/libECC/nn/nn_mul.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.i
 .PHONY : external/libECC/nn/nn_mul.c.i
 
 external/libECC/nn/nn_mul.s: external/libECC/nn/nn_mul.c.s
@@ -1741,7 +1741,7 @@ external/libECC/nn/nn_mul.s: external/libECC/nn/nn_mul.c.s
 
 # target to generate assembly for a file
 external/libECC/nn/nn_mul.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.s
 .PHONY : external/libECC/nn/nn_mul.c.s
 
 innovation/components/cy_memory_unit.o: innovation/components/cy_memory_unit.c.o
@@ -1750,7 +1750,7 @@ innovation/components/cy_memory_unit.o: innovation/components/cy_memory_unit.c.o
 
 # target to build an object file
 innovation/components/cy_memory_unit.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o
 .PHONY : innovation/components/cy_memory_unit.c.o
 
 innovation/components/cy_memory_unit.i: innovation/components/cy_memory_unit.c.i
@@ -1759,7 +1759,7 @@ innovation/components/cy_memory_unit.i: innovation/components/cy_memory_unit.c.i
 
 # target to preprocess a source file
 innovation/components/cy_memory_unit.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.i
 .PHONY : innovation/components/cy_memory_unit.c.i
 
 innovation/components/cy_memory_unit.s: innovation/components/cy_memory_unit.c.s
@@ -1768,7 +1768,7 @@ innovation/components/cy_memory_unit.s: innovation/components/cy_memory_unit.c.s
 
 # target to generate assembly for a file
 innovation/components/cy_memory_unit.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.s
 .PHONY : innovation/components/cy_memory_unit.c.s
 
 innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.o: innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o
@@ -1777,7 +1777,7 @@ innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.o: innovation/src/arithmetic/
 
 # target to build an object file
 innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o
 .PHONY : innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o
 
 innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.i: innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.i
@@ -1786,7 +1786,7 @@ innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.i: innovation/src/arithmetic/
 
 # target to preprocess a source file
 innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.i
 .PHONY : innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.i
 
 innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.s: innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.s
@@ -1795,7 +1795,7 @@ innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.s: innovation/src/arithmetic/
 
 # target to generate assembly for a file
 innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.s
 .PHONY : innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.s
 
 innovation/src/arithmetic/fp_extensions/cy_quad.o: innovation/src/arithmetic/fp_extensions/cy_quad.c.o
@@ -1804,7 +1804,7 @@ innovation/src/arithmetic/fp_extensions/cy_quad.o: innovation/src/arithmetic/fp_
 
 # target to build an object file
 innovation/src/arithmetic/fp_extensions/cy_quad.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o
 .PHONY : innovation/src/arithmetic/fp_extensions/cy_quad.c.o
 
 innovation/src/arithmetic/fp_extensions/cy_quad.i: innovation/src/arithmetic/fp_extensions/cy_quad.c.i
@@ -1813,7 +1813,7 @@ innovation/src/arithmetic/fp_extensions/cy_quad.i: innovation/src/arithmetic/fp_
 
 # target to preprocess a source file
 innovation/src/arithmetic/fp_extensions/cy_quad.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.i
 .PHONY : innovation/src/arithmetic/fp_extensions/cy_quad.c.i
 
 innovation/src/arithmetic/fp_extensions/cy_quad.s: innovation/src/arithmetic/fp_extensions/cy_quad.c.s
@@ -1822,7 +1822,7 @@ innovation/src/arithmetic/fp_extensions/cy_quad.s: innovation/src/arithmetic/fp_
 
 # target to generate assembly for a file
 innovation/src/arithmetic/fp_extensions/cy_quad.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.s
 .PHONY : innovation/src/arithmetic/fp_extensions/cy_quad.c.s
 
 innovation/src/arithmetic/pairings/cy_pbc.o: innovation/src/arithmetic/pairings/cy_pbc.c.o
@@ -1831,7 +1831,7 @@ innovation/src/arithmetic/pairings/cy_pbc.o: innovation/src/arithmetic/pairings/
 
 # target to build an object file
 innovation/src/arithmetic/pairings/cy_pbc.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o
 .PHONY : innovation/src/arithmetic/pairings/cy_pbc.c.o
 
 innovation/src/arithmetic/pairings/cy_pbc.i: innovation/src/arithmetic/pairings/cy_pbc.c.i
@@ -1840,7 +1840,7 @@ innovation/src/arithmetic/pairings/cy_pbc.i: innovation/src/arithmetic/pairings/
 
 # target to preprocess a source file
 innovation/src/arithmetic/pairings/cy_pbc.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.i
 .PHONY : innovation/src/arithmetic/pairings/cy_pbc.c.i
 
 innovation/src/arithmetic/pairings/cy_pbc.s: innovation/src/arithmetic/pairings/cy_pbc.c.s
@@ -1849,7 +1849,7 @@ innovation/src/arithmetic/pairings/cy_pbc.s: innovation/src/arithmetic/pairings/
 
 # target to generate assembly for a file
 innovation/src/arithmetic/pairings/cy_pbc.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.s
 .PHONY : innovation/src/arithmetic/pairings/cy_pbc.c.s
 
 innovation/src/io/cy_io_common_tools.o: innovation/src/io/cy_io_common_tools.c.o
@@ -1858,7 +1858,7 @@ innovation/src/io/cy_io_common_tools.o: innovation/src/io/cy_io_common_tools.c.o
 
 # target to build an object file
 innovation/src/io/cy_io_common_tools.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o
 .PHONY : innovation/src/io/cy_io_common_tools.c.o
 
 innovation/src/io/cy_io_common_tools.i: innovation/src/io/cy_io_common_tools.c.i
@@ -1867,7 +1867,7 @@ innovation/src/io/cy_io_common_tools.i: innovation/src/io/cy_io_common_tools.c.i
 
 # target to preprocess a source file
 innovation/src/io/cy_io_common_tools.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.i
 .PHONY : innovation/src/io/cy_io_common_tools.c.i
 
 innovation/src/io/cy_io_common_tools.s: innovation/src/io/cy_io_common_tools.c.s
@@ -1876,7 +1876,7 @@ innovation/src/io/cy_io_common_tools.s: innovation/src/io/cy_io_common_tools.c.s
 
 # target to generate assembly for a file
 innovation/src/io/cy_io_common_tools.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.s
 .PHONY : innovation/src/io/cy_io_common_tools.c.s
 
 innovation/src/io/cy_io_fp.o: innovation/src/io/cy_io_fp.c.o
@@ -1885,7 +1885,7 @@ innovation/src/io/cy_io_fp.o: innovation/src/io/cy_io_fp.c.o
 
 # target to build an object file
 innovation/src/io/cy_io_fp.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o
 .PHONY : innovation/src/io/cy_io_fp.c.o
 
 innovation/src/io/cy_io_fp.i: innovation/src/io/cy_io_fp.c.i
@@ -1894,7 +1894,7 @@ innovation/src/io/cy_io_fp.i: innovation/src/io/cy_io_fp.c.i
 
 # target to preprocess a source file
 innovation/src/io/cy_io_fp.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.i
 .PHONY : innovation/src/io/cy_io_fp.c.i
 
 innovation/src/io/cy_io_fp.s: innovation/src/io/cy_io_fp.c.s
@@ -1903,7 +1903,7 @@ innovation/src/io/cy_io_fp.s: innovation/src/io/cy_io_fp.c.s
 
 # target to generate assembly for a file
 innovation/src/io/cy_io_fp.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.s
 .PHONY : innovation/src/io/cy_io_fp.c.s
 
 innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.o: innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o
@@ -1912,7 +1912,7 @@ innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.o: innovation/wrappers/bolos/c
 
 # target to build an object file
 innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o
 .PHONY : innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o
 
 innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.i: innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.i
@@ -1921,7 +1921,7 @@ innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.i: innovation/wrappers/bolos/c
 
 # target to preprocess a source file
 innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.i
 .PHONY : innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.i
 
 innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.s: innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.s
@@ -1930,7 +1930,7 @@ innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.s: innovation/wrappers/bolos/c
 
 # target to generate assembly for a file
 innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.s
 .PHONY : innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.s
 
 innovation/wrappers/bolos/cy_wrap_bolos_gda.o: innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o
@@ -1939,7 +1939,7 @@ innovation/wrappers/bolos/cy_wrap_bolos_gda.o: innovation/wrappers/bolos/cy_wrap
 
 # target to build an object file
 innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o
 .PHONY : innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o
 
 innovation/wrappers/bolos/cy_wrap_bolos_gda.i: innovation/wrappers/bolos/cy_wrap_bolos_gda.c.i
@@ -1948,7 +1948,7 @@ innovation/wrappers/bolos/cy_wrap_bolos_gda.i: innovation/wrappers/bolos/cy_wrap
 
 # target to preprocess a source file
 innovation/wrappers/bolos/cy_wrap_bolos_gda.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.i
 .PHONY : innovation/wrappers/bolos/cy_wrap_bolos_gda.c.i
 
 innovation/wrappers/bolos/cy_wrap_bolos_gda.s: innovation/wrappers/bolos/cy_wrap_bolos_gda.c.s
@@ -1957,7 +1957,7 @@ innovation/wrappers/bolos/cy_wrap_bolos_gda.s: innovation/wrappers/bolos/cy_wrap
 
 # target to generate assembly for a file
 innovation/wrappers/bolos/cy_wrap_bolos_gda.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.s
 .PHONY : innovation/wrappers/bolos/cy_wrap_bolos_gda.c.s
 
 innovation/wrappers/bolos/cy_wrap_fp_bolos.o: innovation/wrappers/bolos/cy_wrap_fp_bolos.c.o
@@ -1966,7 +1966,7 @@ innovation/wrappers/bolos/cy_wrap_fp_bolos.o: innovation/wrappers/bolos/cy_wrap_
 
 # target to build an object file
 innovation/wrappers/bolos/cy_wrap_fp_bolos.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.o
 .PHONY : innovation/wrappers/bolos/cy_wrap_fp_bolos.c.o
 
 innovation/wrappers/bolos/cy_wrap_fp_bolos.i: innovation/wrappers/bolos/cy_wrap_fp_bolos.c.i
@@ -1975,7 +1975,7 @@ innovation/wrappers/bolos/cy_wrap_fp_bolos.i: innovation/wrappers/bolos/cy_wrap_
 
 # target to preprocess a source file
 innovation/wrappers/bolos/cy_wrap_fp_bolos.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.i
 .PHONY : innovation/wrappers/bolos/cy_wrap_fp_bolos.c.i
 
 innovation/wrappers/bolos/cy_wrap_fp_bolos.s: innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s
@@ -1984,7 +1984,7 @@ innovation/wrappers/bolos/cy_wrap_fp_bolos.s: innovation/wrappers/bolos/cy_wrap_
 
 # target to generate assembly for a file
 innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s
 .PHONY : innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s
 
 innovation/wrappers/libECC/cy_wrap_fp_libECC.o: innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o
@@ -1993,7 +1993,7 @@ innovation/wrappers/libECC/cy_wrap_fp_libECC.o: innovation/wrappers/libECC/cy_wr
 
 # target to build an object file
 innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o
 .PHONY : innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o
 
 innovation/wrappers/libECC/cy_wrap_fp_libECC.i: innovation/wrappers/libECC/cy_wrap_fp_libECC.c.i
@@ -2002,7 +2002,7 @@ innovation/wrappers/libECC/cy_wrap_fp_libECC.i: innovation/wrappers/libECC/cy_wr
 
 # target to preprocess a source file
 innovation/wrappers/libECC/cy_wrap_fp_libECC.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.i
 .PHONY : innovation/wrappers/libECC/cy_wrap_fp_libECC.c.i
 
 innovation/wrappers/libECC/cy_wrap_fp_libECC.s: innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s
@@ -2011,7 +2011,7 @@ innovation/wrappers/libECC/cy_wrap_fp_libECC.s: innovation/wrappers/libECC/cy_wr
 
 # target to generate assembly for a file
 innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s
 .PHONY : innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s
 
 innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.o: innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o
@@ -2020,7 +2020,7 @@ innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.o: innovation/wrappers/libse
 
 # target to build an object file
 innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o
 
 innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.i: innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.i
@@ -2029,7 +2029,7 @@ innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.i: innovation/wrappers/libse
 
 # target to preprocess a source file
 innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.i
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.i
 
 innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.s: innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.s
@@ -2038,7 +2038,7 @@ innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.s: innovation/wrappers/libse
 
 # target to generate assembly for a file
 innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.s
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.s
 
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.o: innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o
@@ -2047,7 +2047,7 @@ innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.o: innovation/wrapper
 
 # target to build an object file
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o
 
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.i: innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.i
@@ -2056,7 +2056,7 @@ innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.i: innovation/wrapper
 
 # target to preprocess a source file
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.i
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.i
 
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.s: innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.s
@@ -2065,7 +2065,7 @@ innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.s: innovation/wrapper
 
 # target to generate assembly for a file
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.s
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.s
 
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.o: innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o
@@ -2074,7 +2074,7 @@ innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.o: innovation/wrappers/libs
 
 # target to build an object file
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o
 
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.i: innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.i
@@ -2083,7 +2083,7 @@ innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.i: innovation/wrappers/libs
 
 # target to preprocess a source file
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.i
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.i
 
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.s: innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.s
@@ -2092,7 +2092,7 @@ innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.s: innovation/wrappers/libs
 
 # target to generate assembly for a file
 innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.s
 .PHONY : innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.s
 
 launcher.o: launcher.c.o
@@ -2101,7 +2101,7 @@ launcher.o: launcher.c.o
 
 # target to build an object file
 launcher.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/launcher.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/launcher.c.o
 .PHONY : launcher.c.o
 
 launcher.i: launcher.c.i
@@ -2110,7 +2110,7 @@ launcher.i: launcher.c.i
 
 # target to preprocess a source file
 launcher.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/launcher.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/launcher.c.i
 .PHONY : launcher.c.i
 
 launcher.s: launcher.c.s
@@ -2119,7 +2119,7 @@ launcher.s: launcher.c.s
 
 # target to generate assembly for a file
 launcher.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/launcher.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/launcher.dir/build.make src/CMakeFiles/launcher.dir/launcher.c.s
 .PHONY : launcher.c.s
 
 svc.o: svc.c.o
@@ -2128,7 +2128,7 @@ svc.o: svc.c.o
 
 # target to build an object file
 svc.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/svc.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/svc.c.o
 .PHONY : svc.c.o
 
 svc.i: svc.c.i
@@ -2137,7 +2137,7 @@ svc.i: svc.c.i
 
 # target to preprocess a source file
 svc.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/svc.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/svc.c.i
 .PHONY : svc.c.i
 
 svc.s: svc.c.s
@@ -2146,7 +2146,7 @@ svc.s: svc.c.s
 
 # target to generate assembly for a file
 svc.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/svc.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/svc.c.s
 .PHONY : svc.c.s
 
 # Help Target
@@ -2393,6 +2393,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

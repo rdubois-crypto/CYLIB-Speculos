@@ -6,5 +6,5 @@ C_FLAGS = -fPIC   -std=gnu99 -Wpedantic -Wall -Wshadow -Wmissing-prototypes -Wca
 
 C_DEFINES = -Dcmocka_EXPORTS
 
-C_INCLUDES = -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/src -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/src -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include 
+C_INCLUDES = -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/src -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/src -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include 
 

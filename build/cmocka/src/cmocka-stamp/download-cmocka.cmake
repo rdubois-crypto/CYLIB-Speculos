@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(STATUS "verifying file...
-       file='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz'")
+       file='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz'")
 
-  file("SHA256" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz" actual_value)
+  file("SHA256" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "f0ccd8242d55e2fd74b16ba518359151f6f8383ff8aef4976e48393f77bba8b6")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(STATUS "SHA256 hash of
-    /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz
+    /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz
   does not match expected value
     expected: 'f0ccd8242d55e2fd74b16ba518359151f6f8383ff8aef4976e48393f77bba8b6'
       actual: '${actual_value}'")
@@ -71,7 +71,7 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz" STREQUAL "")
+if("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz" STREQUAL "")
   message(FATAL_ERROR "LOCAL can't be empty")
 endif()
 
@@ -79,32 +79,32 @@ if("https://cmocka.org/files/1.1/cmocka-1.1.5.tar.xz" STREQUAL "")
   message(FATAL_ERROR "REMOTE can't be empty")
 endif()
 
-if(EXISTS "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz")
+if(EXISTS "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(STATUS "File already exists and hash match (skip download):
-  file='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz'
+  file='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz'
   SHA256='f0ccd8242d55e2fd74b16ba518359151f6f8383ff8aef4976e48393f77bba8b6'"
       )
       return()
     else()
       message(STATUS "File already exists but hash mismatch. Removing...")
-      file(REMOVE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz")
+      file(REMOVE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz")
     endif()
   else()
     message(STATUS "File already exists but no hash specified (use URL_HASH):
-  file='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz'
+  file='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz")
+    file(REMOVE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(STATUS "Downloading...
-   dst='/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz'
+   dst='/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz'
    timeout='none'"
 )
 
@@ -121,7 +121,7 @@ foreach(i RANGE ${retry_number})
 
     file(
         DOWNLOAD
-        "${url}" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz"
+        "${url}" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz"
         SHOW_PROGRESS
         # no TIMEOUT
         STATUS status
@@ -137,7 +137,7 @@ foreach(i RANGE ${retry_number})
       check_file_hash(has_hash hash_is_good)
       if(has_hash AND NOT hash_is_good)
         message(STATUS "Hash mismatch, removing...")
-        file(REMOVE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz")
+        file(REMOVE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz")
       else()
         message(STATUS "Downloading... done")
         return()

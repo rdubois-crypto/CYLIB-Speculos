@@ -1,8 +1,8 @@
-# Install script for directory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/chef_wrap
+# Install script for directory: /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/chef_wrap
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

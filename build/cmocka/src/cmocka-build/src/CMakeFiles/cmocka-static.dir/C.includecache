@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include/cmocka.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include/cmocka.h
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include/cmocka_private.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include/cmocka_private.h
 config.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include/config.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include/config.h
 stdint.h
 -
 windows.h
@@ -18,9 +18,9 @@ windows.h
 stdio.h
 -
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/src/cmocka.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/src/cmocka.c
 config.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/src/config.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/src/config.h
 malloc.h
 -
 inttypes.h
@@ -48,7 +48,7 @@ time.h
 float.h
 -
 cmocka_platform.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/src/cmocka_platform.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/src/cmocka_platform.h
 cmocka.h
 -
 cmocka_private.h

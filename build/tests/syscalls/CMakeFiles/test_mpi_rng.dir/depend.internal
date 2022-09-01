@@ -7,8 +7,8 @@ tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.o
  ../src/bolos/cx_ed25519.h
  ../src/bolos/cx_hash.h
  ../src/bolos/cxlib.h
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_mpi_rng.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_mpi_rng.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h
  install/include/cmocka.h
  install/include/openssl/asn1.h
  install/include/openssl/asn1err.h
@@ -31,5 +31,5 @@ tests/syscalls/CMakeFiles/test_mpi_rng.dir/test_mpi_rng.c.o
  install/include/openssl/stack.h
  install/include/openssl/symhacks.h
 tests/syscalls/CMakeFiles/test_mpi_rng.dir/utils.c.o
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.c
- /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.h

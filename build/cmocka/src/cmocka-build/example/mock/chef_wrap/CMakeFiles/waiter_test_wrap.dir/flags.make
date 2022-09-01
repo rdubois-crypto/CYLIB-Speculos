@@ -6,5 +6,5 @@ C_FLAGS = -fPIE
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/chef_wrap -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/chef_wrap -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include 
+C_INCLUDES = -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/chef_wrap -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/chef_wrap -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include 
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master
+CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build
+CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build
 
 # Utility rule file for cmocka.
 
@@ -64,56 +64,56 @@ CMakeFiles/cmocka-complete: cmocka/src/cmocka-stamp/cmocka-patch
 CMakeFiles/cmocka-complete: cmocka/src/cmocka-stamp/cmocka-configure
 CMakeFiles/cmocka-complete: cmocka/src/cmocka-stamp/cmocka-build
 CMakeFiles/cmocka-complete: cmocka/src/cmocka-stamp/cmocka-install
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'cmocka'"
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles
-	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka-complete
-	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-done
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Completed 'cmocka'"
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles
+	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles/cmocka-complete
+	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-done
 
 cmocka/src/cmocka-stamp/cmocka-install: cmocka/src/cmocka-stamp/cmocka-build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing install step for 'cmocka'"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE) install
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-install
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Performing install step for 'cmocka'"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE) install
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-install
 
 cmocka/src/cmocka-stamp/cmocka-mkdir:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'cmocka'"
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/tmp
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src
-	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp
-	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-mkdir
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Creating directories for 'cmocka'"
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/tmp
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src
+	/usr/bin/cmake -E make_directory /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp
+	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-mkdir
 
 cmocka/src/cmocka-stamp/cmocka-download: cmocka/src/cmocka-stamp/cmocka-urlinfo.txt
 cmocka/src/cmocka-stamp/cmocka-download: cmocka/src/cmocka-stamp/cmocka-mkdir
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (download, verify and extract) for 'cmocka'"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src && /usr/bin/cmake -P /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/download-cmocka.cmake
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src && /usr/bin/cmake -P /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/verify-cmocka.cmake
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src && /usr/bin/cmake -P /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/extract-cmocka.cmake
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-download
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Performing download step (download, verify and extract) for 'cmocka'"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src && /usr/bin/cmake -P /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/download-cmocka.cmake
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src && /usr/bin/cmake -P /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/verify-cmocka.cmake
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src && /usr/bin/cmake -P /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/extract-cmocka.cmake
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-download
 
 cmocka/src/cmocka-stamp/cmocka-update: cmocka/src/cmocka-stamp/cmocka-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'cmocka'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "No update step for 'cmocka'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-update
+	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-update
 
 cmocka/src/cmocka-stamp/cmocka-patch: cmocka/src/cmocka-stamp/cmocka-download
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'cmocka'"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "No patch step for 'cmocka'"
 	/usr/bin/cmake -E echo_append
-	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-patch
+	/usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-patch
 
 cmocka/src/cmocka-stamp/cmocka-configure: cmocka/tmp/cmocka-cfgcmd.txt
 cmocka/src/cmocka-stamp/cmocka-configure: cmocka/src/cmocka-stamp/cmocka-update
 cmocka/src/cmocka-stamp/cmocka-configure: cmocka/src/cmocka-stamp/cmocka-patch
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'cmocka'"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && /usr/bin/cmake -DWITH_STATIC_LIB=true -DCMAKE_INSTALL_PREFIX=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc -DCMAKE_C_FLAGS= "-GUnix Makefiles" /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-configure
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Performing configure step for 'cmocka'"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && /usr/bin/cmake -DWITH_STATIC_LIB=true -DCMAKE_INSTALL_PREFIX=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install -DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc -DCMAKE_C_FLAGS= "-GUnix Makefiles" /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-configure
 
 cmocka/src/cmocka-stamp/cmocka-build: cmocka/src/cmocka-stamp/cmocka-configure
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'cmocka'"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(MAKE)
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Performing build step for 'cmocka'"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(MAKE)
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && /usr/bin/cmake -E touch /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-build
 
 cmocka: CMakeFiles/cmocka
 cmocka: CMakeFiles/cmocka-complete
@@ -138,6 +138,6 @@ CMakeFiles/cmocka.dir/clean:
 .PHONY : CMakeFiles/cmocka.dir/clean
 
 CMakeFiles/cmocka.dir/depend:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dubois/eclipse-workspace/CYLIB-Speculos /home/dubois/eclipse-workspace/CYLIB-Speculos /home/dubois/eclipse-workspace/CYLIB-Speculos/build /home/dubois/eclipse-workspace/CYLIB-Speculos/build /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles/cmocka.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/cmocka.dir/depend
 

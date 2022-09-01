@@ -6,7 +6,7 @@ C_FLAGS = -fPIE
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/include 
+C_INCLUDES = -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/include 
 
 # Custom defines: example/CMakeFiles/allocate_module_test.dir/allocate_module.c.o_DEFINES = UNIT_TESTING=1
 

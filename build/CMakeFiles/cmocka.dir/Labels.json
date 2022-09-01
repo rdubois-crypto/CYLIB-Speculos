@@ -2,34 +2,34 @@
 	"sources" : 
 	[
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles/cmocka"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles/cmocka.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka-complete.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles/cmocka-complete.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-install.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-install.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-mkdir.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-mkdir.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-download.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-download.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-update.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-update.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-patch.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-patch.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-configure.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-configure.rule"
 		},
 		{
-			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-build.rule"
+			"file" : "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-stamp/cmocka-build.rule"
 		}
 	],
 	"target" : 

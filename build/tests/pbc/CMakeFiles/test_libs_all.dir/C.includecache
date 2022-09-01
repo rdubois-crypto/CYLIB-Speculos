@@ -246,7 +246,7 @@ cy_fp2.h
 external/libsec256k1/libsec256k1_field_10x26.h
 ../src/innovation/wrappers/libsec256k1/external/libsec256k1/libsec256k1_field_10x26.h
 
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/cy_test_libs_all.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_libs_all.c
 stdbool.h
 -
 stddef.h
@@ -258,25 +258,25 @@ stdio.h
 string.h
 -
 innovation/cy_wrap_bolos_gda.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/innovation/cy_wrap_bolos_gda.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/innovation/cy_wrap_bolos_gda.h
 innovation/cy_wrap_bolos_cryptolib.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/innovation/cy_wrap_bolos_cryptolib.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/innovation/cy_wrap_bolos_cryptolib.h
 innovation/cy_wrap_lib256k1_gda.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/innovation/cy_wrap_lib256k1_gda.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/innovation/cy_wrap_lib256k1_gda.h
 innovation/cy_wrap_lib256k1_cryptolib.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/innovation/cy_wrap_lib256k1_cryptolib.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/innovation/cy_wrap_lib256k1_cryptolib.h
 cy_configuration.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/cy_configuration.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_configuration.h
 cy_quad.h
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/cy_quad.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_quad.h
 cy_test_mem_unit.c
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/cy_test_mem_unit.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_mem_unit.c
 cy_test_wrap_fp.c
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/cy_test_wrap_fp.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_wrap_fp.c
 cy_test_wrap_fp2.c
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/cy_test_wrap_fp2.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_wrap_fp2.c
 cy_test_wrap_fp12.c
-/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/pbc/inno/cy_test_wrap_fp12.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_wrap_fp12.c
 
 install/include/openssl/asn1.h
 time.h

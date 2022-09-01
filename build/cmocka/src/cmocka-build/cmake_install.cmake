@@ -1,8 +1,8 @@
-# Install script for directory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka
+# Install script for directory: /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install")
+  set(CMAKE_INSTALL_PREFIX "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,22 +38,22 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xpkgconfigx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/cmocka.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/cmocka.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/cmocka" TYPE FILE FILES
-    "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/cmocka-config.cmake"
-    "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/cmocka-config-version.cmake"
+    "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/cmocka-config.cmake"
+    "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/cmocka-config-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/include/cmake_install.cmake")
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/src/cmake_install.cmake")
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/doc/cmake_install.cmake")
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/include/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/src/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/doc/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/cmake_install.cmake")
 
 endif()
 
@@ -65,5 +65,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

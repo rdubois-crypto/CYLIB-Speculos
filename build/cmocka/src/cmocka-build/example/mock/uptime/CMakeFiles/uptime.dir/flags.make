@@ -6,5 +6,5 @@ C_FLAGS = -fPIE   -std=gnu99 -Wpedantic -Wall -Wshadow -Wmissing-prototypes -Wca
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime -I/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime 
+C_INCLUDES = -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime -I/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime 
 

@@ -1,4 +1,4 @@
-prefix=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install
+prefix=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/install
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

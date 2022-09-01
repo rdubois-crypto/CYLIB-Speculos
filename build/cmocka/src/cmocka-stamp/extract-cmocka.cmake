@@ -1,7 +1,7 @@
 # Make file names absolute:
 #
-get_filename_component(filename "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-1.1.5.tar.xz" ABSOLUTE)
-get_filename_component(directory "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka" ABSOLUTE)
+get_filename_component(filename "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-1.1.5.tar.xz" ABSOLUTE)
+get_filename_component(directory "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka" ABSOLUTE)
 
 message(STATUS "extracting...
      src='${filename}'

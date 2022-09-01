@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka
+CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build
+CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build
 
 # Include any dependencies generated for this target.
 include example/mock/uptime/CMakeFiles/test_uptime.dir/depend.make
@@ -58,17 +58,17 @@ include example/mock/uptime/CMakeFiles/test_uptime.dir/progress.make
 include example/mock/uptime/CMakeFiles/test_uptime.dir/flags.make
 
 example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.o: example/mock/uptime/CMakeFiles/test_uptime.dir/flags.make
-example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.o: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.o"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_uptime.dir/test_uptime.c.o   -c /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c
+example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.o: /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.o"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/test_uptime.dir/test_uptime.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c
 
 example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/test_uptime.dir/test_uptime.c.i"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c > CMakeFiles/test_uptime.dir/test_uptime.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c > CMakeFiles/test_uptime.dir/test_uptime.c.i
 
 example/mock/uptime/CMakeFiles/test_uptime.dir/test_uptime.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/test_uptime.dir/test_uptime.c.s"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c -o CMakeFiles/test_uptime.dir/test_uptime.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime && /usr/bin/arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime/test_uptime.c -o CMakeFiles/test_uptime.dir/test_uptime.c.s
 
 # Object files for target test_uptime
 test_uptime_OBJECTS = \
@@ -81,8 +81,8 @@ example/mock/uptime/test_uptime: example/mock/uptime/CMakeFiles/test_uptime.dir/
 example/mock/uptime/test_uptime: example/mock/uptime/CMakeFiles/test_uptime.dir/build.make
 example/mock/uptime/test_uptime: src/libcmocka.so.0.7.0
 example/mock/uptime/test_uptime: example/mock/uptime/CMakeFiles/test_uptime.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable test_uptime"
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_uptime.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable test_uptime"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_uptime.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/mock/uptime/CMakeFiles/test_uptime.dir/build: example/mock/uptime/test_uptime
@@ -90,10 +90,10 @@ example/mock/uptime/CMakeFiles/test_uptime.dir/build: example/mock/uptime/test_u
 .PHONY : example/mock/uptime/CMakeFiles/test_uptime.dir/build
 
 example/mock/uptime/CMakeFiles/test_uptime.dir/clean:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime && $(CMAKE_COMMAND) -P CMakeFiles/test_uptime.dir/cmake_clean.cmake
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime && $(CMAKE_COMMAND) -P CMakeFiles/test_uptime.dir/cmake_clean.cmake
 .PHONY : example/mock/uptime/CMakeFiles/test_uptime.dir/clean
 
 example/mock/uptime/CMakeFiles/test_uptime.dir/depend:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka/example/mock/uptime /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/example/mock/uptime/CMakeFiles/test_uptime.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka/example/mock/uptime /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime /home/dubois/eclipse-workspace/CYLIB-Speculos/build/cmocka/src/cmocka-build/example/mock/uptime/CMakeFiles/test_uptime.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/mock/uptime/CMakeFiles/test_uptime.dir/depend
 

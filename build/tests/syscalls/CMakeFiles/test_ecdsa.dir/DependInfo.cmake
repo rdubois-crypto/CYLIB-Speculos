@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/test_ecdsa.c" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.o"
-  "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/tests/syscalls/utils.c" "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_ecdsa.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/tests/syscalls/CMakeFiles/test_ecdsa.dir/test_ecdsa.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/utils.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/tests/syscalls/CMakeFiles/test_ecdsa.dir/utils.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "GIT_REVISION=\"\""
+  "GIT_REVISION=\"52bb743\""
   "NATIVE_64BITS"
   "OS_LITTLE_ENDIAN"
   "ST31"
@@ -32,7 +32,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/src/CMakeFiles/emu.dir/DependInfo.cmake"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

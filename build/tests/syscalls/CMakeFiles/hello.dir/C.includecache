@@ -6,3 +6,7 @@
 
 #IncludeRegexTransform: 
 
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/hello.c
+stdio.h
+-
+

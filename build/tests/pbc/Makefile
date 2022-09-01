@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master
+CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build
+CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -91,14 +91,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/tests/pbc/CMakeFiles/progress.marks
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles /home/dubois/eclipse-workspace/CYLIB-Speculos/build/tests/pbc/CMakeFiles/progress.marks
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/clean
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/clean
 .PHONY : clean
 
 # The main clean target
@@ -108,22 +108,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/preinstall
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 tests/pbc/CMakeFiles/test_libs_all.dir/rule:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/CMakeFiles/test_libs_all.dir/rule
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f CMakeFiles/Makefile2 tests/pbc/CMakeFiles/test_libs_all.dir/rule
 .PHONY : tests/pbc/CMakeFiles/test_libs_all.dir/rule
 
 # Convenience name for target.
@@ -133,7 +133,7 @@ test_libs_all: tests/pbc/CMakeFiles/test_libs_all.dir/rule
 
 # fast build rule for target.
 test_libs_all/fast:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/build
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/build
 .PHONY : test_libs_all/fast
 
 inno/cy_test_libs_all.o: inno/cy_test_libs_all.c.o
@@ -142,7 +142,7 @@ inno/cy_test_libs_all.o: inno/cy_test_libs_all.c.o
 
 # target to build an object file
 inno/cy_test_libs_all.c.o:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o
 .PHONY : inno/cy_test_libs_all.c.o
 
 inno/cy_test_libs_all.i: inno/cy_test_libs_all.c.i
@@ -151,7 +151,7 @@ inno/cy_test_libs_all.i: inno/cy_test_libs_all.c.i
 
 # target to preprocess a source file
 inno/cy_test_libs_all.c.i:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.i
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.i
 .PHONY : inno/cy_test_libs_all.c.i
 
 inno/cy_test_libs_all.s: inno/cy_test_libs_all.c.s
@@ -160,7 +160,7 @@ inno/cy_test_libs_all.s: inno/cy_test_libs_all.c.s
 
 # target to generate assembly for a file
 inno/cy_test_libs_all.c.s:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.s
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f tests/pbc/CMakeFiles/test_libs_all.dir/build.make tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.s
 .PHONY : inno/cy_test_libs_all.c.s
 
 # Help Target
@@ -187,6 +187,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

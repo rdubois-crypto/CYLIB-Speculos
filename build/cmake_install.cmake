@@ -1,4 +1,4 @@
-# Install script for directory: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master
+# Install script for directory: /home/dubois/eclipse-workspace/CYLIB-Speculos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,10 +39,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/src/cmake_install.cmake")
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/tests/syscalls/cmake_install.cmake")
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/tests/pbc/cmake_install.cmake")
-  include("/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/src/innovation/tests/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/tests/syscalls/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/tests/pbc/cmake_install.cmake")
+  include("/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/innovation/tests/cmake_install.cmake")
 
 endif()
 
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

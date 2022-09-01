@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master
+CMAKE_SOURCE_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build
+CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/CYLIB-Speculos/build
 
 # Utility rule file for copy-launcher.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculo
 include CMakeFiles/copy-launcher.dir/progress.make
 
 CMakeFiles/copy-launcher: src/launcher
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) Speculos
-	/usr/bin/cmake -E copy_if_different /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/src/launcher /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/speculos/resources/launcher
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) Speculos
+	/usr/bin/cmake -E copy_if_different /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/launcher /home/dubois/eclipse-workspace/CYLIB-Speculos/speculos/resources/launcher
 
 copy-launcher: CMakeFiles/copy-launcher
 copy-launcher: CMakeFiles/copy-launcher.dir/build.make
@@ -72,6 +72,6 @@ CMakeFiles/copy-launcher.dir/clean:
 .PHONY : CMakeFiles/copy-launcher.dir/clean
 
 CMakeFiles/copy-launcher.dir/depend:
-	cd /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/copy-launcher.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dubois/eclipse-workspace/CYLIB-Speculos /home/dubois/eclipse-workspace/CYLIB-Speculos /home/dubois/eclipse-workspace/CYLIB-Speculos/build /home/dubois/eclipse-workspace/CYLIB-Speculos/build /home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles/copy-launcher.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/copy-launcher.dir/depend
 

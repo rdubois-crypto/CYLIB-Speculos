@@ -68,7 +68,7 @@ cy_error_t cy_line_add( const cy_ecfp2point_t *R,
     /*vec384x Z1Z1, U2, S2, H, HH, I, J, V;*/
 
 	cy_fp2_t Z1Z1, U2, S2, H, HH, I, J, V;
-	fp2_ctx_t *ctx_fp2= line[0].ctx_quad;*
+	fp2_ctx_t *ctx_fp2= line[0].ctx_quad;
 
 	 CY_CHECK(cy_fp2_alloc(ctx_fp2, &Z1Z1 ));
 	 CY_CHECK(cy_fp2_alloc(ctx_fp2, &U2 ));
