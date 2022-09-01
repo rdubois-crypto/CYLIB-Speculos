@@ -18,9 +18,9 @@
 
 typedef cy_error_t (*Fct_Hash_Init_t)(void *io_ps_ctx, uint8_t *initializer,
                                      size_t initializer_t8);
-typedef cy_error_t (*Fct_Hash_Update_t)(void *io_ps_ctx, uint8_t *out,
+typedef cy_error_t (*Fct_Hash_Update_t)(void *io_ps_ctx, uint8_t *in,
                                     size_t out_t8);
-typedef cy_error_t (*Fct_Hash_Final_t)(void *io_ps_ctx);
+typedef cy_error_t (*Fct_Hash_Final_t)(void *io_ps_ctx, uint8_t *out);
 
 struct hash_ctx_s {
   uint8_t *Sec_RAMp; /* pointer between the Shared RAM and the component*/
