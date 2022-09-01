@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DWITH_STATIC_LIB=true;-DCMAKE_INSTALL_PREFIX=/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install;-DCMAKE_C_COMPILER=arm-linux-gnueabihf-gcc;-DCMAKE_C_FLAGS=;-GUnix Makefiles;<SOURCE_DIR><SOURCE_SUBDIR>'

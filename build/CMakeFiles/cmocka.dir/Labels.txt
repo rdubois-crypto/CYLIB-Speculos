@@ -1,0 +1,13 @@
+# Target labels
+ cmocka
+# Source files and their labels
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/cmocka-complete.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-install.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-mkdir.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-download.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-update.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-patch.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-configure.rule
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-stamp/cmocka-build.rule

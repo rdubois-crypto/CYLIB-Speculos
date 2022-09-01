@@ -1,0 +1,1 @@
+arm-linux-gnueabihf-gcc   -static CMakeFiles/test_wrap_bolos.dir/inno/cy_test_wrap_bolos.c.o  -o test_wrap_bolos   -L/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib  -Wl,-rpath,/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib -lssl -lcrypto -ldl ../../src/libemu.a -lcmocka-static -lssl -lcrypto -ldl 

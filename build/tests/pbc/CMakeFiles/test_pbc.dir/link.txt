@@ -1,0 +1,1 @@
+arm-linux-gnueabihf-gcc   -static CMakeFiles/test_pbc.dir/cy_test_pbc.c.o  -o test_pbc   -L/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib  -Wl,-rpath,/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib -lssl -lcrypto -ldl ../../src/libemu.a -lcmocka-static -lssl -lcrypto -ldl 

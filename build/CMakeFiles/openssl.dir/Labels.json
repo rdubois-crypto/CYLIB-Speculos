@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/openssl"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/openssl.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/CMakeFiles/openssl-complete.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-stamp/openssl-install.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-stamp/openssl-mkdir.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-stamp/openssl-download.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-stamp/openssl-update.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-stamp/openssl-patch.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-stamp/openssl-configure.rule"
+		},
+		{
+			"file" : "/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/openssl-prefix/src/openssl-stamp/openssl-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"openssl"
+		],
+		"name" : "openssl"
+	}
+}

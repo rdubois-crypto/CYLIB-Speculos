@@ -1,0 +1,1 @@
+arm-linux-gnueabihf-gcc   -static -Wl,-Ttext-segment=0xf0000000 CMakeFiles/launcher.dir/launcher.c.o  -o launcher   -L/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib  -Wl,-rpath,/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib -lssl -lcrypto -ldl libemu.a -lssl -lcrypto -ldl 

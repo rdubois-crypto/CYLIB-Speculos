@@ -1,0 +1,19 @@
+Determining if the include file io.h exists failed with the following output:
+Change Dir: /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_31126/fast && make[3]: Entering directory '/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_31126.dir/build.make CMakeFiles/cmTC_31126.dir/build
+make[4]: Entering directory '/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_31126.dir/CheckIncludeFile.c.o
+/usr/bin/arm-linux-gnueabihf-gcc   -fPIE   -o CMakeFiles/cmTC_31126.dir/CheckIncludeFile.c.o   -c /home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: io.h: No such file or directory
+    1 | #include <io.h>
+      |          ^~~~~~
+compilation terminated.
+make[4]: *** [CMakeFiles/cmTC_31126.dir/build.make:66: CMakeFiles/cmTC_31126.dir/CheckIncludeFile.c.o] Error 1
+make[4]: Leaving directory '/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles/CMakeTmp'
+make[3]: *** [Makefile:121: cmTC_31126/fast] Error 2
+make[3]: Leaving directory '/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/CMakeFiles/CMakeTmp'
+
+
+

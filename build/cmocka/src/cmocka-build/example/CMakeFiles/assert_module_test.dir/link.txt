@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-gcc    CMakeFiles/assert_module_test.dir/assert_module.c.o CMakeFiles/assert_module_test.dir/assert_module_test.c.o  -o assert_module_test  -Wl,-rpath,/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/src ../src/libcmocka.so.0.7.0 

@@ -1,0 +1,1 @@
+/usr/bin/arm-linux-gnueabihf-gcc    CMakeFiles/allocate_module_test.dir/allocate_module.c.o CMakeFiles/allocate_module_test.dir/allocate_module_test.c.o  -o allocate_module_test  -Wl,-rpath,/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/cmocka/src/cmocka-build/src ../src/libcmocka.so.0.7.0 

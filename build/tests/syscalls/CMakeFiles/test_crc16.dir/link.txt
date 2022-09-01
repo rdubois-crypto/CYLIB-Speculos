@@ -1,0 +1,1 @@
+arm-linux-gnueabihf-gcc   -static CMakeFiles/test_crc16.dir/test_crc16.c.o  -o test_crc16   -L/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib  -Wl,-rpath,/home/dubois/eclipse-workspace/Speculos-blst/speculos/speculos-master/build/install/lib -lssl -lcrypto -ldl ../../src/libemu.a -lcmocka-static -lssl -lcrypto -ldl 
