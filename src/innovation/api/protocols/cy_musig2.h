@@ -13,19 +13,23 @@
 struct musig2_ctx_s {
   uint8_t *Sec_RAMp; /* pointer between the Shared RAM and the component*/
 
+  cy_hash_ctx_t *H;/* hash underlying function, used to build hash to scalar function */
 
+  cy_ec_ctx_t *ctx_ec; /* elliptic context for elliptic curves operations 		         */
+  cy_gda_ctx_t *gda;   /* random generator */
 
-  void *opt;
-  size_t opt_t8;
+  void *opt;		   /* reserved for future use*/
+  size_t opt_t8;	   /* size of optional previous field( future use)*/
 };
 
-typedef struct musig2_ctx_s musig2_ctx_t;
+typedef struct musig2_ctx_s cy_musig2_ctx_t;
 
-/* Initialize Musig with Signatures functions, number of users, hash functions */
+/* Initialize Musig with Signatures functions, number of users, hash functions (H is used for agg,nonce and sig)*/
 cy_error_t cy_musig_SetUp(cy_musig2_ctx_t *ctx,  uint8_t *Ramp, size_t sizeRamp,
 						  uint8_t *initializer, size_t init_t,
-			              const cy_hash_ctx_t *H_agg, const cy_hash_ctx_t *H_non, const cy_hash_ctx_t *H_sig);
+			              const cy_hash_ctx_t *H);
 
+/* compute the aggregation (sum) of public keys*/
 cy_error_t cy_musig_KeyAgg(const cy_musig2_ctx_t *ctx,const size_t n_users, const cy_ec_point_t *publickeys, cy_ec_point_t *keyagg);
 
 
@@ -48,3 +52,5 @@ cy_error_t cy_musig_SignAgg_Round2(const cy_musig2_ctx_t *ctx,const size_t n_use
 /* Initialize Musig with Signatures functions, number of users, hash functions */
 cy_error_t cy_musig_Uninit(cy_musig2_ctx_t *ctx);
 
+/* Maximal size of ec element supported by this musig2 implementation */
+#define MAX_MUSIG_EC_T8 128
