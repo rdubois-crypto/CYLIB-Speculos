@@ -6,21 +6,3 @@
 
 #IncludeRegexTransform: 
 
-../src/bolos/cx_crc.h
-stddef.h
--
-
-/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/test_crc16.c
-setjmp.h
--
-stdarg.h
--
-stddef.h
--
-cmocka.h
--
-bolos/cx_crc.h
-/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/syscalls/bolos/cx_crc.h
-
-install/include/cmocka.h
-

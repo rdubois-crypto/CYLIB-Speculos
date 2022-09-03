@@ -65,8 +65,7 @@ add_library(emu
 		##############################################################
 		
      	#I.1) adapt blst sources to speculos environment constraints
-     	
-        	external/blst/blst_exp.c
+     		external/blst/blst_exp.c
         	external/blst/blst_vect.c
      		external/blst/blst_consts.c
         	external/blst/blst_sqrt.c
@@ -75,7 +74,8 @@ add_library(emu
         	external/blst/blst_e2.c
      		external/blst/blst_fp12_tower.c
      		external/blst/blst_pairing.c
-     	
+     		
+        	
      	# #I.2) wrap blst lib
         #innovation/cy_wrap_blst_pbc.c
         
@@ -100,6 +100,21 @@ add_library(emu
 		external/libECC/fp/fp.c
 		
 		innovation/wrappers/libECC/cy_wrap_fp_libECC.c
+		
+		##############################################################
+		# IV. FALCON
+		##############################################################
+		#external/nist_pq/pqclean_falcon-512_clean/codec.c
+		#external/nist_pq/pqclean_falcon-512_clean/common.c
+		#external/nist_pq/pqclean_falcon-512_clean/fft.c
+		#external/nist_pq/pqclean_falcon-512_clean/codec.c
+		#external/nist_pq/pqclean_falcon-512_clean/fpr.c
+		#external/nist_pq/pqclean_falcon-512_clean/keygen.c
+		#external/nist_pq/pqclean_falcon-512_clean/rng.c
+		#external/nist_pq/pqclean_falcon-512_clean/sign.c
+		#external/nist_pq/pqclean_falcon-512_clean/vrfy.c
+		#external/nist_pq/pqclean_falcon-512_clean/pqclean.c
+	
      	##############################################################
 		# V. CY_LIB NATIVE
 		##############################################################

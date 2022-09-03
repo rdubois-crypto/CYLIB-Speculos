@@ -10,7 +10,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "GIT_REVISION=\"52bb743\""
+  "GIT_REVISION=\"ad23d79\""
   "NATIVE_64BITS"
   "OS_LITTLE_ENDIAN"
   "ST31"

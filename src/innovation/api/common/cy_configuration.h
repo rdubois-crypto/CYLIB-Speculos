@@ -25,11 +25,6 @@
 #include "cy_gda_component.h"
 
 
-/* if defined, this flag disable error control and parameters control for faster execution time (reduce security)*/
-//#define _NO_CONTROL
-
-
-
 //#ifndef _FP_UNIT_SELECTED
 /************** CHOOSE YOUR FP UNIT ****/
 /*Pick a burritos ingredient to be used for prime fields */

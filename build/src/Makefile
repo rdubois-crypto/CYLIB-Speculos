@@ -1744,6 +1744,249 @@ external/libECC/nn/nn_mul.c.s:
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.s
 .PHONY : external/libECC/nn/nn_mul.c.s
 
+external/nist_pq/pqclean_falcon-512_clean/codec.o: external/nist_pq/pqclean_falcon-512_clean/codec.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/codec.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/codec.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/codec.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/codec.i: external/nist_pq/pqclean_falcon-512_clean/codec.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/codec.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/codec.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/codec.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/codec.s: external/nist_pq/pqclean_falcon-512_clean/codec.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/codec.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/codec.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/codec.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/common.o: external/nist_pq/pqclean_falcon-512_clean/common.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/common.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/common.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/common.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/common.i: external/nist_pq/pqclean_falcon-512_clean/common.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/common.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/common.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/common.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/common.s: external/nist_pq/pqclean_falcon-512_clean/common.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/common.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/common.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/common.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/fft.o: external/nist_pq/pqclean_falcon-512_clean/fft.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fft.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/fft.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fft.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/fft.i: external/nist_pq/pqclean_falcon-512_clean/fft.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fft.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/fft.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fft.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/fft.s: external/nist_pq/pqclean_falcon-512_clean/fft.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fft.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/fft.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fft.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/fpr.o: external/nist_pq/pqclean_falcon-512_clean/fpr.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fpr.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/fpr.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fpr.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/fpr.i: external/nist_pq/pqclean_falcon-512_clean/fpr.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fpr.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/fpr.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fpr.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/fpr.s: external/nist_pq/pqclean_falcon-512_clean/fpr.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fpr.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/fpr.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/fpr.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/keygen.o: external/nist_pq/pqclean_falcon-512_clean/keygen.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/keygen.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/keygen.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/keygen.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/keygen.i: external/nist_pq/pqclean_falcon-512_clean/keygen.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/keygen.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/keygen.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/keygen.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/keygen.s: external/nist_pq/pqclean_falcon-512_clean/keygen.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/keygen.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/keygen.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/keygen.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/pqclean.o: external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/pqclean.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/pqclean.i: external/nist_pq/pqclean_falcon-512_clean/pqclean.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/pqclean.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/pqclean.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/pqclean.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/pqclean.s: external/nist_pq/pqclean_falcon-512_clean/pqclean.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/pqclean.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/pqclean.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/pqclean.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/rng.o: external/nist_pq/pqclean_falcon-512_clean/rng.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/rng.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/rng.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/rng.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/rng.i: external/nist_pq/pqclean_falcon-512_clean/rng.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/rng.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/rng.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/rng.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/rng.s: external/nist_pq/pqclean_falcon-512_clean/rng.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/rng.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/rng.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/rng.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/sign.o: external/nist_pq/pqclean_falcon-512_clean/sign.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/sign.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/sign.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/sign.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/sign.i: external/nist_pq/pqclean_falcon-512_clean/sign.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/sign.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/sign.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/sign.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/sign.s: external/nist_pq/pqclean_falcon-512_clean/sign.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/sign.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/sign.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/sign.c.s
+
+external/nist_pq/pqclean_falcon-512_clean/vrfy.o: external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/vrfy.o
+
+# target to build an object file
+external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o
+
+external/nist_pq/pqclean_falcon-512_clean/vrfy.i: external/nist_pq/pqclean_falcon-512_clean/vrfy.c.i
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/vrfy.i
+
+# target to preprocess a source file
+external/nist_pq/pqclean_falcon-512_clean/vrfy.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.i
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/vrfy.c.i
+
+external/nist_pq/pqclean_falcon-512_clean/vrfy.s: external/nist_pq/pqclean_falcon-512_clean/vrfy.c.s
+
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/vrfy.s
+
+# target to generate assembly for a file
+external/nist_pq/pqclean_falcon-512_clean/vrfy.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.s
+.PHONY : external/nist_pq/pqclean_falcon-512_clean/vrfy.c.s
+
 innovation/components/cy_memory_unit.o: innovation/components/cy_memory_unit.c.o
 
 .PHONY : innovation/components/cy_memory_unit.o
@@ -2337,6 +2580,33 @@ help:
 	@echo "... external/libECC/nn/nn_mul.o"
 	@echo "... external/libECC/nn/nn_mul.i"
 	@echo "... external/libECC/nn/nn_mul.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/codec.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/codec.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/codec.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/common.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/common.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/common.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/fft.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/fft.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/fft.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/fpr.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/fpr.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/fpr.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/keygen.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/keygen.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/keygen.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/pqclean.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/pqclean.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/pqclean.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/rng.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/rng.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/rng.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/sign.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/sign.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/sign.s"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/vrfy.o"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/vrfy.i"
+	@echo "... external/nist_pq/pqclean_falcon-512_clean/vrfy.s"
 	@echo "... innovation/components/cy_memory_unit.o"
 	@echo "... innovation/components/cy_memory_unit.i"
 	@echo "... innovation/components/cy_memory_unit.s"

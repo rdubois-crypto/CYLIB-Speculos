@@ -63,6 +63,15 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/nn/nn_add.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/nn/nn_div.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/nn/nn_mul.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/codec.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/common.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fft.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fpr.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/keygen.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/pqclean.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/rng.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/sign.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/vrfy.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/components/cy_memory_unit.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/fp_extensions/cy_quad.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o"
@@ -82,7 +91,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "GIT_REVISION=\"52bb743\""
+  "GIT_REVISION=\"ad23d79\""
   "NATIVE_64BITS"
   "OS_LITTLE_ENDIAN"
   )

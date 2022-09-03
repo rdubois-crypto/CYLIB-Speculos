@@ -1352,6 +1352,43 @@ src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: ../src/external/libECC/wor
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: ../src/external/libECC/words/words.h
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: ../src/external/libECC/words/words_64.h
 
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/codec.c
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/common.c
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fft.c
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.c
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/keygen.c
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/api.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/pqclean.c
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/rng.c
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/sign.c
+
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
+src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/vrfy.c
+
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: ../src/innovation/api/common/cy_errors.h
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: ../src/innovation/api/components/cy_memory_unit.h
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: ../src/innovation/components/cy_memory_unit.c
