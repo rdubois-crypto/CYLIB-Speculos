@@ -38,7 +38,7 @@ struct hash_ctx_s {
   Fct_Hash_Configure_t Hash_Configure;
   Fct_Hash_Init_t Hash_Init;
   Fct_Hash_Update_t Hash_Update; /**< pointer to run function                   */
-  Fct_Hash_Final_t Hash_UnInit;
+  Fct_Hash_Final_t Hash_Final;
   Fct_Hash_All_t Hash_All; /* one shot init, run, final execution */
   cy_flag_t is_initialized;
 
