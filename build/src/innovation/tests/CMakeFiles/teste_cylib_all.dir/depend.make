@@ -7,6 +7,7 @@ src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/bolos/cx_hash.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/bolos/cxlib.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/external/libsec256k1/libsec256k1_field_10x26.h
+src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_ec.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_ec_const.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_fp.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_fp12.h
@@ -21,11 +22,13 @@ src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/api/components/cy_memory_unit.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/api/io/cy_io_common_tools.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/src/io/cy_io_common_tools.c
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_libs_all.c
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_mem_unit.c
+src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_ec.c
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_fp.c
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_fp12.c
 src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_fp2.c

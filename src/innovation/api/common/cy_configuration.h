@@ -37,7 +37,8 @@
 #define _FP2_CY_BURRITOS
 /************** CHOOSE YOUR FP12 UNIT ****/
 #define _FP12_CY_BURRITOS
-
+/************** CHOOSE YOUR EC UNIT ****/
+#define _EC_BOLOS_BURRITOS
 
 
 #ifdef _FP_BOLOS_BURRITOS
@@ -92,6 +93,15 @@
 #endif /*endif _FP2_UNIT_DISABLED*/
 
 #include "../wrappers/bolos/cy_wrap_bolos_cryptolib.h"
+
+
+/************** CHOOSE YOUR EC UNIT ****/
+
+
+
+#ifdef _EC_BOLOS_BURRITOS
+#include "../wrappers/bolos/cy_wrap_bolos_ec.h"
+#endif
 
 #endif
 

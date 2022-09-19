@@ -41,10 +41,13 @@
 
 #include "cy_configuration.h"
 #include "cy_quad.h"
+#include "cy_ec.h"
 #include "cy_test_mem_unit.c"
 #include "cy_test_wrap_fp.c"
 #include "cy_test_wrap_fp2.c"
 #include "cy_test_wrap_fp12.c"
+#include "cy_test_wrap_ec.c"
+
 
 cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 {
@@ -67,6 +70,10 @@ cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _FP2_ZONE_T8, &Zone));
 	CY_CHECK(test_fp12_unit(cryptolib->mem_unit->Shared_Memory, _FP2_ZONE_T8));
 	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _FP2_ZONE_T8));
+
+	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _EC_ZONE_T8, &Zone));
+	CY_CHECK(test_ec_unit(cryptolib->mem_unit->Shared_Memory, _EC_ZONE_T8));
+	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _EC_ZONE_T8, &Zone));
 
 	  end:
 	  return error;

@@ -52,6 +52,7 @@ struct hash_ctx_s {
 /* todo: provide ready to use structures */
 #define _SHA512_ID 1
 #define _KECCAK256_ID 2
+#define _PEDDERSEN_ID 3
 
 #define MAX_HASH_T8 64
 typedef struct hash_ctx_s cy_hash_ctx_t;

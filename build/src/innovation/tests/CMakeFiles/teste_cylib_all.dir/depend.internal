@@ -8,6 +8,7 @@ src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o
  ../src/bolos/cx_hash.h
  ../src/bolos/cxlib.h
  ../src/external/libsec256k1/libsec256k1_field_10x26.h
+ ../src/innovation/api/arithmetic/cy_ec.h
  ../src/innovation/api/arithmetic/cy_ec_const.h
  ../src/innovation/api/arithmetic/cy_fp.h
  ../src/innovation/api/arithmetic/cy_fp12.h
@@ -22,11 +23,13 @@ src/innovation/tests/CMakeFiles/teste_cylib_all.dir/cy_test_libs_all.c.o
  ../src/innovation/api/components/cy_memory_unit.h
  ../src/innovation/api/io/cy_io_common_tools.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
  ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
  ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_common_tools.c
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_libs_all.c
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_mem_unit.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_ec.c
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_fp.c
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_fp12.c
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_fp2.c

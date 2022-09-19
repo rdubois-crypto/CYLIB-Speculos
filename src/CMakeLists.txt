@@ -59,6 +59,7 @@ add_library(emu
     	innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c
      	innovation/wrappers/bolos/cy_wrap_bolos_gda.c
      	innovation/wrappers/bolos/cy_wrap_fp_bolos.c
+     	innovation/wrappers/bolos/cy_wrap_bolos_ec.c
      	
      	##############################################################
 		# II. BLST

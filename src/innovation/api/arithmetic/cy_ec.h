@@ -17,6 +17,8 @@
 #ifndef API_CY_EC_H_
 #define API_CY_EC_H_
 
+
+
 struct ec_ctx_s {
   cy_flag_t is_initialized;
   int curve_id;
@@ -28,12 +30,32 @@ struct ec_ctx_s {
   size_t t8_modular_p;
   size_t t8_modular_q;
 
-  cy_fp_ctx_t ctx_fp_p; /*pointer to modular context in Shared Memory*/
-  cy_fp_ctx_t ctx_fp_q; /*pointer to modular context in Shared Memory*/
+  cy_fp_ctx_t *ctx_fp_p; /*pointer to modular context in Shared Memory*/
+  //cy_fp_ctx_t *ctx_fp_q; /*pointer to modular context in Shared Memory*/
 };
 
 typedef struct ec_ctx_s cy_ec_ctx_t;
 
+
+struct cy_ec_s{
+  cy_inner_ec_t *ec;
+
+  #ifndef _NO_CONTROL
+  cy_flag_t is_initialized;
+  #endif
+
+  size_t index; /* offset to the object with the allocated Memory*/
+  cy_ec_ctx_t *ctx;
+};
+
+
+typedef struct cy_ec_s cy_ecpoint_t;
+
+
+#define _HANDLED_EC_MAX 16
+#define _EC_ZONE_T8 (_HANDLED_EC_MAX*(sizeof(cy_ecpoint_t)*sizeof(cy_bn_t)))
+
+/*
 struct cy_ec_s {
   _COORD_HEADER;
   boolean_t is_normalized = 0;
@@ -46,15 +68,16 @@ struct cy_ec_s {
 };
 
 typedef struct cy_ec_s cy_ecpoint_t;
+*/
 
 extern cy_error_t cy_ec_init(cy_ec_ctx_t *ps_ctx, uint8_t *pu8_Mem,
                              const size_t t8_Memory, const int argc,
                              const uint8_t *argv[]);
 
-extern cy_error_t cy_ec_alloc(cy_ec_ctx_t *ps_ctx, size_t ec_t8, cy_ec_t *out);
+extern cy_error_t cy_ec_alloc(cy_ec_ctx_t *ps_ctx, size_t ec_t8, cy_ecpoint_t *out);
 extern cy_error_t cy_ec_import(cy_ec_ctx_t *ps_ctx, uint8_t *in, size_t ec_t8,
-                               cy_ec_t *out);
-extern cy_error_t cy_ec_add(cy_ec_ctx_t *ctx, cy_ecpoint_t *a, cy_ec_t *b,
+		cy_ecpoint_t *out);
+extern cy_error_t cy_ec_add(cy_ec_ctx_t *ctx, cy_ecpoint_t *a, cy_ecpoint_t *b,
 		cy_ecpoint_t *r);
 
 extern cy_error_t cy_ec_scalarmult_fp( cy_ecpoint_t *P, cy_fp_t *k, cy_ecpoint_t *R);
@@ -67,7 +90,10 @@ extern cy_error_t cy_ec_scalarmul_bn(cy_ecpoint_t *a, cy_bn_t *b, cy_ecpoint_t *
 
 extern cy_error_t cy_ec_free(cy_ecpoint_t *ec);
 
-extern cy_error_t cy_ec_uninit(ec_ctx_t *ctx, uint8_t *pu8_Mem,
+extern cy_error_t cy_ec_uninit(cy_ec_ctx_t *ctx, uint8_t *pu8_Mem,
                                const size_t t8_Memory);
+
+/* max bolos supported curve size is BLS12:384 bits*/
+#define MAX_BOLOS_EC_T8 48
 
 #endif /* SRC_INNOVATION_CY_EC_H_ */

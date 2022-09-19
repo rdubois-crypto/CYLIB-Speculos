@@ -40,6 +40,8 @@ bolos/cx_ed25519.h
 stdint.h
 -
 
+../src/innovation/api/arithmetic/cy_ec.h
+
 ../src/innovation/api/arithmetic/cy_ec_const.h
 cy_configuration.h
 ../src/innovation/api/arithmetic/cy_configuration.h
@@ -97,6 +99,8 @@ cy_fp2x3x2.h
 ../src/innovation/api/common/cy_fp2x3x2.h
 ../wrappers/bolos/cy_wrap_bolos_cryptolib.h
 ../src/innovation/api/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+../wrappers/bolos/cy_wrap_bolos_ec.h
+../src/innovation/api/wrappers/bolos/cy_wrap_bolos_ec.h
 
 ../src/innovation/api/common/cy_cryptolib.h
 cy_def.h
@@ -115,6 +119,8 @@ cy_gda_component.h
 ../src/innovation/api/io/cy_io_common_tools.h
 
 ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+
+../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 
 ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 
@@ -155,6 +161,8 @@ cy_configuration.h
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_configuration.h
 cy_quad.h
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_quad.h
+cy_ec.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_ec.h
 cy_test_mem_unit.c
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_mem_unit.c
 cy_test_wrap_fp.c
@@ -163,6 +171,8 @@ cy_test_wrap_fp2.c
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_fp2.c
 cy_test_wrap_fp12.c
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_fp12.c
+cy_test_wrap_ec.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_ec.c
 
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_mem_unit.c
 stdbool.h
@@ -189,6 +199,34 @@ innovation/cy_wrap_bolos_cryptolib.h
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/innovation/cy_wrap_bolos_cryptolib.h
 cy_cryptolib.h
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_cryptolib.h
+cy_io_common_tools.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_io_common_tools.h
+
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_test_wrap_ec.c
+stdio.h
+-
+malloc.h
+-
+setjmp.h
+-
+stdbool.h
+-
+string.h
+-
+stdbool.h
+-
+stdint.h
+-
+cy_errors.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_errors.h
+cy_configuration.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_configuration.h
+cy_errors.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_errors.h
+cy_fp.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_fp.h
+cy_ec.h
+/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_ec.h
 cy_io_common_tools.h
 /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/tests/cy_io_common_tools.h
 

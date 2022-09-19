@@ -45,6 +45,7 @@
 #include "cy_test_wrap_fp.c"
 #include "cy_test_wrap_fp2.c"
 #include "cy_test_wrap_fp12.c"
+#include "cy_test_wrap_ec.c"
 
 cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 {
@@ -68,6 +69,13 @@ cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 	CY_CHECK(test_fp12_unit(cryptolib->mem_unit->Shared_Memory, _FP2_ZONE_T8));
 	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _FP2_ZONE_T8));
 
+	//return error;
+	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _EC_ZONE_T8, &Zone));
+
+	CY_CHECK(test_ec_unit(cryptolib->mem_unit->Shared_Memory, _EC_ZONE_T8));
+	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _EC_ZONE_T8));
+
+
 	  end:
 	  return error;
 }
@@ -76,7 +84,7 @@ cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 int main()
 {
 	cy_error_t error = CY_OK;
-	uint8_t Ramp[ _FP2_ZONE_T8 ];
+	uint8_t Ramp[ _EC_ZONE_T8 ];
 	//uint8_t Ramp[_MAX_MEMORY];
 
 	cryptolib_ctx_t cryptolib;

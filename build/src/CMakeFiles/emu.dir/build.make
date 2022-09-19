@@ -681,9 +681,22 @@ src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s: cmake_for
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_fp_bolos.c -o CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.s
 
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: src/CMakeFiles/emu.dir/flags.make
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_ec.c
+
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.i"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_ec.c > CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.i
+
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.s"
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_ec.c -o CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.s
+
 src/CMakeFiles/emu.dir/external/blst/blst_exp.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_exp.c.o: ../src/external/blst/blst_exp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_exp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_exp.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_exp.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_exp.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_exp.c.i: cmake_force
@@ -696,7 +709,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_exp.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_vect.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_vect.c.o: ../src/external/blst/blst_vect.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_vect.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_vect.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_vect.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_vect.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_vect.c.i: cmake_force
@@ -709,7 +722,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_vect.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_consts.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_consts.c.o: ../src/external/blst/blst_consts.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_consts.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_consts.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_consts.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_consts.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_consts.c.i: cmake_force
@@ -722,7 +735,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_consts.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.o: ../src/external/blst/blst_sqrt.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_sqrt.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_sqrt.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.i: cmake_force
@@ -735,7 +748,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_sqrt.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_recip.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_recip.c.o: ../src/external/blst/blst_recip.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_recip.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_recip.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_recip.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_recip.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_recip.c.i: cmake_force
@@ -748,7 +761,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_recip.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_e1.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_e1.c.o: ../src/external/blst/blst_e1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_e1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_e1.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_e1.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_e1.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_e1.c.i: cmake_force
@@ -761,7 +774,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_e1.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_e2.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_e2.c.o: ../src/external/blst/blst_e2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_e2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_e2.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_e2.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_e2.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_e2.c.i: cmake_force
@@ -774,7 +787,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_e2.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.o: ../src/external/blst/blst_fp12_tower.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_fp12_tower.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.i: cmake_force
@@ -787,7 +800,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_fp12_tower.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.o: ../src/external/blst/blst_pairing.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/blst/blst_pairing.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/blst/blst_pairing.c
 
 src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.i: cmake_force
@@ -800,7 +813,7 @@ src/CMakeFiles/emu.dir/external/blst/blst_pairing.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.i: cmake_force
@@ -813,7 +826,7 @@ src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_gda.c.s:
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptolib.c.i: cmake_force
@@ -826,7 +839,7 @@ src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_lib256k1_cryptoli
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.i: cmake_force
@@ -839,7 +852,7 @@ src/CMakeFiles/emu.dir/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.c.s: 
 
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: ../src/innovation/components/cy_memory_unit.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building C object src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/components/cy_memory_unit.c
 
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.i: cmake_force
@@ -852,7 +865,7 @@ src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.o: ../src/external/libECC/nn/nn.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/libECC/nn/nn.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/nn/nn.c
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.i: cmake_force
@@ -865,7 +878,7 @@ src/CMakeFiles/emu.dir/external/libECC/nn/nn.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o: ../src/external/libECC/nn/nn_add.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/nn/nn_add.c
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.i: cmake_force
@@ -878,7 +891,7 @@ src/CMakeFiles/emu.dir/external/libECC/nn/nn_add.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o: ../src/external/libECC/nn/nn_div.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/nn/nn_div.c
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.i: cmake_force
@@ -891,7 +904,7 @@ src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: ../src/external/libECC/nn/nn_mul.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/nn/nn_mul.c
 
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.i: cmake_force
@@ -904,7 +917,7 @@ src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.o: ../src/external/libECC/fp/fp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Building C object src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/libECC/fp/fp.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/libECC/fp/fp.c
 
 src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.i: cmake_force
@@ -917,7 +930,7 @@ src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o: ../src/innovation/wrappers/libECC/cy_wrap_fp_libECC.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_67) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/libECC/cy_wrap_fp_libECC.c
 
 src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.i: cmake_force
@@ -928,126 +941,9 @@ src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/libECC/cy_wrap_fp_libECC.c -o CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.s
 
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/codec.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_68) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/codec.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/codec.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/codec.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/common.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/common.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/common.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/common.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fft.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fft.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fft.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fft.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fpr.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fpr.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/fpr.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/keygen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/keygen.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/keygen.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/keygen.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/rng.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/rng.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/rng.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/rng.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/sign.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/sign.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/sign.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/sign.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/vrfy.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/vrfy.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/vrfy.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/vrfy.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.s
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: src/CMakeFiles/emu.dir/flags.make
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/pqclean.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_76) "Building C object src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/pqclean.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.i"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/pqclean.c > CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.i
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.s"
-	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/dubois/eclipse-workspace/CYLIB-Speculos/src/external/nist_pq/pqclean_falcon-512_clean/pqclean.c -o CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.s
-
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o: ../src/innovation/src/io/cy_io_common_tools.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_77) "Building C object src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_69) "Building C object src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_common_tools.c
 
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.i: cmake_force
@@ -1060,7 +956,7 @@ src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/src/io/cy_io_fp.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_78) "Building C object src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_70) "Building C object src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_fp.c
 
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.i: cmake_force
@@ -1073,7 +969,7 @@ src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.s: cmake_force
 
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/src/arithmetic/fp_extensions/cy_quad.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_79) "Building C object src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_71) "Building C object src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/fp_extensions/cy_quad.c
 
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.i: cmake_force
@@ -1086,7 +982,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.s: cmak
 
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_80) "Building C object src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_72) "Building C object src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c
 
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.i: cmake_force
@@ -1099,7 +995,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.s: c
 
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/src/arithmetic/pairings/cy_pbc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_81) "Building C object src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_73) "Building C object src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/pairings/cy_pbc.c
 
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.i: cmake_force
@@ -1112,7 +1008,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.s: cmake_forc
 
 src/CMakeFiles/emu.dir/svc.c.o: src/CMakeFiles/emu.dir/flags.make
 src/CMakeFiles/emu.dir/svc.c.o: ../src/svc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_82) "Building C object src/CMakeFiles/emu.dir/svc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_74) "Building C object src/CMakeFiles/emu.dir/svc.c.o"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && arm-linux-gnueabihf-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/emu.dir/svc.c.o   -c /home/dubois/eclipse-workspace/CYLIB-Speculos/src/svc.c
 
 src/CMakeFiles/emu.dir/svc.c.i: cmake_force
@@ -1173,6 +1069,7 @@ emu_OBJECTS = \
 "CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o" \
 "CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o" \
 "CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.o" \
+"CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o" \
 "CMakeFiles/emu.dir/external/blst/blst_exp.c.o" \
 "CMakeFiles/emu.dir/external/blst/blst_vect.c.o" \
 "CMakeFiles/emu.dir/external/blst/blst_consts.c.o" \
@@ -1192,15 +1089,6 @@ emu_OBJECTS = \
 "CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o" \
 "CMakeFiles/emu.dir/external/libECC/fp/fp.c.o" \
 "CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o" \
-"CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o" \
 "CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o" \
 "CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o" \
 "CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o" \
@@ -1259,6 +1147,7 @@ src/libemu.a: src/CMakeFiles/emu.dir/emulate_lnsp_1.0.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_fp_bolos.c.o
+src/libemu.a: src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/external/blst/blst_exp.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/external/blst/blst_vect.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/external/blst/blst_consts.c.o
@@ -1278,15 +1167,6 @@ src/libemu.a: src/CMakeFiles/emu.dir/external/libECC/nn/nn_div.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/external/libECC/fp/fp.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/innovation/wrappers/libECC/cy_wrap_fp_libECC.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o
-src/libemu.a: src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o
@@ -1295,7 +1175,7 @@ src/libemu.a: src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c
 src/libemu.a: src/CMakeFiles/emu.dir/svc.c.o
 src/libemu.a: src/CMakeFiles/emu.dir/build.make
 src/libemu.a: src/CMakeFiles/emu.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_83) "Linking C static library libemu.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dubois/eclipse-workspace/CYLIB-Speculos/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_75) "Linking C static library libemu.a"
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && $(CMAKE_COMMAND) -P CMakeFiles/emu.dir/cmake_clean_target.cmake
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/emu.dir/link.txt --verbose=$(VERBOSE)
 

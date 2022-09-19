@@ -298,6 +298,16 @@ cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg
 	/* Accept iff g^s = R.X^c, beware of multiplicative notations*/
 	cy_ecpoint_t *G=cy_ec_get_generator(ctx->ctx_ec); /* get generating point of the curve , todo ec: coder un get_generator */
 	CY_CHECK(cy_ec_scalarmult_fp(ctx->ctx_ec, G, s, &ec_temp1)); 	/*g^s*/
+	/* todo: c should be recomputed here internally */
+	/* append R in Hashin*/
+
+	//CY_CHECK(cy_ec_export(&ctx->ctx_ec->ctx_fp_q, R,ctx->ctx_ec->t8_modular_p,buffer));
+	//ctx->H->Hash_Update((void *)ctx->H, buffer, ctx->ctx_ec->t8_modular_p);
+	/* append message in Hashin*/
+	//ctx->H->Hash_Update((void *)ctx->H, message, message_t8);
+	//ctx->H->Hash_Final((void *)ctx->H, c); /* final c value */
+
+
 	CY_CHECK(cy_ec_scalarmult_fp(ctx->ctx_ec, Key_agg, c, &ec_temp2)); 	/*X^c*/
 	CY_CHECK(cy_ec_add(ctx->ctx_ec, ec_temp2, R, &ec_temp2)); 	/*R.X^c*/
 

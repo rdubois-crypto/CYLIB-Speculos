@@ -7,6 +7,7 @@ tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/bolos/c
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/bolos/cx_hash.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/bolos/cxlib.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/external/libsec256k1/libsec256k1_field_10x26.h
+tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_ec.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_ec_const.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_fp.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/api/arithmetic/cy_fp12.h
@@ -22,10 +23,12 @@ tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovat
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/api/io/cy_io_common_tools.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/src/io/cy_io_common_tools.c
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_mem_unit.c
+tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_ec.c
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_fp.c
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_fp12.c
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/tests/cy_test_wrap_fp2.c
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 tests/pbc/CMakeFiles/test_libs_all.dir/inno/cy_test_libs_all.c.o: ../tests/pbc/inno/cy_test_libs_all.c

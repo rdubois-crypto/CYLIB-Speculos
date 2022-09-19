@@ -22,7 +22,6 @@
 #define _BRAINPOOL_ALL_ENABLED // enabling all brainpool curves
 #define _STARK_ENABLED         // enabling sparse stark friendly curve
 
-#include "cy_ec_const.h"
 
 /* important warning: the content of bolos cx_ec_point_t and emulated point
  * differ, their field shall only be accessed using the dedicated fonction,
@@ -30,23 +29,23 @@
 
 #define coor_t cx_ecpoint_t;
 
+#define cy_ec_init(ps_ctx, pu8_Mem,t8_Memory,  argc, argv) wrap_bolos_ec_init(ps_ctx, pu8_Mem,t8_Memory,  argc, argv)
+
+
 /* Speculos is not emulating the following bolos functions*/
 #define _WITH_SPECULOS
 #ifdef _WITH_SPECULOS
 
-struct cx_ecpoint_s {
-  cy_bn_t x;
-  cy_bn_t y;
-  cy_bn_t z;
-};
-
-typedef struct cx_ecpoint_s cx_ecpoint_t;
+#define cy_inner_ec_t cx_ecpoint_t
 
 #define cx_ecdomain_parameter_bn(cv, id, out)                                  \
   cy_ecdomain_parameter_bn(cv, id, out)
 
 #endif
 
-#define cx_bn_ec_add(a,b,out) cy_ecpoint_add(a,b,out)
+#define cx_ecpoint_add(a,b,c) cy_ecpoint_add(a,b,c)
 
+
+#define cx_bn_ec_add(a,b,out) cy_ecpoint_add(a,b,out)
+#define _MEM_EC_RESERVED 0xA5
 #endif

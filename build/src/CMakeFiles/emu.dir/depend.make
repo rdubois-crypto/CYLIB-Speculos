@@ -1352,43 +1352,6 @@ src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: ../src/external/libECC/wor
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: ../src/external/libECC/words/words.h
 src/CMakeFiles/emu.dir/external/libECC/nn/nn_mul.c.o: ../src/external/libECC/words/words_64.h
 
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/codec.c
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/codec.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/common.c
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/common.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fft.c
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fft.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.c
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/fpr.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/keygen.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/keygen.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/api.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/pqclean.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/pqclean.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/rng.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/rng.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/sign.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/sign.c
-
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/fpr.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/inner.h
-src/CMakeFiles/emu.dir/external/nist_pq/pqclean_falcon-512_clean/vrfy.c.o: ../src/external/nist_pq/pqclean_falcon-512_clean/vrfy.c
-
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: ../src/innovation/api/common/cy_errors.h
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: ../src/innovation/api/components/cy_memory_unit.h
 src/CMakeFiles/emu.dir/innovation/components/cy_memory_unit.c.o: ../src/innovation/components/cy_memory_unit.c
@@ -1410,6 +1373,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: .
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/api/components/cy_gda_component.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/api/components/cy_memory_unit.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o: ../src/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c
@@ -1448,6 +1412,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../s
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/api/components/cy_gda_component.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/api/components/cy_memory_unit.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o: ../src/innovation/src/arithmetic/fp_extensions/cy_quad.c
@@ -1487,6 +1452,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/inn
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/api/components/cy_gda_component.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/api/components/cy_memory_unit.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o: ../src/innovation/src/arithmetic/pairings/cy_pbc.c
@@ -1529,6 +1495,7 @@ src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/api/com
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/api/components/cy_memory_unit.h
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/api/io/cy_io_common_tools.h
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o: ../src/innovation/src/io/cy_io_fp.c
@@ -1584,6 +1551,39 @@ src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o: in
 src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o: install/include/openssl/safestack.h
 src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o: install/include/openssl/stack.h
 src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o: install/include/openssl/symhacks.h
+
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/bolos/cx_aes.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/bolos/cx_ec.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/bolos/cx_ed25519.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/bolos/cx_hash.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/bolos/cxlib.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/api/arithmetic/cy_ec.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/api/arithmetic/cy_fp.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/api/common/cy_def.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/api/common/cy_errors.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/api/components/cy_gda_component.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/api/components/cy_memory_unit.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.c
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/asn1.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/asn1err.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/bio.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/bioerr.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/bn.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/bnerr.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/crypto.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/cryptoerr.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/e_os2.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/ebcdic.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/ec.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/ecerr.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/opensslconf.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/opensslv.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/ossl_typ.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/safestack.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/stack.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o: install/include/openssl/symhacks.h
 
 src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o: ../src/bolos/cx_aes.h
 src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o: ../src/bolos/cx_ec.h
