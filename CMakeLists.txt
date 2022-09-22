@@ -62,8 +62,9 @@ include_directories(sdk src
  src/innovation/api/ 
  src/innovation/api/arithmetic src/innovation/api/common src/innovation/api/components
  src/innovation/api/io
+ src/innovation/api/protocols
+ src/innovation/api/hash
  src/innovation/tests
- 
  	)
 
 if (PRECOMPILED_DEPENDENCIES_DIR)

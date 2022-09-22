@@ -210,8 +210,7 @@ static cy_error_t test_fp_add(cy_fp_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 
 	  CY_CHECK(cy_fp_export(&fp_r, exported, parameters_t8));
 
-	  debut_print_MsbString(exported, parameters_t8, "\n Add result:\n");
-
+	  _debug(print_MsbString(exported, parameters_t8, "\n Add result:\n"));
 
 
 	  CY_CHECK(cy_fp_free(&fp_a));

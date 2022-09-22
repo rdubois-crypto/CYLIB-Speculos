@@ -33,21 +33,47 @@
 #include "cy_io_common_tools.h"
 
 
+static int test_ecmul(cy_ec_ctx_t *ctx)
+{
+	cy_error_t error = CY_OK;
+
+
+
+    end:
+	   return error;
+}
+
 static int test_ec_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx_testvec_weierstrass_t const *C_cy_allCurves)
 {
 	 cy_error_t error = CY_OK;
 	 cy_ec_ctx_t ctx;
 
 	  /* The shared ram between program and library*/
-	  printf("\n ec module %s", C_cy_allCurves->curve_name);
 
 	  debug_printf("\n @RAMP=%x\n sizeRamp=%x curve=", (unsigned int)Ramp,(int)sizeRam);
 	  debug_Print_RAMp(Ramp, sizeRam);
 	  cx_curve_t curve=C_cy_allCurves->curve;
 
+	  debug_Print_RAMp(Ramp, sizeRam);
+
 	  /* Initializing the fp unit*/
 	  CY_CHECK(cy_ec_init(&ctx, Ramp, sizeRam, curve, NULL));
+	  printf("\n %s %s : ", ctx.libname, C_cy_allCurves->curve_name);
 
+	  _debug(printf("\n after ec Init:"));
+
+	  debug_Print_RAMp(Ramp, sizeRam);
+
+	  CY_CHECK(cy_ec_uninit(&ctx));
+	  _debug(printf("\n after ec UnInit:"));
+
+	  debug_Print_RAMp(Ramp, sizeRam);
+	  _debug(printf("\n exiting"));
+
+	  if (error == CY_OK)
+		    printf(" OK !");
+		  else
+		    printf(" KO\n");
 
 	 end:
 	   return error;

@@ -64,6 +64,8 @@ typedef struct cy_bn_mont_ctx_s cy_bn_mont_ctx_t;
 #define cy_fp_inv(a, r) (wrap_bolos_fp_inv(a, r))
 #define cy_fp_copy(in, out) (wrap_bolos_fp_copy(in, out))
 
+#define cy_fp_get_random(gda,out) wrap_bolos_fp_get_random(gda,out)
+
 //#define cy_fp_inv(a, r) CY_UNIMPLEMENTED_F(cy_fp_inv, a,r)
 /* montgomery */
 #define cy_fp_to_mont(in, out) (wrap_bolos_to_mont(in, out))

@@ -35,53 +35,6 @@
 /*	I. completing missing Speculos functions
  */
 /*****************************************************************************/
-#ifdef emulatedomain
-cx_err_t cy_ecdomain_parameter_bn(cx_curve_t cv, cx_curve_dom_param_t id,
-                                  cx_bn_t out)
-{
-  cy_error_t error = CY_UNHANDLED_CURVE;
-
-  /* we only require the prime field p value here to wrap ec init*/
-  if (id == CX_CURVE_PARAM_Field)
-  {
-	  if (cv == CX_CURVE_SECP256K1) {
-		  CY_CHECK(sys_cx_bn_init(out, C_cy_secp256k1_p, SEC256K1_SIZE_u8));
-	  }
-
-	  if (cv == CX_CURVE_SECP384R1) {
-		  CY_CHECK(sys_cx_bn_init(out, C_cy_secp384r1_p, SEC384r1_SIZE_u8));
-	  }
-
-	  if (cv == CX_CURVE_Stark256) {
-	  		  CY_CHECK(sys_cx_bn_init(out, C_cy_Stark_p, Stark_SIZE_u8));
-	  	  }
-
-  }
-
-  if(id==CX_CURVE_PARAM_Order)
-  {
-	  if (cv == CX_CURVE_SECP256K1) {
-			  CY_CHECK(sys_cx_bn_init(out, C_cy_secp256k1_n, SEC256K1_SIZE_u8));
-		  }
-
-	 if (cv == CX_CURVE_SECP384R1) {
-			  CY_CHECK(sys_cx_bn_init(out, C_cy_secp384r1_n, Stark_SIZE_u8));
-		  }
-	 if (cv == CX_CURVE_Stark256) {
-	 	  		  CY_CHECK(sys_cx_bn_init(out, C_cy_Stark_n, Stark_SIZE_u8));
-	 	  	  }
-
-
-  }
-  /*todo: complete with other bolos curves*/
-  /*
-  CX_CURVE_BLS12_381_G1
-  CX_CURVE_SECP384R1
-  */
-end:
-  return error;
-}
-#endif
 
 #define  cy_ecdomain_parameters_length(curve, length) sys_cx_ecdomain_parameters_length(curve,length);
 
@@ -113,8 +66,6 @@ const cx_ecpoint_t * 	Q
 
 	sys_cx_ecfp_add_point(curve, bs_R, bs_P,bs_Q, len);
 
-       /* sys_cx_ecfp_add_point(  ec_ctx->curve_id, uint8_t *R, const uint8_t
-*P, const uint8_t *Q, size_t X_len);*/
 
 
     return CY_KO;
@@ -136,6 +87,7 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
   //cx_curve_t curve = (cx_curve_t) (argv[0]);
   cx_curve_t curve = (cx_curve_t) argc;
 
+
   size_t size_param_t8=0;/* byte size of parameters */
   const uint8_t *argv_gen[]={NULL, NULL};
 
@@ -148,14 +100,12 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
 
   CY_CHECK(cy_ecdomain_parameters_length(curve, & size_param_t8));
 
-  printf("\n here with curve=%d of size:%d", (int) curve, (int) size_param_t8);
-
-
   ec_ctx->offset = 0;
 
   (ec_ctx->Shared_Memory) = pu8_Mem;
 
   ec_ctx->ctx_fp_p=(cy_fp_ctx_t *) pu8_Mem;
+  ec_ctx->offset = sizeof(cy_fp_ctx_t *);
 
 //  ec_ctx->offset +=sizeof(cy_fp_ctx_t *);
 
@@ -163,35 +113,42 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
   ec_ctx->curve_id = curve;
 
   sys_cx_ecdomain_parameter(curve, CX_CURVE_PARAM_Field, argv_prime+4, (uint32_t) size_param_t8);
-  ec_ctx->offset = ec_ctx->ctx_fp_p->offset;
 
 
   argv_gen[0]=argv_prime;
   argv_gen[1]=argv_prime+4;
 
- int i;
- for(i=0;i<52;i++) printf(" %02x",argv_prime[i]);
-  CY_CHECK(wrap_bolos_fp_init(ec_ctx->ctx_fp_p, pu8_Mem, t8_Memory, 2, argv_gen));
 
+  CY_CHECK(wrap_bolos_fp_init(ec_ctx->ctx_fp_p, pu8_Mem+ec_ctx->offset, t8_Memory-ec_ctx->offset, 2, argv_gen));
 
+  strcpy(ec_ctx->libname, BOLOS_EC_LIBNAME);
 
   ec_ctx->offset += ec_ctx->ctx_fp_p->offset;
+
+
+
 
  // wrap_bolos_fp_init(ec_ctx->ctx_fp_q, pu8_Mem, t8_Memory, 2, argv_gen);
  // ec_ctx->offset += ec_ctx->ctx_fp_q->offset;
 
 
-end:
-  return error;
+  end:
+  	return error;
 }
 
-cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
-                              const size_t t8_Memory)
+cy_error_t wrap_bolos_ec_uninit(cy_ec_ctx_t *ec_ctx)
 {
+	size_t i;
+
+    cy_error_t error = CY_KO;
 	cy_fp_ctx_t *fp_ctx=ec_ctx->ctx_fp_p;
+	for(i=0;i<sizeof(cy_fp_ctx_t *);i++)
+		ec_ctx->Shared_Memory[i]=_MEM_FP_RESERVED;
 
-	wrap_bolos_fp_uninit(fp_ctx, pu8_Mem,t8_Memory);
+	CY_CHECK(wrap_bolos_fp_uninit(fp_ctx, fp_ctx->Shared_Memory,fp_ctx->offset));
 
+	 end:
+		return error;
 }
 
 
@@ -217,7 +174,7 @@ cy_error_t wrap_ecpoint_alloc( cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *P)
      return error;
 }
 
-cy_error_t wrap_bolos_ec_add(cy_ecpoint_t * a, cy_ecpoint_t * b,
+cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
                                cy_ecpoint_t * out)
   {
     cy_error_t error = CY_KO;
@@ -237,16 +194,70 @@ cy_error_t wrap_bolos_ec_add(cy_ecpoint_t * a, cy_ecpoint_t * b,
     return error;
   }
 
+cy_error_t cy_ec_iseq(const cy_ecpoint_t *a, const cy_ecpoint_t *b, int *flag_verif)
+{
+	cy_error_t error = CY_KO;
 
-cy_error_t wrap_bolos_ec_scalarmul_bn(cy_ecpoint_t * a, cy_ecpoint_t * b,
-                               cy_ecpoint_t * out)
+	CY_CHECK(sys_cx_ecpoint_cmp(a->ec,b->ec, (bool*) flag_verif));
+	end:
+	  return error;
+}
+
+cy_error_t wrap_bolos_ec_import(uint8_t *xy, size_t t8_x, cy_ecpoint_t *G){
+	cy_error_t error= CY_KO;
+
+	CY_CHECK(sys_cx_ecpoint_init(G->ec, xy,t8_x, xy+t8_x, t8_x));
+
+	end:
+		    return error;
+}
+
+
+cy_error_t wrap_bolos_ec_import2(uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_y, cy_ecpoint_t *G){
+	cy_error_t error= CY_KO;
+
+	CY_CHECK(sys_cx_ecpoint_init(G->ec, x,t8_x, y, t8_y));
+
+	end:
+		    return error;
+}
+
+
+cy_error_t wrap_bolos_get_generator(const cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *G){
+
+	cy_error_t error= CY_KO;
+
+	CY_CHECK(sys_cx_ecdomain_generator_bn(ec_ctx->curve_id, G->ec));
+
+	  end:
+	    return error;
+
+}
+
+cy_error_t wrap_bolos_cy_ec_copy(const cy_ecpoint_t * P_in, cy_ecpoint_t *P_out)
+{
+	 cy_error_t error = CY_KO;
+
+	 CY_CHECK(sys_cx_bn_copy(P_out->ec->x, P_in->ec->x));
+	 CY_CHECK(sys_cx_bn_copy(P_out->ec->y, P_in->ec->y));
+	 CY_CHECK(sys_cx_bn_copy(P_out->ec->z, P_in->ec->z));
+
+	 end:
+	 	 return error;
+}
+
+cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
+                               cy_ecpoint_t *kP)
   {
     cy_error_t error = CY_KO;
 
-    return error;
+    CY_CHECK(wrap_bolos_cy_ec_copy(P, kP));
+
+    CY_CHECK(sys_cx_ecpoint_scalarmul_bn(kP->ec, *k->bn));
+
+    end:
+    	return error;
   }
-
-
 
 cy_error_t wrap_ecpoint_free(cy_ecpoint_t *P)
 {
@@ -261,8 +272,6 @@ cy_error_t wrap_ecpoint_free(cy_ecpoint_t *P)
 
 
   CY_CHECK(sys_cx_ecpoint_destroy (P->ec));
-
-
 
   end:
      return error;

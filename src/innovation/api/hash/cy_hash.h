@@ -7,7 +7,6 @@
  */
 /* See LICENSE file at the root folder of the project.*/
 /* FILE: cy_errors.h
- */
 /* 																			      */
 /* 																			      */
 /* DESCRIPTION: hash functions  API */
@@ -21,9 +20,9 @@ typedef cy_error_t (*Fct_Hash_Configure_t)(void *io_ps_ctx, uint8_t *initializer
                                      size_t initializer_t8);
 
 typedef cy_error_t (*Fct_Hash_Init_t)(void *io_ps_ctx, uint8_t *in,
-                                     size_t in);
+                                     size_t t8_in);
 typedef cy_error_t (*Fct_Hash_Update_t)(void *io_ps_ctx, uint8_t *in,
-                                    size_t in_t8);
+                                    size_t t8_in);
 typedef cy_error_t (*Fct_Hash_Final_t)(void *io_ps_ctx, uint8_t *out);
 
 typedef cy_error_t (*Fct_Hash_All_t)(uint8_t *in, size_t in_t8, uint8_t *out);

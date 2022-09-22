@@ -125,7 +125,7 @@ add_library(emu
 		innovation/src/arithmetic/fp_extensions/cy_quad.c
 		innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c
 		innovation/src/arithmetic/pairings/cy_pbc.c
-	
+		#innovation/src/protocols/cy_musig2.c
         svc.c)
 
 add_dependencies(emu openssl)

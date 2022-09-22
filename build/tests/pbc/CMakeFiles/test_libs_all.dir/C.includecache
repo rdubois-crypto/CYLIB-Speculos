@@ -101,6 +101,8 @@ cy_fp2x3x2.h
 ../src/innovation/api/wrappers/bolos/cy_wrap_bolos_cryptolib.h
 ../wrappers/bolos/cy_wrap_bolos_ec.h
 ../src/innovation/api/wrappers/bolos/cy_wrap_bolos_ec.h
+../wrappers/bolos/cy_wrap_bolos_gda.h
+../src/innovation/api/wrappers/bolos/cy_wrap_bolos_gda.h
 
 ../src/innovation/api/common/cy_cryptolib.h
 cy_def.h
@@ -116,7 +118,11 @@ cy_gda_component.h
 
 ../src/innovation/api/components/cy_memory_unit.h
 
+../src/innovation/api/hash/cy_hash.h
+
 ../src/innovation/api/io/cy_io_common_tools.h
+
+../src/innovation/api/protocols/cy_musig2.h
 
 ../src/innovation/src/io/cy_io_common_tools.c
 stdint.h
@@ -153,6 +159,38 @@ innovation/cy_wrap_bolos_cryptolib.h
 ../src/innovation/tests/innovation/cy_wrap_bolos_cryptolib.h
 cy_cryptolib.h
 ../src/innovation/tests/cy_cryptolib.h
+cy_io_common_tools.h
+../src/innovation/tests/cy_io_common_tools.h
+
+../src/innovation/tests/cy_test_musig2.c
+stdio.h
+-
+malloc.h
+-
+setjmp.h
+-
+stdbool.h
+-
+string.h
+-
+stdbool.h
+-
+stdint.h
+-
+cy_errors.h
+../src/innovation/tests/cy_errors.h
+cy_configuration.h
+../src/innovation/tests/cy_configuration.h
+cy_errors.h
+../src/innovation/tests/cy_errors.h
+cy_fp.h
+../src/innovation/tests/cy_fp.h
+cy_ec.h
+../src/innovation/tests/cy_ec.h
+cy_hash.h
+../src/innovation/tests/cy_hash.h
+cy_musig2.h
+../src/innovation/tests/cy_musig2.h
 cy_io_common_tools.h
 ../src/innovation/tests/cy_io_common_tools.h
 
@@ -274,6 +312,10 @@ cy_fp2.h
 
 ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
 
+../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
+cy_gda_component.h
+../src/innovation/wrappers/bolos/cy_gda_component.h
+
 ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
 
 ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
@@ -313,6 +355,8 @@ cy_test_wrap_fp12.c
 /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_wrap_fp12.c
 cy_test_wrap_ec.c
 /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_wrap_ec.c
+cy_test_musig2.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_musig2.c
 
 install/include/openssl/asn1.h
 time.h

@@ -26,10 +26,24 @@
 /* important warning: the content of bolos cx_ec_point_t and emulated point
  * differ, their field shall only be accessed using the dedicated fonction,
  * considering x,y and z to be private or error will occur*/
-
+#define BOLOS_EC_LIBNAME "<lib_bolos_v2:EC Module>"
 #define coor_t cx_ecpoint_t;
 
 #define cy_ec_init(ps_ctx, pu8_Mem,t8_Memory,  argc, argv) wrap_bolos_ec_init(ps_ctx, pu8_Mem,t8_Memory,  argc, argv)
+#define cy_ec_uninit(ctx) wrap_bolos_ec_uninit(ctx)
+
+//#define cy_ec_import(ctx, xy, sx, P) wrap_bolos_ec_import(ctx, xy, sx, P)
+//#define cy_ec_import2(ctx, x, sx, y, sy, P) wrap_bolos_ec_import2(ctx, x, sx, y, sy, P)
+
+
+#define cy_ec_alloc(ctx,P) wrap_ecpoint_alloc(ctx,P)
+#define cy_ec_free(P) wrap_ecpoint_free(P)
+
+#define cy_ec_add(a,b,res) wrap_bolos_ec_add(a,b,res)
+
+
+#define cy_ec_scalarmult_fp(k,P,kP) wrap_bolos_ec_scalarmul_fp(k,P,kP)
+#define cy_ec_get_generator(ctx, G) wrap_bolos_get_generator(ctx, G)
 
 
 /* Speculos is not emulating the following bolos functions*/
@@ -42,9 +56,7 @@
   cy_ecdomain_parameter_bn(cv, id, out)
 
 #endif
-
 #define cx_ecpoint_add(a,b,c) cy_ecpoint_add(a,b,c)
-
 
 #define cx_bn_ec_add(a,b,out) cy_ecpoint_add(a,b,out)
 #define _MEM_EC_RESERVED 0xA5

@@ -10,7 +10,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "GIT_REVISION=\"96114be\""
+  "GIT_REVISION=\"b5e47d4\""
   "NATIVE_64BITS"
   "OS_LITTLE_ENDIAN"
   )
@@ -24,6 +24,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../src/innovation/api/common"
   "../src/innovation/api/components"
   "../src/innovation/api/io"
+  "../src/innovation/api/protocols"
+  "../src/innovation/api/hash"
   "../src/innovation/tests"
   "install/include"
   )
