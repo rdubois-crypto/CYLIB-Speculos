@@ -33,14 +33,13 @@
 #define cy_ec_uninit(ctx) wrap_bolos_ec_uninit(ctx)
 
 //#define cy_ec_import(ctx, xy, sx, P) wrap_bolos_ec_import(ctx, xy, sx, P)
-//#define cy_ec_import2(ctx, x, sx, y, sy, P) wrap_bolos_ec_import2(ctx, x, sx, y, sy, P)
+#define cy_ec_import2( x, sx, y, sy, P) wrap_bolos_ec_import2( x, sx, y, sy, P)
 
 
 #define cy_ec_alloc(ctx,P) wrap_ecpoint_alloc(ctx,P)
 #define cy_ec_free(P) wrap_ecpoint_free(P)
 
 #define cy_ec_add(a,b,res) wrap_bolos_ec_add(a,b,res)
-
 
 #define cy_ec_scalarmult_fp(k,P,kP) wrap_bolos_ec_scalarmul_fp(k,P,kP)
 #define cy_ec_get_generator(ctx, G) wrap_bolos_get_generator(ctx, G)

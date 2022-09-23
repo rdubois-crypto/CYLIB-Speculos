@@ -66,7 +66,25 @@ def Print_C_MSB(prefix, name, A, size_word, suffix):
 	print("\n uint8_t ", name, "[", sizeM,"]=", end='');
 	Conv_word_MSB(A, size_word);
 	print(suffix);
+
+#write a variable in a C like style with prefix and suffix comments into a file
+def fprint_c_MSB(f, prefix, name, A, size_word, suffix):
 	
+	concat_str=prefix;
+	sizeA=ceil(log(A)/log(2))  
+	sizeM=ceil(sizeA/size_word)
+	
+	concat_str=concat_str+"\n uint8_t "+ name+ "["+str( sizeM)+"]={";
+	M=Conv_word_MSB(A, size_word);
+	for i in [0..sizeM-2]:
+		concat_str=concat_str+" "+hex(M[i])+",";
+	concat_str=concat_str+" "+hex(M[i])+"};";
+	concat_str=concat_str+suffix;
+	
+	f.write(concat_str);
+	
+	return concat_str;
+		
 def Conv_Num(M, size_word):
 	A=0;
 	for i in [0..len(u)-1]:

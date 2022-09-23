@@ -17,14 +17,33 @@
 #_MU=4;nb_users=3; size_message=2;seed=0;
 
 from time import time
+import sage.all
+import subprocess
+from sage.misc.sage_ostools import redirection
+
 load('musig2.sage');
 load('../common/io_conversions.sage');
 
+C_filepath='test_vector_musig2.c';
+filep = open(C_filepath,'a');
 
-with open('test_vector_musig2.c', 'w') as file_out:
 
-	#print(system(date));
+def DisplaySave(comment, varname, counter, var):
+	print(comment, var);
+	name=varname+str(counter);
+	Print_C_MSB("/*"+name+"*/",name, var,8,"");
+	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(var),8,"");
 
+		
+
+
+with open(C_filepath, 'w') as file_out:
+
+	
+	filep.write("/* File automatically generated using test_musig2_example.sage, the  : ");
+	with redirection(sys.stdout, filep):
+		subprocess.call('date');
+	filep = open(C_filepath,'a');
 
 	print("\n\n********************************************************* \n*******************SAGEMATH:Simulation of a full Sign/Verif of Musig2:\n");
 	print("Simulation for a set of users of size:", nb_users);
@@ -47,15 +66,19 @@ with open('test_vector_musig2.c', 'w') as file_out:
 	for i in [0..nb_users-1]:
 		
 		[x,P]=Musig2_KeyGen(Curve, curve_Generator, Stark_order);#Concatenation of public keys
-		print("/*Secret key user",i,":",x,"*/");
-		name='SecretKey_'+str(i);
-		Print_C_MSB("/*"+name+"*/",name, x,8,"");
 		
-		print("/*Public key user",i,":\n",P,"*/");
-		name='PubX_'+str(i);
-		Print_C_MSB("/*"+name+"*/",name, int(P[0]),8,"");
-		name='PubY_'+str(i);
-		Print_C_MSB("/*"+name+"*/",name, int(P[1]),8,"");
+		DisplaySave("/*Secret key user", 'SecretKey_', i, x)
+		
+		DisplaySave("/*Public key user", 'PublicKey_X', i, int(P[0]))
+		
+		DisplaySave("/*", 'PublicKey_Y', i, int(P[1]))
+		
+		
+#		print("/*Public key user",i,":\n",P,"*/");
+#		name='PubX_'+str(i);
+#		Print_C_MSB("/*"+name+"*/",name, int(P[0]),8,"");
+#		name='PubY_'+str(i);
+#		Print_C_MSB("/*"+name+"*/",name, int(P[1]),8,"");
 		
 		
 		L=L+[int(P[0]),int(P[1])];	
@@ -70,13 +93,23 @@ with open('test_vector_musig2.c', 'w') as file_out:
 	for i in [0..nb_users-1]:	
 		vec_a[i]=H_agg(L, nb_users, L[2*i], L[2*i+1], Stark_order);	
 		print("a[",i,"]=\n",vec_a[i]);
-
+		name="a_"+str(i);
+		fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(vec_a[i]),8,"");
+	
 
 		
 	print("\n*******************Aggregating Public Keys:\n");
 	KeyAgg=Musig2_KeyAgg(Curve, curve_Generator, L, nb_users, Stark_order);
 	print("Aggregated Key:", KeyAgg);
-
+	print("/*Aggregated Key: */");
+	name='Key_Agg_X';
+	Print_C_MSB("\n /*"+name+"*/",name, int(KeyAgg[0]),8,"");
+	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(KeyAgg[0]),8,"");
+	
+	name='Key_Agg_Y';
+	Print_C_MSB("\n /*"+name+"*/",name, int(KeyAgg[1]),8,"");
+	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(KeyAgg[1]),8,"");
+	
 
 	##***********************Round 1 functions******************************/
 	print("\n*******************Signature Round1:\n");
@@ -123,22 +156,27 @@ with open('test_vector_musig2.c', 'w') as file_out:
 	name='R_x';
 	print(R[0]);
 	Print_C_MSB("/*"+name+"*/",name, int(R[0]),8,"");
+	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(R[0]),8,"");
+	
 	name='R_y';
 	Print_C_MSB("/*"+name+"*/",name, int(R[1]),8,"");
+	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(R[1]),8,"");
+	
 	print("/*s part */");
 	name='s';
 	Print_C_MSB("/*"+name+"*/",name, int(s),8,"");
-	print("/*X (agg) */");
-	name='Key_Agg_X';
-	Print_C_MSB("/*"+name+"*/",name, int(KeyAgg[0]),8,"");
-	name='Key_Agg_Y';
-	Print_C_MSB("/*"+name+"*/",name, int(KeyAgg[1]),8,"");
+	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(s),8,"");
+	
+	print("/*c part */");
+	name='c';
+	Print_C_MSB("/*"+name+"*/",name, int(c),8,"");
+	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(c),8,"");
 	
 	
 	
 	res_verif=Musig_Verif_Core(Curve, curve_Generator,R,s,KeyAgg, int(c));
 	print(res_verif);
-
+	filep.close();
 
 
 

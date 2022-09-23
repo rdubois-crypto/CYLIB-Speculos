@@ -35,23 +35,7 @@
 #include "cy_musig2.h"
 
 #include "cy_io_common_tools.h"
-/*R_x*/
- uint8_t  R_x [ 32 ]={  0x85 ,  0xb7 ,  0x68 ,  0x6d ,  0x3b ,  0x63 ,  0x56 ,  0x37 ,  0x42 ,  0xcd ,  0x55 ,  0x63 ,  0x1b ,  0xd2 ,  0x51 ,  0xec ,  0xca ,  0x51 ,  0x58 ,  0xc4 ,  0xae ,  0x1f ,  0x7 ,  0xbc ,  0xd3 ,  0xbb ,  0x7f ,  0x93 ,  0xca ,  0x72 ,  0x8d ,  0x2 };
-
-/*R_y*/
- uint8_t  R_y [ 32 ]={  0xc5 ,  0x5c ,  0x38 ,  0x25 ,  0x86 ,  0x4b ,  0x5e ,  0xc9 ,  0xc4 ,  0xbb ,  0x11 ,  0x98 ,  0xd0 ,  0xa6 ,  0x86 ,  0x5e ,  0xf5 ,  0x73 ,  0x90 ,  0xab ,  0x21 ,  0x91 ,  0x9d ,  0x89 ,  0xbb ,  0x9a ,  0x6b ,  0x80 ,  0xb1 ,  0xd ,  0x12 ,  0x7 };
-
-/*s part */
-/*s*/
- uint8_t  s [ 32 ]={  0x73 ,  0x75 ,  0x84 ,  0x2 ,  0x21 ,  0xdd ,  0xd0 ,  0xd8 ,  0x63 ,  0xab ,  0x46 ,  0x8e ,  0x43 ,  0x27 ,  0xa4 ,  0x52 ,  0x4f ,  0xb3 ,  0xcc ,  0xe1 ,  0x71 ,  0x9a ,  0xc7 ,  0xa6 ,  0x81 ,  0x26 ,  0xc3 ,  0xdb ,  0x73 ,  0xbf ,  0x64 ,  0x2 };
-
-/*X (agg) */
-/*Key_Agg_X*/
- uint8_t  Key_Agg_X [ 32 ]={  0x21 ,  0xb0 ,  0x71 ,  0x8 ,  0x4e ,  0x32 ,  0x2a ,  0xd1 ,  0x50 ,  0x56 ,  0x52 ,  0xf0 ,  0x92 ,  0x59 ,  0xbf ,  0x16 ,  0xd6 ,  0x51 ,  0x64 ,  0xef ,  0x17 ,  0xac ,  0x4d ,  0x18 ,  0xd0 ,  0x82 ,  0x18 ,  0xb4 ,  0xf4 ,  0x9c ,  0xf3 ,  0x5 };
-
-/*Key_Agg_Y*/
- uint8_t  Key_Agg_Y [ 32 ]={  0xe6 ,  0xd6 ,  0xdc ,  0x28 ,  0xbb ,  0xba ,  0xd1 ,  0xcc ,  0x22 ,  0x97 ,  0xb4 ,  0xdf ,  0xa ,  0x1a ,  0x85 ,  0xf0 ,  0xbe ,  0xab ,  0x56 ,  0x7f ,  0xc5 ,  0xf0 ,  0x99 ,  0x61 ,  0xb2 ,  0x1f ,  0xb7 ,  0x20 ,  0x19 ,  0x20 ,  0x22 ,  0x2 };
-
+#include "test_vectors/test_vector_musig2.c"
 
 /*************************************************************/
 /* Verification function									 */
@@ -129,6 +113,39 @@ cy_error_t cy_musig_KeyGen(cy_musig2_ctx_t *ctx,cy_ecpoint_t *X_pub)
    	  return error;
 }
 
+int test_verif(cy_ec_ctx_t *ec_ctx)
+{
+  cy_error_t error=CY_KO;
+  cy_ecpoint_t KeyAgg, R;
+  cy_fp_t fp_s,fp_c;
+  size_t t8_p=ec_ctx->ctx_fp_p->t8_modular;
+
+  printf("\n Entering verif");
+
+  CY_CHECK(cy_ec_alloc(ec_ctx, &KeyAgg));
+
+
+  CY_CHECK(cy_ec_alloc(ec_ctx, &R));
+
+  CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &fp_s));
+
+  CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &fp_c));
+
+  CY_CHECK( cy_fp_import(s, sizeof(s), &fp_s));
+  CY_CHECK(cy_fp_import(c, sizeof(c), &fp_c));
+
+  CY_CHECK( cy_ec_import2(R_x, sizeof(R_x), R_y, sizeof(R_y), &R));
+  CY_CHECK( cy_ec_import2(Key_Agg_X, sizeof(Key_Agg_X), Key_Agg_Y, sizeof(Key_Agg_Y),&KeyAgg ));
+
+
+  CY_CHECK(cy_ec_free( &KeyAgg));
+  CY_CHECK(cy_ec_free( &R));
+  CY_CHECK(cy_fp_free( &fp_s));
+  CY_CHECK(cy_fp_free( &fp_c));
+
+  end:
+  	  return error;
+}
 
 int test_musig_unit()
 {
@@ -146,30 +163,14 @@ int test_musig_unit()
 	musig_ctx.gda=&bolos_gda_component;
 
 	printf("\n\n /************************ Test Musig2 Protocol:");
+	error=test_verif(&ec_ctx);
 
+	printf("\n error=%x", error);
 
 	end:
 			return error;
 }
 
-/*
-*Secret key user 0 :
- 1094657512235374185291588483343030614863730289283862399545675407937049819358
-*Public key user 0 :
- (1365852536693796327005890164729843427848958838754291756020573715938681039043 : 2551950694901895242357765230389768956726518433825247241849848339260761978359 : 1)
-*Secret key user 1 :
- 1576448449201733381605048531123859424271649298253787562369801966884966169831
-*Public key user 1 :
- (1588309406506600313646629867090533454437316531563991043707348038842615502251 : 1150697985454088303193462262008678643749412556753225582961575084236833386272 : 1)
-*Secret key user 2 :
- 340766814953476881753430326832683665209763390437986951091619753285043833992
-*Public key user 2 :
- (2279397190584455522887473889768616037256027913300354543529676131244040586322 : 65859339444455916268772367608859166537697428770482424173768347510080450024 : 1)
-*Secret key user 3 :
- 2761701262821650569617010672442900489532486297426871898323779928886284853397
-*Public key user 3 :
- (438449683985570945819736421875300449043557748297596975778291853326013483269 : 3097120940526213345153316322766266977143346028904862421429379075070092085863 : 1)
-*/
 
 
 

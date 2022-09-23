@@ -76,6 +76,22 @@ const cx_ecpoint_t * 	Q
  */
 /*****************************************************************************/
 
+/* the mapping of memory in bolos for dual FP/EC units is
+ * fp_ctx is written at adress 0
+ * fp offset counter is used to stack both fp and ec
+ * fp_uninit erase all pointers
+ * ec_uninit erase the fp ctx
+ */
+static cy_error_t inc_offset(cy_ec_ctx_t *ec_ctx, size_t t8_inc)
+{
+	ec_ctx->offset+=t8_inc;
+	ec_ctx->ctx_fp_p->offset+=t8_inc;
+
+	if(ec_ctx->offset > ec_ctx->max_offset) return CY_MEM_OVERFLOW;
+
+	return CY_OK;
+}
+
 /* argc input is the value of the curve, argv is  NULL*/
 cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
                               const size_t t8_Memory, const int argc,
@@ -86,6 +102,7 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
   cy_error_t error = CY_KO;
   //cx_curve_t curve = (cx_curve_t) (argv[0]);
   cx_curve_t curve = (cx_curve_t) argc;
+
 
 
   size_t size_param_t8=0;/* byte size of parameters */
@@ -105,7 +122,8 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
   (ec_ctx->Shared_Memory) = pu8_Mem;
 
   ec_ctx->ctx_fp_p=(cy_fp_ctx_t *) pu8_Mem;
-  ec_ctx->offset = sizeof(cy_fp_ctx_t *);
+
+  ec_ctx->offset = sizeof(cy_fp_ctx_t );
 
 //  ec_ctx->offset +=sizeof(cy_fp_ctx_t *);
 
@@ -125,8 +143,9 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
 
   ec_ctx->offset += ec_ctx->ctx_fp_p->offset;
 
+  ec_ctx->is_initialized = CY_LIB_INITIALIZED;
 
-
+ // printf("\n here with code=%x", (unsigned int) error);
 
  // wrap_bolos_fp_init(ec_ctx->ctx_fp_q, pu8_Mem, t8_Memory, 2, argv_gen);
  // ec_ctx->offset += ec_ctx->ctx_fp_q->offset;
@@ -165,8 +184,11 @@ cy_error_t wrap_ecpoint_alloc( cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *P)
 
   }
 
+  P->ec = (cx_ecpoint_t *)(ec_ctx->Shared_Memory + ec_ctx->offset);
+
   CY_CHECK(sys_cx_ecpoint_alloc (P->ec, ec_ctx->curve_id));
-  ec_ctx->offset += sizeof(cy_inner_ec_t *);
+
+  inc_offset( ec_ctx, sizeof(cy_inner_ec_t ));
 
 
 
@@ -262,16 +284,16 @@ cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
 cy_error_t wrap_ecpoint_free(cy_ecpoint_t *P)
 {
   size_t i;
-  cy_error_t error = CY_KO;
+  cy_error_t error = CY_OK;
   cy_ec_ctx_t *ec_ctx= ec_ctx;
+
+  CY_CHECK(sys_cx_ecpoint_destroy (P->ec));
 
   for(i=0;i<sizeof(cy_ecpoint_t *);i++)
     {
 	  ((uint8_t *) P)[i]=_MEM_EC_RESERVED;
     }
 
-
-  CY_CHECK(sys_cx_ecpoint_destroy (P->ec));
 
   end:
      return error;

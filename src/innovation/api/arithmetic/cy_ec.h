@@ -28,7 +28,7 @@ struct ec_ctx_s {
   char libname[T8_MAX_LIBNAME];
   uint8_t *Shared_Memory;
   size_t offset;
-
+  size_t max_offset;/* maximal allocated size*/
   size_t t8_modular_p;
   size_t t8_modular_q;
   cy_ecpoint_t *G;
