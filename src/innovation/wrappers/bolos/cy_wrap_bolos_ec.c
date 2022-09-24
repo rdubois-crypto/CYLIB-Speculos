@@ -236,12 +236,23 @@ cy_error_t wrap_bolos_ec_import(uint8_t *xy, size_t t8_x, cy_ecpoint_t *G){
 
 
 cy_error_t wrap_bolos_ec_import2(uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_y, cy_ecpoint_t *G){
+
 	cy_error_t error= CY_KO;
 
 	CY_CHECK(sys_cx_ecpoint_init(G->ec, x,t8_x, y, t8_y));
 
 	end:
 		    return error;
+}
+
+cy_error_t wrap_bolos_ec_export(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_x)
+{
+	 cy_error_t error = CY_KO;
+
+	 CY_CHECK(sys_cx_ecpoint_export(G->ec, xy, t8_x, xy+t8_x, t8_x));
+
+	 end:
+	  	return error;
 }
 
 
@@ -280,6 +291,20 @@ cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
     end:
     	return error;
   }
+
+
+cy_error_t wrap_bolos_isoncurve(const cy_ecpoint_t *a, int *flag_verif)
+{
+	  cy_error_t error = CY_KO;
+
+
+	    CY_CHECK(sys_cx_ecpoint_is_on_curve(a->ec, (bool*) flag_verif));
+
+	    end:
+	    	return error;
+
+}
+
 
 cy_error_t wrap_ecpoint_free(cy_ecpoint_t *P)
 {

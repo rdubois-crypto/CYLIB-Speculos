@@ -49,10 +49,10 @@ def Conv_word_MSB(A, size_word):
 	mask = 2^size_word-1
 	print("{", end='');
 	for i in [0..sizeM-2]:
-		M[i]= A 	& mask;
+		M[sizeM-1-i]= A 	& mask;
 		print(" ",hex(M[i]),",", end='');
 		A = A >> size_word
-	M[i]= A 	& mask;
+	M[0]= A 	& mask;
 	print(" ",hex(M[i]),"};");
 	
 	return M;	
@@ -78,7 +78,7 @@ def fprint_c_MSB(f, prefix, name, A, size_word, suffix):
 	M=Conv_word_MSB(A, size_word);
 	for i in [0..sizeM-2]:
 		concat_str=concat_str+" "+hex(M[i])+",";
-	concat_str=concat_str+" "+hex(M[i])+"};";
+	concat_str=concat_str+" "+hex(M[sizeM-1])+"};";
 	concat_str=concat_str+suffix;
 	
 	f.write(concat_str);
