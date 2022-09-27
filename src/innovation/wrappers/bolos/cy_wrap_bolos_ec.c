@@ -63,7 +63,6 @@ const cx_ecpoint_t * 	Q
 	UNUSED(out);
 	UNUSED(P);
 	UNUSED(Q);
-
 	sys_cx_ecfp_add_point(curve, bs_R, bs_P,bs_Q, len);
 
 
@@ -84,10 +83,12 @@ const cx_ecpoint_t * 	Q
  */
 static cy_error_t inc_offset(cy_ec_ctx_t *ec_ctx, size_t t8_inc)
 {
-	ec_ctx->offset+=t8_inc;
-	ec_ctx->ctx_fp_p->offset+=t8_inc;
+	size_t total_offset;
 
-	if(ec_ctx->offset > ec_ctx->max_offset) return CY_MEM_OVERFLOW;
+	ec_ctx->ctx_fp_p->offset+=t8_inc;
+	total_offset=ec_ctx->ctx_fp_p->offset+ec_ctx->offset;
+
+	if(total_offset > ec_ctx->max_offset) return CY_MEM_OVERFLOW;
 
 	return CY_OK;
 }
@@ -141,7 +142,6 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
 
   strcpy(ec_ctx->libname, BOLOS_EC_LIBNAME);
 
-  ec_ctx->offset += ec_ctx->ctx_fp_p->offset;
 
   ec_ctx->is_initialized = CY_LIB_INITIALIZED;
 
@@ -184,7 +184,7 @@ cy_error_t wrap_ecpoint_alloc( cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *P)
 
   }
 
-  P->ec = (cx_ecpoint_t *)(ec_ctx->Shared_Memory + ec_ctx->offset);
+  P->ec = (cx_ecpoint_t *)(ec_ctx->Shared_Memory + ec_ctx->offset+ec_ctx->ctx_fp_p->offset);
 
   CY_CHECK(sys_cx_ecpoint_alloc (P->ec, ec_ctx->curve_id));
 
@@ -208,9 +208,8 @@ cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
       goto end;
     }
 
-     CX_CHECK(cx_ecpoint_add(out->ec, a->ec, b->ec));
+     CX_CHECK(sys_cx_ecpoint_add(out->ec, a->ec, b->ec));
 
-    error = CY_OK;
 
   end:
     return error;
@@ -225,7 +224,7 @@ cy_error_t cy_ec_iseq(const cy_ecpoint_t *a, const cy_ecpoint_t *b, int *flag_ve
 	  return error;
 }
 
-cy_error_t wrap_bolos_ec_import(uint8_t *xy, size_t t8_x, cy_ecpoint_t *G){
+cy_error_t wrap_bolos_ec_import(const uint8_t *xy, size_t t8_x, cy_ecpoint_t *G){
 	cy_error_t error= CY_KO;
 
 	CY_CHECK(sys_cx_ecpoint_init(G->ec, xy,t8_x, xy+t8_x, t8_x));
@@ -292,6 +291,18 @@ cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
     	return error;
   }
 
+cy_error_t wrap_bolos_getX(const cy_ecpoint_t *a, cy_fp_t *out)
+{
+	 cy_error_t error = CY_KO;
+
+	 CY_CHECK(sys_cx_bn_copy( *out->bn, a->ec->x));
+
+
+
+	 end:
+		    	return error;
+
+}
 
 cy_error_t wrap_bolos_isoncurve(const cy_ecpoint_t *a, int *flag_verif)
 {

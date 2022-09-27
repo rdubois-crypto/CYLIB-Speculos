@@ -29,6 +29,7 @@ static int cx_weierstrass_mult(cx_curve_t curve, cx_mpi_t *qx, cx_mpi_t *qy,
     group = cx_group_from_nid_and_curve(nid, curve);
   }
   if (group != NULL) {
+
     p = EC_POINT_new(group);
     q = EC_POINT_new(group);
 
@@ -36,7 +37,10 @@ static int cx_weierstrass_mult(cx_curve_t curve, cx_mpi_t *qx, cx_mpi_t *qy,
       ctx = cx_get_bn_ctx();
 
       if (ctx != NULL) {
+
+
         if (EC_POINT_set_affine_coordinates(group, p, px, py, ctx) == 1) {
+
           if (EC_POINT_mul(group, q, NULL, p, k, ctx) == 1) {
             if (EC_POINT_get_affine_coordinates(group, q, qx, qy, ctx) == 1) {
               ret = 1;
@@ -301,6 +305,7 @@ cx_err_t sys_cx_ecpoint_scalarmul(cx_ecpoint_t *ec_P, const uint8_t *k,
   case CX_CURVE_BrainPoolP512R1:
   case CX_CURVE_BrainPoolP512T1: {
     if (cx_weierstrass_mult(ec_P->curve, Qx, Qy, P.x, P.y, e) != 1) {
+
       error = CX_INTERNAL_ERROR;
       goto cleanup;
     }
@@ -331,17 +336,19 @@ cx_err_t sys_cx_ecpoint_scalarmul_bn(cx_ecpoint_t *ec_P, const cx_bn_t bn_k)
   cx_mpi_t *k;
   uint8_t *bytes;
   int num_bytes;
-
   CX_CHECK(cx_bn_to_mpi(bn_k, &k));
   // Convert bn_k into big-endian form and store it in 'bytes':
   num_bytes = cx_mpi_nbytes(k);
   bytes = malloc(num_bytes);
+
   if (bytes == NULL) {
     return CX_MEMORY_FULL;
   }
   if (BN_bn2binpad(k, bytes, num_bytes) != -1) {
+
     error = sys_cx_ecpoint_scalarmul(ec_P, bytes, num_bytes);
   } else {
+
     error = CX_INTERNAL_ERROR;
   }
   free(bytes);
@@ -439,6 +446,7 @@ cx_err_t sys_cx_ecpoint_add(cx_ecpoint_t *ec_R, const cx_ecpoint_t *ec_P,
       error = CX_INTERNAL_ERROR;
     }
   } else {
+
     // Try to use EC_POINT_add:
     if ((nid = cx_nid_from_curve(ec_P->curve)) < 0 ||
         (group = cx_group_from_nid_and_curve(nid, ec_P->curve)) == NULL) {

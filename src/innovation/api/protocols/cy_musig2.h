@@ -2,11 +2,11 @@
 /* Copyright (C) 2022 - Renaud Dubois - This file is part of cy_lib project						  */
 /* License: This software is licensed under a dual BSD and GPL v2 license. 	      */
 /* See LICENSE file at the root folder of the project.							  */
-/* FILE: cy_hybridsig.h										   		              */
+/* FILE: cy_musig2.h										   		              */
 /* 																			      */
 /* 																			      */
 /* DESCRIPTION: 2 round_multisignature signatures APIS                                    */
-/*
+/* */
 /**********************************************************************************/
 
 
@@ -46,6 +46,10 @@ cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *ctx,const size_t n_us
 cy_error_t cy_musig_Sign_Round2_Init(const cy_musig2_ctx_t *ctx,const size_t n_users, const cy_ecpoint_t *publickeys, const size_t index, cy_ecpoint_t *keyagg);
 cy_error_t cy_musig_Sign_Round2_Update(const cy_musig2_ctx_t *ctx,const size_t n_users, const cy_ecpoint_t *publickeys, const size_t index, cy_ecpoint_t *keyagg);
 cy_error_t cy_musig_Sign_Round2_Final(const cy_musig2_ctx_t *ctx,const size_t n_users, const cy_ecpoint_t *publickeys, const size_t index, cy_ecpoint_t *keyagg);
+
+extern cy_error_t cy_musig_Verification_Core(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg,
+		cy_ecpoint_t *R, cy_fp_t *fp_s, cy_fp_t *fp_c,
+		boolean_t *flag_verif);
 
 /* one shot verification */
 cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg,

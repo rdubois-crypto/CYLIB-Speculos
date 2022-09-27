@@ -479,6 +479,7 @@ cy_error_t wrap_bolos_fp_neg( cy_fp_t *a,  cy_fp_t *out)
 	    return error;
 }
 
+
 cy_error_t wrap_bolos_fp_sub(cy_fp_t *a, cy_fp_t *b, cy_fp_t *out)
 {
   cy_error_t error = CY_KO;

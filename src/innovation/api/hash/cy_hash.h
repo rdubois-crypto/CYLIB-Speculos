@@ -6,7 +6,7 @@
 /* License: This software is licensed under a dual BSD and GPL v2 license.
  */
 /* See LICENSE file at the root folder of the project.*/
-/* FILE: cy_errors.h
+/* FILE: cy_hash.h*/
 /* 																			      */
 /* 																			      */
 /* DESCRIPTION: hash functions  API */

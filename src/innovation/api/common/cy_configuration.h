@@ -62,6 +62,7 @@
 #include "bolos/cx_ec.h"
 #include "bolos/cxlib.h"
 #include "../wrappers/bolos/cy_wrap_fp_bolos.h"
+#include "../wrappers/bolos/cy_wrap_bolos_bn.h"
 
 #define _FP_UNIT_SELECTED
 #endif

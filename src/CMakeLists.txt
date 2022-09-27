@@ -56,10 +56,12 @@ add_library(emu
         emulate_lnsp_1.0.c
         
         #I.2) wrap bolos lib
+        innovation/wrappers/bolos/cy_wrap_bolos_bn.c
     	innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c
      	innovation/wrappers/bolos/cy_wrap_bolos_gda.c
      	innovation/wrappers/bolos/cy_wrap_fp_bolos.c
      	innovation/wrappers/bolos/cy_wrap_bolos_ec.c
+     
      	
      	##############################################################
 		# II. BLST
@@ -125,7 +127,9 @@ add_library(emu
 		innovation/src/arithmetic/fp_extensions/cy_quad.c
 		innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c
 		innovation/src/arithmetic/pairings/cy_pbc.c
-		#innovation/src/protocols/cy_musig2.c
+		innovation/src/protocols/cy_musig2.c
+		innovation/src/hash/cy_HashPedersen.c
+		
         svc.c)
 
 add_dependencies(emu openssl)

@@ -44,56 +44,6 @@ cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg
 		boolean_t *flag_verif)
 */
 
-/*************************************************************/
-/* Verification function									 */
-/*************************************************************/
-/* the two part of signatures (R,S) received from previous round, */
-/* R and c being computable from aggregation of Rijs_Round1, S being output of Round2 sign'*/
-
-cy_error_t cy_musig_Verification_Core(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg,
-		cy_ecpoint_t *R, cy_fp_t *fp_s, cy_fp_t *fp_c,
-		boolean_t *flag_verif){
-
-	size_t j ;
-	cy_error_t error=CY_KO;
-	*flag_verif=CY_FALSE;
-	cy_ecpoint_t ec_temp1, ec_temp2, G;
-
-
-	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &ec_temp1));
-	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &ec_temp2));
-
-	/* Accept iff g^s = R.X^c, beware of multiplicative notations*/
-	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &G));
-	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
-
-	CY_CHECK(cy_ec_scalarmult_fp(fp_s, &G, &ec_temp1)); 	/*g^s*/
-return 0;
-	/* todo: c should be recomputed here internally */
-	/* append R in Hashin*/
-
-	//CY_CHECK(cy_ec_export(&ctx->ctx_ec->ctx_fp_q, R,ctx->ctx_ec->t8_modular_p,buffer));
-	//ctx->H->Hash_Update((void *)ctx->H, buffer, ctx->ctx_ec->t8_modular_p);
-	/* append message in Hashin*/
-	//ctx->H->Hash_Update((void *)ctx->H, message, message_t8);
-	//ctx->H->Hash_Final((void *)ctx->H, c); /* final c value */
-
-
-	CY_CHECK(cy_ec_scalarmult_fp(&c, &Key_agg,  &ec_temp2)); 	/*X^c*/
-	CY_CHECK(cy_ec_add( &ec_temp2, &R, &ec_temp2)); 	/*R.X^c*/
-
-
-	/* final verification */
-	CY_CHECK(cy_ec_iseq( &ec_temp1, &ec_temp2, 	flag_verif));
-
-	CY_CHECK(cy_ec_free( &ec_temp1));
-	CY_CHECK(cy_ec_free( &ec_temp2));
-	CY_CHECK(cy_ec_free( &G));
-
-	end:
-		return error;
-}
-
 
 /* Each signer generates a random secret key x ←$ Zp and returns the
 corresponding public key X= g^x*/
@@ -123,7 +73,7 @@ cy_error_t cy_musig_KeyGen(cy_musig2_ctx_t *ctx,cy_ecpoint_t *X_pub)
    	  return error;
 }
 
-int test_verif(cy_musig2_ctx_t *ctx)
+int test_verif_core(cy_musig2_ctx_t *ctx)
 {
   cy_ec_ctx_t *ec_ctx=ctx->ctx_ec;
 
@@ -148,17 +98,18 @@ int test_verif(cy_musig2_ctx_t *ctx)
   CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &fp_s));
 
   CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &fp_c));
+
   CY_CHECK( cy_fp_import(s, sizeof(s), &fp_s));
   CY_CHECK(cy_fp_import(c, sizeof(c), &fp_c));
   CY_CHECK( cy_ec_import2(R_x, sizeof(R_x), R_y, sizeof(R_y), &R));
   CY_CHECK( cy_ec_import2(Key_Agg_X, sizeof(Key_Agg_X), Key_Agg_Y, sizeof(Key_Agg_Y),&KeyAgg ));
 
-  cy_ec_get_generator(ctx->ctx_ec, &Generator);
-
-  CY_CHECK(cy_ec_scalarmult_fp(& fp_s, &Generator, &KeyAgg)); 	/*g^s*/
-
   CY_CHECK(cy_musig_Verification_Core(ctx, &KeyAgg,&R, &fp_s, &fp_c,& flag));
-  printf("\n flag verif:%d", flag);
+  if(flag!=CY_TRUE){
+	  error=CY_KO;
+	  goto end;
+  }
+
 
   CY_CHECK(cy_ec_free( &KeyAgg));
   CY_CHECK(cy_ec_free( &R));
@@ -186,9 +137,8 @@ int test_musig_unit()
 	musig_ctx.gda=&bolos_gda_component;
 
 	printf("\n\n /************************ Test Musig2 Protocol:");
-	error=test_verif(&musig_ctx);
+	error=test_verif_core(&musig_ctx);
 
-	printf("\n error=%x", error);
 
 	end:
 	if(error==CY_OK)  printf("\n All Musig2 tests OK");
