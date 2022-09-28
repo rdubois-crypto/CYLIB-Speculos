@@ -16,7 +16,7 @@
 
 
 /* display the value of a fp in msb*/
-extern cy_error_t cy_io_fp_printMSB(const cy_fp_t *in);
+extern cy_error_t cy_io_fp_printMSB(const cy_fp_t *in, char *comment);
 
 
 /* display the raw montgomery value of a fp in msb*/

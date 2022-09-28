@@ -50,6 +50,7 @@ typedef struct cy_bn_mont_ctx_s cy_bn_mont_ctx_t;
 
 #define cy_fp_import(in, size, out) (wrap_bolos_fp_import(in, size, out))
 #define cy_fp_export(in, out, size) (wrap_bolos_fp_export(in,  out, size))
+#define cy_fp_from_u32(a,b) wrap_bolos_fp_from_u32(a,b)
 #define cy_fp_set_zero(out) wrap_bolos_fp_set_zero(out)
 #define cy_fp_add(a, b, r) (wrap_bolos_fp_add(a, b, r))
 #define cy_fp_sub(a, b, r) (wrap_bolos_fp_sub(a, b, r))

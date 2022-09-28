@@ -40,6 +40,10 @@ struct cy_pedersen_ctx_s{
 typedef struct cy_pedersen_ctx_s cy_pedersen_ctx_t;
 
 
+extern cy_error_t pedersen_init(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx);
+extern cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *res);
+
+
 static const uint8_t Pedersen_Shift[Stark_SIZE_u8*2] = {
 
     0x04, 0x9e, 0xe3, 0xeb, 0xa8, 0xc1, 0x60, 0x07, 0x00, 0xee, 0x1b, 0x87, 0xeb, 0x59, 0x9f, 0x16,

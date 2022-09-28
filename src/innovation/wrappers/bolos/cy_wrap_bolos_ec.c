@@ -208,6 +208,25 @@ cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
       goto end;
     }
 
+    /* Nano S old versions of speculos are not inline with cx_ecpoint_add and return error
+     * if one of the input is the infty point
+     */
+	#ifdef _WITH_SPECULOS
+    	int flag;
+    	CY_CHECK(wrap_bolos_ec_isinfinity(a, &flag));
+    	if(flag==CY_TRUE)
+    	{
+    		wrap_bolos_cy_ec_copy(b, out);
+    		goto end;
+    	}
+    	CY_CHECK(wrap_bolos_ec_isinfinity(b, &flag));
+    	if(flag==CY_TRUE)
+    	{
+    	    		wrap_bolos_cy_ec_copy(a, out);
+    	    		goto end;
+    	 }
+
+	#endif
      CX_CHECK(sys_cx_ecpoint_add(out->ec, a->ec, b->ec));
 
 
@@ -266,6 +285,29 @@ cy_error_t wrap_bolos_get_generator(const cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *G){
 
 }
 
+cy_error_t wrap_bolos_ec_isinfinity(const cy_ecpoint_t * P_in, int *flag)
+{
+	 cy_error_t error = CY_KO;
+	 int cmp=0;
+	 int cmp_acc=0;
+
+
+	 CY_CHECK(sys_cx_bn_cmp_u32(P_in->ec->x, 0, &cmp));
+	 cmp_acc+=cmp;
+
+	 CY_CHECK(sys_cx_bn_cmp_u32(P_in->ec->y, 1, &cmp));
+	 cmp_acc+=cmp;
+
+	 CY_CHECK(sys_cx_bn_cmp_u32(P_in->ec->z, 0, &cmp));
+	 cmp_acc+=cmp;
+
+	 *flag=(cmp_acc==3);
+
+	 end:
+	 	 return error;
+}
+
+
 cy_error_t wrap_bolos_cy_ec_copy(const cy_ecpoint_t * P_in, cy_ecpoint_t *P_out)
 {
 	 cy_error_t error = CY_KO;
@@ -281,9 +323,22 @@ cy_error_t wrap_bolos_cy_ec_copy(const cy_ecpoint_t * P_in, cy_ecpoint_t *P_out)
 cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
                                cy_ecpoint_t *kP)
   {
+	int cmp;
     cy_error_t error = CY_KO;
 
     CY_CHECK(wrap_bolos_cy_ec_copy(P, kP));
+
+    sys_cx_bn_cmp_u32(*k->bn, 0, &cmp);
+
+    /* scalar is null, so output is infty point*/
+    if(cmp==0){
+    	printf("\n infinity");
+    	kP->ec->x=0;
+    	kP->ec->y=1;
+    	kP->ec->z=0;
+    	error=CY_OK;
+    	goto end;
+    }
 
     CY_CHECK(sys_cx_ecpoint_scalarmul_bn(kP->ec, *k->bn));
 

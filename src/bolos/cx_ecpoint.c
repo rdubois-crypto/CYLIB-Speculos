@@ -433,6 +433,8 @@ cx_err_t sys_cx_ecpoint_add(cx_ecpoint_t *ec_R, const cx_ecpoint_t *ec_P,
   EC_GROUP *group;
   EC_POINT *p, *q, *r;
 
+  printf("\n ec add\n ");
+
   if (ec_P->curve != ec_Q->curve) {
     return CX_EC_INVALID_POINT;
   }
@@ -452,11 +454,17 @@ cx_err_t sys_cx_ecpoint_add(cx_ecpoint_t *ec_R, const cx_ecpoint_t *ec_P,
         (group = cx_group_from_nid_and_curve(nid, ec_P->curve)) == NULL) {
       return CX_EC_INVALID_CURVE;
     }
+
+
     p = EC_POINT_from_ecpoint(group, ec_P, true);
     q = EC_POINT_from_ecpoint(group, ec_Q, true);
     r = EC_POINT_from_ecpoint(group, ec_R, false);
 
+    printf("\n here ec add\n ");
+
     if (p == NULL || q == NULL || r == NULL) {
+        printf("\n here ec add null\n ");
+
       error = CX_MEMORY_FULL;
     } else if (EC_POINT_add(group, r, p, q, cx_get_bn_ctx()) == 0) {
       error = CX_INTERNAL_ERROR;

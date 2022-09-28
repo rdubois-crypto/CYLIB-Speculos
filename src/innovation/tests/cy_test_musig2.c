@@ -121,12 +121,11 @@ int test_verif_core(cy_musig2_ctx_t *ctx)
   	  return error;
 }
 
-int test_musig_unit()
+int test_musig_unit(uint8_t *Ramp, size_t Ramp_t8)
 {
 	cy_error_t error=CY_KO;
 	cy_ec_ctx_t ec_ctx;
-	uint8_t Ramp[ _EC_ZONE_T8 ];
-	size_t nb_users=4;
+	 size_t nb_users=4;
 	cy_musig2_ctx_t musig_ctx;
 
 	/* Initiate elliptic structure*/

@@ -77,7 +77,6 @@ _CY_API extern cy_error_t cy_to_fp( uint8_t *in, size_t fp_t8,  DATA_FORMAT how,
 _CY_API extern cy_error_t cy_from_fp( uint8_t *in, size_t fp_t8,  DATA_FORMAT how, cy_fp_t *out );
 _CY_API extern cy_error_t cy_fp_set_zero(cy_fp_t *out);
 _CY_API  extern cy_error_t cy_fp_set_one(cy_fp_t *out);
-
 _CY_API  extern cy_error_t cy_fp_set_zero(cy_fp_t *out);
 _CY_API extern cy_error_t cy_fp_copy(const cy_fp_t *in, cy_fp_t *out);
 

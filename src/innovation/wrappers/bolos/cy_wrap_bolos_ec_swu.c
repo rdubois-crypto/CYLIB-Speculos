@@ -15,6 +15,7 @@
 /* hashing of a Point over a Weierstrass curve from a digest using
  * SWU/Brier-Coron and all technique (alternative to Pedersen Hash)
  * https://eprint.iacr.org/2009/340.pdf*/
+/* this code should be translated for CYLIB APIs in a latter phase */
 /**********************************************************************************/
 
 #include "cy_ec_swu.h"

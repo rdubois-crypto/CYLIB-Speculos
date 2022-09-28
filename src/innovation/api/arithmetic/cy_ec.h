@@ -83,13 +83,15 @@ extern cy_error_t cy_ec_isoncurve(const cy_ecpoint_t *a, int *flag_verif);
 
 extern cy_error_t cy_ec_scalarmult_fp(const cy_fp_t *k, const cy_ecpoint_t *P,  cy_ecpoint_t *R);
 
+/* IO Handling */
 extern cy_error_t cy_ec_import( const uint8_t *xy, size_t t8_x, cy_ecpoint_t *G);
 extern cy_error_t cy_ec_import2( uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_y, cy_ecpoint_t *G);
-
 
 extern cy_error_t cy_ec_export(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_xy);
 extern cy_error_t cy_ec_export2(const cy_ecpoint_t *G,  uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_y );
 extern cy_error_t cy_ec_getX(const cy_ecpoint_t *a, cy_fp_t *out);
+
+extern cy_error_t cy_ec_copy(const cy_ecpoint_t *a, cy_ecpoint_t *b);
 
 extern cy_error_t cy_ec_iseq(const cy_ecpoint_t *a, const cy_ecpoint_t *b, int *flag_verif);
 
@@ -98,6 +100,9 @@ extern cy_error_t cy_ec_scalarmult_MSBString(cy_ecpoint_t *a, cy_ecpoint_t *b, c
 extern cy_error_t cy_ec_sub(cy_ecpoint_t *a, cy_ecpoint_t *b, cy_ecpoint_t *r);
 
 extern cy_error_t cy_ec_scalarmul_bn(cy_ecpoint_t *a, cy_bn_t *b, cy_ecpoint_t *r);
+
+
+extern cy_error_t cy_ec_isinfinity(const cy_ecpoint_t *a, int *flag);
 
 extern cy_error_t cy_ec_free(cy_ecpoint_t *ec);
 

@@ -681,6 +681,18 @@ end:
   return error;
 }
 
+cy_error_t wrap_bolos_fp_from_u32( const uint32_t in, cy_fp_t *out ){
+	cy_error_t error = CY_KO;
+	 cy_fp_ctx_t *ctx = out->ctx;
+	 CY_IS_INIT(ctx);
+
+	 CX_CHECK(sys_cx_bn_set_u32(*(out->bn), in));
+
+	 end:
+	 	  return error;
+
+}
+
 cy_error_t wrap_bolos_fp_get_random(cy_gda_ctx_t *gda, cy_fp_t *out)
 {
 	cy_error_t error = CY_KO;

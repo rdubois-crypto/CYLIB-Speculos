@@ -22,8 +22,10 @@
 
 #include <stdio.h>
 #include "cy_configuration.h"
+
 #include "cy_fp.h"
 #include "cy_io_common_tools.h"
+#include "cy_io_fp.h"
 
 /* display the value of a fp in msb*/
 cy_error_t cy_io_fp_printMSB(const cy_fp_t *in, char *comment)
