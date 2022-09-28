@@ -22,6 +22,9 @@
 #include "cy_fp.h"
 #include "cy_ec.h"
 #include "cy_io_common_tools.h"
+#include "cy_io_fp.h"
+
+#define _MAX_EC_T8 1024*3
 
 /* display the value of a fp in msb*/
 cy_error_t cy_io_ec_printMSB(const cy_ecpoint_t *in, char *comment)
@@ -30,9 +33,15 @@ cy_error_t cy_io_ec_printMSB(const cy_ecpoint_t *in, char *comment)
 
   cy_error_t error=CY_KO;
 
-  CY_CHECK(cy_ec_export(in,  display, in->ctx->t8_modular));
+  printf("export of size %d", (int) in->ctx->ctx_fp_p->t8_modular);
+  printf("\n values of bn:x=%d, y=%d, z=%d", (int) in->ec->x, (int) in->ec->y, (int) in->ec->z);
 
-  print_MsbString(display,  in->ctx->ctx_fp_p->t8_modular, comment );
+
+  CY_CHECK(cy_ec_export(in,  display, in->ctx->ctx_fp_p->t8_modular));
+
+  printf("\n done");
+
+  print_MsbString(display,  2*in->ctx->ctx_fp_p->t8_modular, comment );
 
 
 

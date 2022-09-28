@@ -99,6 +99,8 @@ _CY_API extern cy_error_t cy_fp_pow( cy_fp_t *in, uint8_t *scalar, size_t scalar
 /* Comparizons */
 _CY_API extern cy_error_t cy_fp_isone(const cy_fp_t *in, int *iszero);
 _CY_API extern cy_error_t cy_fp_iszero(const cy_fp_t *in, int *iszero);
+_CY_API extern cy_error_t cy_fp_iseq(const cy_fp_t *in1, const cy_fp_t *in2, int *eq_or_opp);
+
 _CY_API extern cy_error_t cy_fp_eq_or_opp(cy_fp_t *in1, cy_fp_t *in2, int *eq_or_opp);
 
 /* Montgomery representation handling */

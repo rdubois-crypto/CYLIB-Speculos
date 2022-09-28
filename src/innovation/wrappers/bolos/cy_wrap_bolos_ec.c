@@ -199,7 +199,7 @@ cy_error_t wrap_ecpoint_alloc( cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *P)
 cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
                                cy_ecpoint_t * out)
   {
-    cy_error_t error = CY_KO;
+    cy_error_t error = CY_OK;
     cy_ec_ctx_t *ctx = a->ctx;
 
     if (ctx->is_initialized != CY_LIB_INITIALIZED) {
@@ -216,12 +216,16 @@ cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
     	CY_CHECK(wrap_bolos_ec_isinfinity(a, &flag));
     	if(flag==CY_TRUE)
     	{
+    		printf("\n left add is infty");
+    		error = CY_OK;
     		wrap_bolos_cy_ec_copy(b, out);
     		goto end;
     	}
     	CY_CHECK(wrap_bolos_ec_isinfinity(b, &flag));
     	if(flag==CY_TRUE)
     	{
+    		printf("\n right add is infty");
+    			error = CY_OK;
     	    		wrap_bolos_cy_ec_copy(a, out);
     	    		goto end;
     	 }
@@ -266,6 +270,14 @@ cy_error_t wrap_bolos_ec_import2(uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_
 cy_error_t wrap_bolos_ec_export(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_x)
 {
 	 cy_error_t error = CY_KO;
+	 int flag=0;
+	 CY_CHECK(wrap_bolos_ec_isinfinity(G,&flag));
+
+	 if(flag==CY_TRUE){
+		 printf("\n infinity detected, exporting 0,1");
+		 memset(xy,0,2*t8_x);
+		 xy[2*t8_x-1]=1;
+	 }
 
 	 CY_CHECK(sys_cx_ecpoint_export(G->ec, xy, t8_x, xy+t8_x, t8_x));
 
@@ -301,7 +313,7 @@ cy_error_t wrap_bolos_ec_isinfinity(const cy_ecpoint_t * P_in, int *flag)
 	 CY_CHECK(sys_cx_bn_cmp_u32(P_in->ec->z, 0, &cmp));
 	 cmp_acc+=cmp;
 
-	 *flag=(cmp_acc==3);
+	 *flag=(cmp_acc==0);
 
 	 end:
 	 	 return error;
@@ -332,10 +344,11 @@ cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
 
     /* scalar is null, so output is infty point*/
     if(cmp==0){
-    	printf("\n infinity");
-    	kP->ec->x=0;
-    	kP->ec->y=1;
-    	kP->ec->z=0;
+    	//printf("\n infinity");
+    	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->x, 0));
+    	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->x, 1));
+    	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->x, 0));
+
     	error=CY_OK;
     	goto end;
     }
