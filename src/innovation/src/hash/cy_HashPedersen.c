@@ -34,9 +34,26 @@
 #include "cy_io_fp.h"
 #include "cy_io_ec.h"
 
+
 #include "cy_HashPedersen.h"
 
 
+/* display the value of a fp in msb*/
+cy_error_t pcy_io_fp_printMSB(const cy_fp_t *in, char *comment)
+{
+  uint8_t display[1024];
+
+  cy_error_t error=CY_KO;
+
+  CY_CHECK(cy_fp_export(in,  display, in->ctx->t8_modular));
+
+  print_MsbString(display,  in->ctx->t8_modular, comment );
+
+
+
+  end:
+  	  return error;
+}
 
 static cy_error_t ec_muladd(cy_pedersen_ctx_t *ctx, cy_ecpoint_t *acc, cy_fp_t *a, int index)
 {
@@ -45,17 +62,8 @@ static cy_error_t ec_muladd(cy_pedersen_ctx_t *ctx, cy_ecpoint_t *acc, cy_fp_t *
   // int flag=0;
 
    CY_CHECK(cy_ec_alloc(ctx->ec_ctx, &ec_temp));
-
-   printf("\n-- enter muladd\n ");
    CY_CHECK(cy_ec_scalarmult_fp(a, &ctx->P[index], &ec_temp));
-
-   printf("\n mul computed\n ");
-   cy_io_ec_printMSB(&ec_temp, "\n ectemp:");
-
    CY_CHECK(cy_ec_add( &ec_temp, acc, acc));
-
-   cy_io_ec_printMSB(acc, "\n muladd out:");
-   printf("\n-- leaving muladd\n");
    CY_CHECK(cy_ec_free( &ec_temp));
 
    end:
@@ -80,17 +88,8 @@ cy_error_t pedersen_init(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx)
    CY_CHECK(cy_ec_import(Pedersen_P1, Stark_SIZE_u8, &ctx->P[1] ));
    CY_CHECK(cy_ec_import(Pedersen_P2, Stark_SIZE_u8, &ctx->P[2] ));
    CY_CHECK(cy_ec_import(Pedersen_P3, Stark_SIZE_u8, &ctx->P[3] ));
-
-
-
    CY_CHECK(cy_ec_import(Pedersen_Shift, Stark_SIZE_u8, &ctx->ShiftPoint ));
-
-
-
    CY_CHECK(cy_fp_import(mask248_low, Stark_SIZE_u8, &ctx->mask248_low) );
-
-
-
 
    end:
    return error;           
@@ -107,37 +106,28 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
 
 
    CY_CHECK(cy_ec_import(Pedersen_Shift, Stark_SIZE_u8, &ec_Hash )); /* R=ShiftPoint*/
-   CY_CHECK(cy_bn_or( a->bn, ctx->mask248_low.bn, fp_temp.bn) );		 /*R+= low_a*P0*/
+   CY_CHECK(cy_bn_and( a->bn, ctx->mask248_low.bn, fp_temp.bn) );		 /*R+= low_a*P0*/
 
 
    CY_CHECK(ec_muladd(ctx, &ec_Hash, &fp_temp, 0));
-   cy_io_ec_printMSB(&ec_Hash, "\n muladd P0:");
 
 
    CY_CHECK(cy_wrap_bolos_bn_shift_r((size_t) 248, a->bn));							/*R+= low_a*P1*/
-   printf("\n here!");
-
    CY_CHECK( ec_muladd(ctx, &ec_Hash, a, 1));
-
-   printf("\n here post muladd P1 with error=%x", (unsigned int)error);
-  // CY_CHECK(cy_io_ec_printMSB(&ec_Hash, "\n muladd P1:"));
-
-   printf("\n here pre or");
-
-   CY_CHECK(cy_bn_or( b->bn, ctx->mask248_low.bn, fp_temp.bn) );		 /*R+= low_b*P2*/
+   CY_CHECK(cy_bn_and( b->bn, ctx->mask248_low.bn, fp_temp.bn) );		 /*R+= low_b*P2*/
 
    CY_CHECK(ec_muladd(ctx, &ec_Hash, &fp_temp, 2));
-   cy_io_ec_printMSB(&ec_Hash, "\n muladd P2:");
 
 
    CY_CHECK(cy_wrap_bolos_bn_shift_r(248, b->bn));							/*R+= low_a*P1*/
    CY_CHECK(ec_muladd(ctx, &ec_Hash, b, 3));
-   cy_io_ec_printMSB(&ec_Hash, "\n muladd P3:");
 
    /* getX*/
    CY_CHECK( cy_ec_getX(&ec_Hash, res));
 
    CY_CHECK( cy_ec_free(&ec_Hash));
+   CY_CHECK( cy_fp_free(&fp_temp));
+
    end:
    return error;           
    }

@@ -216,7 +216,7 @@ cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
     	CY_CHECK(wrap_bolos_ec_isinfinity(a, &flag));
     	if(flag==CY_TRUE)
     	{
-    		printf("\n left add is infty");
+
     		error = CY_OK;
     		wrap_bolos_cy_ec_copy(b, out);
     		goto end;
@@ -224,7 +224,6 @@ cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
     	CY_CHECK(wrap_bolos_ec_isinfinity(b, &flag));
     	if(flag==CY_TRUE)
     	{
-    		printf("\n right add is infty");
     			error = CY_OK;
     	    		wrap_bolos_cy_ec_copy(a, out);
     	    		goto end;
@@ -274,7 +273,7 @@ cy_error_t wrap_bolos_ec_export(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_x
 	 CY_CHECK(wrap_bolos_ec_isinfinity(G,&flag));
 
 	 if(flag==CY_TRUE){
-		 printf("\n infinity detected, exporting 0,1");
+
 		 memset(xy,0,2*t8_x);
 		 xy[2*t8_x-1]=1;
 	 }
@@ -332,6 +331,20 @@ cy_error_t wrap_bolos_cy_ec_copy(const cy_ecpoint_t * P_in, cy_ecpoint_t *P_out)
 	 	 return error;
 }
 
+
+cy_error_t wrap_bolos_ec_setinfinity( cy_ecpoint_t *kP)
+{
+	 cy_error_t error = CY_KO;
+
+	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->x, 0));
+	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->y, 1));
+	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->z, 0));
+
+	 end:
+	    	return error;
+}
+
+
 cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
                                cy_ecpoint_t *kP)
   {
@@ -345,10 +358,7 @@ cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
     /* scalar is null, so output is infty point*/
     if(cmp==0){
     	//printf("\n infinity");
-    	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->x, 0));
-    	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->x, 1));
-    	 CX_CHECK(sys_cx_bn_set_u32(kP->ec->x, 0));
-
+    	CX_CHECK(wrap_bolos_ec_setinfinity( kP));
     	error=CY_OK;
     	goto end;
     }

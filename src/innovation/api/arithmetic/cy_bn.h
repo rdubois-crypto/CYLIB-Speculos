@@ -33,6 +33,7 @@ _CY_API extern cy_error_t cy_bn_sub( cy_bn_t *a, cy_bn_t *b, cy_bn_t *r);
 _CY_API extern cy_error_t cy_bn_neg( cy_bn_t *a,  cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_shift_r(const size_t t1_shift, cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_or( const cx_bn_t *a, const cx_bn_t *b, cx_bn_t *r);
+_CY_API extern cy_error_t cy_bn_and( const cx_bn_t *a, const cx_bn_t *b, cx_bn_t *r);
 
 _CY_API extern cy_error_t cy_bn_inc(cy_bn_t *in, cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_dec(cy_bn_t *in, cy_bn_t *out);

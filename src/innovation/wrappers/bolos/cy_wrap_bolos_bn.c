@@ -46,6 +46,17 @@ cy_error_t cy_wrap_bolos_bn_or( const cx_bn_t *a, const cx_bn_t *b, cx_bn_t *r){
 
 }
 
+
+cy_error_t cy_wrap_bolos_bn_and( const cx_bn_t *a, const cx_bn_t *b, cx_bn_t *r){
+	cy_error_t error;
+
+		CY_CHECK(sys_cx_bn_and(*r, *a,*b));
+
+		end:
+			return error;
+
+}
+
 cy_error_t cy_wrap_bolos_bn_shift_r(const size_t n, cx_bn_t *r){
 
 	cy_error_t error;

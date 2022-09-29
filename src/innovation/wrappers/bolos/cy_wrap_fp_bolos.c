@@ -708,12 +708,15 @@ cy_error_t wrap_bolos_fp_get_random(cy_gda_ctx_t *gda, cy_fp_t *out)
 
 cy_error_t wrap_fp_iseq(const cy_fp_t *in1, const cy_fp_t *in2, int *eq){
 	cy_error_t error = CY_KO;
+	*eq=CY_FALSE;
 
 	cy_fp_ctx_t *ctx = in1->ctx;
 	CY_IS_INIT(ctx);
 
 	CY_CHECK(sys_cx_bn_cmp(*in1->bn, *in2->bn, eq));
 
+	if(*eq==0) *eq=CY_TRUE;
+	else *eq=CY_FALSE;
 
 	end:
 	  return error;

@@ -17,5 +17,6 @@
 
 #define cy_bn_or(a,b,out) cy_wrap_bolos_bn_or(a,b,out)
 
+#define cy_bn_and(a,b,out) cy_wrap_bolos_bn_and(a,b,out)
 
 #endif

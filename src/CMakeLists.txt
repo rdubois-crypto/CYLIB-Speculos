@@ -123,6 +123,7 @@ add_library(emu
 		##############################################################
 		innovation/src/io/cy_io_common_tools.c
 		innovation/src/io/cy_io_fp.c
+		innovation/src/io/cy_io_ec.c
 		
 		innovation/src/arithmetic/fp_extensions/cy_quad.c
 		innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c

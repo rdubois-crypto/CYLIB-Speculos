@@ -102,6 +102,7 @@ extern cy_error_t cy_ec_sub(cy_ecpoint_t *a, cy_ecpoint_t *b, cy_ecpoint_t *r);
 extern cy_error_t cy_ec_scalarmul_bn(cy_ecpoint_t *a, cy_bn_t *b, cy_ecpoint_t *r);
 
 
+extern cy_error_t cy_ec_setinfinity( cy_ecpoint_t *kP);
 extern cy_error_t cy_ec_isinfinity(const cy_ecpoint_t *a, int *flag);
 
 extern cy_error_t cy_ec_free(cy_ecpoint_t *ec);

@@ -38,7 +38,7 @@
 
 #include "test_vectors/test_vector_hashpedersen.c"
 
-int test_verif_pedersen(cy_ec_ctx_t *ec_ctx)
+static int test_verif_pedersen_core(cy_ec_ctx_t *ec_ctx)
 {
  cy_error_t error=CY_KO;
  cy_pedersen_ctx_t ped_ctx;
@@ -56,13 +56,11 @@ int test_verif_pedersen(cy_ec_ctx_t *ec_ctx)
 
  CY_CHECK(pedersen_init(ec_ctx, &ped_ctx));
  CY_CHECK(pedersen(&ped_ctx, &fp_m0, &fp_m1, &fp_res));
- printf("\n post pedersen, error=%x", error);
 
  CY_CHECK(cy_fp_iseq(&fp_res, &fp_expected, &flag));
- printf("\n flag cmp=%d", flag);
- cy_io_fp_printMSB(&fp_res, "\n res ped");
 
- cy_io_fp_printMSB(&fp_expected, "\n res exp");
+ _debug(cy_io_fp_printMSB(&fp_res, "\n res pedersen"));
+ _debug(cy_io_fp_printMSB(&fp_expected, "\n res expected"));
 
 
  cy_fp_free(&fp_m0);
@@ -86,9 +84,12 @@ int test_pedersen(uint8_t *Ramp, size_t Ramp_t8)
 	/* Initiate elliptic structure*/
 	CY_CHECK(cy_ec_init(&ec_ctx, Ramp,_EC_ZONE_T8, CY_CURVE_Stark256, NULL));
 
-	CY_CHECK(test_verif_pedersen(&ec_ctx));
+	printf("\n test  pedersen core hash:");
+	CY_CHECK(test_verif_pedersen_core(&ec_ctx));
+	printf(" OK");
 
-		printf("\n post verif error=%x",(unsigned int) error);
+	/* tpdo: investigate cy uninit*/
+	(cy_ec_uninit(&ec_ctx));
 
 	end:
 	  return error;
