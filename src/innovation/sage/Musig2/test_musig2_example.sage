@@ -24,14 +24,14 @@ from sage.misc.sage_ostools import redirection
 load('musig2.sage');
 load('../common/io_conversions.sage');
 
-C_filepath='test_vector_musig2.c';
+C_filepath='test_vec/test_vector_musig2.c';
 filep = open(C_filepath,'a');
 
 
 def DisplaySave(comment, varname, counter, var):
 	print(comment, var);
 	name=varname+str(counter);
-	Print_C_MSB("/*"+name+"*/",name, var,8,"");
+	print(name, hex(var), "*/");
 	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(var),8,"");
 
 		
@@ -64,21 +64,21 @@ with open(C_filepath, 'w') as file_out:
 	L=[];
 	secrets=[];
 	for i in [0..nb_users-1]:
-		
+		print("\n***** user",i);
 		[x,P]=Musig2_KeyGen(Curve, curve_Generator, Stark_order);#Concatenation of public keys
 		
 		DisplaySave("/*Secret key user", 'SecretKey_', i, x)
 		
-		DisplaySave("/*Public key user", 'PublicKey_X', i, int(P[0]))
+		DisplaySave("/*Public key ", 'PublicKey_X', i, int(P[0]))
 		
 		DisplaySave("/*", 'PublicKey_Y', i, int(P[1]))
 		
 		
 #		print("/*Public key user",i,":\n",P,"*/");
 #		name='PubX_'+str(i);
-#		Print_C_MSB("/*"+name+"*/",name, int(P[0]),8,"");
+#		print(name, hex(var));
 #		name='PubY_'+str(i);
-#		Print_C_MSB("/*"+name+"*/",name, int(P[1]),8,"");
+#		print(name, hex(var));
 		
 		
 		L=L+[int(P[0]),int(P[1])];	
@@ -101,6 +101,10 @@ with open(C_filepath, 'w') as file_out:
 	print("\n*******************Aggregating Public Keys:\n");
 	KeyAgg=Musig2_KeyAgg(Curve, curve_Generator, L, nb_users, Stark_order);
 	print("Aggregated Key:", KeyAgg);
+	if(int(KeyAgg[1])&1==1): 
+		print("Wrong Key Agg, change Seed");
+		exit();
+	
 	print("/*Aggregated Key: */");
 	name='Key_Agg_X';
 	Print_C_MSB("\n /*"+name+"*/",name, int(KeyAgg[0]),8,"");
@@ -152,30 +156,34 @@ with open(C_filepath, 'w') as file_out:
 
 	##***********************Verification functions******************************/
 	print("\n*******************Verification :\n");
+	print("/*Public KeyAgg */");
+	print(hex(int(KeyAgg[0])));
+
+	
 	print("/*R part */");
 	name='R_x';
-	print(R[0]);
-	Print_C_MSB("/*"+name+"*/",name, int(R[0]),8,"");
+	print(hex(int(R[0])));
 	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(R[0]),8,"");
 	
 	name='R_y';
-	Print_C_MSB("/*"+name+"*/",name, int(R[1]),8,"");
+	
 	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(R[1]),8,"");
 	
 	print("/*s part */");
+	print(hex(int(s)));
+	
 	name='s';
-	Print_C_MSB("/*"+name+"*/",name, int(s),8,"");
 	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(s),8,"");
 	
 	print("/*c part */");
+	print(hex(int(c)));
 	name='c';
-	Print_C_MSB("/*"+name+"*/",name, int(c),8,"");
 	fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(c),8,"");
 	
-	
-	
+
 	res_verif=Musig_Verif_Core(Curve, curve_Generator,R,s,KeyAgg, int(c));
 	print(res_verif);
+	
 	filep.close();
 
 

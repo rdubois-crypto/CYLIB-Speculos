@@ -13,7 +13,7 @@
 ## Stark curve parameters extracted from
 ## https:github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/common/ec.cairo
 
-load('pedersen_hashpoint.sage');
+load('../PedersenHash/pedersen_hashpoint.sage');
 
 # note: as much as possible, loop variable i is used to adress user in [0..n-1], 
 # while j adress the position in a vector (of dimension n) of values .
@@ -73,8 +73,8 @@ def H_non(KeyAgg, nb_users, vec_R, message, size_message, curve_order):
 def H_sig(KeyAgg, R, m, size_message, curve_order):
 	Fq=GF(curve_order);
 	Input=[_SEPARATION_SIG];#separating the domains
-	Input+=[int(KeyAgg[0]), int(KeyAgg[1])];
-	Input+=[int(R[0]), int(R[1])];
+	Input+=[int(KeyAgg[0])];
+	Input+=[int(R[0])];
 	for cpt_i in [0..size_message-1]:
 		Input=Input+[m[cpt_i]];
 		
@@ -123,7 +123,11 @@ def Musig2_KeyGen(Curve, curve_generator, curve_order):
 	Fq=GF(curve_order);
 	privatekey=int(Fq.random_element());
 	publickey=curve_generator*privatekey;
-	
+	#/* compatibility BIP340*/
+	if( (int(publickey[1])&1)==1):#BIP340 compatibility
+		privatekey=curve_order-privatekey;
+		publickey=curve_generator*privatekey;		
+			
 	return [int(privatekey), publickey];
 	
 	
