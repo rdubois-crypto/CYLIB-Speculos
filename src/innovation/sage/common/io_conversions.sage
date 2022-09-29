@@ -47,13 +47,13 @@ def Conv_word_MSB(A, size_word):
 	M=copy(matrix(1, sizeM)[0])
 	
 	mask = 2^size_word-1
-	print("{", end='');
+	#print("{", end='');
 	for i in [0..sizeM-2]:
 		M[sizeM-1-i]= A 	& mask;
-		print(" ",hex(M[i]),",", end='');
+#		/*print(" ",hex(M[i]),",", end='');*/
 		A = A >> size_word
 	M[0]= A 	& mask;
-	print(" ",hex(M[i]),"};");
+#	/*print(" ",hex(M[i]),"};");*/
 	
 	return M;	
 		
