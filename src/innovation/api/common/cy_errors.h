@@ -30,6 +30,10 @@ typedef int cy_flag_t;
 #define CY_LIB_ALLOCATED   ((int)0x22222222)
 #define CY_LIB_UNINITIALIZED ((int)0x44444444)
 
+
+#define CY_OBJ_INITIALIZED ((int)0x66)
+
+
 #define CY_INCOMPLETE_IMPLEMENTATION 0xfffffffffffffffa
 
 #define CY_NOT_IMPLEMENTED 0x506

@@ -325,6 +325,56 @@ cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg
 
 
 #endif
+
+
+
+
+/*
+Derivate with B340 constraint (y even) value of pubkey
+*/
+cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *random,
+								cy_fp_t *xpriv, cy_ecpoint_t *X_pub)
+{
+	/*I.Declarations and allocations*/
+	cy_error_t error=CY_KO;
+	cy_fp_t x;
+	uint32_t sign=0;
+	cy_ec_ctx_t  *ec_ctx= ctx->ctx_ec;
+
+	cy_ecpoint_t G;
+	cy_ec_alloc(ctx->ctx_ec, &G);
+
+	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
+
+	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
+
+	/*II. Computations*/
+
+	/* returns the corresponding public key X=g^x*/
+	CY_CHECK(cy_ec_scalarmult_fp(random, &G, X_pub));
+
+	/* compatibility BIP340*/
+	CY_CHECK(cy_ec_getparityY(X_pub, &sign));
+
+	if(sign==1)
+	{
+		CY_CHECK(cy_fp_neg(random, xpriv));
+
+		CY_CHECK(cy_ec_scalarmult_fp(xpriv, &G,  X_pub));
+	}
+	else
+	{
+		cy_fp_copy(random, xpriv);
+	}
+
+	/*III. Free pointers*/
+	CY_CHECK(cy_fp_free(&x));
+	cy_ec_free(&G);
+
+	end:
+   	  return error;
+}
+
 /*************************************************************/
 /* Verification function									 */
 /*************************************************************/
@@ -339,30 +389,21 @@ cy_error_t cy_musig_Verification_Core(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_ag
 	*flag_verif=CY_FALSE;
 	cy_ecpoint_t ec_temp1, ec_temp2, G;
 
+	/* allocating */
 	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &ec_temp1));
 	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &ec_temp2));
+	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &G));
 
 	/* Accept iff g^s = R.X^c, beware of multiplicative notations*/
-	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &G));
 	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
-
 	CY_CHECK(cy_ec_scalarmult_fp(fp_s, &G, &ec_temp1)); 	/*g^s*/
-	/* todo: c should be recomputed here internally */
-	/* append R in Hashin*/
-
-	//CY_CHECK(cy_ec_export(&ctx->ctx_ec->ctx_fp_q, R,ctx->ctx_ec->t8_modular_p,buffer));
-	//ctx->H->Hash_Update((void *)ctx->H, buffer, ctx->ctx_ec->t8_modular_p);
-	/* append message in Hashin*/
-	//ctx->H->Hash_Update((void *)ctx->H, message, message_t8);
-	//ctx->H->Hash_Final((void *)ctx->H, c); /* final c value */
-
-
 	CY_CHECK(cy_ec_scalarmult_fp(fp_c, Key_agg,  &ec_temp2)); 	/*X^c*/
 	CY_CHECK(cy_ec_add( &ec_temp2, R, &ec_temp2)); 	/*R.X^c*/
 
 	/* final verification */
 	CY_CHECK(cy_ec_iseq( &ec_temp1, &ec_temp2, 	flag_verif));
 
+	/* freeing */
 	CY_CHECK(cy_ec_free( &ec_temp1));
 	CY_CHECK(cy_ec_free( &ec_temp2));
 	CY_CHECK(cy_ec_free( &G));

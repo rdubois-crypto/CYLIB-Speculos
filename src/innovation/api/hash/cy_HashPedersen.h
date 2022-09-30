@@ -33,11 +33,33 @@ struct cy_pedersen_ctx_s{
   cy_ecpoint_t ShiftPoint;
   cy_fp_t mask248_low; /* mask for low 248 bits*/
 
+  uint8_t buffer[_MAX_CYLIB_EC_T8];
+  size_t current_t8;
+  size_t blocksize;
+  size_t data_fp_length;
+
+  /* current value of internal hash*/
+  cy_fp_t fp_hash;
+
   cy_ec_ctx_t *ec_ctx;
 };
 
 
 typedef struct cy_pedersen_ctx_s cy_pedersen_ctx_t;
+
+extern cy_error_t pedersen_hash_init(cy_pedersen_ctx_t *ctx, uint8_t *constant, size_t t8_constant);
+extern cy_error_t pedersen_hash_update(cy_pedersen_ctx_t *ctx,  uint8_t *data, size_t t8_data);
+extern cy_error_t pedersen_hash_final(cy_pedersen_ctx_t *ctx, uint8_t *hash_res, size_t t8_res);
+
+#define _PEDERSEN_HASH_UNIT_ID 0x9ede5e
+
+extern cy_hash_unit_t unit_pedersen;
+
+
+extern cy_error_t pedersen_configure(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx);
+/* core pedersen hash of two elements*/
+extern cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *res);
+
 
 
 static const uint8_t Pedersen_Shift[Stark_SIZE_u8*2] = {

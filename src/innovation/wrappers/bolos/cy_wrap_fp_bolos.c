@@ -467,7 +467,7 @@ end:
   return error;
 }
 
-cy_error_t wrap_bolos_fp_neg( cy_fp_t *a,  cy_fp_t *out)
+cy_error_t wrap_bolos_fp_neg(const cy_fp_t *a,  cy_fp_t *out)
 {
 	 cy_error_t error = CY_KO;
 	  cy_fp_ctx_t *ctx = a->ctx;
@@ -720,6 +720,17 @@ cy_error_t wrap_fp_iseq(const cy_fp_t *in1, const cy_fp_t *in2, int *eq){
 
 	end:
 	  return error;
+}
+
+
+cy_error_t wrap_bolos_fp_setone(cy_fp_t *io)
+{
+	cy_error_t error = CY_KO;
+
+	CX_CHECK(sys_cx_bn_set_u32(*(io->bn), 1));
+
+	end:
+	   	return error;
 }
 
 /*****************************************************************************/

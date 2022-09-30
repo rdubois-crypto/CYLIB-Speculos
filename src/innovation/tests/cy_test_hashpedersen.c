@@ -54,17 +54,62 @@ static int test_verif_pedersen_core(cy_ec_ctx_t *ec_ctx)
  cy_fp_import(tv_m1, sizeof(tv_m1), &fp_m1);
  cy_fp_import(core_pedersen, sizeof(core_pedersen), &fp_expected);
 
- CY_CHECK(pedersen_init(ec_ctx, &ped_ctx));
+ CY_CHECK(pedersen_configure(ec_ctx, &ped_ctx));
  CY_CHECK(pedersen(&ped_ctx, &fp_m0, &fp_m1, &fp_res));
 
  CY_CHECK(cy_fp_iseq(&fp_res, &fp_expected, &flag));
 
- _debug(cy_io_fp_printMSB(&fp_res, "\n res pedersen"));
- _debug(cy_io_fp_printMSB(&fp_expected, "\n res expected"));
 
+ if(flag!=CY_TRUE) {
+	 error=CY_FALSE;
+	 (cy_io_fp_printMSB(&fp_res, "\n res pedersen"));
+	  (cy_io_fp_printMSB(&fp_expected, "\n res expected"));
+ }
 
  cy_fp_free(&fp_m0);
  cy_fp_free(&fp_m1);
+ cy_fp_free(&fp_res);
+ cy_fp_free(&fp_expected);
+
+end:
+  return error;
+}
+
+
+static int test_verif_pedersen_chain(cy_ec_ctx_t *ec_ctx)
+{
+ cy_error_t error=CY_KO;
+ cy_pedersen_ctx_t ped_ctx;
+ int flag=0;
+
+ cy_fp_t fp_data[2], fp_res, fp_expected;
+
+ cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_data[0]);
+ cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_data[1]);
+ cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_res);
+ cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_expected);
+
+ cy_fp_import(tv_m0, sizeof(tv_m0), &fp_data[0]);
+ cy_fp_import(tv_m1, sizeof(tv_m1), &fp_data[1]);
+ cy_fp_import(full_pedersen, sizeof(full_pedersen), &fp_expected);
+
+ CY_CHECK(pedersen_configure(ec_ctx, &ped_ctx));
+ CY_CHECK(pedersen_hash(&ped_ctx, &fp_data,2,  &fp_res));
+
+
+
+ CY_CHECK(cy_fp_iseq(&fp_res, &fp_expected, &flag));
+
+
+ if(flag!=CY_TRUE) {
+	 error=CY_FALSE;
+	 printf("\n flag pedersen chain=%d", flag);
+	 (cy_io_fp_printMSB(&fp_res, "\n res pedersen"));
+	  (cy_io_fp_printMSB(&fp_expected, "\n res expected"));
+ }
+
+ cy_fp_free(&fp_data[0]);
+ cy_fp_free(&fp_data[1]);
  cy_fp_free(&fp_res);
  cy_fp_free(&fp_expected);
 
@@ -86,6 +131,10 @@ int test_pedersen(uint8_t *Ramp, size_t Ramp_t8)
 
 	printf("\n test  pedersen core hash:");
 	CY_CHECK(test_verif_pedersen_core(&ec_ctx));
+	printf(" OK");
+
+	printf("\n test  pedersen chain:");
+	CY_CHECK(test_verif_pedersen_chain(&ec_ctx));
 	printf(" OK");
 
 	/* tpdo: investigate cy uninit*/

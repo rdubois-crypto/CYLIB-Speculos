@@ -84,7 +84,7 @@ _CY_API extern cy_error_t cy_fp_copy(const cy_fp_t *in, cy_fp_t *out);
 /* Arithmetic functions */
 _CY_API extern cy_error_t cy_fp_add(  cy_fp_t *a, cy_fp_t *b, cy_fp_t *r);
 _CY_API extern cy_error_t cy_fp_sub( cy_fp_t *a, cy_fp_t *b, cy_fp_t *r);
-_CY_API extern cy_error_t cy_fp_neg( cy_fp_t *a,  cy_fp_t *out);
+_CY_API extern cy_error_t cy_fp_neg( const cy_fp_t *a,  cy_fp_t *out);
 
 _CY_API extern cy_error_t cy_fp_inc(cy_fp_t *in, cy_fp_t *out);
 _CY_API extern cy_error_t cy_fp_dec(cy_fp_t *in, cy_fp_t *out);

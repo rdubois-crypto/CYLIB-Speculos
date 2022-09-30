@@ -35,42 +35,65 @@
 #include "cy_musig2.h"
 
 #include "cy_io_common_tools.h"
+#include "cy_io_ec.h"
+#include "cy_ec_const.h"
+
+#include "cy_HashPedersen.h"
 #include "test_vectors/test_vector_musig2.c"
 
-/*
-cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg,
-		cy_ecpoint_t *R, cy_fp_t *s, cy_fp_t *c,
-		const uint8_t *message, const size_t message_t8,
-		boolean_t *flag_verif)
-*/
-
-
-/* Each signer generates a random secret key x ←$ Zp and returns the
-corresponding public key X= g^x*/
-cy_error_t cy_musig_KeyGen(cy_musig2_ctx_t *ctx,cy_ecpoint_t *X_pub)
+int test_keygen(cy_musig2_ctx_t *ctx)
 {
-	/*I.Declarations and allocations*/
-	cy_error_t error=CY_KO;
-	cy_fp_t x;
-	cy_ecpoint_t G;
-	cy_ec_alloc(ctx->ctx_ec, &G);
-	cy_ec_get_generator(ctx->ctx_ec, &G);
-	cy_ec_ctx_t  *ec_ctx= ctx->ctx_ec;
+  cy_ec_ctx_t *ec_ctx=ctx->ctx_ec;
+  cy_error_t error=CY_KO;
+  cy_ecpoint_t Generator;
+  cy_ecpoint_t ExpectedKpub;
+  cy_ecpoint_t ComputedKpub;
+  cy_fp_t random, xpriv;
+  int flag=CY_FALSE;
+  size_t t8_p=ec_ctx->ctx_fp_p->t8_modular;
 
-	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
+  printf("\n  KeyGen Musig Core:");
+  /* Allocations*/
+  cy_fp_alloc(ec_ctx->ctx_fp_p,t8_p , &random);
+  cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &xpriv);
 
-	/*II. Computations*/
-	/*generates a random secret key x ←$ Zp*/
-	CY_CHECK(cy_fp_get_random(ctx->gda, &x));
-	/* returns the corresponding public key X=g^x*/
-	CY_CHECK(cy_ec_scalarmult_fp(&G, &x, X_pub));
+  CY_CHECK(cy_ec_alloc(ec_ctx, &Generator));
+  CY_CHECK(cy_ec_alloc(ec_ctx, &ComputedKpub));
+  CY_CHECK(cy_ec_alloc(ec_ctx, &ExpectedKpub));
 
-	/*III. Free pointers*/
-	CY_CHECK(cy_fp_free(&x));
-	cy_ec_free(&G);
+  CY_CHECK( cy_ec_import2(PublicKey_X0, sizeof(PublicKey_X0), PublicKey_Y0, sizeof(PublicKey_Y0), &ExpectedKpub));
+  CY_CHECK(cy_fp_import(SecretKey_0, t8_p, &random));
 
-	end:
-   	  return error;
+
+  CY_CHECK(cy_musig_KeyGenDeriv(ctx, &random, &xpriv, &ComputedKpub));
+
+  cy_ec_iseq(&ComputedKpub, &ExpectedKpub, &flag);
+
+
+
+  if(flag!=CY_TRUE)
+  {
+	  printf("\n failure, flag=%d", flag);
+     (cy_io_ec_printMSB(&ComputedKpub, "\n res Keygen"));
+     (cy_io_ec_printMSB(&ExpectedKpub, "\n res expected"));
+
+	  error=CY_FALSE;
+	  goto end;
+  }
+
+
+  /* Release memory */
+
+  CY_CHECK(cy_fp_free( &random));
+  CY_CHECK(cy_fp_free( &xpriv));
+
+  CY_CHECK(cy_ec_free( &Generator));
+  CY_CHECK(cy_ec_free( &ExpectedKpub));
+
+  printf(" OK");
+
+  end:
+ 	  return error;
 }
 
 int test_verif_core(cy_musig2_ctx_t *ctx)
@@ -81,36 +104,32 @@ int test_verif_core(cy_musig2_ctx_t *ctx)
   cy_ecpoint_t Generator, KeyAgg, R;
   cy_fp_t fp_s,fp_c;
   int flag=0;
-  uint8_t buffer[64]={ 0x01, 0xEF, 0x15, 0xC1, 0x85, 0x99, 0x97, 0x1B, 0x7B, 0xEC, 0xED, 0x41, 0x5A, 0x40, 0xF0, 0xC7
-		  , 0xDE, 0xAC, 0xFD, 0x9B, 0x0D, 0x18, 0x19, 0xE0, 0x3D, 0x72, 0x3D, 0x8B, 0xC9, 0x43, 0xCF, 0xCA
-		  , 0x00, 0x56, 0x68, 0x06, 0x0A, 0xA4, 0x97, 0x30, 0xB7, 0xBE, 0x48, 0x01, 0xDF, 0x46, 0xEC, 0x62
-		  , 0xDE, 0x53, 0xEC, 0xD1, 0x1A, 0xBE, 0x43, 0xA3, 0x28, 0x73, 0x00, 0x0C, 0x36, 0xE8, 0xDC, 0x1F
-		    };
+
 
   size_t t8_p=ec_ctx->ctx_fp_p->t8_modular;
 
-  printf("\n Verif Musig Core:");
-
+  printf("\n  Verif Musig Core:");
+  /* Allocations*/
   CY_CHECK(cy_ec_alloc(ec_ctx, &KeyAgg));
   CY_CHECK(cy_ec_alloc(ec_ctx, &Generator));
   CY_CHECK(cy_ec_alloc(ec_ctx, &R));
-
   CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &fp_s));
-
   CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &fp_c));
-
+  /* Import test vectors */
   CY_CHECK( cy_fp_import(s, sizeof(s), &fp_s));
   CY_CHECK(cy_fp_import(c, sizeof(c), &fp_c));
   CY_CHECK( cy_ec_import2(R_x, sizeof(R_x), R_y, sizeof(R_y), &R));
   CY_CHECK( cy_ec_import2(Key_Agg_X, sizeof(Key_Agg_X), Key_Agg_Y, sizeof(Key_Agg_Y),&KeyAgg ));
 
+  /* Core verification */
   CY_CHECK(cy_musig_Verification_Core(ctx, &KeyAgg,&R, &fp_s, &fp_c,& flag));
   if(flag!=CY_TRUE){
 	  error=CY_KO;
 	  goto end;
   }
 
-
+  /* Release memory */
+  CY_CHECK(cy_ec_free( &Generator));
   CY_CHECK(cy_ec_free( &KeyAgg));
   CY_CHECK(cy_ec_free( &R));
   CY_CHECK(cy_fp_free( &fp_s));
@@ -121,23 +140,76 @@ int test_verif_core(cy_musig2_ctx_t *ctx)
   	  return error;
 }
 
+cy_error_t cy_musig_configure( cy_hash_unit_t *H, uint8_t *Ramp, size_t Ramp_t8, int curve,  int n_users,
+							   cy_ec_ctx_t *ec_ctx, cy_musig2_ctx_t *musig_ctx){
+
+    cy_error_t error=CY_OK;
+
+    CY_CHECK(cy_ec_init(ec_ctx, Ramp,Ramp_t8, curve, NULL));
+
+   	musig_ctx->ctx_ec=ec_ctx;
+   	musig_ctx->H=H;
+   	musig_ctx->n_users=n_users;
+   	//pedersen_unit_configure((void*)H, (uint8_t *) ec_ctx, curve);
+
+   	musig_ctx->H->Hash_Configure((void*)H, (uint8_t *) ec_ctx, curve);
+
+   	end:
+		return error;
+}
+
+cy_error_t cy_Sign_Round1(const cy_fp_t *xpriv, const cy_fp_t *random, cy_ecpoint_t *Ri)
+{
+
+ return 0;
+}
+
+// L concatenation of public keys
+cy_error_t cy_HashAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i)
+{
+  size_t i;
+
+  for(i=0;i<musig_ctx->n_users;i++)
+  {
+
+  }
+
+}
+
+cy_error_t test_musig_configure(cy_hash_unit_t *H,int curve, cy_ec_ctx_t *ec_ctx, uint8_t *Ramp, size_t Ramp_t8, cy_musig2_ctx_t *musig_ctx)
+{
+	cy_error_t error=CY_OK;
+
+	printf("\n\n  Test Musig2 Configure:");
+	printf(" %s:", H->Component_name);fflush(stdout);
+
+	CY_CHECK(cy_musig_configure( H, Ramp, Ramp_t8, curve, 4, ec_ctx, musig_ctx));
+
+	end:
+	if(error==CY_OK)  printf(" OK");
+	else printf(" KO!!!");
+			return error;
+}
+
 int test_musig_unit(uint8_t *Ramp, size_t Ramp_t8)
 {
 	cy_error_t error=CY_KO;
 	cy_ec_ctx_t ec_ctx;
-	 size_t nb_users=4;
-	cy_musig2_ctx_t musig_ctx;
 
-	/* Initiate elliptic structure*/
-	CY_CHECK(cy_ec_init(&ec_ctx, Ramp,_EC_ZONE_T8, CY_CURVE_Stark256, NULL));
-	musig_ctx.ctx_ec=&ec_ctx;
+	size_t nb_users=4;
+	cy_musig2_ctx_t musig_ctx;
+	printf("\n\n /************************ Test Musig2 Protocol:");
+
 
 	/* Initiate gda*/
+	CY_CHECK(test_musig_configure(&unit_pedersen, CY_CURVE_Stark256, &ec_ctx, Ramp, Ramp_t8, &musig_ctx));
 	musig_ctx.gda=&bolos_gda_component;
 
-	printf("\n\n /************************ Test Musig2 Protocol:");
-	error=test_verif_core(&musig_ctx);
+    CY_CHECK(test_verif_core(&musig_ctx));
+	CY_CHECK(test_keygen(&musig_ctx));
+	//CY_CHECK(cy_ec_uninit(&ec_ctx));
 
+	/* configuring Musig2 with hashpedersen and StarkCurve */
 
 	end:
 	if(error==CY_OK)  printf("\n All Musig2 tests OK");

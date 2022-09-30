@@ -115,18 +115,18 @@ static cy_error_t test_fp_montgomery(cy_fp_ctx_t *ctx)
 		return CY_OK;
 	}
 
-	printf("\n Test Montgomery on 256k1:");
+	//printf("\n Test Montgomery on 256k1:");
 
 	CY_CHECK(cy_fp_from_bn( p_mont_h, &fp_temp ));
-	CY_CHECK(cy_io_fp_printMSB(&fp_temp, "\n R2="));
+	//CY_CHECK(cy_io_fp_printMSB(&fp_temp, "\n R2="));
 
 	p_mont_h=cy_get_fp_montgomery_constant2(ctx);
 	CY_CHECK(cy_fp_from_bn( p_mont_h, &fp_temp ));
-	CY_CHECK(cy_io_fp_printMSB(&fp_temp, "\n n0="));
+	//CY_CHECK(cy_io_fp_printMSB(&fp_temp, "\n n0="));
 
 	p_mont_h=cy_get_fp_montgomery_one(ctx);
 	CY_CHECK(cy_fp_from_bn( p_mont_h, &fp_temp ));
-	CY_CHECK(cy_io_fp_printMSB(&fp_temp, "\n R="));
+	//CY_CHECK(cy_io_fp_printMSB(&fp_temp, "\n R="));
 
 
 	CY_CHECK(cy_fp_free(&fp_temp));
@@ -148,29 +148,25 @@ static cy_error_t test_fp_montgomery(cy_fp_ctx_t *ctx)
 	CY_CHECK(cy_fp_alloc(ctx, parameters_t8, &fp_aR));
 	CY_CHECK(cy_fp_mul(&fp_b, &fp_a, &fp_aR));
 
-	CY_CHECK(cy_io_fp_printMSB(&fp_aR, "\n ---a*b= "));
+	//CY_CHECK(cy_io_fp_printMSB(&fp_aR, "\n ---a*b= "));
 
 
 
 	CY_CHECK(cy_fp_mont_import(mod_a, parameters_t8, &fp_aR));
 
-	CY_CHECK(cy_io_fp_printMSB(&fp_a, "\n ---a= "));
-	CY_CHECK(cy_io_fp_printMSB(&fp_aR, "\n ---aR= "));
+	//CY_CHECK(cy_io_fp_printMSB(&fp_a, "\n ---a= "));
+	//CY_CHECK(cy_io_fp_printMSB(&fp_aR, "\n ---aR= "));
 
 	CY_CHECK(cy_fp_mult_mont(&fp_b, &fp_aR, &fp_aR));
-	CY_CHECK(cy_io_fp_printMSB(&fp_aR, "\n ---Mulmont(aR*b)= "));
+	//CY_CHECK(cy_io_fp_printMSB(&fp_aR, "\n ---Mulmont(aR*b)= "));
 
 	//printf("n aR=%x", (unsigned int )*fp_aR.bn);
 
 	//CY_CHECK(cy_bn_export( p_mont_h, res, parameters_t8 ));
 
-
 	CY_CHECK(cy_fp_free(&fp_a));
 	CY_CHECK(cy_fp_free(&fp_aR));
 	CY_CHECK(cy_fp_free(&fp_b));
-
-
-
 
 	end:
 		  return error;

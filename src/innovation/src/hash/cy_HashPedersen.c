@@ -71,7 +71,7 @@ static cy_error_t ec_muladd(cy_pedersen_ctx_t *ctx, cy_ecpoint_t *acc, cy_fp_t *
 }
 
 /* init PShift, P0 to P3*/
-cy_error_t pedersen_init(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx)
+cy_error_t pedersen_configure(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx)
 {
    cy_error_t error;
    size_t i;
@@ -83,6 +83,7 @@ cy_error_t pedersen_init(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx)
    }
    CY_CHECK(cy_ec_alloc(ec_ctx, &ctx->ShiftPoint));
    CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular,& ctx->mask248_low));
+   CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &ctx->fp_hash));
 
    CY_CHECK(cy_ec_import(Pedersen_P0, Stark_SIZE_u8, &ctx->P[0] ));
    CY_CHECK(cy_ec_import(Pedersen_P1, Stark_SIZE_u8, &ctx->P[1] ));
@@ -132,30 +133,139 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
    return error;           
    }
  
-/* note: for a init/update/final version, pedersen could be considered as a 252 bits block sized hash function*/
-/* this implementation is intended to be compatible with Cairo */   
-cy_error_t pedersen_hash(cy_pedersen_ctx_t *ctx, cy_fp_t *data, size_t data_fp_length)
+
+
+
+/* Compute the main loop, without the final padding with length */
+cy_error_t pedersen_hash_updatefp(cy_pedersen_ctx_t *ctx,  cy_fp_t *data, cy_fp_t *io_fp_hash)
+{
+	 cy_error_t error;
+
+	 CY_CHECK(pedersen(ctx, io_fp_hash, data , io_fp_hash));
+	 ctx->data_fp_length++;
+	 end:
+	    return error;
+}
+
+cy_error_t pedersen_hash_init(cy_pedersen_ctx_t *ctx, uint8_t *constant, size_t t8_constant)
+{
+	 cy_error_t error;
+
+	 ctx->current_t8=0;
+	 ctx->data_fp_length=0;
+
+	 CY_CHECK(cy_fp_import(constant, t8_constant, &ctx->fp_hash));
+
+	 end:
+		    return error;
+}
+
+cy_error_t pedersen_hash_update(cy_pedersen_ctx_t *ctx,  uint8_t *data, size_t t8_data)
+{
+	 cy_error_t error;
+	 cy_fp_t fp_temp;
+	 size_t i;
+
+	 cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_temp);
+
+	 /* for simplicity sake, the hash only handles full fp updating for now*/
+	 if((t8_data%ctx->blocksize)!=0)
+	 {
+		 return CY_ERR_LENGTH;
+	 }
+	 ctx->current_t8+=t8_data;
+	 for(i=0;i<t8_data;i+=ctx->blocksize)
+	 {
+		 cy_fp_import(data, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_temp);
+		 CY_CHECK(pedersen_hash_updatefp(ctx,&fp_temp, &ctx->fp_hash ));
+
+	 }
+
+
+	 cy_fp_free(&fp_temp);
+
+	 end:
+	    return error;
+}
+
+
+/* Compute the main loop, without the final padding with length */
+cy_error_t pedersen_hash_unpadded(cy_pedersen_ctx_t *ctx, cy_fp_t *data, size_t data_fp_length, cy_fp_t *res)
 {
   cy_error_t error;
   size_t i;
-  cy_fp_t fp_hash;
-  cy_fp_t fp_temp;
+  uint8_t zero[1]={0};
 
-
-  CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_hash));
-  CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_temp));
-
-  CY_CHECK(cy_fp_set_zero(&fp_hash));
 
   /*hash=pedersen(0, data[0]); 			#h(0,x1)*/
-  for(i=1;i<data_fp_length;i++){
-	  CY_CHECK(pedersen(ctx, &fp_hash, &fp_hash, &(data[i])) );
+  CY_CHECK(pedersen_hash_init(ctx, zero, 1));
+
+  for(i=0;i<data_fp_length-1;i++){
+	  CY_CHECK(pedersen(ctx, &ctx->fp_hash, &(data[i]) , &ctx->fp_hash));
   }
-  CY_CHECK(cy_fp_from_u32( (uint32_t) data_fp_length, &fp_temp));
 
-  CY_CHECK(pedersen(ctx, &fp_hash, &fp_hash, &fp_temp));
+  CY_CHECK(pedersen(ctx, &ctx->fp_hash, &(data[i]) , res));
 
-  CY_CHECK(cy_fp_free(&fp_hash));
+ ctx->data_fp_length=data_fp_length;
+
+   end:
+   return error;
+}
+
+
+/* Compute the main loop, without the final padding with length */
+cy_error_t pedersen_hash_final_fp(cy_pedersen_ctx_t *ctx, size_t data_fp_length, cy_fp_t *res)
+{
+	 cy_error_t error;
+	 cy_fp_t fp_temp;
+	 CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_temp));
+
+	  CY_CHECK(cy_fp_from_u32( (uint32_t) data_fp_length, &fp_temp));
+	  CY_CHECK(pedersen(ctx, &ctx->fp_hash, &fp_temp, res));
+
+	  CY_CHECK(cy_fp_free(&fp_temp));
+
+	  end:
+	    return error;
+}
+
+
+/* Compute the main loop, without the final padding with length */
+cy_error_t pedersen_hash_final(cy_pedersen_ctx_t *ctx, uint8_t *hash_res, size_t t8_res)
+{
+	 cy_error_t error;
+	 cy_fp_t fp_temp;
+
+	 if(t8_res!=ctx->ec_ctx->ctx_fp_p->t8_modular)
+	 {
+		 error=CY_ERR_LENGTH;
+		 goto end;
+	 }
+	 CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_temp));
+
+	  CY_CHECK(cy_fp_from_u32( ctx->data_fp_length, &fp_temp));
+	  CY_CHECK(pedersen(ctx, &ctx->fp_hash, &fp_temp, &ctx->fp_hash));
+	  /* export resulting felt to uint8_t buffer output*/
+	  CY_CHECK(cy_fp_export(&ctx->fp_hash,  hash_res, ctx->ec_ctx->ctx_fp_p->t8_modular));
+
+	  CY_CHECK(cy_fp_free(&fp_temp));
+
+	  end:
+	    return error;
+}
+
+
+/* note: for a init/update/final version, pedersen could be considered as a 252 bits block sized hash function*/
+/* this implementation is intended to be compatible with Cairo */   
+cy_error_t pedersen_hash(cy_pedersen_ctx_t *ctx, cy_fp_t *data, size_t data_fp_length, cy_fp_t *res)
+{
+  cy_error_t error;
+
+
+  CY_CHECK(pedersen_hash_unpadded(ctx, data, data_fp_length,& ctx->fp_hash));
+  CY_CHECK(pedersen_hash_final_fp(ctx,  data_fp_length,res));  /*hash=pedersen(h(...), n);*/
+
+
    end:
    return error;           
 }   
@@ -169,10 +279,56 @@ cy_error_t pedersen_uninit(cy_pedersen_ctx_t *ctx){
     }
 
   CY_CHECK(cy_ec_free(&ctx->ShiftPoint));
+  CY_CHECK(cy_fp_free(&ctx->fp_hash));
+
   end:
      return error;
 }
    
+
+/* Ramp is a pointer to the memory for the unit
+ * the curve identifier is used to initialize the ellitic context
+ */
+cy_error_t pedersen_unit_configure(void *pedersen_unit, uint8_t *ec_ctx, size_t curve_id)
+{
+	 cy_error_t error=0;
+	 cy_hash_unit_t *unit=(cy_hash_unit_t *) pedersen_unit;
+
+	 //printf("\n pedersen_unit_configure");
+
+	 UNUSED(curve_id);
+
+
+	 CY_CHECK(pedersen_configure( (cy_ec_ctx_t *) ec_ctx, (cy_pedersen_ctx_t *) (unit->ctx) ));
+
+	 unit->is_initialized=CY_OBJ_INITIALIZED;
+
+	 end:
+	 	 return error;
+}
+
+cy_pedersen_ctx_t global_pedersen_ctx;
+
+cy_hash_unit_t unit_pedersen={
+		NULL,
+		_PEDERSEN_HASH_UNIT_ID,
+		"<CYLIB Pedersen:Hash Unit>",
+
+		(Fct_Hash_Configure_t) pedersen_unit_configure,
+		(Fct_Hash_Init_t) pedersen_hash_init,
+		(Fct_Hash_Update_t) pedersen_hash_update,
+		(Fct_Hash_Final_t) pedersen_hash_final,
+		 NULL, /* no hash all*/
+		 NULL,
+
+		 CY_ERR_INIT,
+		 (void*) &global_pedersen_ctx,
+		0,
+		  0,
+		  NULL,
+		  0
+};
+
    
    
    

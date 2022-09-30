@@ -34,6 +34,9 @@
 
 #define cy_ec_import(xy, sx, P) wrap_bolos_ec_import(xy, sx, P)
 #define cy_ec_import2( x, sx, y, sy, P) wrap_bolos_ec_import2( x, sx, y, sy, P)
+#define cy_ec_import_compressed(a,b,c,d) wrap_bolos_ec_import_compressed(a,b,c,d)
+#define cy_ec_export_compressed(a,b,c,d) wrap_bolos_ec_export_compressed(a,b,c,d)
+
 #define cy_ec_copy(in, out) wrap_bolos_cy_ec_copy(in, out)
 
 #define cy_ec_alloc(ctx,P) wrap_ecpoint_alloc(ctx,P)
@@ -47,7 +50,7 @@
 #define cy_ec_setinfinity(P) wrap_bolos_ec_setinfinity(P)
 #define cy_ec_scalarmult_fp(k,P,kP) wrap_bolos_ec_scalarmul_fp(k,P,kP)
 #define cy_ec_get_generator(ctx, G) wrap_bolos_get_generator(ctx, G)
-
+#define cy_ec_getparityY(G, sign) wrap_bolos_ec_getparityY(G, sign)
 
 /* Speculos is not emulating the following bolos functions*/
 #define _WITH_SPECULOS

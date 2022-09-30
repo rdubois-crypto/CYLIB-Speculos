@@ -52,6 +52,8 @@ struct cy_ec_s{
 };
 
 
+/* maximal size of elliptic curve handled by CYLIB*/
+#define _MAX_CYLIB_EC_T8 256
 
 #define _HANDLED_EC_MAX 16
 #define _EC_ZONE_T8 (_HANDLED_EC_MAX*(sizeof(cy_ecpoint_t)*sizeof(cy_bn_t)))
@@ -71,44 +73,49 @@ struct cy_ec_s {
 typedef struct cy_ec_s cy_ecpoint_t;
 */
 
+/* Memory Handling */
 extern cy_error_t cy_ec_init(cy_ec_ctx_t *ps_ctx, uint8_t *pu8_Mem,
                              const size_t t8_Memory, const int argc,
                              const uint8_t *argv[]);
-
 extern cy_error_t cy_ec_alloc(cy_ec_ctx_t *ps_ctx,  cy_ecpoint_t *out);
-extern cy_error_t cy_ec_add(const cy_ecpoint_t *a, const cy_ecpoint_t *b,
-		cy_ecpoint_t *r);
+extern cy_error_t cy_ec_uninit(cy_ec_ctx_t *ctx);
 
-extern cy_error_t cy_ec_isoncurve(const cy_ecpoint_t *a, int *flag_verif);
-
-extern cy_error_t cy_ec_scalarmult_fp(const cy_fp_t *k, const cy_ecpoint_t *P,  cy_ecpoint_t *R);
+extern cy_error_t cy_ec_free(cy_ecpoint_t *ec);
 
 /* IO Handling */
 extern cy_error_t cy_ec_import( const uint8_t *xy, size_t t8_x, cy_ecpoint_t *G);
 extern cy_error_t cy_ec_import2( uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_y, cy_ecpoint_t *G);
+extern cy_error_t cy_ec_import_compressed(const uint8_t *xy_compressed,
+        const size_t xy_compressed_len, const uint32_t sign, cy_ecpoint_t *P_out);
 
 extern cy_error_t cy_ec_export(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_xy);
 extern cy_error_t cy_ec_export2(const cy_ecpoint_t *G,  uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_y );
+extern cy_error_t cy_ec_export_compressed(const cy_ecpoint_t *P_in, uint8_t *xy_compressed,
+        const size_t xy_compressed_len, uint32_t *sign );
+
 extern cy_error_t cy_ec_getX(const cy_ecpoint_t *a, cy_fp_t *out);
+extern cy_error_t cy_ec_getY(const cy_ecpoint_t *a, cy_fp_t *out);
+extern cy_error_t cy_ec_getparityY(const cy_ecpoint_t *a, uint32_t *parity);
+
+extern cy_error_t cy_ec_get_generator(const cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *G);
 
 extern cy_error_t cy_ec_copy(const cy_ecpoint_t *a, cy_ecpoint_t *b);
 
-extern cy_error_t cy_ec_iseq(const cy_ecpoint_t *a, const cy_ecpoint_t *b, int *flag_verif);
-
-extern cy_error_t cy_ec_scalarmult_MSBString(cy_ecpoint_t *a, cy_ecpoint_t *b, cy_ecpoint_t *r);
-
+/* Arithmetic functions */
+extern cy_error_t cy_ec_add(const cy_ecpoint_t *a, const cy_ecpoint_t *b,
+		cy_ecpoint_t *r);
 extern cy_error_t cy_ec_sub(cy_ecpoint_t *a, cy_ecpoint_t *b, cy_ecpoint_t *r);
 
-extern cy_error_t cy_ec_scalarmul_bn(cy_ecpoint_t *a, cy_bn_t *b, cy_ecpoint_t *r);
+extern cy_error_t cy_ec_iseq(const cy_ecpoint_t *a, const cy_ecpoint_t *b, int *flag_verif);
+extern cy_error_t cy_ec_isoncurve(const cy_ecpoint_t *a, int *flag_verif);
 
+extern cy_error_t cy_ec_scalarmult_MSBString(cy_ecpoint_t *a, cy_ecpoint_t *b, cy_ecpoint_t *r);
+extern cy_error_t cy_ec_scalarmult_fp(const cy_fp_t *k, const cy_ecpoint_t *P,  cy_ecpoint_t *R);
+extern cy_error_t cy_ec_scalarmul_bn(cy_ecpoint_t *a, cy_bn_t *b, cy_ecpoint_t *r);
 
 extern cy_error_t cy_ec_setinfinity( cy_ecpoint_t *kP);
 extern cy_error_t cy_ec_isinfinity(const cy_ecpoint_t *a, int *flag);
 
-extern cy_error_t cy_ec_free(cy_ecpoint_t *ec);
-
-extern cy_error_t cy_ec_get_generator(const cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *G);
-extern cy_error_t cy_ec_uninit(cy_ec_ctx_t *ctx);
 
 /* max bolos supported curve size is BLS12:384 bits*/
 #define MAX_BOLOS_EC_T8 48

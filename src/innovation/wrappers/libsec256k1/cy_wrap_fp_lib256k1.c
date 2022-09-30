@@ -391,7 +391,7 @@ end:
 
 
 
-cy_error_t wrap_lib256k1_fp_neg(cy_fp_t *b, cy_fp_t *out)
+cy_error_t wrap_lib256k1_fp_neg(const cy_fp_t *b, cy_fp_t *out)
 {
 	 cy_error_t error = CY_KO;
 	  cy_fp_ctx_t *ctx = out->ctx;

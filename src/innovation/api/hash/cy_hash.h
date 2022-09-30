@@ -23,11 +23,11 @@ typedef cy_error_t (*Fct_Hash_Init_t)(void *io_ps_ctx, uint8_t *in,
                                      size_t t8_in);
 typedef cy_error_t (*Fct_Hash_Update_t)(void *io_ps_ctx, uint8_t *in,
                                     size_t t8_in);
-typedef cy_error_t (*Fct_Hash_Final_t)(void *io_ps_ctx, uint8_t *out);
+typedef cy_error_t (*Fct_Hash_Final_t)(void *io_ps_ctx, uint8_t *out, size_t sizeout);
 
 typedef cy_error_t (*Fct_Hash_All_t)(uint8_t *in, size_t in_t8, uint8_t *out);
 
-struct hash_ctx_s {
+struct hash_unit_s {
   uint8_t *Sec_RAMp; /* pointer between the Shared RAM and the component*/
 
   uint64_t id; /**< Component identifier                                   */
@@ -35,13 +35,17 @@ struct hash_ctx_s {
 
   /*Hash subfunctions*/
   Fct_Hash_Configure_t Hash_Configure;
+
   Fct_Hash_Init_t Hash_Init;
   Fct_Hash_Update_t Hash_Update; /**< pointer to run function                   */
   Fct_Hash_Final_t Hash_Final;
+
   Fct_Hash_All_t Hash_All; /* one shot init, run, final execution */
+  Fct_Hash_Configure_t Hash_Uninit; /* release configure*/
+
   cy_flag_t is_initialized;
 
-  uint8_t *internal_state;
+  void *ctx;
   size_t state_t8;
   size_t Hash_t8;
   void *opt;
@@ -54,6 +58,6 @@ struct hash_ctx_s {
 #define _PEDDERSEN_ID 3
 
 #define MAX_HASH_T8 64
-typedef struct hash_ctx_s cy_hash_ctx_t;
+typedef struct hash_unit_s cy_hash_unit_t;
 
 #endif

@@ -318,6 +318,28 @@ cy_error_t wrap_bolos_ec_isinfinity(const cy_ecpoint_t * P_in, int *flag)
 	 	 return error;
 }
 
+cy_error_t wrap_bolos_ec_import_compressed(const uint8_t *xy_compressed,
+        const size_t xy_compressed_len, const uint32_t sign, cy_ecpoint_t *P_out)
+{
+
+	 cy_error_t error = CY_KO;
+	 CY_CHECK(sys_cx_ecpoint_decompress(P_out->ec, xy_compressed, xy_compressed_len, sign));
+
+	 end:
+		 	 return error;
+}
+
+cy_error_t wrap_bolos_ec_export_compressed(const cy_ecpoint_t *P_in, uint8_t *xy_compressed,
+        const size_t xy_compressed_len, uint32_t *sign )
+{
+    cy_error_t error = CY_KO;
+	CY_CHECK(sys_cx_ecpoint_decompress(P_in->ec, xy_compressed, xy_compressed_len,  *sign));
+
+	 end:
+		 	 return error;
+}
+
+
 
 cy_error_t wrap_bolos_cy_ec_copy(const cy_ecpoint_t * P_in, cy_ecpoint_t *P_out)
 {
@@ -369,17 +391,64 @@ cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
     	return error;
   }
 
-cy_error_t wrap_bolos_getX(const cy_ecpoint_t *a, cy_fp_t *out)
+cy_error_t wrap_bolos_export_doublefp(const cy_ecpoint_t *a, cy_fp_t *x, cy_fp_t *y)
 {
 	 cy_error_t error = CY_KO;
 
-	 CY_CHECK(sys_cx_bn_copy( *out->bn, a->ec->x));
+	 CY_CHECK(sys_cx_ecpoint_export_bn(a->ec, x->bn, y->bn));
+	 end:
+		    	return error;
+}
 
 
+cy_error_t wrap_bolos_getX(const cy_ecpoint_t *a, cy_fp_t *out)
+{
+	 cy_error_t error = CY_KO;
+     cy_fp_t trash;
+     cy_fp_alloc(a->ctx->ctx_fp_p, a->ctx->ctx_fp_p->t8_modular, &trash);
+
+	 CY_CHECK(sys_cx_ecpoint_export_bn((a->ec), out->bn, trash.bn));
 
 	 end:
 		    	return error;
+}
 
+
+
+cy_error_t wrap_bolos_getY(const cy_ecpoint_t *a, cy_fp_t *out)
+{
+	cy_error_t error = CY_KO;
+	     cy_fp_t trash;
+	     int flag;
+
+	     CY_CHECK(cy_fp_alloc(a->ctx->ctx_fp_p, a->ctx->ctx_fp_p->t8_modular, &trash));
+
+	     CY_CHECK(wrap_bolos_ec_isinfinity(a, &flag));;
+
+	     if(flag==CY_TRUE)
+	     {
+	    	 CY_CHECK(cy_fp_set_one(out));
+	     }
+	    CY_CHECK(sys_cx_ecpoint_export_bn((a->ec), trash.bn, out->bn));
+
+		 cy_fp_free(&trash);
+		 end:
+			    	return error;
+}
+
+cy_error_t wrap_bolos_ec_getparityY(const cy_ecpoint_t *a, uint32_t *sign){
+	cy_error_t error = CY_KO;
+	cy_fp_t fp_temp;
+	CY_CHECK(cy_fp_alloc(a->ctx->ctx_fp_p, a->ctx->ctx_fp_p->t8_modular, &fp_temp));
+
+	CY_CHECK(wrap_bolos_getY(a, &fp_temp));
+
+	CY_CHECK(sys_cx_bn_is_odd(*(fp_temp.bn), (bool*) sign));
+
+	CY_CHECK(cy_fp_free(&fp_temp));
+
+    end:
+				    	return error;
 }
 
 cy_error_t wrap_bolos_isoncurve(const cy_ecpoint_t *a, int *flag_verif)

@@ -57,6 +57,8 @@ typedef struct cy_bn_mont_ctx_s cy_bn_mont_ctx_t;
 #define  cy_fp_neg( in, out) (wrap_bolos_fp_neg(in, out))
 #define  cy_fp_cmp( in1, in2, out) (in1, in2, out))
 #define cy_fp_set_zero(out) wrap_bolos_fp_set_zero(out)
+#define cy_fp_set_one(out) wrap_bolos_fp_setone(out)
+
 #define cy_fp_iseq(a,b,res) wrap_fp_iseq(a,b,res)
 #define cy_fp_mul(a, b, r) (wrap_bolos_fp_mul(a, b, r))
 #define cy_fp_sqr(in, out) (wrap_bolos_fp_sqr(in,  out))
