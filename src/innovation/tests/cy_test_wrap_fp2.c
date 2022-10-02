@@ -54,12 +54,13 @@ uint8_t quad_a[] = { 172, 55,  63,  63,  189, 248, 237, 255, 103, 8,  115, 206, 
 static cy_error_t test_fp2_add(fp2_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 {
 	 cy_error_t error = CY_OK;
-	 cy_fp2_t fp_a, fp_b, fp_apowp, fp_r;
-	 uint8_t exported[_MAX_SIZE_TESTED_FP_T8];
-	  uint8_t test_a[_MAX_SIZE_TESTED_FP_T8];
-	  uint8_t test_b[_MAX_SIZE_TESTED_FP_T8];
+	 cy_fp2_t fp_a;
+	 //uint8_t exported[_MAX_SIZE_TESTED_FP_T8];
+	  //uint8_t test_a[_MAX_SIZE_TESTED_FP_T8];
+	  //uint8_t test_b[_MAX_SIZE_TESTED_FP_T8];
 	  size_t parameters_t8= ctx->ctx.t8_modular;
 
+	  UNUSED(Ramp);UNUSED(sizeRam);
 	  debug_printf("\n-Alloc and Import");
 
 
@@ -114,7 +115,8 @@ static int test_fp2_crypto_parameters(const uint8_t *argv[], int argc, char *nam
   cy_error_t error = CY_OK;
 
 
-  size_t parameters_t8=(size_t) (argv[0][0]);
+  //size_t parameters_t8=(size_t) (argv[0][0]);
+  UNUSED(argv);
 
   /* The shared ram between program and library*/
   debug_printf("\n @RAMP=%x\n sizeRamp=%x", (unsigned int)Ramp,(int)sizeRam);

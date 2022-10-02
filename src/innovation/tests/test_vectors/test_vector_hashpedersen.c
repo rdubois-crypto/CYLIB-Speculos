@@ -1,4 +1,4 @@
-/* File automatically generated using test_hashpedersen.sage, the  : mar. 27 sept. 2022 12:30:58 CEST*
+/* File automatically generated using test_hashpedersen.sage, the  : mar. 27 sept. 2022 12:30:58 CEST*/
 
  /*m0*/
 

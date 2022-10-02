@@ -94,7 +94,7 @@ static int test_verif_pedersen_chain(cy_ec_ctx_t *ec_ctx)
  cy_fp_import(full_pedersen, sizeof(full_pedersen), &fp_expected);
 
  CY_CHECK(pedersen_configure(ec_ctx, &ped_ctx));
- CY_CHECK(pedersen_hash(&ped_ctx, &fp_data,2,  &fp_res));
+ CY_CHECK(pedersen_hash(&ped_ctx, (cy_fp_t *) &fp_data,2,  &fp_res));
 
 
 
@@ -123,11 +123,11 @@ int test_pedersen(uint8_t *Ramp, size_t Ramp_t8)
 	cy_error_t error=CY_KO;
 	cy_ec_ctx_t ec_ctx;
 
-	size_t nb_users=4;
+
 
 	printf("\n\n /************************ Test Pedersen Hash:");
 	/* Initiate elliptic structure*/
-	CY_CHECK(cy_ec_init(&ec_ctx, Ramp,_EC_ZONE_T8, CY_CURVE_Stark256, NULL));
+	CY_CHECK(cy_ec_init(&ec_ctx, Ramp,Ramp_t8, CY_CURVE_Stark256, NULL));
 
 	printf("\n test  pedersen core hash:");
 	CY_CHECK(test_verif_pedersen_core(&ec_ctx));

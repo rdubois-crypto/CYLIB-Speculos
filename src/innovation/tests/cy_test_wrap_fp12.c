@@ -63,16 +63,19 @@
 static cy_error_t test_fp12_add(fp12_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 {
 	 cy_error_t error = CY_OK;
+	 UNUSED(ctx);
+	 UNUSED(Ramp);
+	 UNUSED(sizeRam);
+
+#ifdef loopi
+
 	 cy_fp12_t fp_a, fp_b, fp_apowp, fp_r;
 	 uint8_t exported[_MAX_SIZE_TESTED_FP_T8];
 	  uint8_t test_a[_MAX_SIZE_TESTED_FP_T8];
 	  uint8_t test_b[_MAX_SIZE_TESTED_FP_T8];
 	  size_t parameters_t8= ctx->ctx_quad.ctx.t8_modular;
 
-	  debug_printf("\n-Alloc and Import");
-
-#ifdef loopi
-
+	  	  debug_printf("\n-Alloc and Import");
 	  CY_CHECK(cy_fp12_alloc(ctx, parameters_t8, &fp_a));
 	  debug_printf("\n After 1 Alloc");
 	   debug_Print_RAMp(Ramp, sizeRam);
@@ -106,9 +109,9 @@ static cy_error_t test_fp12_add(fp12_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 	  CY_CHECK(cy_fp12_free(&fp_a));
 	  debug_printf("\n after free");
 	  debug_Print_RAMp(Ramp, sizeRam);
-
+	  end: // printf("\n end crypto");
 #endif
-	end: // printf("\n end crypto");
+
 	  if (error == CY_OK)
 	    printf(" OK !");
 	  else
@@ -123,7 +126,7 @@ static int test_fp12_crypto_parameters(const uint8_t *argv[], int argc, char *na
   cy_error_t error = CY_OK;
 
 
-  size_t parameters_t8=(size_t) (argv[0][0]);
+  //size_t parameters_t8=(size_t) (argv[0][0]);
 
   /* The shared ram between program and library*/
   debug_printf("\n @RAMP=%x\n sizeRamp=%x", (unsigned int)Ramp,(int)sizeRam);

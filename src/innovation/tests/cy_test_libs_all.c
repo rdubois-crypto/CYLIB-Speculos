@@ -45,7 +45,7 @@
 #include "cy_test_wrap_fp.c"
 #include "cy_test_wrap_fp2.c"
 #include "cy_test_wrap_fp12.c"
-#include "cy_test_wrap_ec.c"
+//#include "cy_test_wrap_ec.c"
 #include "cy_test_musig2.c"
 
 cy_error_t test_all(cryptolib_ctx_t *cryptolib)

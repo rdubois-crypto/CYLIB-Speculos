@@ -35,11 +35,11 @@
 
 static int test_ecmul(cy_ec_ctx_t *ctx)
 {
-	cy_error_t error = CY_OK;
+	cy_error_t error = CY_KO;
+	UNUSED(ctx);
 
 
-
-    end:
+   // end:
 	   return error;
 }
 
@@ -55,7 +55,7 @@ static int test_ec_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx_tes
 	  cx_curve_t curve=C_cy_allCurves->curve;
 
 	  debug_Print_RAMp(Ramp, sizeRam);
-
+	  UNUSED(name);
 	  /* Initializing the fp unit*/
 	  CY_CHECK(cy_ec_init(&ctx, Ramp, sizeRam, curve, NULL));
 	  printf("\n %s %s : ", ctx.libname, C_cy_allCurves->curve_name);
@@ -90,7 +90,7 @@ static cy_error_t test_ec_unit(uint8_t *Ramp, size_t Ramp_t8)
 	printf("\n nb supported curves=%d", nb_supported);
 
     const uint8_t *argv_gen[]={NULL, NULL};
-
+    UNUSED(argv_gen); //to make compiler happy
     if(nb_supported>5) nb_supported=5;
 
 	for(i=0;i<nb_supported;i++){

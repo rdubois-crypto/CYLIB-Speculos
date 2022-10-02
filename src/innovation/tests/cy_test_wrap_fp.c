@@ -32,9 +32,10 @@
 #define _MAX_SIZE_TESTED_FP_T8 48
 
 /* expected precomputed constant n0 on sec256k1, obtained from sage */
-expected_no_128_256k1[16]={0xbc, 0xb2, 0x23, 0xfe, 0xdc, 0x24, 0xa0, 0x59,
+/*
+uint8_t expected_no_128_256k1[16]={0xbc, 0xb2, 0x23, 0xfe, 0xdc, 0x24, 0xa0, 0x59,
 						   0xd8, 0x38, 0x09, 0x1d, 0xd2, 0x25, 0x35, 0x31};
-
+*/
 
 /* size coded on 64 bits lsb*/
 
@@ -62,6 +63,7 @@ uint8_t mod_b[] = { 193, 85,  77, 181, 65,  190, 220, 240, 100, 143, 53,
 /* We test simultaneously mul, add, sub and pow using a little fermat inversion loop checking that a^(p-2)-a^-1==0 with random input*/
 /* input : allocated fp (a,b,r)*/
 /* TODO*/
+/*
 int test_InversionFermatLoop(cy_fp_ctx_t *ctx)
 {
   cy_error_t error = CY_OK;
@@ -69,9 +71,6 @@ int test_InversionFermatLoop(cy_fp_ctx_t *ctx)
   uint8_t two[1]={2};
   uint8_t one[1]={1};
 
-  /* TODO*/
-  /* We test simultaneously mul and inv by testing reciprocity */
-  /* TODO*/
   	 uint8_t exported[_MAX_SIZE_TESTED_FP_T8];
   	  uint8_t test_a[_MAX_SIZE_TESTED_FP_T8];
   	  uint8_t test_b[_MAX_SIZE_TESTED_FP_T8];
@@ -93,12 +92,12 @@ int test_InversionFermatLoop(cy_fp_ctx_t *ctx)
   end:
 	  return error;
 }
-
+*/
 
 static cy_error_t test_fp_montgomery(cy_fp_ctx_t *ctx)
 {
 	cy_error_t error = CY_OK;
-	cy_fp_t fp_a, fp_b, fp_aR, fp_bR;
+	cy_fp_t fp_a, fp_b, fp_aR;
 	uint8_t res[SEC256K1_SIZE_u8];
 	size_t parameters_t8= ctx->t8_modular;
 
@@ -175,11 +174,14 @@ static cy_error_t test_fp_montgomery(cy_fp_ctx_t *ctx)
 static cy_error_t test_fp_add(cy_fp_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 {
 	 cy_error_t error = CY_OK;
-	 cy_fp_t fp_a, fp_b, fp_apowp, fp_r;
+	 cy_fp_t fp_a, fp_b,  fp_r;
 	 uint8_t exported[_MAX_SIZE_TESTED_FP_T8];
-	  uint8_t test_a[_MAX_SIZE_TESTED_FP_T8];
-	  uint8_t test_b[_MAX_SIZE_TESTED_FP_T8];
+	  //uint8_t test_a[_MAX_SIZE_TESTED_FP_T8];
+	 // uint8_t test_b[_MAX_SIZE_TESTED_FP_T8];
 	  size_t parameters_t8= ctx->t8_modular;
+
+	  UNUSED(Ramp);
+	  UNUSED(sizeRam);
 
 	  debug_printf("\n-Alloc and Import");
 
@@ -235,7 +237,7 @@ static int test_crypto_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx
   argv_gen[0]=C_cy_allCurves->t8_size;
   argv_gen[1]=C_cy_allCurves->p;
 
-  size_t parameters_t8=(size_t) (argv_gen[0][0]);
+  //size_t parameters_t8=(size_t) (argv_gen[0][0]);
 
   /* The shared ram between program and library*/
   debug_printf("\n @RAMP=%x\n sizeRamp=%x", (unsigned int)Ramp,(int)sizeRam);
@@ -274,6 +276,7 @@ static cy_error_t test_fp_unit(uint8_t *Ramp, size_t Ramp_t8)
 	printf("\n nb supported curves=%d", nb_supported);
 
     const uint8_t *argv_gen[]={NULL, NULL};
+    UNUSED(argv_gen);
 
     if(nb_supported>5) nb_supported=5;
 

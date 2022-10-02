@@ -83,6 +83,8 @@ bolos/cxlib.h
 ../src/innovation/api/common/bolos/cxlib.h
 ../wrappers/bolos/cy_wrap_fp_bolos.h
 ../src/innovation/api/wrappers/bolos/cy_wrap_fp_bolos.h
+../wrappers/bolos/cy_wrap_bolos_bn.h
+../src/innovation/api/wrappers/bolos/cy_wrap_bolos_bn.h
 ../wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 ../src/innovation/api/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
 ../../../src/innovation/cy_wrap_fp_libecc.h
@@ -114,13 +116,23 @@ cy_gda_component.h
 
 ../src/innovation/api/common/cy_errors.h
 
+../src/innovation/api/common/cy_io_fp.h
+
 ../src/innovation/api/components/cy_gda_component.h
 
 ../src/innovation/api/components/cy_memory_unit.h
 
+../src/innovation/api/hash/cy_HashPedersen.h
+cy_ec.h
+../src/innovation/api/hash/cy_ec.h
+cy_ec_const.h
+../src/innovation/api/hash/cy_ec_const.h
+
 ../src/innovation/api/hash/cy_hash.h
 
 ../src/innovation/api/io/cy_io_common_tools.h
+
+../src/innovation/api/io/cy_io_ec.h
 
 ../src/innovation/api/protocols/cy_musig2.h
 
@@ -133,6 +145,40 @@ cy_io_common_tools.h
 ../src/innovation/src/io/cy_io_common_tools.h
 stdio.h
 -
+
+../src/innovation/tests/cy_test_hashpedersen.c
+stdio.h
+-
+malloc.h
+-
+setjmp.h
+-
+stdbool.h
+-
+string.h
+-
+stdbool.h
+-
+stdint.h
+-
+cy_errors.h
+../src/innovation/tests/cy_errors.h
+cy_configuration.h
+../src/innovation/tests/cy_configuration.h
+cy_errors.h
+../src/innovation/tests/cy_errors.h
+cy_fp.h
+../src/innovation/tests/cy_fp.h
+cy_ec.h
+../src/innovation/tests/cy_ec.h
+cy_io_common_tools.h
+../src/innovation/tests/cy_io_common_tools.h
+cy_io_fp.h
+../src/innovation/tests/cy_io_fp.h
+cy_HashPedersen.h
+../src/innovation/tests/cy_HashPedersen.h
+test_vectors/test_vector_hashpedersen.c
+../src/innovation/tests/test_vectors/test_vector_hashpedersen.c
 
 ../src/innovation/tests/cy_test_mem_unit.c
 stdbool.h
@@ -193,6 +239,14 @@ cy_musig2.h
 ../src/innovation/tests/cy_musig2.h
 cy_io_common_tools.h
 ../src/innovation/tests/cy_io_common_tools.h
+cy_io_ec.h
+../src/innovation/tests/cy_io_ec.h
+cy_ec_const.h
+../src/innovation/tests/cy_ec_const.h
+cy_HashPedersen.h
+../src/innovation/tests/cy_HashPedersen.h
+test_vectors/test_vector_musig2.c
+../src/innovation/tests/test_vectors/test_vector_musig2.c
 
 ../src/innovation/tests/cy_test_wrap_ec.c
 stdio.h
@@ -308,6 +362,12 @@ cy_quad.h
 cy_fp2.h
 ../src/innovation/tests/cy_fp2.h
 
+../src/innovation/tests/test_vectors/test_vector_hashpedersen.c
+
+../src/innovation/tests/test_vectors/test_vector_musig2.c
+
+../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
+
 ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
 
 ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
@@ -357,6 +417,8 @@ cy_test_wrap_ec.c
 /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_wrap_ec.c
 cy_test_musig2.c
 /home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_musig2.c
+cy_test_hashpedersen.c
+/home/dubois/eclipse-workspace/CYLIB-Speculos/tests/pbc/inno/cy_test_hashpedersen.c
 
 install/include/openssl/asn1.h
 time.h

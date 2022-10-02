@@ -67,8 +67,12 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/fp_extensions/cy_quad.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/arithmetic/pairings/cy_pbc.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/hash/cy_HashPedersen.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/hash/cy_HashPedersen.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_common_tools.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_ec.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/io/cy_io_ec.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_fp.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/protocols/cy_musig2.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/src/protocols/cy_musig2.c.o"
+  "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_bn.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_bn.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_ec.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_ec.c.o"
   "/home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_gda.c" "/home/dubois/eclipse-workspace/CYLIB-Speculos/build/src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_gda.c.o"
@@ -83,7 +87,7 @@ set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "GIT_REVISION=\"b5e47d4\""
+  "GIT_REVISION=\"e03ac5b\""
   "NATIVE_64BITS"
   "OS_LITTLE_ENDIAN"
   )

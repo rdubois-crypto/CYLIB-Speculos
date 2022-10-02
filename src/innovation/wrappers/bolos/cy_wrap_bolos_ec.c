@@ -401,6 +401,24 @@ cy_error_t wrap_bolos_export_doublefp(const cy_ecpoint_t *a, cy_fp_t *x, cy_fp_t
 }
 
 
+
+cy_error_t wrap_bolos_exportX(const cy_ecpoint_t *a, uint8_t *out, size_t t8_out)
+{
+	 cy_error_t error = CY_KO;
+     cy_fp_t trash;
+     cy_fp_alloc(a->ctx->ctx_fp_p, a->ctx->ctx_fp_p->t8_modular, &trash);
+
+
+	 CY_CHECK(wrap_bolos_getX(a, &trash));
+	 CY_CHECK(cy_fp_export(&trash, out, t8_out));
+
+	 CY_CHECK(cy_fp_free( &trash));
+
+	 end:
+		    	return error;
+}
+
+
 cy_error_t wrap_bolos_getX(const cy_ecpoint_t *a, cy_fp_t *out)
 {
 	 cy_error_t error = CY_KO;

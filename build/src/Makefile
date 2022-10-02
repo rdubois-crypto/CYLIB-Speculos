@@ -1852,6 +1852,33 @@ innovation/src/arithmetic/pairings/cy_pbc.c.s:
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.s
 .PHONY : innovation/src/arithmetic/pairings/cy_pbc.c.s
 
+innovation/src/hash/cy_HashPedersen.o: innovation/src/hash/cy_HashPedersen.c.o
+
+.PHONY : innovation/src/hash/cy_HashPedersen.o
+
+# target to build an object file
+innovation/src/hash/cy_HashPedersen.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/hash/cy_HashPedersen.c.o
+.PHONY : innovation/src/hash/cy_HashPedersen.c.o
+
+innovation/src/hash/cy_HashPedersen.i: innovation/src/hash/cy_HashPedersen.c.i
+
+.PHONY : innovation/src/hash/cy_HashPedersen.i
+
+# target to preprocess a source file
+innovation/src/hash/cy_HashPedersen.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/hash/cy_HashPedersen.c.i
+.PHONY : innovation/src/hash/cy_HashPedersen.c.i
+
+innovation/src/hash/cy_HashPedersen.s: innovation/src/hash/cy_HashPedersen.c.s
+
+.PHONY : innovation/src/hash/cy_HashPedersen.s
+
+# target to generate assembly for a file
+innovation/src/hash/cy_HashPedersen.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/hash/cy_HashPedersen.c.s
+.PHONY : innovation/src/hash/cy_HashPedersen.c.s
+
 innovation/src/io/cy_io_common_tools.o: innovation/src/io/cy_io_common_tools.c.o
 
 .PHONY : innovation/src/io/cy_io_common_tools.o
@@ -1879,6 +1906,33 @@ innovation/src/io/cy_io_common_tools.c.s:
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.s
 .PHONY : innovation/src/io/cy_io_common_tools.c.s
 
+innovation/src/io/cy_io_ec.o: innovation/src/io/cy_io_ec.c.o
+
+.PHONY : innovation/src/io/cy_io_ec.o
+
+# target to build an object file
+innovation/src/io/cy_io_ec.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_ec.c.o
+.PHONY : innovation/src/io/cy_io_ec.c.o
+
+innovation/src/io/cy_io_ec.i: innovation/src/io/cy_io_ec.c.i
+
+.PHONY : innovation/src/io/cy_io_ec.i
+
+# target to preprocess a source file
+innovation/src/io/cy_io_ec.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_ec.c.i
+.PHONY : innovation/src/io/cy_io_ec.c.i
+
+innovation/src/io/cy_io_ec.s: innovation/src/io/cy_io_ec.c.s
+
+.PHONY : innovation/src/io/cy_io_ec.s
+
+# target to generate assembly for a file
+innovation/src/io/cy_io_ec.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_ec.c.s
+.PHONY : innovation/src/io/cy_io_ec.c.s
+
 innovation/src/io/cy_io_fp.o: innovation/src/io/cy_io_fp.c.o
 
 .PHONY : innovation/src/io/cy_io_fp.o
@@ -1905,6 +1959,60 @@ innovation/src/io/cy_io_fp.s: innovation/src/io/cy_io_fp.c.s
 innovation/src/io/cy_io_fp.c.s:
 	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.s
 .PHONY : innovation/src/io/cy_io_fp.c.s
+
+innovation/src/protocols/cy_musig2.o: innovation/src/protocols/cy_musig2.c.o
+
+.PHONY : innovation/src/protocols/cy_musig2.o
+
+# target to build an object file
+innovation/src/protocols/cy_musig2.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/protocols/cy_musig2.c.o
+.PHONY : innovation/src/protocols/cy_musig2.c.o
+
+innovation/src/protocols/cy_musig2.i: innovation/src/protocols/cy_musig2.c.i
+
+.PHONY : innovation/src/protocols/cy_musig2.i
+
+# target to preprocess a source file
+innovation/src/protocols/cy_musig2.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/protocols/cy_musig2.c.i
+.PHONY : innovation/src/protocols/cy_musig2.c.i
+
+innovation/src/protocols/cy_musig2.s: innovation/src/protocols/cy_musig2.c.s
+
+.PHONY : innovation/src/protocols/cy_musig2.s
+
+# target to generate assembly for a file
+innovation/src/protocols/cy_musig2.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/src/protocols/cy_musig2.c.s
+.PHONY : innovation/src/protocols/cy_musig2.c.s
+
+innovation/wrappers/bolos/cy_wrap_bolos_bn.o: innovation/wrappers/bolos/cy_wrap_bolos_bn.c.o
+
+.PHONY : innovation/wrappers/bolos/cy_wrap_bolos_bn.o
+
+# target to build an object file
+innovation/wrappers/bolos/cy_wrap_bolos_bn.c.o:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_bn.c.o
+.PHONY : innovation/wrappers/bolos/cy_wrap_bolos_bn.c.o
+
+innovation/wrappers/bolos/cy_wrap_bolos_bn.i: innovation/wrappers/bolos/cy_wrap_bolos_bn.c.i
+
+.PHONY : innovation/wrappers/bolos/cy_wrap_bolos_bn.i
+
+# target to preprocess a source file
+innovation/wrappers/bolos/cy_wrap_bolos_bn.c.i:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_bn.c.i
+.PHONY : innovation/wrappers/bolos/cy_wrap_bolos_bn.c.i
+
+innovation/wrappers/bolos/cy_wrap_bolos_bn.s: innovation/wrappers/bolos/cy_wrap_bolos_bn.c.s
+
+.PHONY : innovation/wrappers/bolos/cy_wrap_bolos_bn.s
+
+# target to generate assembly for a file
+innovation/wrappers/bolos/cy_wrap_bolos_bn.c.s:
+	cd /home/dubois/eclipse-workspace/CYLIB-Speculos/build && $(MAKE) -f src/CMakeFiles/emu.dir/build.make src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_bn.c.s
+.PHONY : innovation/wrappers/bolos/cy_wrap_bolos_bn.c.s
 
 innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.o: innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.c.o
 
@@ -2376,12 +2484,24 @@ help:
 	@echo "... innovation/src/arithmetic/pairings/cy_pbc.o"
 	@echo "... innovation/src/arithmetic/pairings/cy_pbc.i"
 	@echo "... innovation/src/arithmetic/pairings/cy_pbc.s"
+	@echo "... innovation/src/hash/cy_HashPedersen.o"
+	@echo "... innovation/src/hash/cy_HashPedersen.i"
+	@echo "... innovation/src/hash/cy_HashPedersen.s"
 	@echo "... innovation/src/io/cy_io_common_tools.o"
 	@echo "... innovation/src/io/cy_io_common_tools.i"
 	@echo "... innovation/src/io/cy_io_common_tools.s"
+	@echo "... innovation/src/io/cy_io_ec.o"
+	@echo "... innovation/src/io/cy_io_ec.i"
+	@echo "... innovation/src/io/cy_io_ec.s"
 	@echo "... innovation/src/io/cy_io_fp.o"
 	@echo "... innovation/src/io/cy_io_fp.i"
 	@echo "... innovation/src/io/cy_io_fp.s"
+	@echo "... innovation/src/protocols/cy_musig2.o"
+	@echo "... innovation/src/protocols/cy_musig2.i"
+	@echo "... innovation/src/protocols/cy_musig2.s"
+	@echo "... innovation/wrappers/bolos/cy_wrap_bolos_bn.o"
+	@echo "... innovation/wrappers/bolos/cy_wrap_bolos_bn.i"
+	@echo "... innovation/wrappers/bolos/cy_wrap_bolos_bn.s"
 	@echo "... innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.o"
 	@echo "... innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.i"
 	@echo "... innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.s"

@@ -1373,6 +1373,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_fp2x3x2.c.o
  ../src/innovation/api/common/cy_errors.h
  ../src/innovation/api/components/cy_gda_component.h
  ../src/innovation/api/components/cy_memory_unit.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
@@ -1413,6 +1414,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/fp_extensions/cy_quad.c.o
  ../src/innovation/api/common/cy_errors.h
  ../src/innovation/api/components/cy_gda_component.h
  ../src/innovation/api/components/cy_memory_unit.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
@@ -1454,6 +1456,7 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o
  ../src/innovation/api/common/cy_errors.h
  ../src/innovation/api/components/cy_gda_component.h
  ../src/innovation/api/components/cy_memory_unit.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
@@ -1478,9 +1481,102 @@ src/CMakeFiles/emu.dir/innovation/src/arithmetic/pairings/cy_pbc.c.o
  install/include/openssl/safestack.h
  install/include/openssl/stack.h
  install/include/openssl/symhacks.h
+src/CMakeFiles/emu.dir/innovation/src/hash/cy_HashPedersen.c.o
+ ../src/bolos/cx_aes.h
+ ../src/bolos/cx_ec.h
+ ../src/bolos/cx_ed25519.h
+ ../src/bolos/cx_hash.h
+ ../src/bolos/cxlib.h
+ ../src/external/libsec256k1/libsec256k1_field_10x26.h
+ ../src/innovation/api/arithmetic/cy_bn.h
+ ../src/innovation/api/arithmetic/cy_ec.h
+ ../src/innovation/api/arithmetic/cy_ec_const.h
+ ../src/innovation/api/arithmetic/cy_fp.h
+ ../src/innovation/api/arithmetic/cy_fp2.h
+ ../src/innovation/api/arithmetic/cy_fp2x3x2.h
+ ../src/innovation/api/arithmetic/cy_quad.h
+ ../src/innovation/api/common/cy_configuration.h
+ ../src/innovation/api/common/cy_def.h
+ ../src/innovation/api/common/cy_errors.h
+ ../src/innovation/api/common/cy_io_fp.h
+ ../src/innovation/api/components/cy_gda_component.h
+ ../src/innovation/api/components/cy_memory_unit.h
+ ../src/innovation/api/hash/cy_HashPedersen.h
+ ../src/innovation/api/hash/cy_hash.h
+ ../src/innovation/api/io/cy_io_common_tools.h
+ ../src/innovation/api/io/cy_io_ec.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
+ ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
+ ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/hash/cy_HashPedersen.c
+ install/include/openssl/asn1.h
+ install/include/openssl/asn1err.h
+ install/include/openssl/bio.h
+ install/include/openssl/bioerr.h
+ install/include/openssl/bn.h
+ install/include/openssl/bnerr.h
+ install/include/openssl/crypto.h
+ install/include/openssl/cryptoerr.h
+ install/include/openssl/e_os2.h
+ install/include/openssl/ebcdic.h
+ install/include/openssl/ec.h
+ install/include/openssl/ecerr.h
+ install/include/openssl/opensslconf.h
+ install/include/openssl/opensslv.h
+ install/include/openssl/ossl_typ.h
+ install/include/openssl/safestack.h
+ install/include/openssl/stack.h
+ install/include/openssl/symhacks.h
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_common_tools.c.o
  ../src/innovation/api/io/cy_io_common_tools.h
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_common_tools.c
+src/CMakeFiles/emu.dir/innovation/src/io/cy_io_ec.c.o
+ ../src/bolos/cx_aes.h
+ ../src/bolos/cx_ec.h
+ ../src/bolos/cx_ed25519.h
+ ../src/bolos/cx_hash.h
+ ../src/bolos/cxlib.h
+ ../src/external/libsec256k1/libsec256k1_field_10x26.h
+ ../src/innovation/api/arithmetic/cy_ec.h
+ ../src/innovation/api/arithmetic/cy_fp.h
+ ../src/innovation/api/arithmetic/cy_fp2.h
+ ../src/innovation/api/arithmetic/cy_fp2x3x2.h
+ ../src/innovation/api/arithmetic/cy_quad.h
+ ../src/innovation/api/common/cy_configuration.h
+ ../src/innovation/api/common/cy_def.h
+ ../src/innovation/api/common/cy_errors.h
+ ../src/innovation/api/common/cy_io_fp.h
+ ../src/innovation/api/components/cy_gda_component.h
+ ../src/innovation/api/components/cy_memory_unit.h
+ ../src/innovation/api/io/cy_io_common_tools.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
+ ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
+ ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_ec.c
+ install/include/openssl/asn1.h
+ install/include/openssl/asn1err.h
+ install/include/openssl/bio.h
+ install/include/openssl/bioerr.h
+ install/include/openssl/bn.h
+ install/include/openssl/bnerr.h
+ install/include/openssl/crypto.h
+ install/include/openssl/cryptoerr.h
+ install/include/openssl/e_os2.h
+ install/include/openssl/ebcdic.h
+ install/include/openssl/ec.h
+ install/include/openssl/ecerr.h
+ install/include/openssl/opensslconf.h
+ install/include/openssl/opensslv.h
+ install/include/openssl/ossl_typ.h
+ install/include/openssl/safestack.h
+ install/include/openssl/stack.h
+ install/include/openssl/symhacks.h
 src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o
  ../src/bolos/cx_aes.h
  ../src/bolos/cx_ec.h
@@ -1495,15 +1591,94 @@ src/CMakeFiles/emu.dir/innovation/src/io/cy_io_fp.c.o
  ../src/innovation/api/common/cy_configuration.h
  ../src/innovation/api/common/cy_def.h
  ../src/innovation/api/common/cy_errors.h
+ ../src/innovation/api/common/cy_io_fp.h
  ../src/innovation/api/components/cy_gda_component.h
  ../src/innovation/api/components/cy_memory_unit.h
  ../src/innovation/api/io/cy_io_common_tools.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
  ../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
  ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
  ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
  /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/io/cy_io_fp.c
+ install/include/openssl/asn1.h
+ install/include/openssl/asn1err.h
+ install/include/openssl/bio.h
+ install/include/openssl/bioerr.h
+ install/include/openssl/bn.h
+ install/include/openssl/bnerr.h
+ install/include/openssl/crypto.h
+ install/include/openssl/cryptoerr.h
+ install/include/openssl/e_os2.h
+ install/include/openssl/ebcdic.h
+ install/include/openssl/ec.h
+ install/include/openssl/ecerr.h
+ install/include/openssl/opensslconf.h
+ install/include/openssl/opensslv.h
+ install/include/openssl/ossl_typ.h
+ install/include/openssl/safestack.h
+ install/include/openssl/stack.h
+ install/include/openssl/symhacks.h
+src/CMakeFiles/emu.dir/innovation/src/protocols/cy_musig2.c.o
+ ../src/bolos/cx_aes.h
+ ../src/bolos/cx_ec.h
+ ../src/bolos/cx_ed25519.h
+ ../src/bolos/cx_hash.h
+ ../src/bolos/cxlib.h
+ ../src/external/libsec256k1/libsec256k1_field_10x26.h
+ ../src/innovation/api/arithmetic/cy_ec.h
+ ../src/innovation/api/arithmetic/cy_fp.h
+ ../src/innovation/api/arithmetic/cy_fp2.h
+ ../src/innovation/api/arithmetic/cy_fp2x3x2.h
+ ../src/innovation/api/arithmetic/cy_quad.h
+ ../src/innovation/api/common/cy_configuration.h
+ ../src/innovation/api/common/cy_def.h
+ ../src/innovation/api/common/cy_errors.h
+ ../src/innovation/api/components/cy_gda_component.h
+ ../src/innovation/api/components/cy_memory_unit.h
+ ../src/innovation/api/hash/cy_hash.h
+ ../src/innovation/api/protocols/cy_musig2.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_cryptolib.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_ec.h
+ ../src/innovation/wrappers/bolos/cy_wrap_bolos_gda.h
+ ../src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
+ ../src/innovation/wrappers/libsec256k1/cy_wrap_fp_lib256k1.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/src/protocols/cy_musig2.c
+ install/include/openssl/asn1.h
+ install/include/openssl/asn1err.h
+ install/include/openssl/bio.h
+ install/include/openssl/bioerr.h
+ install/include/openssl/bn.h
+ install/include/openssl/bnerr.h
+ install/include/openssl/crypto.h
+ install/include/openssl/cryptoerr.h
+ install/include/openssl/e_os2.h
+ install/include/openssl/ebcdic.h
+ install/include/openssl/ec.h
+ install/include/openssl/ecerr.h
+ install/include/openssl/opensslconf.h
+ install/include/openssl/opensslv.h
+ install/include/openssl/ossl_typ.h
+ install/include/openssl/safestack.h
+ install/include/openssl/stack.h
+ install/include/openssl/symhacks.h
+src/CMakeFiles/emu.dir/innovation/wrappers/bolos/cy_wrap_bolos_bn.c.o
+ ../src/bolos/cx_aes.h
+ ../src/bolos/cx_ec.h
+ ../src/bolos/cx_ed25519.h
+ ../src/bolos/cx_hash.h
+ ../src/bolos/cxlib.h
+ ../src/innovation/api/arithmetic/cy_bn.h
+ ../src/innovation/api/arithmetic/cy_fp.h
+ ../src/innovation/api/common/cy_def.h
+ ../src/innovation/api/common/cy_errors.h
+ ../src/innovation/api/components/cy_gda_component.h
+ ../src/innovation/api/components/cy_memory_unit.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_bn.c
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_bolos_bn.h
+ /home/dubois/eclipse-workspace/CYLIB-Speculos/src/innovation/wrappers/bolos/cy_wrap_fp_bolos.h
  install/include/openssl/asn1.h
  install/include/openssl/asn1err.h
  install/include/openssl/bio.h

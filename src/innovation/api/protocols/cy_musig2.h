@@ -20,7 +20,7 @@ struct musig2_ctx_s {
 
   cy_ec_ctx_t *ctx_ec; /* elliptic context for elliptic curves operations 		         */
   cy_gda_ctx_t *gda;   /* random generator */
-  int n_users;
+  unsigned int n_users;
 
   void *opt;		   /* reserved for future use*/
   size_t opt_t8;	   /* size of optional previous field( future use)*/

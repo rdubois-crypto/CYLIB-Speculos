@@ -59,7 +59,8 @@ extern cy_hash_unit_t unit_pedersen;
 extern cy_error_t pedersen_configure(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx);
 /* core pedersen hash of two elements*/
 extern cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *res);
-
+/* chain hash*/
+extern cy_error_t pedersen_hash(cy_pedersen_ctx_t *ctx, cy_fp_t *data, size_t data_fp_length, cy_fp_t *res);
 
 
 static const uint8_t Pedersen_Shift[Stark_SIZE_u8*2] = {

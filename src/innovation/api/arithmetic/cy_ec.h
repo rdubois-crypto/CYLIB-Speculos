@@ -90,6 +90,8 @@ extern cy_error_t cy_ec_import_compressed(const uint8_t *xy_compressed,
 
 extern cy_error_t cy_ec_export(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_xy);
 extern cy_error_t cy_ec_export2(const cy_ecpoint_t *G,  uint8_t *x, size_t t8_x, uint8_t *y, size_t t8_y );
+extern cy_error_t cy_ec_exportX(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_xy);
+
 extern cy_error_t cy_ec_export_compressed(const cy_ecpoint_t *P_in, uint8_t *xy_compressed,
         const size_t xy_compressed_len, uint32_t *sign );
 
