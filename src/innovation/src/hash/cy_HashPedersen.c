@@ -59,9 +59,10 @@ static cy_error_t ec_muladd(cy_pedersen_ctx_t *ctx, cy_ecpoint_t *acc, cy_fp_t *
 {
    cy_error_t error;
    cy_ecpoint_t ec_temp;
-  // int flag=0;
+
 
    CY_CHECK(cy_ec_alloc(ctx->ec_ctx, &ec_temp));
+
    CY_CHECK(cy_ec_scalarmult_fp(a, &ctx->P[index], &ec_temp));
    CY_CHECK(cy_ec_add( &ec_temp, acc, acc));
    CY_CHECK(cy_ec_free( &ec_temp));
@@ -78,12 +79,16 @@ cy_error_t pedersen_configure(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx)
  //  int flag;
    ctx->ec_ctx=ec_ctx;
 
+   printf("\n ctx adresse=%x", (unsigned int) ec_ctx);
+
    for(i=0;i<_NUM_PEDPOINT;i++){
 	   CY_CHECK(cy_ec_alloc(ec_ctx, &ctx->P[i]));
    }
    CY_CHECK(cy_ec_alloc(ec_ctx, &ctx->ShiftPoint));
    CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular,& ctx->mask248_low));
    CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &ctx->fp_hash));
+
+   ctx->blocksize=ctx->ec_ctx->ctx_fp_p->t8_modular;
 
    CY_CHECK(cy_ec_import(Pedersen_P0, Stark_SIZE_u8, &ctx->P[0] ));
    CY_CHECK(cy_ec_import(Pedersen_P1, Stark_SIZE_u8, &ctx->P[1] ));
@@ -104,7 +109,6 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
 
    CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, Stark_SIZE_u8, &fp_temp));
    CY_CHECK(cy_ec_alloc(ctx->ec_ctx, &ec_Hash));
-
 
    CY_CHECK(cy_ec_import(Pedersen_Shift, Stark_SIZE_u8, &ec_Hash )); /* R=ShiftPoint*/
    CY_CHECK(cy_bn_and( a->bn, ctx->mask248_low.bn, fp_temp.bn) );		 /*R+= low_a*P0*/
@@ -137,11 +141,12 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
 
 
 /* Compute the main loop, without the final padding with length */
-cy_error_t pedersen_hash_updatefp(cy_pedersen_ctx_t *ctx,  cy_fp_t *data, cy_fp_t *io_fp_hash)
+cy_error_t pedersen_hash_updatefp(cy_pedersen_ctx_t *ctx,  cy_fp_t *data)
 {
 	 cy_error_t error;
 
-	 CY_CHECK(pedersen(ctx, io_fp_hash, data , io_fp_hash));
+
+	 CY_CHECK(pedersen(ctx, &ctx->fp_hash, data , &ctx->fp_hash));
 	 ctx->data_fp_length++;
 	 end:
 	    return error;
@@ -160,24 +165,29 @@ cy_error_t pedersen_hash_init(cy_pedersen_ctx_t *ctx, uint8_t *constant, size_t 
 		    return error;
 }
 
+/* beware that the update should be one field element per update (no fragmentation of felt is possible)*/
 cy_error_t pedersen_hash_update(cy_pedersen_ctx_t *ctx,  uint8_t *data, size_t t8_data)
 {
 	 cy_error_t error;
 	 cy_fp_t fp_temp;
-	 size_t i;
+	 size_t i, t8_block=ctx->ec_ctx->ctx_fp_p->t8_modular;
 
-	 cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_temp);
+	 cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, t8_block, &fp_temp);
 
-	 /* for simplicity sake, the hash only handles full fp updating for now*/
-	 if((t8_data%ctx->blocksize)!=0)
-	 {
-		 return CY_ERR_LENGTH;
-	 }
 	 ctx->current_t8+=t8_data;
+
+
 	 for(i=0;i<t8_data;i+=ctx->blocksize)
 	 {
-		 cy_fp_import(data, ctx->ec_ctx->ctx_fp_p->t8_modular, &fp_temp);
-		 CY_CHECK(pedersen_hash_updatefp(ctx,&fp_temp, &ctx->fp_hash ));
+		 if(i+ctx->blocksize>t8_data)
+		 {
+			 t8_block=t8_data-i;
+		 }
+
+		 CY_CHECK(cy_fp_import(data, t8_block, &fp_temp));
+
+
+		 CY_CHECK(pedersen_hash_updatefp(ctx,&fp_temp ));
 
 	 }
 
@@ -201,12 +211,14 @@ cy_error_t pedersen_hash_unpadded(cy_pedersen_ctx_t *ctx, cy_fp_t *data, size_t 
   CY_CHECK(pedersen_hash_init(ctx, zero, 1));
 
   for(i=0;i<data_fp_length-1;i++){
-	  CY_CHECK(pedersen(ctx, &ctx->fp_hash, &(data[i]) , &ctx->fp_hash));
+
+	  CY_CHECK(pedersen_hash_updatefp(ctx, &(data[i]) ));
+
   }
 
   CY_CHECK(pedersen(ctx, &ctx->fp_hash, &(data[i]) , res));
 
- ctx->data_fp_length=data_fp_length;
+  ctx->data_fp_length++;
 
    end:
    return error;
@@ -245,8 +257,10 @@ cy_error_t pedersen_hash_final(cy_pedersen_ctx_t *ctx, uint8_t *hash_res, size_t
 
 	  CY_CHECK(cy_fp_from_u32( ctx->data_fp_length, &fp_temp));
 	  CY_CHECK(pedersen(ctx, &ctx->fp_hash, &fp_temp, &ctx->fp_hash));
+
 	  /* export resulting felt to uint8_t buffer output*/
 	  CY_CHECK(cy_fp_export(&ctx->fp_hash,  hash_res, ctx->ec_ctx->ctx_fp_p->t8_modular));
+
 
 	  CY_CHECK(cy_fp_free(&fp_temp));
 
@@ -286,28 +300,33 @@ cy_error_t pedersen_uninit(cy_pedersen_ctx_t *ctx){
 }
    
 
+cy_pedersen_ctx_t global_pedersen_ctx;
+
 /* Ramp is a pointer to the memory for the unit
  * the curve identifier is used to initialize the ellitic context
  */
-cy_error_t pedersen_unit_configure(void *pedersen_unit, uint8_t *ec_ctx, size_t curve_id)
+cy_error_t pedersen_unit_configure(void *pedersen_unit, uint8_t *ec_ctx, size_t t8_ctx)
 {
 	 cy_error_t error=0;
 	 cy_hash_unit_t *unit=(cy_hash_unit_t *) pedersen_unit;
 
-	 //printf("\n pedersen_unit_configure");
+	 printf("\n ctx adresse=%x", (unsigned int) ec_ctx);
+	 printf("\n ctx pedersen=%x", (unsigned int) unit->ctx);
+	 printf("\n global ctx pedersen=%x", (unsigned int) &global_pedersen_ctx);
 
-	 UNUSED(curve_id);
 
 
-	 CY_CHECK(pedersen_configure( (cy_ec_ctx_t *) ec_ctx, (cy_pedersen_ctx_t *) (unit->ctx) ));
+	 UNUSED(t8_ctx);/*t8_ctx is here for hash_unit_t compatibility */
+	 UNUSED(ec_ctx);
+
+	 //CY_CHECK(pedersen_configure( (cy_ec_ctx_t *) ec_ctx, (cy_pedersen_ctx_t *) (unit->ctx) ));
 
 	 unit->is_initialized=CY_OBJ_INITIALIZED;
 
-	 end:
+//	 end:
 	 	 return error;
 }
 
-cy_pedersen_ctx_t global_pedersen_ctx;
 
 cy_hash_unit_t unit_pedersen={
 		NULL,
@@ -322,7 +341,7 @@ cy_hash_unit_t unit_pedersen={
 		 NULL,
 
 		 CY_ERR_INIT,
-		 (void*) &global_pedersen_ctx,
+		 (void*) &global_pedersen_ctx, /* *ctx */
 		0,
 		  0,
 		  NULL,

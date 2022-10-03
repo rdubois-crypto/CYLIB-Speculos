@@ -15,15 +15,25 @@
 #define _CY_HASH_H
 
 
-/* for tweakable hash functions (null for most cases */
-typedef cy_error_t (*Fct_Hash_Configure_t)(void *io_ps_ctx, uint8_t *initializer,
+typedef struct hash_unit_s cy_hash_unit_t;
+
+/* for tweakable hash functions (null for most cases, here self_unit is a pointer to the
+ * cy_hash_unit_t itself */
+typedef cy_error_t (*Fct_Hash_Configure_t)(cy_hash_unit_t *self_unit, uint8_t *initializer,
                                      size_t initializer_t8);
 
+/* reason of the untyped (void*) :ctx is a pointer to the hashing context; which is different for each functions
+ * for pedersen, it will adress a structure containing elliptic params
+ */
 typedef cy_error_t (*Fct_Hash_Init_t)(void *io_ps_ctx, uint8_t *in,
                                      size_t t8_in);
 typedef cy_error_t (*Fct_Hash_Update_t)(void *io_ps_ctx, uint8_t *in,
                                     size_t t8_in);
 typedef cy_error_t (*Fct_Hash_Final_t)(void *io_ps_ctx, uint8_t *out, size_t sizeout);
+
+/* release memory*/
+typedef cy_error_t (*Fct_Hash_Uninit_t)(cy_hash_unit_t *self_unit);
+
 
 typedef cy_error_t (*Fct_Hash_All_t)(uint8_t *in, size_t in_t8, uint8_t *out);
 
@@ -58,6 +68,5 @@ struct hash_unit_s {
 #define _PEDDERSEN_ID 3
 
 #define MAX_HASH_T8 64
-typedef struct hash_unit_s cy_hash_unit_t;
 
 #endif

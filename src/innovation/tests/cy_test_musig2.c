@@ -41,6 +41,8 @@
 #include "cy_HashPedersen.h"
 #include "test_vectors/test_vector_musig2.c"
 
+#define _NB_USERS_TEST 4
+
 int test_keygen(cy_musig2_ctx_t *ctx)
 {
   cy_ec_ctx_t *ec_ctx=ctx->ctx_ec;
@@ -158,24 +160,17 @@ cy_error_t cy_musig_configure( cy_hash_unit_t *H, uint8_t *Elliptic_Ramp, size_t
 		return error;
 }
 
-/*
-cy_error_t cy_Sign_Round1(const cy_fp_t *xpriv, const cy_fp_t *random, cy_ecpoint_t *Ri)
-{
-
- return 0;
-}
-*/
 
 // L concatenation of public keys
 cy_error_t cy_HashAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i, uint8_t *ai)
 {
   size_t i;
   cy_error_t error=CY_OK;
-
+  uint8_t zero[32]={0};
 
   uint8_t buffer[2*MAX_MUSIG_EC_T8];
   size_t t8_buffer=2*musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
- // musig_ctx->H->Hash_Init();
+  //musig_ctx->H->Hash_Init(musig_ctx->H->ctx, zero, 1);
 
   for(i=0;i<musig_ctx->n_users;i++)
   {
@@ -225,6 +220,103 @@ cy_error_t cy_KeyAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, cy_ecpoi
    	return error;
 }
 
+cy_error_t test_HashAgg(cy_musig2_ctx_t *musig_ctx)
+{
+		cy_error_t error=CY_OK;
+		cy_ecpoint_t ec_temp;
+		size_t i;
+		uint8_t buffer[2*MAX_MUSIG_EC_T8];
+		cy_ecpoint_t ec_L[_NB_USERS_TEST];
+	    cy_ec_ctx_t *ec_ctx=musig_ctx->ctx_ec;
+		size_t t8_fp=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
+		cy_fp_t ExpectedHAgg, HAgg;
+		int flag=0;
+
+		printf("\n  Test Hash Agg:");
+
+		/* allocations*/
+		CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p,t8_fp, &ExpectedHAgg));
+		for(i=0;i<_NB_USERS_TEST;i++)
+		{
+			CY_CHECK(cy_ec_alloc(ec_ctx, &ec_L[i]));
+		}
+
+		/* Import test vectors */
+		CY_CHECK(cy_ec_import(PublicKey_X0,t8_fp, &ec_L[0]));
+		CY_CHECK(cy_ec_import(PublicKey_X1,t8_fp, &ec_L[1]));
+		CY_CHECK(cy_ec_import(PublicKey_X2,t8_fp, &ec_L[2]));
+		CY_CHECK(cy_ec_import(PublicKey_X3,t8_fp, &ec_L[3]));
+		CY_CHECK(cy_fp_import(a_0, sizeof(a_0), &ExpectedHAgg));
+
+		printf("\n allocated");
+
+		/* Compute ai's */
+		CY_CHECK(cy_HashAgg(musig_ctx, ec_L, 0, buffer));
+
+		CY_CHECK(cy_fp_import(buffer, sizeof(a_0), &HAgg));
+
+
+		/* Compare computed to expected test vector */
+		//CY_CHECK(cy_fp_iseq(&ExpectedHAgg, &buffer, &flag));
+
+		printf("\n flag=%d", flag);
+
+		/* free memory*/
+		for(i=0;i<_NB_USERS_TEST;i++)
+		{
+				CY_CHECK(cy_ec_free( &ec_L[i]));
+		}
+		CY_CHECK(cy_fp_free( &ExpectedHAgg));
+
+
+		end:
+			return error;
+}
+
+
+
+
+cy_error_t test_musig_KeyAgg(cy_musig2_ctx_t *musig_ctx)
+{
+	cy_error_t error=CY_OK;
+	cy_ecpoint_t ec_temp;
+	size_t i;
+	cy_ecpoint_t ec_L[_NB_USERS_TEST];
+    cy_ec_ctx_t *ec_ctx=musig_ctx->ctx_ec;
+	size_t t8_fp=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
+	cy_ecpoint_t KeyAgg, ExpectedKAgg;
+	/* allocations*/
+	CY_CHECK(cy_ec_alloc(ec_ctx, &KeyAgg));
+	CY_CHECK(cy_ec_alloc(ec_ctx, &ExpectedKAgg));
+	for(i=0;i<_NB_USERS_TEST;i++)
+	{
+		CY_CHECK(cy_ec_alloc(ec_ctx, &ec_L[i]));
+	}
+
+	/* Import test vectors */
+	CY_CHECK(cy_ec_import(PublicKey_X0,t8_fp, &ec_L[0]));
+	CY_CHECK(cy_ec_import(PublicKey_X1,t8_fp, &ec_L[1]));
+	CY_CHECK(cy_ec_import(PublicKey_X2,t8_fp, &ec_L[2]));
+	CY_CHECK(cy_ec_import(PublicKey_X3,t8_fp, &ec_L[3]));
+	CY_CHECK( cy_ec_import2(Key_Agg_X, sizeof(Key_Agg_X), Key_Agg_Y, sizeof(Key_Agg_Y), &ExpectedKAgg));
+
+	/* Compute Key Aggregation */
+	CY_CHECK(cy_KeyAgg(musig_ctx, ec_L, &KeyAgg));
+
+	/* Compare computed to expected test vector */
+
+	/* free memory*/
+	for(i=0;i<_NB_USERS_TEST;i++)
+		{
+			CY_CHECK(cy_ec_free( &ec_L[i]));
+		}
+	CY_CHECK(cy_ec_free( &KeyAgg));
+
+
+	end:
+		return error;
+}
+
 cy_error_t test_musig_configure(cy_hash_unit_t *H,int curve, cy_ec_ctx_t *ec_ctx, uint8_t *Ramp, size_t Ramp_t8, cy_musig2_ctx_t *musig_ctx)
 {
 	cy_error_t error=CY_OK;
@@ -256,6 +348,8 @@ int test_musig_unit(uint8_t *Ramp, size_t Ramp_t8)
 
     CY_CHECK(test_verif_core(&musig_ctx));
 	CY_CHECK(test_keygen(&musig_ctx));
+	//CY_CHECK(test_HashAgg(&musig_ctx));
+
 	//CY_CHECK(cy_ec_uninit(&ec_ctx));
 
 	/* configuring Musig2 with hashpedersen and StarkCurve */
