@@ -79,7 +79,6 @@ cy_error_t pedersen_configure(cy_ec_ctx_t *ec_ctx, cy_pedersen_ctx_t *ctx)
  //  int flag;
    ctx->ec_ctx=ec_ctx;
 
-   printf("\n ctx adresse=%x", (unsigned int) ec_ctx);
 
    for(i=0;i<_NUM_PEDPOINT;i++){
 	   CY_CHECK(cy_ec_alloc(ec_ctx, &ctx->P[i]));
@@ -107,6 +106,8 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
    cy_fp_t fp_temp;
   // int flag=0;
 
+  // printf("\n ****************pedersen core");
+
    CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, Stark_SIZE_u8, &fp_temp));
    CY_CHECK(cy_ec_alloc(ctx->ec_ctx, &ec_Hash));
 
@@ -116,7 +117,7 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
 
    CY_CHECK(ec_muladd(ctx, &ec_Hash, &fp_temp, 0));
 
-
+  // printf("\n pedersen 2");
    CY_CHECK(cy_wrap_bolos_bn_shift_r((size_t) 248, a->bn));							/*R+= low_a*P1*/
    CY_CHECK( ec_muladd(ctx, &ec_Hash, a, 1));
    CY_CHECK(cy_bn_and( b->bn, ctx->mask248_low.bn, fp_temp.bn) );		 /*R+= low_b*P2*/
@@ -300,7 +301,6 @@ cy_error_t pedersen_uninit(cy_pedersen_ctx_t *ctx){
 }
    
 
-cy_pedersen_ctx_t global_pedersen_ctx;
 
 /* Ramp is a pointer to the memory for the unit
  * the curve identifier is used to initialize the ellitic context
@@ -309,10 +309,6 @@ cy_error_t pedersen_unit_configure(void *pedersen_unit, uint8_t *ec_ctx, size_t 
 {
 	 cy_error_t error=0;
 	 cy_hash_unit_t *unit=(cy_hash_unit_t *) pedersen_unit;
-
-	 printf("\n ctx adresse=%x", (unsigned int) ec_ctx);
-	 printf("\n ctx pedersen=%x", (unsigned int) unit->ctx);
-	 printf("\n global ctx pedersen=%x", (unsigned int) &global_pedersen_ctx);
 
 
 

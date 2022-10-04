@@ -190,7 +190,7 @@ cy_error_t wrap_ecpoint_alloc( cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *P)
 
   inc_offset( ec_ctx, sizeof(cy_inner_ec_t ));
 
-
+// printf("\n allocating ec %x", (P->ec->x) );
 
   end:
      return error;
@@ -427,6 +427,8 @@ cy_error_t wrap_bolos_getX(const cy_ecpoint_t *a, cy_fp_t *out)
 
 	 CY_CHECK(sys_cx_ecpoint_export_bn((a->ec), out->bn, trash.bn));
 
+	 cy_fp_free(&trash);
+
 	 end:
 		    	return error;
 }
@@ -487,6 +489,7 @@ cy_error_t wrap_ecpoint_free(cy_ecpoint_t *P)
   size_t i;
   cy_error_t error = CY_OK;
   cy_ec_ctx_t *ec_ctx= ec_ctx;
+  //printf("\n destroying ec %x", (P->ec->x) );
 
   CY_CHECK(sys_cx_ecpoint_destroy (P->ec));
 

@@ -227,6 +227,35 @@ static cy_error_t test_fp_add(cy_fp_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 }
 
 
+static int test_leak_fp(cy_fp_ctx_t *ctx)
+{
+  cy_error_t error;
+  size_t i;
+
+  #define _LEAK_TEST 10
+  cy_fp_t leak[_LEAK_TEST];
+  printf("\n test_fp leakage:");
+  cy_bn_t bneak[_LEAK_TEST];
+
+  for(i=0;i<_LEAK_TEST;i++)
+  {
+
+	 //CX_CHECK(sys_cx_bn_alloc(&bneak[i], 48));
+	 //CX_CHECK(sys_cx_bn_destroy(&bneak[i]));
+
+	 CY_CHECK( cy_fp_alloc(ctx, ctx->t8_modular, &leak[i]));
+
+	 //printf("\n bn allocated: %x", *leak[i].bn);
+
+	 CY_CHECK( cy_fp_free(& leak[i]));
+
+  }
+
+  printf(" OK");
+  end:
+    return error;
+}
+
 static int test_crypto_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx_testvec_weierstrass_t const *C_cy_allCurves)
 {
   cy_fp_ctx_t ctx;
@@ -250,6 +279,7 @@ static int test_crypto_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx
   debug_Print_RAMp(Ramp, sizeRam);
 
   test_fp_add(&ctx, Ramp, sizeRam);
+  test_leak_fp(&ctx);
 
   if(strcmp(name,"Curve sec256k1")==0)
 	  test_fp_montgomery(&ctx);

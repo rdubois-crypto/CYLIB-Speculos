@@ -53,6 +53,7 @@ extern cy_error_t pedersen_hash_final(cy_pedersen_ctx_t *ctx, uint8_t *hash_res,
 
 #define _PEDERSEN_HASH_UNIT_ID 0x9ede5e
 
+static cy_pedersen_ctx_t global_pedersen_ctx;
 extern cy_hash_unit_t unit_pedersen;
 
 
@@ -63,6 +64,7 @@ extern cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_f
 extern cy_error_t pedersen_hash(cy_pedersen_ctx_t *ctx, cy_fp_t *data, size_t data_fp_length, cy_fp_t *res);
 
 extern cy_error_t pedersen_unit_configure(void *pedersen_unit, uint8_t *ec_ctx, size_t t8_ctx);
+extern cy_error_t pedersen_uninit(cy_pedersen_ctx_t *ctx);
 
 
 static const uint8_t Pedersen_Shift[Stark_SIZE_u8*2] = {

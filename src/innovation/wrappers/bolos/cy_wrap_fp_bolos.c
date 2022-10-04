@@ -379,11 +379,17 @@ cy_error_t wrap_bolos_fp_alloc(cy_fp_ctx_t *ctx, size_t t8_r, cy_fp_t *r)
   r->index =  ctx->offset;
   r->bn = (cx_bn_t *)(ctx->Shared_Memory + ctx->offset);
 
+
   /*printf("\n %s allocating from %x with offset=%x to %x, t8_r=%d", ctx->libname,
          (unsigned int)ctx->Shared_Memory, ctx->offset, (unsigned int)r->index,
          (int)t8_r);*/
   //printf("\n allocating from @%x with value %x", (unsigned int) r->bn, (unsigned int) *(r->bn));
+
   CX_CHECK(sys_cx_bn_alloc(r->bn, t8_r));
+  //UNUSED(t8_r);
+  //CX_CHECK(sys_cx_bn_alloc(r->bn, 16));
+ // printf("\n allocating bn:%x at @%x", (unsigned int) (*r->bn), (unsigned int) r->bn);
+
   ctx->offset += sizeof(cx_bn_t *);
   r->is_initialized=CY_LIB_ALLOCATED;
   error = CY_OK;
@@ -395,7 +401,16 @@ end:
 cy_error_t wrap_bolos_fp_free(cy_fp_t *r)
 {
   size_t i;
-  cy_fp_ctx_t *ctx = r->ctx;
+  cy_error_t error = CY_KO;
+   cy_fp_ctx_t *ctx = r->ctx;
+   CY_IS_INIT(ctx);
+
+
+
+  // printf("\n destroy bn:%x at @%x", (unsigned int) (*r->bn), (unsigned int) r->bn);
+
+   CX_CHECK(sys_cx_bn_destroy(r->bn));
+
   for(i=0;i<sizeof(cx_bn_t *);i++)
   {
 	  *(ctx->Shared_Memory+r->index+i)=_MEM_FP_RESERVED;
@@ -406,8 +421,11 @@ cy_error_t wrap_bolos_fp_free(cy_fp_t *r)
   if (r->index == ( ctx->offset)) {
     ctx->offset -= sizeof(cx_bn_t *);
   }
-//  printf("\n destroy %x", (unsigned int) r->bn);
-  return (sys_cx_bn_destroy(r->bn));
+
+
+
+  end:
+    return error;
   //return CY_OK;
 }
 

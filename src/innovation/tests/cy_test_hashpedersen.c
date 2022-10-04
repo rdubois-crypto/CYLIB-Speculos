@@ -159,10 +159,14 @@ static int test_verif_pedersen_initupdatefinal(cy_ec_ctx_t *ec_ctx)
 		  (cy_io_fp_printMSB(&fp_expected, "\n res expected"));
 	 }
 
+	 CY_CHECK(cy_fp_free(&fp_res_stream));
+	 CY_CHECK(cy_fp_free(&fp_expected));
+
+	 CY_CHECK(pedersen_uninit(&ped_ctx_stream));
+
 	 end:
 	  return error;
 }
-
 
 cy_error_t test_pedersen_hashunit(cy_ec_ctx_t *ec_ctx, cy_hash_unit_t *H)
 {
@@ -170,17 +174,35 @@ cy_error_t test_pedersen_hashunit(cy_ec_ctx_t *ec_ctx, cy_hash_unit_t *H)
 	size_t p_unused;
 	uint8_t zero[Stark_SIZE_u8]={0};
 	uint8_t buffer[Stark_SIZE_u8]={0};
+	cy_pedersen_ctx_t ped_ctx_stream;
+	cy_fp_t fp_data[2], fp_res_stream, fp_expected;
+	int flag;
+
+	H->ctx=(void *) &ped_ctx_stream;
+	//H->ctx=(void *) &this_global_pedersen_ctx;
+	 //CY_CHECK(pedersen_configure(ec_ctx, &ped_ctx_stream));
+
+	 cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_res_stream);
+	 cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_expected);
+	 cy_fp_import(full_pedersen, sizeof(full_pedersen), &fp_expected);
 
 
 	CY_CHECK(H->Hash_Configure(H, (uint8_t *) ec_ctx, p_unused));
+	CY_CHECK(H->Hash_Init(H->ctx, zero, 1));
+	CY_CHECK(H->Hash_Update(H->ctx, tv_m0, sizeof(tv_m0)));
+	CY_CHECK(H->Hash_Update(H->ctx, tv_m1, sizeof(tv_m1)));
 
-	//CY_CHECK(H->Hash_Init(H->ctx, zero, 1));
-	//CY_CHECK(H->Hash_Update(H->ctx, tv_m0, sizeof(tv_m0)));
-	//CY_CHECK(H->Hash_Update(H->ctx, tv_m1, sizeof(tv_m1)));
+	CY_CHECK(H->Hash_Final(H->ctx, buffer, sizeof(buffer)));
 
-	//CY_CHECK(H->Hash_Final(H->ctx, buffer, sizeof(buffer)));
+	 CY_CHECK(cy_fp_import(buffer, sizeof(buffer), &fp_res_stream));
+	 CY_CHECK(cy_fp_iseq(&fp_res_stream, &fp_expected, &flag));
 
-
+	 if(flag!=CY_TRUE) {
+			 error=CY_FALSE;
+			 printf("\n flag pedersen chain=%d", flag);
+			 (cy_io_fp_printMSB(&fp_res_stream, "\n res pedersen stream"));
+			 (cy_io_fp_printMSB(&fp_expected, "\n res expected"));
+		 }
 
 	end:
 	  return error;
@@ -211,9 +233,9 @@ int test_pedersen(uint8_t *Ramp, size_t Ramp_t8)
 	CY_CHECK(test_verif_pedersen_initupdatefinal(&ec_ctx));
 	printf(" OK");
 
-	//printf("\n test  <CYLIB Pedersen:Hash Unit> :");
-	//test_pedersen_hashunit(&ec_ctx, &unit_pedersen);
-	//printf(" OK");
+	printf("\n test  <CYLIB Pedersen:Hash Unit> :");
+	test_pedersen_hashunit(&ec_ctx, &unit_pedersen);
+	printf(" OK");
 
 	/* tpdo: investigate cy uninit*/
 	(cy_ec_uninit(&ec_ctx));
