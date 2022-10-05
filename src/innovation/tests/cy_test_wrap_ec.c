@@ -33,13 +33,42 @@
 #include "cy_io_common_tools.h"
 
 
-static int test_ecmul(cy_ec_ctx_t *ctx)
+static int test_ec_leak(cy_ec_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 {
-	cy_error_t error = CY_KO;
-	UNUSED(ctx);
 
+	 cy_error_t error=CY_KO;
+	  size_t i;
 
-   // end:
+	  #define _LEAK_TEST 10
+	  cy_ecpoint_t leak[_LEAK_TEST];
+	  printf("\n test_ec leakage:");
+
+	  for(i=0;i<_LEAK_TEST;i++)
+	  {
+
+		// print_MsbString(Ramp, sizeRam, "\nRAMp pre alloc:\n");
+		  // printf("\n--- offset prealloc= %d", (int) (ctx->ctx_fp_p->offset ));
+
+		 CY_CHECK( cy_ec_alloc(ctx,  &leak[i]));
+		 //printf("\n--- offset post alloc= %d", (int) (ctx->ctx_fp_p->offset ));
+		 //print_MsbString(Ramp, sizeRam, "\nRAMp post alloc:\n");
+
+		 //print_MsbString(Ramp, sizeRam, "\nRAMp post alloc:\n");
+
+		// printf("\n @allocated =%x %x %x", leak[i].ec->x, leak[i].ec->y, leak[i].ec->z);
+		 CY_CHECK( cy_ec_free(& leak[i]));
+
+		 //print_MsbString(Ramp, sizeRam, "\nRAMp post free:\n");
+		 //printf("\n--- offset post free= %d", (int) (ctx->ctx_fp_p->offset ));
+
+	  }
+
+	  printf(" OK");
+	  end:
+	    return error;
+
+   // end
+
 	   return error;
 }
 
@@ -49,8 +78,9 @@ static int test_ec_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx_tes
 	 cy_ec_ctx_t ctx;
 
 	  /* The shared ram between program and library*/
+	// print_MsbString(Ramp, sizeRam, "\nRAMp:\n");
 
-	  debug_printf("\n @RAMP=%x\n sizeRamp=%x curve=", (unsigned int)Ramp,(int)sizeRam);
+	  debug_printf("\n------------------ @RAMP=%x\n sizeRamp=%x curve=", (unsigned int)Ramp,(int)sizeRam);
 	  debug_Print_RAMp(Ramp, sizeRam);
 	  cx_curve_t curve=C_cy_allCurves->curve;
 
@@ -61,11 +91,16 @@ static int test_ec_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx_tes
 	  printf("\n %s %s : ", ctx.libname, C_cy_allCurves->curve_name);
 
 	  _debug(printf("\n after ec Init:"));
+	  CY_CHECK(test_ec_leak(&ctx, Ramp, sizeRam));
 
 	  debug_Print_RAMp(Ramp, sizeRam);
 
+	 // print_MsbString(Ramp, sizeRam, "\nRAMp pre-uninit:\n");
+
 	  CY_CHECK(cy_ec_uninit(&ctx));
+
 	  _debug(printf("\n after ec UnInit:"));
+	 // print_MsbString(Ramp, sizeRam, "\nRAMp uninit:\n");
 
 	  debug_Print_RAMp(Ramp, sizeRam);
 	  _debug(printf("\n exiting"));
@@ -76,6 +111,8 @@ static int test_ec_parameters( char *name, uint8_t *Ramp, size_t sizeRam, cx_tes
 		    printf(" KO\n");
 
 	 end:
+	 // print_MsbString(Ramp, sizeRam, "\nRAMp post uninit:\n");
+
 	   return error;
 }
 
@@ -103,6 +140,11 @@ static cy_error_t test_ec_unit(uint8_t *Ramp, size_t Ramp_t8)
 	}
 
 	end:
+	  if (error == CY_OK)
+			    printf("\n All EC tests OK !");
+			  else
+			    printf(" KO\n");
+
 	  return error;
 }
 

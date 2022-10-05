@@ -24,7 +24,7 @@
 #include "cy_bn.h"
 
 
-
+/* beware to destroy it !*/
 cy_error_t cy_bn_import( const uint8_t *in, size_t bn_t8, cy_bn_t *out ){
 	cy_error_t error;
 

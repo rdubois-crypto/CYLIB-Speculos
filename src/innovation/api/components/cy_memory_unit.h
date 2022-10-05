@@ -21,7 +21,7 @@
   32 /* maximal size of the library name (example: "bolos_v1.0.O")*/
 #define T8_MAX_OBJECTNAME                                                      \
   32 /* maximal size of object name (example : "modular_ari_component")*/
-#define _MAX_MEMORY 5120 /* max bolos size app is around 4ko=(1<<17)*/
+#define _MAX_MEMORY 4096 /* max bolos size app is around 4ko=(1<<12)bytes*/
 
 struct mem_ctx_s {
   uint8_t *Shared_Memory;

@@ -305,6 +305,7 @@ cy_error_t wrap_bolos_fp_init(cy_fp_ctx_t *ps_ctx, uint8_t *pu8_Mem,
     error = CY_KO;
     goto end;
   }
+  ps_ctx->t8_allocated_max=t8_Memory;
 
   for(i=0;i<t8_Memory;i++) pu8_Mem[i]=_MEM_FP_RESERVED;
 
@@ -375,6 +376,12 @@ cy_error_t wrap_bolos_fp_alloc(cy_fp_ctx_t *ctx, size_t t8_r, cy_fp_t *r)
     goto end;
   }
 
+  if((ctx->offset+sizeof(cx_bn_t *))> ctx->t8_allocated_max )
+  {
+	  error=CY_MEM_OVERFLOW;
+	  goto end;
+  }
+
   r->ctx = ctx;
   r->index =  ctx->offset;
   r->bn = (cx_bn_t *)(ctx->Shared_Memory + ctx->offset);
@@ -416,13 +423,13 @@ cy_error_t wrap_bolos_fp_free(cy_fp_t *r)
 	  *(ctx->Shared_Memory+r->index+i)=_MEM_FP_RESERVED;
   }
 
-  r->index = CY_LIB_UNINITIALIZED;
 
   if (r->index == ( ctx->offset)) {
     ctx->offset -= sizeof(cx_bn_t *);
   }
 
 
+  r->index = CY_LIB_UNINITIALIZED;
 
   end:
     return error;

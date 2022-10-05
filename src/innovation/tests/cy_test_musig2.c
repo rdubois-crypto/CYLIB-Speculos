@@ -47,7 +47,6 @@ int test_keygen(cy_musig2_ctx_t *ctx)
 {
   cy_ec_ctx_t *ec_ctx=ctx->ctx_ec;
   cy_error_t error=CY_KO;
-  cy_ecpoint_t Generator;
   cy_ecpoint_t ExpectedKpub;
   cy_ecpoint_t ComputedKpub;
   cy_fp_t random, xpriv;
@@ -59,7 +58,6 @@ int test_keygen(cy_musig2_ctx_t *ctx)
   cy_fp_alloc(ec_ctx->ctx_fp_p,t8_p , &random);
   cy_fp_alloc(ec_ctx->ctx_fp_p, t8_p, &xpriv);
 
-  CY_CHECK(cy_ec_alloc(ec_ctx, &Generator));
   CY_CHECK(cy_ec_alloc(ec_ctx, &ComputedKpub));
   CY_CHECK(cy_ec_alloc(ec_ctx, &ExpectedKpub));
 
@@ -88,9 +86,8 @@ int test_keygen(cy_musig2_ctx_t *ctx)
 
   CY_CHECK(cy_fp_free( &random));
   CY_CHECK(cy_fp_free( &xpriv));
-
-  CY_CHECK(cy_ec_free( &Generator));
   CY_CHECK(cy_ec_free( &ExpectedKpub));
+  CY_CHECK(cy_ec_free( &ComputedKpub));
 
   printf(" OK");
 
@@ -147,7 +144,7 @@ cy_error_t cy_musig_configure( cy_hash_unit_t *H, uint8_t *Elliptic_Ramp, size_t
 
     cy_error_t error=CY_OK;
     cy_pedersen_ctx_t ped_ctx_stream;
-    uint8_t zero[32]={0};
+    uint8_t zero[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
     CY_CHECK(cy_ec_init(ec_ctx, Elliptic_Ramp,Elliptic_Ramp_t8, curve, NULL));
 
@@ -158,47 +155,66 @@ cy_error_t cy_musig_configure( cy_hash_unit_t *H, uint8_t *Elliptic_Ramp, size_t
 	H->ctx=(void *) &ped_ctx_stream;
 
    	//CY_CHECK(musig_ctx->H->Hash_Configure((void*)H, (uint8_t *) ec_ctx, curve));
-	//CY_CHECK(musig_ctx->H->Hash_Init(H->ctx, zero, 32));
+
+	//CY_CHECK(musig_ctx->H->Hash_Init(H->ctx, zero, 1));
 
    	end:
 		return error;
 }
 
+/* arbitrary constant for domain separation, beware to be equal with sage simulation */
+#define _SEPARATION_AGG 0x3
 
 // L concatenation of public keys
 cy_error_t cy_PedersenHashAgg(cy_musig2_ctx_t *musig_ctx,  const cy_ecpoint_t *L, int index_i, uint8_t *ai)
 {
   size_t i;
   cy_error_t error=CY_OK;
-  uint8_t zero[32]={0};
+  uint8_t zero[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
   uint8_t buffer[2*MAX_MUSIG_EC_T8];
+  uint8_t separation[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,_SEPARATION_AGG};
+
   size_t t8_buffer=2*musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
-  cy_pedersen_ctx_t pedersen;
+  cy_pedersen_ctx_t pedersen_cx;
+  size_t t8_modular=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
 
-  CY_CHECK(pedersen_configure( musig_ctx->ctx_ec, &pedersen));
-
-  CY_CHECK(pedersen_hash_init(&pedersen, zero, 32));
+  CY_CHECK(pedersen_configure( musig_ctx->ctx_ec, &pedersen_cx));
 
 
- // musig_ctx->H->Hash_Init(musig_ctx->H->ctx, zero, 1);
 
-  for(i=0;i<musig_ctx->n_users;i++)
+  CY_CHECK(pedersen_hash_init(&pedersen_cx, zero, sizeof(zero)));
+  pcy_io_fp_printMSB(& (pedersen_cx.fp_hash), "\n fphash ");
+
+  //printf("\n nusers=%d, index=%d",musig_ctx->n_users, index_i);
+
+
+
+  CY_CHECK(pedersen_hash_update(&pedersen_cx, separation, sizeof(separation)));
+  pcy_io_fp_printMSB(& (pedersen_cx.fp_hash), "\n fphash ");
+
+  for(i=0;i<4;i++)
   {
-	  CY_CHECK(cy_ec_export(&L[i], buffer, t8_buffer));
-	  printf("\n ---");
-	  CY_CHECK(pedersen_hash_update(&pedersen, buffer, t8_buffer));
-	  printf("\n ---");
-	//  CY_CHECK(musig_ctx->H->Hash_Update(musig_ctx->H->ctx, buffer, t8_buffer));
+	  CY_CHECK(cy_ec_export(&L[i], buffer, t8_modular));
+
+	  //printf("\n hash agg :i=%d",i);
+	  //cy_io_ec_printMSB(&L[i], "Kpub ");
+	  CY_CHECK(pedersen_hash_update(&pedersen_cx, buffer, t8_buffer));
+	  //pcy_io_fp_printMSB(& (pedersen_cx.fp_hash), "\n fphash ");
+
   }
 
-  CY_CHECK(cy_ec_export(&L[index_i], buffer, t8_buffer));
-  CY_CHECK(pedersen_hash_update(&pedersen, buffer, t8_buffer));
+  CY_CHECK(cy_ec_export(&L[index_i], buffer, t8_modular));
+  //printf("\n nusers=%d, index=%d",musig_ctx->n_users, index_i);
 
- // musig_ctx->H->Hash_Update(musig_ctx->H->ctx, buffer, t8_buffer);
-  //musig_ctx->H->Hash_Final(musig_ctx->H->ctx, ai, t8_buffer);
-  CY_CHECK(pedersen_hash_final(&pedersen, ai, musig_ctx->ctx_ec->ctx_fp_p->t8_modular));
+ // cy_io_ec_printMSB(&L[i], "Kpub index");
+  CY_CHECK(pedersen_hash_update(&pedersen_cx, buffer, t8_buffer));
+  //pcy_io_fp_printMSB(& (pedersen_cx.fp_hash), "\n fphash ");
 
+  CY_CHECK(pedersen_hash_final(&pedersen_cx, ai, musig_ctx->ctx_ec->ctx_fp_p->t8_modular));
+  CY_CHECK(pedersen_uninit(  &pedersen_cx));
+
+  //printf("\n hash agg end",i);
   end:
   	return error;
 
@@ -259,6 +275,7 @@ cy_error_t cy_KeyAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, cy_ecpoi
   cy_ec_copy(&accumulator, KeyAgg);
 
   CY_CHECK(cy_ec_free( &ec_temp));
+  CY_CHECK(cy_fp_free( &ai));
 
   end:
    	return error;
@@ -288,34 +305,43 @@ cy_error_t test_HashAgg(cy_musig2_ctx_t *musig_ctx)
 		}
 
 		/* Import test vectors */
-		CY_CHECK(cy_ec_import(PublicKey_X0,t8_fp, &ec_L[0]));
-		CY_CHECK(cy_ec_import(PublicKey_X1,t8_fp, &ec_L[1]));
-		CY_CHECK(cy_ec_import(PublicKey_X2,t8_fp, &ec_L[2]));
-		CY_CHECK(cy_ec_import(PublicKey_X3,t8_fp, &ec_L[3]));
-		CY_CHECK(cy_fp_import(a_0, sizeof(a_0), &ExpectedHAgg));
+		CY_CHECK(cy_ec_import2(PublicKey_X0,sizeof(PublicKey_X0), PublicKey_Y0,sizeof(PublicKey_Y0),&ec_L[0]));
+		CY_CHECK(cy_ec_import2(PublicKey_X1,sizeof(PublicKey_X1), PublicKey_Y1,sizeof(PublicKey_Y1), &ec_L[1]));
+		CY_CHECK(cy_ec_import2(PublicKey_X2,sizeof(PublicKey_X2), PublicKey_Y2,sizeof(PublicKey_Y2),&ec_L[2]));
+		CY_CHECK(cy_ec_import2(PublicKey_X3,sizeof(PublicKey_X3), PublicKey_Y3,sizeof(PublicKey_Y3), &ec_L[3]));
 
-		printf("\n allocated");
+		CY_CHECK(cy_fp_import(a_1, sizeof(a_1), &ExpectedHAgg));
+
 
 		/* Compute ai's */
-		CY_CHECK(cy_PedersenHashAgg(musig_ctx, ec_L, 0, buffer));
+		CY_CHECK(cy_PedersenHashAgg(musig_ctx, ec_L, 1, buffer));
 
-		CY_CHECK(cy_fp_import(buffer, sizeof(a_0), &HAgg));
+		CY_CHECK(cy_fp_import(buffer, sizeof(a_1), &HAgg));
 
 
 		/* Compare computed to expected test vector */
-		//CY_CHECK(cy_fp_iseq(&ExpectedHAgg, &buffer, &flag));
+		CY_CHECK(cy_fp_iseq(&ExpectedHAgg, &HAgg, &flag));
 
 		printf("\n flag=%d", flag);
+		 if(flag!=CY_TRUE) {
+					 error=CY_FALSE;
+					 printf("\n flag pedersen chain=%d", flag);
+					 (cy_io_fp_printMSB(&HAgg, "\n hagg computed"));
+					 (cy_io_fp_printMSB(&ExpectedHAgg, "\n hagg expected"));
+					 goto end;
+				 }
 
 		/* free memory*/
 		for(i=0;i<_NB_USERS_TEST;i++)
 		{
 				CY_CHECK(cy_ec_free( &ec_L[i]));
 		}
+
 		CY_CHECK(cy_fp_free( &ExpectedHAgg));
-
-
+		CY_CHECK(cy_fp_free( &HAgg));
+		printf(" OK");
 		end:
+
 			return error;
 }
 
@@ -357,6 +383,7 @@ cy_error_t test_musig_KeyAgg(cy_musig2_ctx_t *musig_ctx)
 			CY_CHECK(cy_ec_free( &ec_L[i]));
 		}
 	CY_CHECK(cy_ec_free( &KeyAgg));
+	CY_CHECK(cy_ec_free( &ExpectedKAgg));
 
 
 	end:
@@ -380,25 +407,27 @@ cy_error_t test_musig_configure(cy_hash_unit_t *H,int curve, cy_ec_ctx_t *ec_ctx
 
 int test_musig_unit(uint8_t *Ramp, size_t Ramp_t8)
 {
-	cy_error_t error=CY_KO;
+	cy_error_t error=CY_OK;
 	cy_ec_ctx_t ec_ctx;
-
 
 	cy_musig2_ctx_t musig_ctx;
 	printf("\n\n /************************ Test Musig2 Protocol:");
 
+	//print_MsbString(Ramp, Ramp_t8, "\nRAMp:\n");
 
 	/* Initiate gda*/
 	CY_CHECK(test_musig_configure(&unit_pedersen, CY_CURVE_Stark256, &ec_ctx, Ramp, Ramp_t8, &musig_ctx));
 
 	//return 0;
-	musig_ctx.gda=&bolos_gda_component;
+	//musig_ctx.gda=&bolos_gda_component;
 
     CY_CHECK(test_verif_core(&musig_ctx));
 	CY_CHECK(test_keygen(&musig_ctx));
-	//CY_CHECK(test_HashAgg(&musig_ctx));
+	CY_CHECK(test_HashAgg(&musig_ctx));
 
-	//CY_CHECK(cy_ec_uninit(&ec_ctx));
+	//print_MsbString(Ramp, Ramp_t8, "\nRAMp:\n");
+
+	CY_CHECK(cy_ec_uninit(&ec_ctx));
 
 	/* configuring Musig2 with hashpedersen and StarkCurve */
 

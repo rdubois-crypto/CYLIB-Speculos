@@ -233,9 +233,13 @@ int test_pedersen(uint8_t *Ramp, size_t Ramp_t8)
 	CY_CHECK(test_verif_pedersen_initupdatefinal(&ec_ctx));
 	printf(" OK");
 
+
+
 	printf("\n test  <CYLIB Pedersen:Hash Unit> :");
 	test_pedersen_hashunit(&ec_ctx, &unit_pedersen);
 	printf(" OK");
+
+
 
 	/* tpdo: investigate cy uninit*/
 	(cy_ec_uninit(&ec_ctx));

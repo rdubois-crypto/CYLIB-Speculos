@@ -58,7 +58,7 @@ typedef int cy_flag_t;
 #define CY_MEM_OVERFLOW 0xfffffff1
 #define CY_MEM_FREE_INDEX 0xfffffff2
 #define CY_MEM_FREE_MISSING 0xf3fffff2
-
+#define CY_MEM_UNDERFLOW 0xf3fffff7
 /* Modular integers errors*/
 
 /* Elliptic curve  errors*/

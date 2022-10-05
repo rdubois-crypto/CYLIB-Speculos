@@ -93,6 +93,22 @@ static cy_error_t inc_offset(cy_ec_ctx_t *ec_ctx, size_t t8_inc)
 	return CY_OK;
 }
 
+ cy_error_t dec_offset(cy_ec_ctx_t *ec_ctx, size_t t8_dec)
+{
+	cy_error_t error=CY_KO;
+
+	if(ec_ctx->ctx_fp_p->offset<t8_dec){
+		error=CY_MEM_UNDERFLOW;
+	}
+	else{
+	  ec_ctx->ctx_fp_p->offset-=t8_dec;
+	  error=CY_OK;
+	}
+
+	return error;
+}
+
+
 /* argc input is the value of the curve, argv is  NULL*/
 cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
                               const size_t t8_Memory, const int argc,
@@ -119,6 +135,7 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
   CY_CHECK(cy_ecdomain_parameters_length(curve, & size_param_t8));
 
   ec_ctx->offset = 0;
+  ec_ctx->max_offset=t8_Memory;
 
   (ec_ctx->Shared_Memory) = pu8_Mem;
 
@@ -161,10 +178,13 @@ cy_error_t wrap_bolos_ec_uninit(cy_ec_ctx_t *ec_ctx)
 
     cy_error_t error = CY_KO;
 	cy_fp_ctx_t *fp_ctx=ec_ctx->ctx_fp_p;
-	for(i=0;i<sizeof(cy_fp_ctx_t *);i++)
-		ec_ctx->Shared_Memory[i]=_MEM_FP_RESERVED;
+	printf("\n uninit size %x",sizeof(cy_fp_ctx_t *) );
+
 
 	CY_CHECK(wrap_bolos_fp_uninit(fp_ctx, fp_ctx->Shared_Memory,fp_ctx->offset));
+
+	for(i=0;i<sizeof(cy_fp_ctx_t );i++)
+			ec_ctx->Shared_Memory[i]=_MEM_FP_RESERVED;
 
 	 end:
 		return error;
@@ -184,13 +204,18 @@ cy_error_t wrap_ecpoint_alloc( cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *P)
 
   }
 
+  if((ec_ctx->ctx_fp_p->offset+sizeof(cy_inner_ec_t ))> ec_ctx->max_offset )
+  {
+	  error=CY_MEM_OVERFLOW;
+	  goto end;
+  }
+
   P->ec = (cx_ecpoint_t *)(ec_ctx->Shared_Memory + ec_ctx->offset+ec_ctx->ctx_fp_p->offset);
 
   CY_CHECK(sys_cx_ecpoint_alloc (P->ec, ec_ctx->curve_id));
 
   inc_offset( ec_ctx, sizeof(cy_inner_ec_t ));
 
-// printf("\n allocating ec %x", (P->ec->x) );
 
   end:
      return error;
@@ -489,18 +514,17 @@ cy_error_t wrap_ecpoint_free(cy_ecpoint_t *P)
   size_t i;
   cy_error_t error = CY_OK;
   cy_ec_ctx_t *ec_ctx= ec_ctx;
+  cy_inner_ec_t *p=P->ec;
   //printf("\n destroying ec %x", (P->ec->x) );
 
   CY_CHECK(sys_cx_ecpoint_destroy (P->ec));
 
-  for(i=0;i<sizeof(cy_ecpoint_t *);i++)
+  for(i=0;i<sizeof(cy_inner_ec_t );i++)
     {
-	  ((uint8_t *) P)[i]=_MEM_EC_RESERVED;
+	  ((uint8_t *) p)[i]=_MEM_FP_RESERVED;
     }
 
 
   end:
      return error;
 }
-
-

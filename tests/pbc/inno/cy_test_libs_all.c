@@ -53,6 +53,7 @@ cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 {
 	cy_error_t error = CY_OK;
 	uint8_t *Zone;
+//#define test_all_units
 
 	/* testing memory unit, giving back a closed module*/
 	CY_CHECK(test_mem_unit(cryptolib));
@@ -71,15 +72,19 @@ cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 	CY_CHECK(test_fp12_unit(cryptolib->mem_unit->Shared_Memory, _FP2_ZONE_T8));
 	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _FP2_ZONE_T8));
 
-
 	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _EC_ZONE_T8, &Zone));
-	CY_CHECK(test_pedersen(cryptolib->mem_unit->Shared_Memory, _EC_ZONE_T8));
+	CY_CHECK(test_ec_unit(cryptolib->mem_unit->Shared_Memory, _EC_ZONE_T8));
 	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _EC_ZONE_T8));
+
+
+	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _MAX_MEMORY, &Zone));
+	CY_CHECK(test_pedersen(cryptolib->mem_unit->Shared_Memory, _MAX_MEMORY));
+	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _MAX_MEMORY));
 
 	//return error;
-	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _EC_ZONE_T8, &Zone));
-	CY_CHECK(test_musig_unit(cryptolib->mem_unit->Shared_Memory, _EC_ZONE_T8));
-	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _EC_ZONE_T8));
+	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _MAX_MEMORY, &Zone));
+	CY_CHECK(test_musig_unit(cryptolib->mem_unit->Shared_Memory, _MAX_MEMORY));
+	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _MAX_MEMORY));
 
 
 	  end:
@@ -90,7 +95,7 @@ cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 int main()
 {
 	cy_error_t error = CY_OK;
-	uint8_t Ramp[ _EC_ZONE_T8 ];
+	uint8_t Ramp[ _MAX_MEMORY ];
 	//uint8_t Ramp[_MAX_MEMORY];
 
 	cryptolib_ctx_t cryptolib;

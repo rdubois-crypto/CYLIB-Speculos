@@ -146,9 +146,12 @@ cy_error_t pedersen_hash_updatefp(cy_pedersen_ctx_t *ctx,  cy_fp_t *data)
 {
 	 cy_error_t error;
 
+	// pcy_io_fp_printMSB(data, "\n update with: ");
 
 	 CY_CHECK(pedersen(ctx, &ctx->fp_hash, data , &ctx->fp_hash));
-	 ctx->data_fp_length++;
+
+	 ctx->data_fp_length++ ;
+	 printf("\n data length is:%d", (int) ctx->data_fp_length);
 	 end:
 	    return error;
 }
@@ -159,6 +162,8 @@ cy_error_t pedersen_hash_init(cy_pedersen_ctx_t *ctx, uint8_t *constant, size_t 
 
 	 ctx->current_t8=0;
 	 ctx->data_fp_length=0;
+
+	 printf("\n size modulus:%d",(int) ctx->fp_hash.ctx->t8_modular);
 
 	 CY_CHECK(cy_fp_import(constant, t8_constant, &ctx->fp_hash));
 
@@ -173,7 +178,7 @@ cy_error_t pedersen_hash_update(cy_pedersen_ctx_t *ctx,  uint8_t *data, size_t t
 	 cy_fp_t fp_temp;
 	 size_t i, t8_block=ctx->ec_ctx->ctx_fp_p->t8_modular;
 
-	 cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, t8_block, &fp_temp);
+	 CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, t8_block, &fp_temp));
 
 	 ctx->current_t8+=t8_data;
 
@@ -184,16 +189,16 @@ cy_error_t pedersen_hash_update(cy_pedersen_ctx_t *ctx,  uint8_t *data, size_t t
 		 {
 			 t8_block=t8_data-i;
 		 }
-
-		 CY_CHECK(cy_fp_import(data, t8_block, &fp_temp));
-
+		 printf("\n tbloc=%d i=%d", (int) t8_block, (int) i);
+		 CY_CHECK(cy_fp_import(data+i, t8_block, &fp_temp));
+		 //pcy_io_fp_printMSB(&fp_temp, "\n imoported : ");
 
 		 CY_CHECK(pedersen_hash_updatefp(ctx,&fp_temp ));
 
 	 }
 
 
-	 cy_fp_free(&fp_temp);
+	 CY_CHECK(cy_fp_free(&fp_temp));
 
 	 end:
 	    return error;
@@ -294,6 +299,7 @@ cy_error_t pedersen_uninit(cy_pedersen_ctx_t *ctx){
     }
 
   CY_CHECK(cy_ec_free(&ctx->ShiftPoint));
+  CY_CHECK(cy_fp_free( &ctx->mask248_low) );
   CY_CHECK(cy_fp_free(&ctx->fp_hash));
 
   end:
@@ -315,11 +321,11 @@ cy_error_t pedersen_unit_configure(void *pedersen_unit, uint8_t *ec_ctx, size_t 
 	 UNUSED(t8_ctx);/*t8_ctx is here for hash_unit_t compatibility */
 	 UNUSED(ec_ctx);
 
-	 //CY_CHECK(pedersen_configure( (cy_ec_ctx_t *) ec_ctx, (cy_pedersen_ctx_t *) (unit->ctx) ));
+	 CY_CHECK(pedersen_configure( (cy_ec_ctx_t *) ec_ctx, (cy_pedersen_ctx_t *) (unit->ctx) ));
 
 	 unit->is_initialized=CY_OBJ_INITIALIZED;
 
-//	 end:
+	 end:
 	 	 return error;
 }
 

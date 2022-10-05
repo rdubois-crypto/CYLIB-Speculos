@@ -29,7 +29,8 @@ struct cy_fp_ctx_s{
   cy_flag_t is_initialized;
   char libname[T8_MAX_LIBNAME];
   uint8_t *Shared_Memory;
-  size_t offset;
+  size_t t8_allocated_max;	/* allocated size of Shared Memory, provided at init */
+  size_t offset;      		/* current allocated size, must be < allocated */
 
   size_t t8_modular;
   void *modular; /*pointer to modular context in Shared Memory*/
