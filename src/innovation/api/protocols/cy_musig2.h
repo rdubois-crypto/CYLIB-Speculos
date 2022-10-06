@@ -32,14 +32,21 @@ struct musig2_ctx_s {
 
 typedef struct musig2_ctx_s cy_musig2_ctx_t;
 
-/* Initialize Musig with Signatures functions, number of users, hash functions (H is used for agg,nonce and sig)*/
-extern cy_error_t cy_musig_SetUp(cy_musig2_ctx_t *ctx,  uint8_t *Ramp, size_t sizeRamp,
-						  uint8_t *initializer, size_t init_t,
-			              const cy_hash_unit_t *H);
 
-extern cy_error_t cy_HashAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i, uint8_t *ai);
+/* arbitrary constant for domain separation, beware to be equal with sage simulation */
+#define _SEPARATION_SIG 0x1
+#define _SEPARATION_NON 0x2
+#define _SEPARATION_AGG 0x3
+
+/* Initialize Musig with Signatures functions, number of users, hash functions (H is used for agg,nonce and sig)*/
+extern cy_error_t cy_musig_SetUp( cy_hash_unit_t *H, uint8_t *Elliptic_Ramp, size_t Elliptic_Ramp_t8, int curve,  int n_users,
+							   cy_ec_ctx_t *ec_ctx, cy_musig2_ctx_t *musig_ctx);
+
+extern cy_error_t cy_Hsig(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *KeyAg, const cy_ecpoint_t *R, uint8_t *m, size_t t8_m, cy_fp_t *c);
+
+extern cy_error_t cy_Hagg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i, uint8_t *ai);
 /* compute the aggregation (sum) of public keys*/
-extern cy_error_t cy_KeyAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *ec_L, cy_ecpoint_t *KeyAgg);
+extern cy_error_t cy_musig_KeyAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *ec_L, cy_ecpoint_t *KeyAgg);
 
 /*************************************************************/
 /* Single user functions*/
@@ -91,7 +98,7 @@ cy_error_t cy_musig_SigAgg_Round1(cy_musig2_ctx_t *ctx, const size_t n_users, co
 cy_error_t cy_musig_SigAgg_Round2(const size_t n_users, const cy_fp_t **vec_sig2, cy_fp_t *sig);
 
 /* Initialize Musig with Signatures functions, number of users, hash functions */
-cy_error_t cy_musig_Uninit(cy_musig2_ctx_t *ctx);
+extern cy_error_t cy_musig_Uninit(cy_musig2_ctx_t *ctx);
 
 /* Maximal size of ec element supported by this musig2 implementation */
 #define MAX_MUSIG_EC_T8 128

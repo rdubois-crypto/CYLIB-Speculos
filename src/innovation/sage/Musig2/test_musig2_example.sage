@@ -55,6 +55,9 @@ with open(C_filepath, 'w') as file_out:
 	message=[0..size_message-1];
 	for i in [0..size_message-1]:
 		message[i]=int(Fq.random_element());
+		name='message_'+str(i);
+		fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(message[i]),8,"");
+	
 	print(message);
 
 
@@ -125,8 +128,14 @@ with open(C_filepath, 'w') as file_out:
 
 			
 	for i in [0..nb_users-1]:#compute each users contribution
-		[vec_nonces[i], vec_Rj[i]]=Musig2_Sign_Round1(Stark_order, nb_users,curve_Generator);	
-		
+		[vec_nonces[i], vec_Rj[i]]=Musig2_Sign_Round1(Stark_order, nb_users,curve_Generator);
+		#for j in [0.._MU]:
+		#	name="r_"+str(i)+str(j);	
+			#fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(vec_nonces[i][j]),8,"");
+		#	name="R_"+str(i)+str(j);
+			#fprint_c_MSB(filep, "\n /*"+name+"*/",name, int(vec_Rj[i][j][0]),8,"");
+	
+	
 	#Aggregate Round1 contributions	
 	vec_R=Musig2_Sig1Agg(vec_Rj);
 		
