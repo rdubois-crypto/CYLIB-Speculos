@@ -34,7 +34,7 @@ struct ec_ctx_s {
   cy_ecpoint_t *G;
 
   cy_fp_ctx_t *ctx_fp_p; /*pointer to modular context in Shared Memory*/
-  //cy_fp_ctx_t *ctx_fp_q; /*pointer to modular context in Shared Memory*/
+  //cy_fp_ctx_t *ctx_fp_q; /*pointer to modular context in Shared Memory, included at protocol level*/
 };
 
 typedef struct ec_ctx_s cy_ec_ctx_t;
@@ -100,6 +100,7 @@ extern cy_error_t cy_ec_getY(const cy_ecpoint_t *a, cy_fp_t *out);
 extern cy_error_t cy_ec_getparityY(const cy_ecpoint_t *a, uint32_t *parity);
 
 extern cy_error_t cy_ec_get_generator(const cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *G);
+extern cy_error_t cy_ec_get_curveorder(const cy_ec_ctx_t *ec_ctx, uint8_t *order, size_t t8_order);
 
 extern cy_error_t cy_ec_copy(const cy_ecpoint_t *a, cy_ecpoint_t *b);
 

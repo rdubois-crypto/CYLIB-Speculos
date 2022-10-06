@@ -62,6 +62,42 @@ cy_error_t cy_Hsig(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *KeyAg, const 
 
 
 /*************************************************************/
+/* Computation of b=H(X, R1, ..., Rv, m)*/
+/*************************************************************/
+
+cy_error_t cy_Hnon(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *XAgg, const cy_ecpoint_t *R,  uint8_t *m, size_t t8_m, uint8_t *b)
+{
+	  size_t i;
+	  cy_error_t error=CY_OK;
+	  uint8_t zero[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	  cy_hash_unit_t *H=musig_ctx->H;
+
+	  uint8_t buffer[2*MAX_MUSIG_EC_T8];
+	  uint8_t separation[32]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,_SEPARATION_NON};
+
+	  size_t t8_buffer=2*musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
+
+	  size_t t8_modular=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
+
+	 // CY_CHECK(H->Hash_Configure( H, (uint8_t *) musig_ctx->ctx_ec, _UNUSED_VALUE_));
+	  CY_CHECK(H->Hash_Init(H->ctx, zero, 1));
+	  CY_CHECK(H->Hash_Update(H->ctx, separation, sizeof(separation)));
+
+	  CY_CHECK(cy_ec_export(XAgg, buffer, t8_modular));
+	  CY_CHECK(H->Hash_Update(H->ctx, buffer, t8_buffer));
+	  for(i=0;i<_MU_;i++)
+	  	  {
+		  	  CY_CHECK(cy_ec_export(R+i, buffer, t8_modular));
+		  	  CY_CHECK(H->Hash_Update(H->ctx, buffer, t8_buffer));
+	  	  }
+	  CY_CHECK(H->Hash_Update(H->ctx, m, t8_m));
+	  CY_CHECK(H->Hash_Final(H->ctx, b, musig_ctx->ctx_ec->ctx_fp_p->t8_modular));
+	  //CY_CHECK(H->Hash_Uninit(H->ctx));
+
+	  end:
+	  	return error;
+}
+/*************************************************************/
 /* Computation of ai=H(L, X_i)*/
 /*************************************************************/
 cy_error_t cy_Hagg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i, uint8_t *ai)
@@ -132,16 +168,16 @@ cy_error_t cy_musig_KeyAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *ec_L,
    	return error;
 }
 
-/*************************************************************/
-/* Single user functions*/
-/*************************************************************/
-
 cy_error_t cy_musig_SetUp( cy_hash_unit_t *H, uint8_t *Elliptic_Ramp, size_t Elliptic_Ramp_t8, int curve,  int n_users,
 							   cy_ec_ctx_t *ec_ctx, cy_musig2_ctx_t *musig_ctx){
 
     cy_error_t error=CY_OK;
+    uint8_t buffer[MAX_MUSIG_EC_T8];
 
     CY_CHECK(cy_ec_init(ec_ctx, Elliptic_Ramp,Elliptic_Ramp_t8, curve, NULL));
+
+    cy_ec_get_curveorder(ec_ctx, buffer, ec_ctx->ctx_fp_p->t8_modular);
+
 
    	musig_ctx->ctx_ec=ec_ctx;
    	musig_ctx->H=H;
@@ -164,6 +200,10 @@ cy_error_t cy_musig_uninit( cy_musig2_ctx_t *musig_ctx)
 	end:
 		return error;
 }
+
+/*************************************************************/
+/* Single user functions*/
+/*************************************************************/
 
 
 /*
@@ -196,7 +236,6 @@ cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *rando
 	if(sign==1)
 	{
 		CY_CHECK(cy_fp_neg(random, xpriv));
-
 		CY_CHECK(cy_ec_scalarmult_fp(xpriv, &G,  X_pub));
 	}
 	else
@@ -212,6 +251,93 @@ cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *rando
    	  return error;
 }
 
+/* Signature round 1*/
+/* beware that sign of random will be modified is derived y is even*/
+cy_error_t cy_musig_Sign1_Deriv(const cy_musig2_ctx_t *ctx, cy_fp_t io_random[_MU_],
+								 cy_ecpoint_t Ri[_MU_])
+{
+	/*I.Declarations and allocations*/
+	cy_error_t error=CY_KO;
+	cy_fp_t x;
+    size_t i;
+    uint32_t sign;
+
+	cy_ec_ctx_t  *ec_ctx= ctx->ctx_ec;
+
+	cy_ecpoint_t G;
+	cy_ec_alloc(ctx->ctx_ec, &G);
+
+	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
+	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
+
+	/*II. Computations*/
+
+	/* returns the corresponding public key X=g^x*/
+	for(i=0;i<_MU_;i++)
+		{
+		  CY_CHECK(cy_ec_scalarmult_fp(io_random, &G, Ri+i));
+		  /* compatibility BIP340*/
+		  	CY_CHECK(cy_ec_getparityY( Ri+i, &sign));
+
+		  	if(sign==1)
+		  	{
+		  		CY_CHECK(cy_fp_neg(io_random, io_random));
+		  		CY_CHECK(cy_ec_scalarmult_fp(io_random, &G,  Ri+i));
+		  	}
+		}
+
+	/*III. Free pointers*/
+	CY_CHECK(cy_fp_free(&x));
+	cy_ec_free(&G);
+
+	end:
+   	  return error;
+}
+
+
+/* input:
+ * - musig ctx
+ * - Rij the list of vectors of output of single user Sig1
+ * output:
+ * - R the aggregated vector
+ */
+cy_error_t cy_musig_Sign1_Agg(const cy_musig2_ctx_t *musig_ctx, cy_ecpoint_t *Rij[_MU_], cy_ecpoint_t *R)
+{
+	size_t i,j;
+	cy_error_t error=CY_KO;
+	for(j=0;j<_MU_;j++)
+	{
+		CY_CHECK(cy_ec_setinfinity(&R[j]));
+
+		for(i=0;i<musig_ctx->n_users;i++)
+		{
+			 CY_CHECK(cy_ec_add(&(Rij[i][j]), &R[j], &R[j]));
+		}
+	}
+	end:
+   	  return error;
+}
+
+
+/* input:
+ * - musig ctx
+ * - si the list  of output of single user Sig2, beware that the modular context is over order of curve
+ * output:
+ * - R the aggregated vector
+ */
+cy_error_t cy_musig_Sign2_Agg(const cy_musig2_ctx_t *musig_ctx, cy_fp_t *s_i, cy_fp_t *s)
+{
+	size_t i;
+	cy_error_t error=CY_KO;
+	CY_CHECK(cy_fp_set_zero(s));
+
+	for(i=0;i<musig_ctx->n_users;i++)
+	{
+			 CY_CHECK(cy_fp_add(&(s_i[i]), s, s));
+	}
+	end:
+   	  return error;
+}
 #ifdef _TESTED
 
 /* Each signer generates a random secret key x ←$ Zp and returns the
@@ -405,61 +531,23 @@ cy_error_t cy_musig_SigAgg_Round2(const size_t n_users, const cy_fp_t **vec_sig2
 			return error;
 }
 
-/*************************************************************/
-/* Verification function									 */
-/*************************************************************/
-/* the two part of signatures (R,S) received from previous round, */
-/* R and c being computable from aggregation of Rijs_Round1, S being output of Round2 sign'*/
-
-cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg,
-		cy_ecpoint_t *R, cy_fp_t *s,
-		const uint8_t *message, const size_t message_t8,
-		boolean_t *flag_verif){
-
-	size_t j ;
-	cy_error_t error=CY_KO;
-	*flag_verif=CY_FALSE;
-	cy_ecpoint_t ec_temp1, ec_temp2;
-
-	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &ec_temp1));
-	CY_CHECK(cy_ec_alloc(ctx->ctx_ec, &ec_temp2));
-
-	/* Accept iff g^s = R.X^c, beware of multiplicative notations*/
-	cy_ecpoint_t *G=cy_ec_get_generator(ctx->ctx_ec); /* get generating point of the curve , todo ec: coder un get_generator */
-	CY_CHECK(cy_ec_scalarmult_fp(ctx->ctx_ec, G, s, &ec_temp1)); 	/*g^s*/
-	/* todo: c should be recomputed here internally */
-	/* append R in Hashin*/
-
-	//CY_CHECK(cy_ec_export(&ctx->ctx_ec->ctx_fp_q, R,ctx->ctx_ec->t8_modular_p,buffer));
-	//ctx->H->Hash_Update((void *)ctx->H, buffer, ctx->ctx_ec->t8_modular_p);
-	/* append message in Hashin*/
-	//ctx->H->Hash_Update((void *)ctx->H, message, message_t8);
-	//ctx->H->Hash_Final((void *)ctx->H, c); /* final c value */
-
-
-	CY_CHECK(cy_musig_Verification_Core(ctx, Key_agg, R, fp_s, fp_c, flag_verif));
-
-	end:
-		return error;
-}
-
-
-
-
-
 
 #endif
-
-
-
+/*************************************************************/
+/* Verification functions								 */
+/*************************************************************/
+/* the two part of signatures (R,S) received from previous round, */
+/* R and c being computable from aggregation of Rijs_Round1, S being output of Round2 sign'*/
 
 
 /*************************************************************/
 /* Verification function									 */
 /*************************************************************/
+
 /* the two part of signatures (R,S) received from previous round, */
 /* R and c being computable from aggregation of Rijs_Round1, S being output of Round2 sign'*/
 
+/* core function with external hashing */
 cy_error_t cy_musig_Verification_Core(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg,
 		cy_ecpoint_t *R, cy_fp_t *fp_s, cy_fp_t *fp_c,
 		boolean_t *flag_verif){
@@ -487,6 +575,26 @@ cy_error_t cy_musig_Verification_Core(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_ag
 	CY_CHECK(cy_ec_free( &ec_temp2));
 	CY_CHECK(cy_ec_free( &G));
 
+	end:
+		return error;
+}
+
+
+/* one shot hashing full verification function with internal hashing */
+cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg,
+		cy_ecpoint_t *R, cy_fp_t *fp_s, uint8_t *message, size_t t8_message,
+		boolean_t *flag_verif){
+
+	cy_error_t error=CY_KO;
+	cy_fp_t fp_c;
+
+	*flag_verif=CY_FALSE;
+	CY_CHECK(cy_fp_alloc(ctx->ctx_ec->ctx_fp_p, ctx->ctx_ec->ctx_fp_p->t8_modular,&fp_c));
+
+	CY_CHECK(cy_Hsig(ctx, Key_agg, R, message, t8_message, &fp_c));
+	CY_CHECK(cy_musig_Verification_Core(ctx, Key_agg, R, fp_s, &fp_c, flag_verif));
+
+	CY_CHECK(cy_fp_free( &fp_c));
 	end:
 		return error;
 }

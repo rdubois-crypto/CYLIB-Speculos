@@ -309,6 +309,16 @@ cy_error_t wrap_bolos_ec_export(const cy_ecpoint_t *G,  uint8_t *xy, size_t t8_x
 	  	return error;
 }
 
+cy_error_t wrap_bolos_ec_get_curveorder(const cy_ec_ctx_t *ec_ctx, uint8_t *order, size_t t8_order)
+{
+	 cy_error_t error = CY_KO;
+
+     CY_CHECK(sys_cx_ecdomain_parameter(ec_ctx->curve_id, CX_CURVE_PARAM_Order, order, (uint32_t) t8_order));
+
+	 end:
+		  	return error;
+}
+
 
 cy_error_t wrap_bolos_get_generator(const cy_ec_ctx_t *ec_ctx, cy_ecpoint_t *G){
 

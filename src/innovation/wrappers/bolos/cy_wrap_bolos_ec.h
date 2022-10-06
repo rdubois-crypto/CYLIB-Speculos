@@ -53,7 +53,7 @@
 #define cy_ec_scalarmult_fp(k,P,kP) wrap_bolos_ec_scalarmul_fp(k,P,kP)
 #define cy_ec_get_generator(ctx, G) wrap_bolos_get_generator(ctx, G)
 #define cy_ec_getparityY(G, sign) wrap_bolos_ec_getparityY(G, sign)
-
+#define cy_ec_get_curveorder(ctx,out, size) wrap_bolos_ec_get_curveorder(ctx, out, size)
 /* Speculos is not emulating the following bolos functions*/
 #define _WITH_SPECULOS
 #ifdef _WITH_SPECULOS
