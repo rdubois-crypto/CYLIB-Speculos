@@ -151,7 +151,7 @@ cy_error_t pedersen_hash_updatefp(cy_pedersen_ctx_t *ctx,  cy_fp_t *data)
 	 CY_CHECK(pedersen(ctx, &ctx->fp_hash, data , &ctx->fp_hash));
 
 	 ctx->data_fp_length++ ;
-	 printf("\n data length is:%d", (int) ctx->data_fp_length);
+	 //printf("\n data length is:%d", (int) ctx->data_fp_length);
 	 end:
 	    return error;
 }
@@ -163,7 +163,7 @@ cy_error_t pedersen_hash_init(cy_pedersen_ctx_t *ctx, uint8_t *constant, size_t 
 	 ctx->current_t8=0;
 	 ctx->data_fp_length=0;
 
-	 printf("\n size modulus:%d",(int) ctx->fp_hash.ctx->t8_modular);
+	 //printf("\n size modulus:%d",(int) ctx->fp_hash.ctx->t8_modular);
 
 	 CY_CHECK(cy_fp_import(constant, t8_constant, &ctx->fp_hash));
 
@@ -189,7 +189,7 @@ cy_error_t pedersen_hash_update(cy_pedersen_ctx_t *ctx,  uint8_t *data, size_t t
 		 {
 			 t8_block=t8_data-i;
 		 }
-		 printf("\n tbloc=%d i=%d", (int) t8_block, (int) i);
+		 //printf("\n tbloc=%d i=%d", (int) t8_block, (int) i);
 		 CY_CHECK(cy_fp_import(data+i, t8_block, &fp_temp));
 		 //pcy_io_fp_printMSB(&fp_temp, "\n imoported : ");
 
@@ -340,7 +340,7 @@ cy_hash_unit_t unit_pedersen={
 		(Fct_Hash_Update_t) pedersen_hash_update,
 		(Fct_Hash_Final_t) pedersen_hash_final,
 		 NULL, /* no hash all*/
-		 NULL,
+		(Fct_Hash_Uninit_t) pedersen_uninit,
 
 		 CY_ERR_INIT,
 		 (void*) &global_pedersen_ctx, /* *ctx */

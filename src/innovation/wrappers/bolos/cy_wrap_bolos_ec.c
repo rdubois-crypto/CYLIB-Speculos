@@ -178,7 +178,7 @@ cy_error_t wrap_bolos_ec_uninit(cy_ec_ctx_t *ec_ctx)
 
     cy_error_t error = CY_KO;
 	cy_fp_ctx_t *fp_ctx=ec_ctx->ctx_fp_p;
-	printf("\n uninit size %x",sizeof(cy_fp_ctx_t *) );
+	//printf("\n uninit size %x",sizeof(cy_fp_ctx_t *) );
 
 
 	CY_CHECK(wrap_bolos_fp_uninit(fp_ctx, fp_ctx->Shared_Memory,fp_ctx->offset));

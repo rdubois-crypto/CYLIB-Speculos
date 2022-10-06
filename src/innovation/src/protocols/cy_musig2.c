@@ -18,6 +18,92 @@
 #include "cy_hash.h"
 #include "cy_musig2.h"
 
+
+/*************************************************************/
+/* Common to user/Agregator functions*/
+/*************************************************************/
+
+
+
+/*************************************************************/
+/* Single user functions*/
+/*************************************************************/
+
+/*
+Derivate with B340 constraint (y even) value of pubkey
+*/
+cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *random,
+								cy_fp_t *xpriv, cy_ecpoint_t *X_pub)
+{
+	/*I.Declarations and allocations*/
+	cy_error_t error=CY_KO;
+	cy_fp_t x;
+	uint32_t sign=0;
+	cy_ec_ctx_t  *ec_ctx= ctx->ctx_ec;
+
+	cy_ecpoint_t G;
+	cy_ec_alloc(ctx->ctx_ec, &G);
+
+	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
+
+	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
+
+	/*II. Computations*/
+
+	/* returns the corresponding public key X=g^x*/
+	CY_CHECK(cy_ec_scalarmult_fp(random, &G, X_pub));
+
+	/* compatibility BIP340*/
+	CY_CHECK(cy_ec_getparityY(X_pub, &sign));
+
+	if(sign==1)
+	{
+		CY_CHECK(cy_fp_neg(random, xpriv));
+
+		CY_CHECK(cy_ec_scalarmult_fp(xpriv, &G,  X_pub));
+	}
+	else
+	{
+		cy_fp_copy(random, xpriv);
+	}
+
+	/*III. Free pointers*/
+	CY_CHECK(cy_fp_free(&x));
+	cy_ec_free(&G);
+
+	end:
+   	  return error;
+}
+
+/* Signature round 1*/
+cy_error_t cy_musig_Sign1(const cy_musig2_ctx_t *ctx, const cy_fp_t *random,
+								 cy_ecpoint_t *Ri)
+{
+	/*I.Declarations and allocations*/
+	cy_error_t error=CY_KO;
+	cy_fp_t x;
+
+	cy_ec_ctx_t  *ec_ctx= ctx->ctx_ec;
+
+	cy_ecpoint_t G;
+	cy_ec_alloc(ctx->ctx_ec, &G);
+
+	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
+
+	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
+
+	/*II. Computations*/
+
+	/* returns the corresponding public key X=g^x*/
+	CY_CHECK(cy_ec_scalarmult_fp(random, &G, Ri));
+
+	/*III. Free pointers*/
+	CY_CHECK(cy_fp_free(&x));
+	cy_ec_free(&G);
+
+	end:
+   	  return error;
+}
 #ifdef _TESTED
 /* Initialize Musig with Signatures functions, number of users, hash functions */
 cy_error_t cy_musig_SetUp(cy_musig2_ctx_t *ctx,  uint8_t *Ramp, size_t sizeRamp,
@@ -31,37 +117,6 @@ cy_error_t cy_musig_SetUp(cy_musig2_ctx_t *ctx,  uint8_t *Ramp, size_t sizeRamp,
 	end:
 			return error;
 }
-/*************************************************************/
-/* Computation of ai=H(L, X_i)*/
-/*************************************************************/
-static cy_error_t cy_musig_KeyAggCoeff(cy_musig2_ctx_t *ctx, const cy_ecpoint_t *publickeys, size_t n_users, size_t index,
-		cy_fp_t *ai)
-{
-	uint8_t buffer[MAX_MUSIG_EC_T8];
-	uint8_t hash[MAX_MUSIG_HASH_T8];
-
-	cy_error_t error=CY_KO;
-
-	/*H_agg is chosen to be H(X1||X2||\ldots||X_i), where || denotes concatenation */
-	for(i=0;i<n_users;i++){
-		CY_CHECK(cy_ec_export(&ctx->ctx_ec->ctx_fp_q, publickeys+i,ctx->ctx_ec->t8_modular_p,buffer));
-		ctx->H->Hash_Update((void *)ctx->H, buffer, ctx->ctx_ec->t8_modular_p);
-	}
-	CY_CHECK(cy_ec_export(&ctx->ctx_ec->ctx_fp_q, publickeys+index,ctx->ctx_ec->t8_modular_p,buffer));
-	ctx->H->Hash_Update((void *)ctx->H, buffer, ctx->ctx_ec->t8_modular_p);
-	ctx->H->Hash_Final((void *)ctx->H, hash);
-
-	/*import hash of hash function size to Fq scalar field, assumption is that hash output has same bitsize as field*/
-	/* todo: make modular reduction of buffer */
-	CY_CHECK(cy_fp_import(&ctx->ctx_ec->ctx_fp_q, hash,ctx->H->Hash_t8,ai));
-
-	end:
-		return error;
-}
-
-/*************************************************************/
-/* Single user functions*/
-/*************************************************************/
 
 /* Each signer generates a random secret key x ←$ Zp and returns the
 corresponding public key X= g^x*/
@@ -207,41 +262,14 @@ cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *ctx,const size_t n_us
 	end:
 	   	  return error;
 }
+#endif
 /*************************************************************/
 /* Aggregator functions*/
 /*************************************************************/
 /*  aggregate key corresponding to L is X=Prod_1^n X^ai */
-cy_error_t cy_musig_KeyAgg(cy_musig2_ctx_t *ctx, const size_t n_users, const cy_ecpoint_t *publickeys, cy_ecpoint_t *keyagg){
-	size_t i;
-	cy_ecpoint_t temp;
-	cy_fp_t ai;/*H(L,Xi)*/
-
-	cy_fp_alloc(&ctx->ctx_ec->ctx_fp_p, &ai)
-	cy_ec_alloc(ctx->ctx_ec, &temp);
-	cy_ecpoint_t *G=cy_ec_get_generator(ctx->ctx_ec); /* get generating point of the curve , todo ec: coder un get_generator */
 
 
-	cy_error_t error=CY_KO;
-
-	/* set accumulator to infinity point*/
-	CY_CHECK(cy_ec_setInfty(ctx->ctx_ec, &temp));
-	/* compute sum of X^H(L,Xi)*/
-	for(i=0;i<n_users;i++)
-	{
-
-		cy_musig_HashToScalarField(ctx, publickeys, n_users, i, &ai);
-		CY_CHECK(cy_ec_scalarmult_fp(G,  &ai, temp));
-		CY_CHECK(cy_ec_add(&temp, publickeys+i, &temp));
-	}
-
-	CY_CHECK(cy_ec_copy(ctx->ctx_ec, &temp, &keyagg));
-	CY_CHECK(cy_ec_free(&temp));
-	CY_CHECK(cy_fp_free(&ai));
-
-	end:
-		return error;
-}
-
+#ifdef tested
 cy_error_t cy_musig_SigAgg_Round1(cy_musig2_ctx_t *ctx, const size_t n_users, const cy_ecpoint_t **vec_sig, cy_ecpoint_t **vec_sigagg){
 	size_t i,j ;
 	cy_ecpoint_t keyagg;
@@ -329,51 +357,6 @@ cy_error_t cy_musig_Verification_All(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_agg
 
 
 
-/*
-Derivate with B340 constraint (y even) value of pubkey
-*/
-cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *random,
-								cy_fp_t *xpriv, cy_ecpoint_t *X_pub)
-{
-	/*I.Declarations and allocations*/
-	cy_error_t error=CY_KO;
-	cy_fp_t x;
-	uint32_t sign=0;
-	cy_ec_ctx_t  *ec_ctx= ctx->ctx_ec;
-
-	cy_ecpoint_t G;
-	cy_ec_alloc(ctx->ctx_ec, &G);
-
-	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
-
-	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
-
-	/*II. Computations*/
-
-	/* returns the corresponding public key X=g^x*/
-	CY_CHECK(cy_ec_scalarmult_fp(random, &G, X_pub));
-
-	/* compatibility BIP340*/
-	CY_CHECK(cy_ec_getparityY(X_pub, &sign));
-
-	if(sign==1)
-	{
-		CY_CHECK(cy_fp_neg(random, xpriv));
-
-		CY_CHECK(cy_ec_scalarmult_fp(xpriv, &G,  X_pub));
-	}
-	else
-	{
-		cy_fp_copy(random, xpriv);
-	}
-
-	/*III. Free pointers*/
-	CY_CHECK(cy_fp_free(&x));
-	cy_ec_free(&G);
-
-	end:
-   	  return error;
-}
 
 /*************************************************************/
 /* Verification function									 */

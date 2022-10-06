@@ -174,13 +174,9 @@ cy_error_t test_pedersen_hashunit(cy_ec_ctx_t *ec_ctx, cy_hash_unit_t *H)
 	size_t p_unused;
 	uint8_t zero[Stark_SIZE_u8]={0};
 	uint8_t buffer[Stark_SIZE_u8]={0};
-	cy_pedersen_ctx_t ped_ctx_stream;
 	cy_fp_t fp_data[2], fp_res_stream, fp_expected;
 	int flag;
 
-	H->ctx=(void *) &ped_ctx_stream;
-	//H->ctx=(void *) &this_global_pedersen_ctx;
-	 //CY_CHECK(pedersen_configure(ec_ctx, &ped_ctx_stream));
 
 	 cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_res_stream);
 	 cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_expected);

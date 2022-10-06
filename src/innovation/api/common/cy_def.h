@@ -41,6 +41,8 @@ typedef  enum {
 /* this stipulates that the object is a CY_LIB API  */
 #define _CY_API
 
+/* magic number for unused values*/
+#define _UNUSED_VALUE_ 0x33
 /* headers definition */
 
 

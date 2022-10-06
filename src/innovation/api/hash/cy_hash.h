@@ -51,7 +51,7 @@ struct hash_unit_s {
   Fct_Hash_Final_t Hash_Final;
 
   Fct_Hash_All_t Hash_All; /* one shot init, run, final execution */
-  Fct_Hash_Configure_t Hash_Uninit; /* release configure*/
+  Fct_Hash_Uninit_t Hash_Uninit; /* release configure*/
 
   cy_flag_t is_initialized;
 

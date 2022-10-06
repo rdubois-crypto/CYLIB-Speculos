@@ -6,12 +6,16 @@
 /* 																			      */
 /* 																			      */
 /* DESCRIPTION: 2 round_multisignature signatures APIS                                    */
-/* */
+/* https://eprint.iacr.org/2020/1261.pdf    */
 /**********************************************************************************/
 
 
 #ifndef API_CY_MUSIG2_H_
 #define API_CY_MUSIG2_H_
+
+/* the mu constant is the size of the vector of nonces by user*/
+#define _MU_ 2
+#define _SEPARATION_AGG 0x3
 
 struct musig2_ctx_s {
   uint8_t *Sec_RAMp; /* pointer between the Shared RAM and the component*/
@@ -32,6 +36,10 @@ typedef struct musig2_ctx_s cy_musig2_ctx_t;
 extern cy_error_t cy_musig_SetUp(cy_musig2_ctx_t *ctx,  uint8_t *Ramp, size_t sizeRamp,
 						  uint8_t *initializer, size_t init_t,
 			              const cy_hash_unit_t *H);
+
+extern cy_error_t cy_HashAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i, uint8_t *ai);
+/* compute the aggregation (sum) of public keys*/
+extern cy_error_t cy_KeyAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *ec_L, cy_ecpoint_t *KeyAgg);
 
 /*************************************************************/
 /* Single user functions*/
@@ -78,8 +86,6 @@ cy_error_t cy_musig_Verification_Final(cy_musig2_ctx_t *ctx, cy_ecpoint_t *Key_a
 /*************************************************************/
 /* Aggregator functions*/
 /*************************************************************/
-/* compute the aggregation (sum) of public keys*/
-cy_error_t cy_musig_KeyAgg(const cy_musig2_ctx_t *ctx,const size_t n_users, const cy_ecpoint_t *publickeys, cy_ecpoint_t *keyagg);
 
 cy_error_t cy_musig_SigAgg_Round1(cy_musig2_ctx_t *ctx, const size_t n_users, const cy_ecpoint_t **vec_sig, cy_ecpoint_t **vec_sigagg);
 cy_error_t cy_musig_SigAgg_Round2(const size_t n_users, const cy_fp_t **vec_sig2, cy_fp_t *sig);
@@ -91,4 +97,4 @@ cy_error_t cy_musig_Uninit(cy_musig2_ctx_t *ctx);
 #define MAX_MUSIG_EC_T8 128
 #define MAX_MUSIG_HASH_T8 128
 
-#endif
+#endif //API_CY_MUSIG2_H_
