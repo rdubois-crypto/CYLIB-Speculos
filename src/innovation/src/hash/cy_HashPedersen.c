@@ -104,11 +104,16 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
    cy_error_t error;
    cy_ecpoint_t ec_Hash;
    cy_fp_t fp_temp;
+   //cy_fp_t fp_temp2;
+
   // int flag=0;
 
   // printf("\n ****************pedersen core");
 
    CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, Stark_SIZE_u8, &fp_temp));
+ //  CY_CHECK(cy_fp_alloc(ctx->ec_ctx->ctx_fp_p, Stark_SIZE_u8, &fp_temp2));
+
+
    CY_CHECK(cy_ec_alloc(ctx->ec_ctx, &ec_Hash));
 
    CY_CHECK(cy_ec_import(Pedersen_Shift, Stark_SIZE_u8, &ec_Hash )); /* R=ShiftPoint*/
@@ -133,6 +138,7 @@ cy_error_t pedersen(cy_pedersen_ctx_t *ctx, cy_fp_t *a, cy_fp_t *b,  cy_fp_t *re
 
    CY_CHECK( cy_ec_free(&ec_Hash));
    CY_CHECK( cy_fp_free(&fp_temp));
+   //CY_CHECK(cy_fp_(&fp_temp2));
 
    end:
    return error;           

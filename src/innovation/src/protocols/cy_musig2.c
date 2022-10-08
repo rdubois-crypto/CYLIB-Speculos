@@ -19,6 +19,11 @@
 #include "cy_musig2.h"
 
 
+#include <stdio.h>
+#include "cy_io_common_tools.h"
+#include "cy_io_ec.h"
+#include "cy_io_fp.h"
+
 /*************************************************************/
 /* Common to user/Agregator functions*/
 /*************************************************************/
@@ -223,11 +228,15 @@ cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *rando
 
 	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
 
+
 	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
 
 	/*II. Computations*/
 
 	/* returns the corresponding public key X=g^x*/
+
+	//cy_io_fp_printMSB(X_pub, "\n input to parity");
+
 	CY_CHECK(cy_ec_scalarmult_fp(random, &G, X_pub));
 
 	/* compatibility BIP340*/
@@ -251,6 +260,19 @@ cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *rando
    	  return error;
 }
 
+cy_error_t cy_musig_KeyGen(const cy_musig2_ctx_t *ctx, cy_fp_t *xpriv, cy_ecpoint_t *X_pub)
+{
+ uint8_t buffer[_MAX_FP_T8];
+ cy_error_t error;
+
+ CY_CHECK(ctx->gda->GDA_Run(ctx->gda, buffer, ctx->ctx_ec->ctx_fp_p->t8_modular));
+ CY_CHECK(cy_fp_import(buffer, ctx->ctx_ec->ctx_fp_p->t8_modular, xpriv));
+ CY_CHECK(cy_musig_KeyGenDeriv(ctx, xpriv, xpriv, X_pub));
+
+ end:
+  return error;
+}
+
 /* Signature round 1*/
 /* beware that sign of random will be modified is derived y is even*/
 cy_error_t cy_musig_Sign1_Deriv(const cy_musig2_ctx_t *ctx, cy_fp_t io_random[_MU_],
@@ -258,40 +280,46 @@ cy_error_t cy_musig_Sign1_Deriv(const cy_musig2_ctx_t *ctx, cy_fp_t io_random[_M
 {
 	/*I.Declarations and allocations*/
 	cy_error_t error=CY_KO;
-	cy_fp_t x;
-    size_t i;
-    uint32_t sign;
+	 size_t j;
 
-	cy_ec_ctx_t  *ec_ctx= ctx->ctx_ec;
 
-	cy_ecpoint_t G;
-	cy_ec_alloc(ctx->ctx_ec, &G);
+	/* returns the corresponding public ephemeral X=g^x*/
+	for(j=0;j<_MU_;j++)
+	{
 
-	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
-	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
 
-	/*II. Computations*/
 
-	/* returns the corresponding public key X=g^x*/
-	for(i=0;i<_MU_;i++)
-		{
-		  CY_CHECK(cy_ec_scalarmult_fp(io_random, &G, Ri+i));
-		  /* compatibility BIP340*/
-		  	CY_CHECK(cy_ec_getparityY( Ri+i, &sign));
+			CY_CHECK(cy_musig_KeyGenDeriv(ctx, &io_random[j], &io_random[j], &Ri[j]));
+	}
 
-		  	if(sign==1)
-		  	{
-		  		CY_CHECK(cy_fp_neg(io_random, io_random));
-		  		CY_CHECK(cy_ec_scalarmult_fp(io_random, &G,  Ri+i));
-		  	}
-		}
-
-	/*III. Free pointers*/
-	CY_CHECK(cy_fp_free(&x));
-	cy_ec_free(&G);
 
 	end:
    	  return error;
+}
+
+
+cy_error_t cy_musig_Sign1(const cy_musig2_ctx_t *ctx, cy_fp_t ri[_MU_],
+								 cy_ecpoint_t Ri[_MU_])
+{
+	/*I.Declarations and allocations*/
+	cy_error_t error=CY_KO;
+    uint8_t buffer[_MAX_FP_T8];
+    size_t j;
+
+    /* generate the private nonces using random generator*/
+    for(j=0;j<_MU_;j++)
+
+    {
+
+	 CY_CHECK(ctx->gda->GDA_Run(ctx->gda, buffer, ctx->ctx_ec->ctx_fp_p->t8_modular));
+
+	 CY_CHECK(cy_fp_import(buffer, ctx->ctx_ec->ctx_fp_p->t8_modular, &ri[j]));
+
+    }
+    CY_CHECK(cy_musig_Sign1_Deriv(ctx, ri, Ri));
+
+	end:
+	   	  return error;
 }
 
 

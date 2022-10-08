@@ -59,6 +59,7 @@ extern cy_error_t cy_musig_KeyAgg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t
 extern cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *random,
 								cy_fp_t *xpriv, cy_ecpoint_t *X_pub);
 
+extern cy_error_t cy_musig_KeyGen(const cy_musig2_ctx_t *ctx, cy_fp_t *xpriv, cy_ecpoint_t *X_pub);
 /*Signature of users Sign in Round 1*/
 cy_error_t cy_musig_Sign_Round1(const cy_musig2_ctx_t *ctx, cy_fp_t *ri, cy_ecpoint_t *Ri);
 

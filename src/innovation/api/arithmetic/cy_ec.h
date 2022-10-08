@@ -80,6 +80,12 @@ extern cy_error_t cy_ec_init(cy_ec_ctx_t *ps_ctx, uint8_t *pu8_Mem,
 extern cy_error_t cy_ec_alloc(cy_ec_ctx_t *ps_ctx,  cy_ecpoint_t *out);
 extern cy_error_t cy_ec_uninit(cy_ec_ctx_t *ctx);
 
+extern cy_error_t cy_ec_save(cy_ec_ctx_t *ctx, uint8_t *Ramout, size_t t8_sizeout);
+
+extern cy_error_t cy_ec_load(cy_ec_ctx_t *ctx, uint8_t *Ram, size_t t8_sizein);
+
+
+
 extern cy_error_t cy_ec_free(cy_ecpoint_t *ec);
 
 /* IO Handling */
@@ -107,6 +113,11 @@ extern cy_error_t cy_ec_copy(const cy_ecpoint_t *a, cy_ecpoint_t *b);
 /* Arithmetic functions */
 extern cy_error_t cy_ec_add(const cy_ecpoint_t *a, const cy_ecpoint_t *b,
 		cy_ecpoint_t *r);
+
+extern cy_error_t cy_ec_scalarmul_batch_fp(const cy_fp_t *a, const cy_ecpoint_t *P, const cy_fp_t *b, const cy_ecpoint_t *Q,
+		cy_ecpoint_t *R); /* shamir's trick aP+bQ */
+
+
 extern cy_error_t cy_ec_sub(cy_ecpoint_t *a, cy_ecpoint_t *b, cy_ecpoint_t *r);
 
 extern cy_error_t cy_ec_iseq(const cy_ecpoint_t *a, const cy_ecpoint_t *b, int *flag_verif);

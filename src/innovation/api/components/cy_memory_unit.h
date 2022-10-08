@@ -21,7 +21,12 @@
   32 /* maximal size of the library name (example: "bolos_v1.0.O")*/
 #define T8_MAX_OBJECTNAME                                                      \
   32 /* maximal size of object name (example : "modular_ari_component")*/
-#define _MAX_MEMORY 8192 /* max bolos size app is around 4ko=(1<<12)bytes*/
+
+#define ST31_RAM 4096 		/* ST31 max ram, (nanoS:https://github.com/LedgerHQ/nanos-secure-sdk/blob/master/script.ld#L27)*/
+#define ST33_RAM 30*1024	/* ST33 max ram, (nanoX, SPlus, Stax :https://github.com/LedgerHQ/nanox-secure-sdk/blob/master/script.ld#L29)*/
+
+
+#define _MAX_MEMORY ST33_RAM /* max bolos RAM is around 4ko=(1<<12)bytes*/
 
 struct mem_ctx_s {
   uint8_t *Shared_Memory;

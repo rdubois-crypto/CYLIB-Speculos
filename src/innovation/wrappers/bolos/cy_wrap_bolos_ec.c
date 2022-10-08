@@ -402,6 +402,38 @@ cy_error_t wrap_bolos_ec_setinfinity( cy_ecpoint_t *kP)
 }
 
 
+cy_error_t wrap_bolos_scalarmul_batch_fp(const cy_fp_t *a, const cy_ecpoint_t *P, const cy_fp_t *b, const cy_ecpoint_t *Q,
+		cy_ecpoint_t *R)
+{
+	cy_error_t error=CY_KO;
+	int cmp;
+
+	sys_cx_bn_cmp_u32(*a->bn, 0, &cmp);
+
+	 /* scalar is null, so output is bQ*/
+	if(cmp==0){
+	    	//printf("\n infinity");
+			CY_CHECK(wrap_bolos_ec_scalarmul_fp(b,Q,R));
+	    	error=CY_OK;
+	    	goto end;
+	}
+	sys_cx_bn_cmp_u32(*b->bn, 0, &cmp);
+	if(cmp==0){
+		    	//printf("\n infinity");
+				CY_CHECK(wrap_bolos_ec_scalarmul_fp(a,P,R));
+		    	error=CY_OK;
+		    	goto end;
+		}
+
+	CY_CHECK(sys_cx_ecpoint_double_scalarmul_bn(R->ec, P->ec, Q->ec, *a->bn, *b->bn));
+
+
+	end:
+	return error;
+}
+
+
+
 cy_error_t wrap_bolos_ec_scalarmul_fp(const cy_fp_t * k, const cy_ecpoint_t * P,
                                cy_ecpoint_t *kP)
   {
@@ -517,6 +549,31 @@ cy_error_t wrap_bolos_isoncurve(const cy_ecpoint_t *a, int *flag_verif)
 	    	return error;
 
 }
+
+cy_error_t cy_wrap_bolos_ec_save(cy_ec_ctx_t *ctx, uint8_t *Ramout, size_t t8_sizeout){
+	cy_error_t error = CY_KO;
+	size_t i;
+
+	/* this only represent the sharedRAM memory, the content of cryptographic accelerator is also saved */
+	if(t8_sizeout<ctx->max_offset)
+	{
+		return CY_ERR_LENGTH;
+	}
+
+	/* copy the content of Ramp*/
+	memcpy(Ramout, ctx, sizeof(cy_ec_ctx_t));
+
+	/* not optimal for now, testing the value of the RAM for free/allocated values*/
+	for(i=ctx->offset;i<ctx->max_offset;i+=sizeof(cy_fp_t *))
+		if(ctx->Shared_Memory[i]==!_MEM_FP_RESERVED)
+		{
+
+		}
+
+
+	return error;
+}
+
 
 
 cy_error_t wrap_ecpoint_free(cy_ecpoint_t *P)

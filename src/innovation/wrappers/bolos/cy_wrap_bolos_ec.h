@@ -45,7 +45,7 @@
 #define cy_ec_isoncurve(P,booleen) wrap_bolos_isoncurve(P, booleen)
 #define cy_ec_export(G, xy, sxy) wrap_bolos_ec_export(G, xy, sxy)
 #define cy_ec_exportX(G, x, sx) wrap_bolos_exportX(G, x, sx)
-
+#define cy_ec_scalarmul_batch_fp(a,P,b,Q, R) wrap_bolos_scalarmul_batch_fp(a,P,b,Q, R)
 #define cy_ec_add(a,b,res) wrap_bolos_ec_add(a,b,res)
 #define cy_ec_getX(a,b) wrap_bolos_getX(a,b)
 #define cy_ec_isinfinity(P, bool) wrap_bolos_ec_isinfinity(P, bool)
