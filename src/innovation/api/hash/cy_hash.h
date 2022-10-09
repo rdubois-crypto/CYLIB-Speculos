@@ -27,7 +27,7 @@ typedef cy_error_t (*Fct_Hash_Configure_t)(cy_hash_unit_t *self_unit, uint8_t *i
  */
 typedef cy_error_t (*Fct_Hash_Init_t)(void *io_ps_ctx, uint8_t *in,
                                      size_t t8_in);
-typedef cy_error_t (*Fct_Hash_Update_t)(void *io_ps_ctx, uint8_t *in,
+typedef cy_error_t (*Fct_Hash_Update_t)(void *io_ps_ctx, const uint8_t *in,
                                     size_t t8_in);
 typedef cy_error_t (*Fct_Hash_Final_t)(void *io_ps_ctx, uint8_t *out, size_t sizeout);
 

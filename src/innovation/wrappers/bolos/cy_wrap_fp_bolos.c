@@ -534,7 +534,7 @@ cy_error_t wrap_bolos_fp_cmp(const cy_fp_t *a, cy_fp_t *b, boolean_t *out)
 	  return error;
 }
 
-cy_error_t wrap_bolos_fp_mul(cy_fp_t *a, cy_fp_t *b, cy_fp_t *out)
+cy_error_t wrap_bolos_fp_mul(const cy_fp_t *a, const cy_fp_t *b, cy_fp_t *out)
 {
   cy_error_t error = CY_KO;
   cy_fp_ctx_t *ctx = a->ctx;

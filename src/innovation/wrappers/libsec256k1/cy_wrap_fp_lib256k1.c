@@ -277,7 +277,7 @@ cy_error_t wrap_lib256k1_fp_sqr(const cy_fp_t *in, cy_fp_t *out)
 		  return error;
 }
 
-cy_error_t wrap_lib256k1_fp_inc(cy_fp_t *in, cy_fp_t *out)
+cy_error_t wrap_lib256k1_fp_inc(const cy_fp_t *in, cy_fp_t *out)
 {
 	 cy_error_t error = CY_KO;
 	  cy_fp_ctx_t *ctx = in->ctx;
@@ -318,7 +318,7 @@ end:
 }
 
 
-cy_error_t wrap_lib256k1_fp_mul(cy_fp_t *a, cy_fp_t *b, cy_fp_t *out)
+cy_error_t wrap_lib256k1_fp_mul(const cy_fp_t *a, const cy_fp_t *b, cy_fp_t *out)
 {
   cy_error_t error = CY_KO;
   cy_fp_ctx_t *ctx = out->ctx;

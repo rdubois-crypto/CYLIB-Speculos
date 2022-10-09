@@ -43,9 +43,9 @@ extern cy_error_t cy_musig_SetUp( cy_hash_unit_t *H, uint8_t *Elliptic_Ramp, siz
 							   cy_ec_ctx_t *ec_ctx, cy_musig2_ctx_t *musig_ctx);
 
 
-extern cy_error_t cy_Hagg(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i, uint8_t *ai);
-extern cy_error_t cy_Hnon(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *XAgg, const cy_ecpoint_t *R,  uint8_t *m, size_t t8_m, uint8_t *b);
-extern cy_error_t cy_Hsig(cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *KeyAg, const cy_ecpoint_t *R, uint8_t *m, size_t t8_m, cy_fp_t *c);
+extern cy_error_t cy_Hagg(const cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *L, int index_i, uint8_t *ai);
+extern cy_error_t cy_Hnon(const cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *XAgg, const cy_ecpoint_t *R,  const uint8_t *m, const size_t t8_m, uint8_t *b);
+extern cy_error_t cy_Hsig(const cy_musig2_ctx_t *musig_ctx, const cy_ecpoint_t *KeyAg, const cy_ecpoint_t *R, const uint8_t *m, const size_t t8_m, cy_fp_t *c);
 
 
 /* compute the aggregation (sum) of public keys*/
@@ -64,10 +64,13 @@ extern cy_error_t cy_musig_KeyGen(const cy_musig2_ctx_t *ctx, cy_fp_t *xpriv, cy
 cy_error_t cy_musig_Sign_Round1(const cy_musig2_ctx_t *ctx, cy_fp_t *ri, cy_ecpoint_t *Ri);
 
 /*Signature of users Sign' in Round 2*/
-cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *ctx,const size_t n_users,  const cy_fp_t *ai, const cy_ecpoint_t **vec_sigagg,
-									const uint8_t *message, const size_t message_t8,
-									cy_fp_t *s_i);
 
+extern cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *musig_ctx,
+		const uint8_t *ai, const cy_fp_t *privatekey_xi,
+		const cy_ecpoint_t *Ri,const cy_ecpoint_t *XAgg,
+		const cy_fp_t *ri,
+		const uint8_t *message, const size_t t8_message,
+		cy_ecpoint_t *R, cy_fp_t *fp_s, cy_fp_t *fp_c);
 
 /* Limited stack compatible versions  (to be done)*/
 cy_error_t cy_musig_Sign_Round2_Init(const cy_musig2_ctx_t *ctx,const size_t n_users, const cy_ecpoint_t *publickeys, const size_t index, cy_ecpoint_t *keyagg);
