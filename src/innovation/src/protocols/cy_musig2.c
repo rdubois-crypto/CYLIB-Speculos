@@ -228,17 +228,9 @@ cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *rando
 
 	CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &x));
 
-
 	CY_CHECK(cy_ec_get_generator(ctx->ctx_ec, &G));
 
-	/*II. Computations*/
-
-	/* returns the corresponding public key X=g^x*/
-
-	//cy_io_fp_printMSB(X_pub, "\n input to parity");
-
-	CY_CHECK(cy_ec_scalarmult_fp(random, &G, X_pub));
-
+	  CY_CHECK(cy_ec_scalarmult_fp(random, &G, X_pub));
 	/* compatibility BIP340*/
 	CY_CHECK(cy_ec_getparityY(X_pub, &sign));
 
@@ -310,9 +302,7 @@ cy_error_t cy_musig_Sign1(const cy_musig2_ctx_t *ctx, cy_fp_t ri[_MU_],
     for(j=0;j<_MU_;j++)
 
     {
-
 	 CY_CHECK(ctx->gda->GDA_Run(ctx->gda, buffer, ctx->ctx_ec->ctx_fp_p->t8_modular));
-
 	 CY_CHECK(cy_fp_import(buffer, ctx->ctx_ec->ctx_fp_p->t8_modular, &ri[j]));
 
     }
@@ -346,6 +336,32 @@ cy_error_t cy_musig_Sign1_Agg(const cy_musig2_ctx_t *musig_ctx, cy_ecpoint_t *Ri
    	  return error;
 }
 
+/* same but using serialized representation of ephemeral points to spare memory in crypto accelerator*/
+cy_error_t cy_musig_Sign1_tu8_Agg(const cy_musig2_ctx_t *musig_ctx,
+		  uint8_t  (svg_Rij[][_MU_])[_MAX_CYLIB_EC_T8],
+		  cy_ecpoint_t *R)
+{
+	size_t i,j;
+	cy_error_t error=CY_KO;
+	cy_ecpoint_t ec_temp;
+	size_t t8_fp=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
+
+	CY_CHECK(cy_ec_alloc(musig_ctx->ctx_ec, &ec_temp));
+	for(j=0;j<_MU_;j++)
+		{
+			CY_CHECK(cy_ec_setinfinity(&R[j]));
+			for(i=0;i<musig_ctx->n_users;i++)
+			{
+				CY_CHECK(cy_ec_import(svg_Rij[i][j], t8_fp, &ec_temp));
+				 CY_CHECK(cy_ec_add(&ec_temp, &R[j], &R[j]));
+			}
+		}
+
+	CY_CHECK(cy_ec_free( &ec_temp));
+
+	end:
+	   	  return error;
+}
 
 /* input:
  * - musig ctx
@@ -367,54 +383,6 @@ cy_error_t cy_musig_Sign2_Agg(const cy_musig2_ctx_t *musig_ctx, cy_fp_t *s_i, cy
    	  return error;
 }
 #ifdef _TESTED
-
-/* Each signer generates a random secret key x ←$ Zp and returns the
-corresponding public key X= g^x*/
-cy_error_t cy_musig_KeyGen(cy_musig2_ctx_t *ctx, const size_t n_users, cy_ecpoint_t *X_pub)
-{
-	/*I.Declarations and allocations*/
-	cy_error_t error=CY_KO;
-	cy_fp_t x;
-	cy_ecpoint_t *G=cy_ec_get_generator(ctx->ctx_ec); /* get generating point of the curve , todo ec: coder un get_generator */
-	CY_CHECK(cy_fp_alloc(&x, ctx->ctx_ec->ctx_fp_p->t8_modular));
-
-	/*II. Computations*/
-	/*generates a random secret key x ←$ Zp*/
-	CY_CHECK(cy_fp_get_random(ctx->gda, &x));
-	/* returns the corresponding public key X=g^x*/
-	CY_CHECK(cy_ec_scalarmult_fp(G, &x, X_pub));
-
-	/*III. Free pointers*/
-	CY_CHECK(cy_fp_free(&x));
-
-	end:
-   	  return error;
-}
-
-
-
-cy_error_t cy_musig_Sign_Round1_all(const cy_musig2_ctx_t *ctx,const size_t n_users,  const size_t index, cy_ecpoint_t *Rijs_Round1)
-{
-	cy_error_t error=CY_KO;
-	size_t i;
-	cy_fp_t x;
-	cy_ecpoint_t *G=cy_ec_get_generator(ctx->ctx_ec); /* get generating point of the curve , todo ec: coder un get_generator */
-
-	CY_CHECK(cy_fp_alloc(&x, ctx->ctx_ec->ctx_fp_p->t8_modular));
-	/* For each j ∈ {1, . . . , ν}*/
-	for(i=0;i<n_users; i++)
-	{
-		/*generates a random nonce key ri,j ←$ Zp*/
-		CY_CHECK(cy_fp_get_random(ctx->gda, &x));
-		/*computes R1,j =g^r1,j*/
-		CY_CHECK(cy_ec_scalarmult_fp(G, &x, Rijs_Round1+i));
-	}
-
-	CY_CHECK(cy_fp_free(&x));
-
-	end:
-   	  return error;
-}
 
 /* Sign' function of paper*/
 /* ai is computed externally using cy_musig_KeyAggCoeff*/
@@ -519,48 +487,6 @@ cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *ctx,const size_t n_us
 /*  aggregate key corresponding to L is X=Prod_1^n X^ai */
 
 
-#ifdef tested
-cy_error_t cy_musig_SigAgg_Round1(cy_musig2_ctx_t *ctx, const size_t n_users, const cy_ecpoint_t **vec_sig, cy_ecpoint_t **vec_sigagg){
-	size_t i,j ;
-	cy_ecpoint_t keyagg;
-	cy_error_t error=CY_KO;
-	cy_ecpoint_t *sig_i;/* the sig of i-th user*/
-	cy_ecpoint_t *sigaggj_j; /* the j-th coordinates of the aggregation*/
-	/* copy first pubkey in res*/
-
-	/* compute vectorial sum of signatures*/
-	for(j=0;j<n_users;j++)
-	{
-		CY_CHECK(cy_ec_copy(ctx->ctx_ec, &vec_sig[0]+j, &vec_sigagg[0]));/*copy first user sig to begin sum*/
-		for(i=1;i<n_users;i++)
-		{
-			sig_i=*vec_sig+i;/* the i-th user sig*/
-			CY_CHECK(cy_ec_add(vec_sigagg+i, sig_i+j, vec_sigagg));
-		}
-	}
-	end:
-		return error;
-}
-
-/*SignAgg', output the sum s=sum s_i mod p*/
-cy_error_t cy_musig_SigAgg_Round2(const size_t n_users, const cy_fp_t **vec_sig2, cy_fp_t *S)
-{
-	size_t j ;
-	cy_error_t error=CY_KO;
-
-	CY_CHECK(cy_fp_copy(S->ctx, &vec_sig2[0], S));/*copy first user sig to begin sum*/
-
-	for(j=0;j<n_users;j++)
-		{
-			CY_CHECK(cy_fp_add(S->ctx, &vec_sig2[j], S, S));/*accumulate signature in sum*/
-		}
-
-	end:
-			return error;
-}
-
-
-#endif
 /*************************************************************/
 /* Verification functions								 */
 /*************************************************************/

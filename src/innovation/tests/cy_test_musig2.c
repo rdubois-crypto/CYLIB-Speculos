@@ -69,7 +69,6 @@ int test_keygen(cy_musig2_ctx_t *ctx)
   CY_CHECK( cy_ec_import2(PublicKey_X0, sizeof(PublicKey_X0), PublicKey_Y0, sizeof(PublicKey_Y0), &ExpectedKpub));
   CY_CHECK(cy_fp_import(SecretKey_0, t8_p, &random));
 
-
   CY_CHECK(cy_musig_KeyGenDeriv(ctx, &random, &xpriv, &ComputedKpub));
 
   CY_CHECK(cy_ec_iseq(&ComputedKpub, &ExpectedKpub, &flag));
@@ -156,13 +155,6 @@ int test_verif_core(cy_musig2_ctx_t *ctx)
   	  return error;
 }
 
-int test_SigAgg(cy_musig2_ctx_t *musig_ctx)
-{
- printf("\n test SigAgg1: NOT IMPLEMENTED");
- printf("\n test SigAgg2: NOT IMPLEMENTED");
-
- return CY_OK;
-}
 
 int test_verif_all(cy_musig2_ctx_t *musig_ctx)
 {
@@ -375,8 +367,8 @@ static cy_error_t test_musig_SetUp(cy_hash_unit_t *H, cy_gda_ctx_t *gda, int cur
 }
 
 /* simulating the keygen of all users */
- cy_error_t Keygen_all(cy_musig2_ctx_t *musig_ctx,
-						  	 uint8_t svg_Kpub[_NB_USER_EXAMPLE][_MAX_CYLIB_EC_T8],
+ cy_error_t simu_Keygen_all(cy_musig2_ctx_t *musig_ctx,
+						  	 uint8_t svg_Kpub[][_MAX_CYLIB_EC_T8],
 							 cy_ecpoint_t *KeyAgg)
 {
 	size_t t8_fp=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
@@ -411,8 +403,11 @@ static cy_error_t test_musig_SetUp(cy_hash_unit_t *H, cy_gda_ctx_t *gda, int cur
 		return error;
 }
 
+
+
+
 /* testing validity of import/export*/
-test_keygen_all( cy_musig2_ctx_t *musig_ctx,uint8_t svg_Kpub[_NB_USER_EXAMPLE][_MAX_CYLIB_EC_T8], cy_ecpoint_t *KeyAgg)
+test_keygen_all( cy_musig2_ctx_t *musig_ctx,uint8_t svg_Kpub[][_MAX_CYLIB_EC_T8], cy_ecpoint_t *KeyAgg)
  {
 	cy_ecpoint_t Kpub[_NB_USER_EXAMPLE];
 	cy_error_t error;
@@ -420,7 +415,10 @@ test_keygen_all( cy_musig2_ctx_t *musig_ctx,uint8_t svg_Kpub[_NB_USER_EXAMPLE][_
 	size_t t8_fp=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
 	printf("\n    subtest keygen_all:");
 	size_t i;
+
+
 	cy_ecpoint_t KeyAgg_computed;
+	int flag=0;
 
 	CY_CHECK(cy_ec_alloc(ec_ctx, &KeyAgg_computed));
 
@@ -435,6 +433,16 @@ test_keygen_all( cy_musig2_ctx_t *musig_ctx,uint8_t svg_Kpub[_NB_USER_EXAMPLE][_
 
 	CY_CHECK(cy_musig_KeyAgg(musig_ctx, Kpub, &KeyAgg_computed));
 
+	CY_CHECK(cy_ec_iseq(&KeyAgg_computed, KeyAgg, &flag));
+
+	if(flag!=CY_TRUE)
+	{
+		cy_io_ec_printMSB(KeyAgg, "\n expected");
+		cy_io_ec_printMSB(&KeyAgg_computed, "\n computed");
+		error=CY_FALSE;
+		goto end;
+	}
+
 	CY_CHECK(cy_ec_free(&KeyAgg_computed));
 
 	for(i=0;i<musig_ctx->n_users;i++)
@@ -448,6 +456,116 @@ test_keygen_all( cy_musig2_ctx_t *musig_ctx,uint8_t svg_Kpub[_NB_USER_EXAMPLE][_
  }
 
 
+
+/* simulating the keygen of all users */
+cy_error_t simu_Sign1_all(cy_musig2_ctx_t *musig_ctx,
+						  uint8_t svg_rij[][_MU_][_MAX_CYLIB_EC_T8],
+						  uint8_t svg_Rij[][_MU_][_MAX_CYLIB_EC_T8],
+						  cy_ecpoint_t R[_MU_]
+ 							 )
+{
+	cy_error_t error;
+	cy_ec_ctx_t *ec_ctx=musig_ctx->ctx_ec;
+	size_t t8_fp=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
+	size_t i,j;
+
+	cy_fp_t rij[_NB_USER_EXAMPLE][_MU_];
+	cy_ecpoint_t Rij[_NB_USER_EXAMPLE][_MU_];
+
+	printf("\n    Sign Round 1");
+
+
+	for(i=0;i<musig_ctx->n_users;i++)
+	{
+		for(j=0;j<_MU_;j++)
+		{
+			CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_fp, &(rij[i][j])));
+			//printf("\n i=%d, j=%d",i,j);
+			CY_CHECK(cy_ec_alloc(ec_ctx, &(Rij[i][j])));
+			//printf("\n allocated cell: %x %x %x", Rij[i][j].ec->x, Rij[i][j].ec->y, Rij[i][j].ec->z);
+
+		}
+		CY_CHECK(cy_musig_Sign1(musig_ctx, rij[i], Rij[i]));
+
+		for(j=0;j<_MU_;j++)
+		{
+			//printf("\n-------------------- i=%d, j=%d", (int) i, (int) j);
+			CY_CHECK(cy_ec_export( &Rij[i][j],svg_Rij[i][j], t8_fp));
+			//cy_io_ec_printMSB(&Rij[i][j], "\n exporting:");
+
+			CY_CHECK(cy_fp_export(&rij[i][j],  svg_rij[i][j], t8_fp));
+
+			CY_CHECK(cy_fp_free(&(rij[i][j])));
+			CY_CHECK(cy_ec_free(&(Rij[i][j])));
+		}
+
+	}
+	CY_CHECK(cy_musig_Sign1_tu8_Agg(musig_ctx, svg_Rij, R));
+
+	end:
+			return error;
+}
+/* todo: test reimport and compliance with derivated Rij's*/
+int test_Sig1Agg(cy_musig2_ctx_t *musig_ctx,  uint8_t svg_rij[][_MU_][_MAX_CYLIB_EC_T8],
+		  uint8_t svg_Rij[][_MU_][_MAX_CYLIB_EC_T8])
+{
+ cy_error_t error;
+ cy_fp_t rij[_NB_USER_EXAMPLE][_MU_];
+ cy_ecpoint_t Rij[_NB_USER_EXAMPLE][_MU_];
+ cy_ec_ctx_t *ec_ctx=musig_ctx->ctx_ec;
+ int flag;
+ cy_ecpoint_t ec_temp;
+ size_t t8_fp=musig_ctx->ctx_ec->ctx_fp_p->t8_modular;
+ size_t i,j;
+ printf("\n    subtest SigAgg1: ");
+
+ CY_CHECK(cy_ec_alloc(ec_ctx, &ec_temp));
+
+ for(i=0;i<musig_ctx->n_users;i++)
+ 	{
+ 		for(j=0;j<_MU_;j++)
+ 		{
+ 			CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_fp, &(rij[i][j])));
+ 			CY_CHECK(cy_ec_alloc(ec_ctx, &(Rij[i][j])));
+
+ 			CY_CHECK(cy_ec_import( svg_Rij[i][j], t8_fp, &Rij[i][j]));
+ 			CY_CHECK(cy_fp_import(  svg_rij[i][j], t8_fp, &rij[i][j]));
+
+ 			CY_CHECK(cy_musig_KeyGenDeriv(musig_ctx, &rij[i][j], &rij[i][j], &ec_temp));
+
+ 			CY_CHECK(cy_ec_iseq(&ec_temp, &Rij[i][j], &flag));
+
+ 			CY_CHECK(cy_fp_free(&(rij[i][j])));
+ 			CY_CHECK(cy_ec_free(&(Rij[i][j])));
+ 			if(flag!=CY_TRUE)
+ 			{
+ 				error=CY_FALSE;
+ 				goto end;
+ 			}
+ 		}
+
+ 	}
+ printf(" OK");
+
+ end:
+ CY_CHECK(cy_ec_free(&ec_temp));
+
+ 			return error;
+}
+
+
+/* simulating the keygen of all users */
+cy_error_t simu_Sign2_all(cy_musig2_ctx_t *musig_ctx,
+						  uint8_t svg_Kpub[][_MAX_CYLIB_EC_T8],
+						  uint8_t svg_rij[][_MU_][_MAX_CYLIB_EC_T8],
+						  uint8_t svg_Rij[][_MU_][_MAX_CYLIB_EC_T8],
+						  cy_fp_t *s
+ 							 )
+{
+
+
+}
+
 /* full example, assuming an initialized musig_ctx */
 cy_error_t test_musig_full_example(cy_musig2_ctx_t *musig_ctx)
 {
@@ -457,12 +575,10 @@ cy_error_t test_musig_full_example(cy_musig2_ctx_t *musig_ctx)
 
 	cy_error_t error;
 
-	cy_ecpoint_t Kpub[_NB_USER_EXAMPLE];
+	cy_ecpoint_t ec_R, Kpub[_NB_USER_EXAMPLE];
 	cy_fp_t xpriv[_NB_USER_EXAMPLE];
 
 	/* those must be saved if using a single component and swap to memory */
-	cy_fp_t rij[_NB_USER_EXAMPLE][_MU_];
-	cy_ecpoint_t Rij[_NB_USER_EXAMPLE][_MU_];
 	cy_ecpoint_t KeyAgg;
 
 	uint8_t svg_rij[_NB_USER_EXAMPLE][_MU_][_MAX_CYLIB_EC_T8];
@@ -470,59 +586,15 @@ cy_error_t test_musig_full_example(cy_musig2_ctx_t *musig_ctx)
 	uint8_t svg_Kpub[_NB_USER_EXAMPLE][_MAX_CYLIB_EC_T8];
 
 	CY_CHECK(cy_ec_alloc(ec_ctx, &KeyAgg));
-	printf("\n\n test Musig2 Full example:");
+	CY_CHECK(cy_ec_alloc(ec_ctx, &ec_R));
+	printf("\n\n test Musig2 Full example, current bn:%x", KeyAgg.ec->x);
 
-	/* to be split to avoid ST31/33 unit memoverflow */
-#ifdef old
-	/* I. Key generations */
-	/* I.1 users */
-	for(i=0;i<musig_ctx->n_users;i++)
-		{
-			/* I. Allocations*/
-			CY_CHECK(cy_ec_alloc(ec_ctx, &Kpub[i]));
-			CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_fp, &xpriv[i]));
-
-			/* II. Key Generation :each user generates its keys*/
-			CY_CHECK(cy_musig_KeyGen(musig_ctx, &xpriv[i], &Kpub[i]));
-		}
-	/* I.2 aggregation */
-	CY_CHECK(cy_ec_alloc(ec_ctx, &KeyAgg));
-	CY_CHECK(cy_musig_KeyAgg(musig_ctx, Kpub, &KeyAgg));
-
-	/* III. Signature first round: each user generates a vector of _MU_ nonces and derivated ephemeral point*/
-	for(i=0;i<musig_ctx->n_users;i++)
-	{
-		for(j=0;j<_MU_;j++)
-		{
-			CY_CHECK(cy_fp_alloc(ec_ctx->ctx_fp_p, t8_fp, &(rij[i][j])));
-			//printf("\n i=%d, j=%d",i,j);
-			CY_CHECK(cy_ec_alloc(ec_ctx, &(Rij[i][j])));
-			printf("\n allocated cell: %x %x %x", Rij[i][j].ec->x, Rij[i][j].ec->y, Rij[i][j].ec->z);
-
-			//CY_CHECK(cy_fp_export(rij[i][j], t8_fp, &svg_rij[i][j]));
-
-		}
-		CY_CHECK(cy_musig_Sign1(musig_ctx, rij[i], Rij[i]));
-
-		for(j=0;j<_MU_;j++)
-		{
-			CY_CHECK(cy_fp_free(&(rij[i][j])));
-			CY_CHECK(cy_ec_free(&(Rij[i][j])));
-		}
-	}
-
-	/* IV. Free memory*/
-		for(i=0;i<musig_ctx->n_users;i++)
-		{
-			CY_CHECK(cy_ec_free(&Kpub[i]));
-			CY_CHECK(cy_fp_free(&xpriv[i]));
-
-		}
-#endif
-	CY_CHECK(Keygen_all(musig_ctx, svg_Kpub, &KeyAgg));
+	CY_CHECK(simu_Keygen_all(musig_ctx, svg_Kpub, &KeyAgg));
 	CY_CHECK(test_keygen_all(musig_ctx, svg_Kpub, &KeyAgg));
+	CY_CHECK(simu_Sign1_all( musig_ctx, svg_rij,svg_Rij, &ec_R));
+	CY_CHECK(test_Sig1Agg(musig_ctx,  svg_rij,svg_Rij));
 
-
+	CY_CHECK(cy_ec_free( &ec_R));
 	CY_CHECK(cy_ec_free( &KeyAgg));
 	end:
 		if(error==CY_OK)  printf(" OK");
@@ -546,20 +618,15 @@ int test_musig_unit(uint8_t *Ramp, size_t Ramp_t8)
 	//return 0;
 	//musig_ctx.gda=&bolos_gda_component;
 
-    CY_CHECK(test_verif_core(&musig_ctx));
-	CY_CHECK(test_keygen(&musig_ctx));
-	CY_CHECK(test_HashnKeyAgg(&musig_ctx));
-	//CY_CHECK(test_HashSig(&musig_ctx));
+    CY_CHECK(test_verif_core(&musig_ctx)); 	/* unitary vector test of schnorr verification, external hashing*/
+	CY_CHECK(test_keygen(&musig_ctx));	 	/* unitary vector test of key generation */
+	CY_CHECK(test_HashnKeyAgg(&musig_ctx)); /* unitary vector test of key aggregation */
+	//CY_CHECK(test_HashSig(&musig_ctx));		/* unitary test for Hsig, also validated with full verif_all */
 	//print_MsbString(Ramp, Ramp_t8, "\nRAMp:\n");
-	CY_CHECK(test_verif_all(&musig_ctx));
-	CY_CHECK(test_SigAgg(&musig_ctx));
+	CY_CHECK(test_verif_all(&musig_ctx));	/* unitary vector test of schnorr verification, external hashing*/
 
-	//CY_CHECK(cy_musig_uninit( &musig_ctx));
-
-	//CY_CHECK(test_musig_SetUp(&unit_pedersen, &bolos_gda_component, CY_CURVE_Stark256, &ec_ctx, Ramp, Ramp_t8, &musig_ctx));
 	CY_CHECK(test_musig_full_example(&musig_ctx));
 	CY_CHECK(cy_musig_uninit( &musig_ctx));
-
 
 	/* configuring Musig2 with hashpedersen and StarkCurve */
 

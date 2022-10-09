@@ -255,7 +255,10 @@ cy_error_t wrap_bolos_ec_add(const cy_ecpoint_t * a, const cy_ecpoint_t * b,
     	 }
 
 	#endif
+    // printf("\n standard add");
+
      CX_CHECK(sys_cx_ecpoint_add(out->ec, a->ec, b->ec));
+     //printf("\n standard add performed");
 
 
   end:
