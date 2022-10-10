@@ -7,21 +7,21 @@
  */
 /* See LICENSE file at the root folder of the project.
  */
-/* FILE: cy_io_fp.c */
+/* FILE: cy_hmac_ctr.c */
 /*               										   		                  */
 /* 																			      */
 /* 																			      */
 /* DESCRIPTION: IO for fp */
 /**********************************************************************************/
 
-#ifndef CY_IO_FP_H
-#define CY_IO_FP_H
-
-/* display the value of a fp in msb*/
-extern cy_error_t cy_io_fp_printMSB(const cy_fp_t *in, char *comment);
+hmac_ctr_init(int hash_id, const uint8_t *key, size_t key_len)
+{
 
 
-/* display the raw montgomery value of a fp in msb*/
+}
 
-/* normalized then display a montgomery fp value in msb*/
-#endif
+hmac_ctr_encrypt(int hash_id, const uint8_t *key, size_t key_len)
+{
+
+
+}

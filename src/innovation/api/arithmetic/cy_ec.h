@@ -34,7 +34,7 @@ struct ec_ctx_s {
   cy_ecpoint_t *G;
 
   cy_fp_ctx_t *ctx_fp_p; /*pointer to modular context in Shared Memory*/
-  //cy_fp_ctx_t *ctx_fp_q; /*pointer to modular context in Shared Memory, included at protocol level*/
+  cy_fp_ctx_t *ctx_fp_q; /*pointer to modular context in Shared Memory, included at protocol level*/
 };
 
 typedef struct ec_ctx_s cy_ec_ctx_t;

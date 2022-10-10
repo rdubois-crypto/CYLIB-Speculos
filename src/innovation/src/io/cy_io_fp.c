@@ -27,11 +27,10 @@
 #include "cy_io_common_tools.h"
 #include "cy_io_fp.h"
 
-#define _MAX_FP_T8_ 1024
 /* display the value of a fp in msb*/
 cy_error_t cy_io_fp_printMSB(const cy_fp_t *in, char *comment)
 {
-  uint8_t display[_MAX_FP_T8_];
+  uint8_t display[_MAX_FP_T8];
 
   cy_error_t error=CY_KO;
 

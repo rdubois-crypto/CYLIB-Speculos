@@ -24,7 +24,6 @@
 
 #define _MAX_FP_T8 512 /* maximal byte size of a fp*/
 
-
 struct cy_fp_ctx_s{
   cy_flag_t is_initialized;
   char libname[T8_MAX_LIBNAME];

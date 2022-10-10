@@ -18,5 +18,9 @@
 #define cy_bn_or(a,b,out) cy_wrap_bolos_bn_or(a,b,out)
 
 #define cy_bn_and(a,b,out) cy_wrap_bolos_bn_and(a,b,out)
+#define cy_bn_sub(a,b,out) cy_wrap_bolos_bn_sub(a,b,out)
+#define cy_bn_mod(a,mod, out) cy_wrap_bolos_bn_mod(a,mod, out)
+#define cy_bn_mod_mul(a,b, mod, out) cy_wrap_bolos_bn_modmul(a,b, mod, out)
+#define cy_bn_mod_add(a,b, mod, out) cy_wrap_bolos_bn_modadd(a,b, mod, out)
 
 #endif

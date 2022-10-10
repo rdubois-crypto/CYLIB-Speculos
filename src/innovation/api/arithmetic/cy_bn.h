@@ -29,11 +29,12 @@ _CY_API extern cy_error_t cy_bn_copy(const cy_bn_t *in, cy_bn_t *out);
 
 /* Arithmetic functions */
 _CY_API extern cy_error_t cy_bn_add(  cy_bn_t *a, cy_bn_t *b, cy_bn_t *r);
-_CY_API extern cy_error_t cy_bn_sub( cy_bn_t *a, cy_bn_t *b, cy_bn_t *r);
+_CY_API extern cy_error_t cy_bn_sub(const cy_bn_t *a, const cy_bn_t *b, cy_bn_t *r);
 _CY_API extern cy_error_t cy_bn_neg( cy_bn_t *a,  cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_shift_r(const size_t t1_shift, cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_or( const cx_bn_t *a, const cx_bn_t *b, cx_bn_t *r);
 _CY_API extern cy_error_t cy_bn_and( const cx_bn_t *a, const cx_bn_t *b, cx_bn_t *r);
+_CY_API extern cy_error_t cy_bn_mod(const cy_bn_t *a, const cy_bn_t *modulo, cy_bn_t *out );
 
 _CY_API extern cy_error_t cy_bn_inc(cy_bn_t *in, cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_dec(cy_bn_t *in, cy_bn_t *out);
@@ -45,6 +46,10 @@ _CY_API extern cy_error_t cy_bn_sqr( const cy_bn_t *in, cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_sqrt( cy_bn_t *in, cy_bn_t *out);
 _CY_API extern cy_error_t cy_bn_pow( cy_bn_t *in, uint8_t *scalar, size_t scalar_t8, cy_bn_t *out); /* for library enabling Montgomery, you should use montgomery version*/
 
+//modular functions: are you sure you don't need montgomery speed up ?
+_CY_API extern cy_error_t cy_bn_mod(const cy_bn_t *a, const cy_bn_t *modulo, cy_bn_t *out);
+_CY_API extern cy_error_t cy_bn_mod_mul(const cy_bn_t *a, const cy_bn_t *b, const cy_bn_t *modulo, cy_bn_t *out);
+_CY_API extern cy_error_t cy_bn_mod_add(const cy_bn_t *a, const cy_bn_t *b, const cy_bn_t *modulo, cy_bn_t *out);
 /* Comparizons */
 _CY_API extern cy_error_t cy_bn_isone(const cy_bn_t *in, int *iszero);
 _CY_API extern cy_error_t cy_bn_iszero(const cy_bn_t *in, int *iszero);

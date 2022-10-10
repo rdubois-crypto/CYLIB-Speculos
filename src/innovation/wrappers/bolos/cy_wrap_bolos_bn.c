@@ -66,3 +66,48 @@ cy_error_t cy_wrap_bolos_bn_shift_r(const size_t n, cx_bn_t *r){
 	end:
 		return error;
 }
+
+
+cy_error_t cy_wrap_bolos_bn_sub(const cy_bn_t *a, const cy_bn_t *b, cy_bn_t *out)
+{
+  cy_error_t error = CY_KO;
+
+  CX_CHECK(sys_cx_bn_sub(*out, *a, *b));
+
+end:
+  return error;
+}
+
+
+cy_error_t cy_wrap_bolos_bn_modadd(const cy_bn_t *a, const cy_bn_t *b, const cy_bn_t *modulo, cy_bn_t *out)
+{
+  cy_error_t error = CY_KO;
+
+  CX_CHECK(sys_cx_bn_mod_add(*out, *a, *b,  *modulo));
+
+end:
+  return error;
+}
+
+
+cy_error_t cy_wrap_bolos_bn_modmul(const cy_bn_t *a, const cy_bn_t *b, const cy_bn_t *modulo, cy_bn_t *out)
+{
+  cy_error_t error = CY_KO;
+
+  CX_CHECK(sys_cx_bn_mod_mul(*out, *a, *b,  *modulo));
+
+end:
+  return error;
+}
+
+cy_error_t cy_wrap_bolos_bn_mod(const cy_bn_t *a, const cy_bn_t *modulo, cy_bn_t *out )
+{
+	cy_error_t error = CY_KO;
+
+    CX_CHECK(sys_cx_bn_reduce(*out, *a, *modulo));
+
+	end:
+	  return error;
+
+}
+

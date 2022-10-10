@@ -42,6 +42,8 @@ static int test_ec_leak(cy_ec_ctx_t *ctx, uint8_t *Ramp, size_t sizeRam)
 	  #define _LEAK_TEST 10
 	  cy_ecpoint_t leak[_LEAK_TEST];
 	  printf("\n test_ec leakage:");
+	  UNUSED(Ramp);
+	  UNUSED(sizeRam);
 
 	  for(i=0;i<_LEAK_TEST;i++)
 	  {

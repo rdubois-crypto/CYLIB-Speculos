@@ -163,8 +163,9 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
   ec_ctx->is_initialized = CY_LIB_INITIALIZED;
 
  // printf("\n here with code=%x", (unsigned int) error);
+  //sys_cx_ecdomain_parameter(curve, CX_CURVE_PARAM_Order, argv_prime+4, (uint32_t) size_param_t8);
 
- // wrap_bolos_fp_init(ec_ctx->ctx_fp_q, pu8_Mem, t8_Memory, 2, argv_gen);
+  //wrap_bolos_fp_init(ec_ctx->ctx_fp_q, pu8_Mem+ec_ctx->offset, t8_Memory, 2, argv_gen);
  // ec_ctx->offset += ec_ctx->ctx_fp_q->offset;
 
 
@@ -316,7 +317,7 @@ cy_error_t wrap_bolos_ec_get_curveorder(const cy_ec_ctx_t *ec_ctx, uint8_t *orde
 {
 	 cy_error_t error = CY_KO;
 
-     CY_CHECK(sys_cx_ecdomain_parameter(ec_ctx->curve_id, CX_CURVE_PARAM_Order, order, (uint32_t) t8_order));
+	 CY_CHECK(sys_cx_ecdomain_parameter(ec_ctx->curve_id, CX_CURVE_PARAM_Order, order, (uint32_t) t8_order));
 
 	 end:
 		  	return error;

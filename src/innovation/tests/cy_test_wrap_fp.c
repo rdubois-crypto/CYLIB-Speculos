@@ -235,7 +235,7 @@ static int test_leak_fp(cy_fp_ctx_t *ctx)
   #define _LEAK_TEST 10
   cy_fp_t leak[_LEAK_TEST];
   printf("\n test_fp leakage:");
-  cy_bn_t bneak[_LEAK_TEST];
+ // cy_bn_t bneak[_LEAK_TEST];
 
   for(i=0;i<_LEAK_TEST;i++)
   {
