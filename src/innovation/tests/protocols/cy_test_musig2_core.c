@@ -351,7 +351,7 @@ int test_musig_unit(uint8_t *Ramp, size_t Ramp_t8)
 	cy_ec_ctx_t ec_ctx;
 
 	cy_musig2_ctx_t musig_ctx;
-	printf("\n\n /************************ Test Musig2 Protocol:");
+	printf("\n\n /************************ Test Musig2 Protocol core:");
 
 
 	CY_CHECK(test_musig_SetUp(&unit_pedersen, &bolos_gda_component, CY_CURVE_Stark256, &ec_ctx, Ramp, Ramp_t8, &musig_ctx));
@@ -368,7 +368,7 @@ int test_musig_unit(uint8_t *Ramp, size_t Ramp_t8)
 
 
 	end:
-	if(error==CY_OK)  printf("\n All Musig2 tests OK");
+	if(error==CY_OK)  printf("\n All Musig2_core tests OK");
 	else printf("\n  Musig2 KO with error=%x",(unsigned int) error);
 			return error;
 }

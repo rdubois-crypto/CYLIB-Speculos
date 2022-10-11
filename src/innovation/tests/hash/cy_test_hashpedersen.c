@@ -82,8 +82,8 @@ static int test_verif_pedersen_chain(cy_ec_ctx_t *ec_ctx)
 {
  cy_error_t error=CY_KO;
  cy_pedersen_ctx_t ped_ctx;
- uint8_t zero[Stark_SIZE_u8]={0};
- uint8_t buffer[Stark_SIZE_u8]={0};
+ //uint8_t zero[Stark_SIZE_u8]={0};
+ //uint8_t buffer[Stark_SIZE_u8]={0};
 
 
  int flag=0;
@@ -128,14 +128,13 @@ static int test_verif_pedersen_initupdatefinal(cy_ec_ctx_t *ec_ctx)
 {
 	cy_pedersen_ctx_t ped_ctx_stream;
 	cy_error_t error=CY_KO;
-	 cy_pedersen_ctx_t ped_ctx;
 	 uint8_t zero[Stark_SIZE_u8]={0};
 	 uint8_t buffer[Stark_SIZE_u8]={0};
 
 
 	 int flag=0;
 
-	 cy_fp_t fp_data[2], fp_res_stream, fp_expected;
+	 cy_fp_t  fp_res_stream, fp_expected;
 
 	 cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_res_stream);
 	 cy_fp_alloc(ec_ctx->ctx_fp_p, ec_ctx->ctx_fp_p->t8_modular, &fp_expected);
@@ -171,7 +170,7 @@ static int test_verif_pedersen_initupdatefinal(cy_ec_ctx_t *ec_ctx)
 cy_error_t test_pedersen_hashunit(cy_ec_ctx_t *ec_ctx, cy_hash_unit_t *H)
 {
 	cy_error_t error=CY_KO;
-	size_t p_unused;
+	size_t p_unused=0;
 	uint8_t zero[Stark_SIZE_u8]={0};
 	uint8_t buffer[Stark_SIZE_u8]={0};
 	cy_fp_t fp_data[2], fp_res_stream, fp_expected;

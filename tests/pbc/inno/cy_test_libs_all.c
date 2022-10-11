@@ -41,13 +41,16 @@
 
 #include "cy_configuration.h"
 #include "cy_quad.h"
-#include "cy_test_mem_unit.c"
-#include "cy_test_wrap_fp.c"
-#include "cy_test_wrap_fp2.c"
-#include "cy_test_wrap_fp12.c"
-#include "cy_test_wrap_ec.c"
-#include "cy_test_musig2.c"
-#include "cy_test_hashpedersen.c"
+#include "components/cy_test_mem_unit.c"
+#include "arithmetic/cy_test_wrap_fp.c"
+#include "arithmetic/cy_test_wrap_fp2.c"
+#include "arithmetic/cy_test_wrap_fp12.c"
+#include "arithmetic/cy_test_wrap_ec.c"
+#include "protocols/cy_test_musig2_core.c"
+#include "protocols/cy_test_musig2_fsm.c"
+
+#include "hash/cy_test_hashpedersen.c"
+
 
 cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 {
@@ -86,6 +89,10 @@ cy_error_t test_all(cryptolib_ctx_t *cryptolib)
 	CY_CHECK(test_musig_unit(cryptolib->mem_unit->Shared_Memory, _MAX_MEMORY));
 	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _MAX_MEMORY));
 
+	//return error;
+	CY_CHECK(cy_mem_malloc(cryptolib->mem_unit, _MAX_MEMORY, &Zone));
+	CY_CHECK(test_musig_fsm(cryptolib->mem_unit->Shared_Memory, _MAX_MEMORY));
+	CY_CHECK(cy_mem_free(cryptolib->mem_unit, Zone, _MAX_MEMORY));
 
 	  end:
 	  return error;

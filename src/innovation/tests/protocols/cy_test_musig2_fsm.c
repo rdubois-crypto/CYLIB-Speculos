@@ -40,7 +40,7 @@
 #include "cy_musig2.h"
 
 #include "test_vectors/test_vector_musig2.c"
-#include "cy_musig2_fsm.c"
+#include "../../src/protocols/musig2/cy_musig2_fsm.c"
 
 
 int test_musig_fsm(uint8_t *Ramp, size_t Ramp_t8)
@@ -54,7 +54,7 @@ int test_musig_fsm(uint8_t *Ramp, size_t Ramp_t8)
 
 
 	end:
-	if(error==CY_OK)  printf("\n All Musig2 tests OK");
+	if(error==CY_OK)  printf("\n All Musig2 fsm tests OK");
 	else printf("\n  Musig2 KO with error=%x",(unsigned int) error);
 			return error;
 }

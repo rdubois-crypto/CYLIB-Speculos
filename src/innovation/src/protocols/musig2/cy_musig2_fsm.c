@@ -32,10 +32,10 @@
 struct musig2_fsm_user_s {
   int state;
 
-  cy_fp_t *xpriv;
-  cy_fp_t *ai;
-  cy_ecpoint_t *Kpub;
-  cy_musig2_ctx_t *musig;
+  cy_fp_t xpriv;
+  cy_fp_t ai;
+  cy_ecpoint_t Kpub;
+  cy_musig2_ctx_t musig;
 
   cy_fp_t *rij[MAX_MUSIG2_USERS]; /* nonces for round 1*/
 
@@ -47,13 +47,26 @@ typedef struct musig2_fsm_user_s musig2_fsm_user_t;
 
 cy_error_t cy_musig2_starknet_user_init(musig2_fsm_user_t *ctx){
 
+ UNUSED(ctx);
 
-
+ return CY_KO;
 }
+
+
+cy_error_t cy_musig2_user_uninit(musig2_fsm_user_t *ctx){
+
+ UNUSED(ctx);
+
+ return CY_KO;
+}
+
+
 
 /* reusing an existing private key */
 cy_error_t cy_musig2_starknet_user_init_from_sk(musig2_fsm_user_t *ctx){
+	 UNUSED(ctx);
 
+	 return CY_KO;
 
 
 }
@@ -61,13 +74,17 @@ cy_error_t cy_musig2_starknet_user_init_from_sk(musig2_fsm_user_t *ctx){
 
 cy_error_t cy_musig2_starknet_user_send_pubkey(musig2_fsm_user_t *ctx, uint8_t *pubkey[_MAX_CYLIB_EC_T8]){
 
-
+	 UNUSED(ctx);
+	 UNUSED(pubkey);
+	 return CY_KO;
 
 }
 
 cy_error_t cy_musig2_starknet_user_send_round1(musig2_fsm_user_t *ctx, uint8_t *nonces[_MAX_CYLIB_EC_T8]){
 
-
+	 UNUSED(ctx);
+	 UNUSED(nonces);
+	 return CY_KO;
 
 }
 

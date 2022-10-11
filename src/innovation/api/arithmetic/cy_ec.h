@@ -53,7 +53,7 @@ struct cy_ec_s{
 
 
 /* maximal size of elliptic curve handled by CYLIB*/
-#define _MAX_CYLIB_EC_T8 256
+#define _MAX_CYLIB_EC_T8 _MAX_FP_T8
 
 #define _HANDLED_EC_MAX 16
 #define _EC_ZONE_T8 (_HANDLED_EC_MAX*(sizeof(cy_ecpoint_t)*sizeof(cy_bn_t)))

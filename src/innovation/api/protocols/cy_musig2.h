@@ -75,10 +75,11 @@ cy_error_t cy_musig_Sign1(const cy_musig2_ctx_t *ctx, cy_fp_t ri[_MU_],
 extern cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *musig_ctx,
 		const uint8_t *ai,
 		const cy_fp_t *privatekey_xi,
-		const cy_ecpoint_t *R1,const cy_ecpoint_t *XAgg,
-		const cy_fp_t *ri,
+		const cy_ecpoint_t *R1,/* aggregated Ri from Round 1*/
+		const cy_ecpoint_t *XAgg,
+		const uint8_t tu8_ri[_MU_][_MAX_CYLIB_EC_T8],
 		const uint8_t *message, const size_t t8_message,
-		cy_ecpoint_t *R2,
+		cy_ecpoint_t *R,
 		uint8_t *tu8_s,
 		uint8_t *tu8_c
 		);
