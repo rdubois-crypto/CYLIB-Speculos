@@ -15,7 +15,7 @@
 
 /* Maximal size of ec element supported by this musig2 implementation */
 /* note that lower limit may be thrown by cryptographic accelerator */
-#define MAX_MUSIG_EC_T8 128
+#define MAX_MUSIG_EC_T8 _MAX_CYLIB_EC_T8
 #define MAX_MUSIG_HASH_T8 128
 
 
