@@ -25,7 +25,7 @@ struct musig2_ctx_s {
   cy_hash_unit_t *H;/* hash underlying function, used to build hash to scalar function */
 
   cy_ec_ctx_t *ctx_ec; /* elliptic context for elliptic curves operations 	*/
-  cy_fp_ctx_t *ctx_order;	         /* modular context to perform operation over the scalar field */
+  //cy_fp_ctx_t *ctx_order;	         /* modular context to perform operation over the scalar field */
   cy_gda_ctx_t *gda;   /* random generator */
   unsigned int n_users;
 

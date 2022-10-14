@@ -194,7 +194,8 @@ cy_error_t cy_musig_KeyGenDeriv(const cy_musig2_ctx_t *ctx, const cy_fp_t *rando
 
 	if(sign==1)
 	{
-		CY_CHECK(cy_bn_sub( order.bn, random->bn, xpriv->bn)); /* mod q*/
+
+		CY_CHECK(cy_fp_sub( &order, random, xpriv));
 		CY_CHECK(cy_ec_scalarmult_fp(xpriv, &G,  X_pub));
 	}
 	else
@@ -329,9 +330,15 @@ cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *musig_ctx,
 	{
 		CY_CHECK(cy_ec_scalarmult_fp(&fp_b, &R1[j], &ec_temp));
 		CY_CHECK(cy_ec_add( R, &ec_temp, R));
-		CY_CHECK(cy_bn_mod_mul(fp_ri[j].bn, fp_b.bn, order.bn, fp_temp.bn));
-		CY_CHECK(cy_bn_mod_add(acc_ribj.bn, fp_temp.bn, order.bn, acc_ribj.bn));
-		CY_CHECK(cy_bn_mod_mul(fp_b.bn, fp_b.bn, order.bn, fp_b.bn));
+		//CY_CHECK(cy_bn_mod_mul(fp_ri[j].bn, fp_b.bn, order.bn, fp_temp.bn));
+		CY_CHECK(cy_fp_mul(&fp_ri[j], &fp_b,  &fp_temp));
+
+		//CY_CHECK(cy_bn_mod_add(acc_ribj.bn, fp_temp.bn, order.bn, acc_ribj.bn));
+		CY_CHECK(cy_fp_add(&acc_ribj, &fp_temp, & acc_ribj));
+
+		//CY_CHECK(cy_bn_mod_mul(fp_b.bn, fp_b.bn, order.bn, fp_b.bn));
+		CY_CHECK(cy_fp_mul(&fp_b, &fp_b, & fp_b));
+
 	}
 
 	/* Hsig(X, R, m)*/
@@ -339,9 +346,12 @@ cy_error_t cy_musig_Sign_Round2_all(const cy_musig2_ctx_t *musig_ctx,
 	CY_CHECK(cy_fp_import( tu8_c, t8_fp, &fp_c));
 	CY_CHECK(cy_fp_import( ai, t8_fp, &fp_ai));
 
-	CY_CHECK(cy_bn_mod_mul(fp_c.bn, fp_ai.bn, order.bn, fp_temp.bn));				/* c.ai*/
-	CY_CHECK(cy_bn_mod_mul( fp_temp.bn, privatekey_xi->bn, order.bn, fp_temp.bn));	/* (c*ai*privatekey_xi)*/
-	CY_CHECK(cy_bn_mod_add( fp_temp.bn, acc_ribj.bn, order.bn, fp_temp.bn));		/*s1= ca1x1 + sum(r1jb^j)*/
+	//CY_CHECK(cy_bn_mod_mul(fp_c.bn, fp_ai.bn, order.bn, fp_temp.bn));				/* c.ai*/
+	CY_CHECK(cy_fp_mul(&fp_c, &fp_ai, &fp_temp));
+	//CY_CHECK(cy_bn_mod_mul( fp_temp.bn, privatekey_xi->bn, order.bn, fp_temp.bn));	/* (c*ai*privatekey_xi)*/
+	CY_CHECK(cy_fp_mul( &fp_temp, privatekey_xi, &fp_temp));	/* (c*ai*privatekey_xi)*/
+
+	CY_CHECK(cy_fp_add( &fp_temp, &acc_ribj,  &fp_temp));		/*s1= ca1x1 + sum(r1jb^j)*/
 
 	CY_CHECK(cy_fp_export(&fp_temp, tu8_s, t8_fp));
 
@@ -450,7 +460,8 @@ cy_error_t cy_musig_Sign2_Agg_tu8(const cy_musig2_ctx_t *musig_ctx, uint8_t s_i[
 	for(i=1;i<musig_ctx->n_users;i++)
 	{
 		CY_CHECK(cy_fp_import(s_i[i], t8_fp, &fp_temp));
-		CY_CHECK(cy_bn_mod_add(fp_temp.bn, fp_s.bn, fp_order.bn, fp_s.bn));
+		//CY_CHECK(cy_bn_mod_add(fp_temp.bn, fp_s.bn, fp_order.bn, fp_s.bn));
+		CY_CHECK(cy_fp_add(&fp_temp, &fp_s, & fp_s));
 	}
 
 	CY_CHECK(cy_fp_export(&fp_s, tu8_s, t8_fp));

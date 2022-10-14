@@ -148,7 +148,7 @@ cy_error_t wrap_bolos_ec_init(cy_ec_ctx_t *ec_ctx, uint8_t *pu8_Mem,
   be_from_word32(size_param_t8, argv_prime);
   ec_ctx->curve_id = curve;
 
-  sys_cx_ecdomain_parameter(curve, CX_CURVE_PARAM_Field, argv_prime+4, (uint32_t) size_param_t8);
+  sys_cx_ecdomain_parameter(curve, CX_CURVE_PARAM_Order, argv_prime+4, (uint32_t) size_param_t8);
 
 
   argv_gen[0]=argv_prime;

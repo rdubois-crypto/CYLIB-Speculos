@@ -14,3 +14,5 @@
 extern cy_error_t cy_Schnorr_Verification_Core(cy_ec_ctx_t *ctx_ec, cy_ecpoint_t *Key_agg,
 		cy_ecpoint_t *R, cy_fp_t *fp_s, cy_fp_t *fp_c,
 		boolean_t *flag_verif);
+
+extern cy_error_t cy_Schnorr_Sign(cy_hash_unit_t *H, cy_ec_ctx_t *ctx_ec, cy_fp_t *xpriv, uint8_t *message, size_t t8_message, uint8_t *R, uint8_t *fp_s);

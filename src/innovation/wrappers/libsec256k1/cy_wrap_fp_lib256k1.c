@@ -365,7 +365,7 @@ cy_error_t wrap_lib256k1_fp_inv(cy_fp_t *in, cy_fp_t *out)
 
 #define _MAX_MAGNITUDE (1<<30)
 
-cy_error_t wrap_lib256k1_fp_sub(cy_fp_t *a, cy_fp_t *b, cy_fp_t *out)
+cy_error_t wrap_lib256k1_fp_sub(const cy_fp_t *a, const cy_fp_t *b, cy_fp_t *out)
 {
   cy_error_t error = CY_KO;
   cy_fp_ctx_t *ctx = out->ctx;

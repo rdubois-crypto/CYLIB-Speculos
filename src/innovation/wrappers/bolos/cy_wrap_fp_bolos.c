@@ -505,7 +505,7 @@ cy_error_t wrap_bolos_fp_neg(const cy_fp_t *a,  cy_fp_t *out)
 }
 
 
-cy_error_t wrap_bolos_fp_sub(cy_fp_t *a, cy_fp_t *b, cy_fp_t *out)
+cy_error_t wrap_bolos_fp_sub(const cy_fp_t *a, const cy_fp_t *b, cy_fp_t *out)
 {
   cy_error_t error = CY_KO;
   cy_fp_ctx_t *ctx = a->ctx;
