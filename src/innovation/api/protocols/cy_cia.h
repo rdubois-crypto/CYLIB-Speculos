@@ -58,7 +58,7 @@ extern size_t cy_fread(void *restrict ptr, size_t size, size_t nmemb,
 		cy_FILE_t *restrict stream);
 
 /* A ciphered and sign mode of operation:*/
-extern cy_error_t cy_CIA_Init(uint8_t *iv, char *path, cx_hmac_ctx *ctx_hmac, uint8_t *key, uint8_t *buffer, int mode);
+extern cy_error_t cy_CIA_Init(uint8_t *iv, const char *path, cx_hmac_ctx *ctx_hmac, const uint8_t *key, uint8_t *buffer, const unsigned int mode);
 extern cy_error_t cy_CIA_Update(uint8_t *iv, cx_hmac_ctx *ctx_hmac, const uint8_t *key, const  uint8_t *data, const size_t t8_data, uint8_t *ciphered);
 extern cy_error_t cy_CIA_Final(uint8_t *iv, cx_hmac_ctx *ctx_hmac,uint8_t *sig);
 
