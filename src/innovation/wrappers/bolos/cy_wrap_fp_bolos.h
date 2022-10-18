@@ -26,21 +26,6 @@
 
 #define cy_bn_t cx_bn_t
 
-/* while not specified, one can check that the montgomery representation used by
- * bolos is a 128 bits multiplier.
- */
-struct cy_bn_mont_ctx_s {
-  cy_bn_t n;
-  //cy_bn_t h2; /* 2^2*bitsizeof(p) mod p */
-  /* -p^-1 mod 2^(bitsizeof(word_t)) */
-  cy_bn_t mpinv;
-  cy_bn_t h; /* 2^bitsizeof(p) mod p, it is also 1 in montgo rep */
-  cy_bn_t h2; /* 2^bitsizeof(p) mod p, it is also 1 in montgo rep */
-
-};
-
-
-typedef struct cy_bn_mont_ctx_s cy_bn_mont_ctx_t;
 
 #define cy_fp_init(a, b, c, d, e) (wrap_bolos_fp_init(a, b, c, d, e))
 #define cy_fp_uninit(ctx, mem, size) (wrap_bolos_fp_uninit(ctx, mem, size))
@@ -76,20 +61,9 @@ typedef struct cy_bn_mont_ctx_s cy_bn_mont_ctx_t;
 #define cy_fp_mont_import(in, size, out) (wrap_bolos_mont_import(in, size, out))
 #define cy_fp_mont_export(in, out, size) (wrap_bolos_mont_export(in, out,size))
 
-/* Speculos is not emulating Montgomery functions, added here*/
+/* Speculos is not emulating Montgomery functions, added in cy_speculos.c*/
 #define _WITH_SPECULOS
-#ifdef _WITH_SPECULOS
-#define cx_mont_mul(r, a, b, c)           (cy_mont_mul(r, a, b, c))
-#define cx_mont_init(ctx_out, n_in)       (cy_mont_init(ctx_out, n_in))
-#define cx_mont_to_montgomery(out, in, c) (cy_mont_to_montgomery(out, in, c))
-#define cx_mont_from_montgomery(out, in, c) (cy_mont_from_montgomery(out, in, c))
-#define cx_bn_mod_invert_nprime(r,a,n) (sys_cx_bn_mod_invert_nprime(r,a,n))
-#define cx_bn_mont_ctx_t                  cy_bn_mont_ctx_t
-#define cx_mont_alloc(ctx, t8_length)     cy_mont_alloc(ctx, t8_length)
 
-
-#else
-#endif
 
 /* Direct access functions */
 #define cy_fp_from_bn(in,  out) (wrap_cy_fp_from_bn(in,  out))

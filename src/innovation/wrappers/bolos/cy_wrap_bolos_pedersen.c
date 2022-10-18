@@ -11,7 +11,7 @@
 #define cx_ecfp_add_point(a,b,c,d,e) sys_cx_ecfp_add_point(a,b,c,d,e)
 
 #define PRINTF(a) printf(a)
-
+#define CX_KO (1-CX_OK)
 #include "bolos/cxlib.h"
 //#include "bolos/os.h"
 //#include "bolos/cx.h"
@@ -225,7 +225,7 @@ cx_err_t test_pedersenx2()
 	int flag=true;
 	flag=flag&flag;/* make compiler happy*/
 
-	cx_err_t error;
+	cx_err_t error=CX_KO;
 	FieldElement a={  0x02, 0x6b, 0x0b, 0x10, 0x22, 0x94, 0x77, 0x33, 0x55, 0x1f, 0xde, 0x40, 0x50, 0xca, 0x68, 0x04,
 		    0x03, 0xca, 0x0c, 0xfe, 0x4b, 0x3b, 0xc6, 0xdd, 0xf3, 0x46, 0xd4, 0x9d, 0x06, 0xea, 0x0e, 0xd3};
 
@@ -236,13 +236,15 @@ cx_err_t test_pedersenx2()
 	FieldElement res2;
 
 	pedersen(res,a,b);
-	CX_CHECK(pedersen_x2(res,a,b));
+	CX_CHECK(pedersen_x2(res2,a,b));
 
 	PRINTF("\n Test Pedersen x2:");
 	for(i=0;i<sizeof(res);i++)
 	{
 		if(res[i]!=res2[i]){
 			flag=false;
+			error=CX_KO;
+			goto end;
 		}
 		PRINTF(" KO");
 	}

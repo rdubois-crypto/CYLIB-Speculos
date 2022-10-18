@@ -49,7 +49,14 @@ extern cy_error_t cy_mem_malloc(cy_mem_ctx_t *io_mem, size_t allocated_t8, uint8
 extern cy_error_t cy_mem_free(cy_mem_ctx_t *io_mem, uint8_t *index,
                               size_t sizeof_element);
 extern cy_error_t cy_mem_check(cy_mem_ctx_t *io_mem);
-extern cy_error_t cy_mem_defrag(cy_mem_ctx_t *io_mem);
+
+
+
+extern void *cy_malloc(cy_mem_ctx_t* ctx_mem, size_t size_type);
+extern cy_error_t cy_free(cy_mem_ctx_t *io_mem, void* ptr, size_t size_type) ;/* secured free, checking the canary */
+
+extern cy_error_t cy_mem_defrag(cy_mem_ctx_t *io_mem, size_t size);
+
 extern cy_error_t cy_mem_uninit(cy_mem_ctx_t *io_mem);
 
 #define _MEM_ERASED_READY 0xCA /* value chosen because harder to fault attack*/

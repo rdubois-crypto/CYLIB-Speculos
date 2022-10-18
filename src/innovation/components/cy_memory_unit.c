@@ -122,12 +122,67 @@ end:
   return error;
 }
 
-/*not implemented for now*/
-cy_error_t cy_mem_defrag(cy_mem_ctx_t *io_mem)
+static void* cy_mem_spotfree(cy_mem_ctx_t *io_mem, size_t size)
 {
-  UNUSED(io_mem);
-  return CY_OK;
+
+ size_t cpt_i, free_acc=0;
+
+ for (cpt_i =0;cpt_i< io_mem->offset;cpt_i++)
+ {
+	 if(io_mem->Shared_Memory[cpt_i]==_MEM_ALLOCATED)
+	 {
+		 free_acc++;
+	 }
+	 else{
+		 free_acc=0;
+	 }
+	 if(free_acc==size)
+	 {
+		 return (void *) &(io_mem->Shared_Memory[cpt_i-size+1]);
+	 }
+ }
+
+ return NULL;
 }
+
+cy_error_t cy_free(cy_mem_ctx_t *io_mem, void* ptr, size_t size_type)
+{
+	size_t cpt_i;
+	cy_error_t error=CY_OK;
+
+	if((unsigned int) ptr > (unsigned int)(io_mem->Shared_Memory+io_mem->allocated_t8) )
+		error=CY_MEM_OVERFLOW;
+
+	for (cpt_i =0;cpt_i< size_type;cpt_i++)
+		((uint8_t *) ptr)[cpt_i]=_MEM_ALLOCATED;
+
+
+	 return error;
+}
+
+void *cy_malloc(cy_mem_ctx_t* ctx_mem, size_t size_type){
+	void * address=NULL;
+
+	if(ctx_mem->is_initialized!=CY_LIB_INITIALIZED) {
+		goto end;
+	}
+
+	/* if memory is full, find free spot*/
+	if((ctx_mem->offset+size_type)>ctx_mem->allocated_t8 )
+	{
+		address=(cy_mem_spotfree(ctx_mem, size_type));
+	}
+	else
+	{
+		address=(void *)(ctx_mem->Shared_Memory + ctx_mem->offset);
+		ctx_mem->offset+=size_type;
+	}
+
+	end:
+	  return address;
+}
+
+
 
 /* unallocated memory shall have _MEM_ERASED value*/
 cy_error_t cy_mem_check(cy_mem_ctx_t *io_mem)

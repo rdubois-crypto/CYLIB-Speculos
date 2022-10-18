@@ -48,7 +48,7 @@
 #include "arithmetic/cy_test_wrap_ec.c"
 #include "protocols/cy_test_musig2_core.c"
 #include "protocols/cy_test_musig2_fsm.c"
-
+#include "components/cy_test_field_unit.c"
 #include "hash/cy_test_hashpedersen.c"
 
 
